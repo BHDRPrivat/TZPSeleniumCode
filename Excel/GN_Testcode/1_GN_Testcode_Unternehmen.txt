@@ -1,0 +1,40 @@
+	driver.findElement(By.name("companyName")).click();
+	driver.findElement(By.name("companyName")).clear();
+	driver.findElement(By.name("companyName")).sendKeys(Unternehmensname);
+	
+	driver.findElement(By.name("lei")).click();
+	driver.findElement(By.name("lei")).clear();
+	driver.findElement(By.name("lei")).sendKeys(LEI);
+	
+	@id='menu-country'
+	Land:
+	 Deutschland
+	 Österreich
+
+	driver.findElement(By.name("website")).click();
+	driver.findElement(By.name("website")).clear();
+	driver.findElement(By.name("website")).sendKeys(Webseite);
+
+	driver.findElement(By.name("emailForBusinessConfirmations")).click();
+	driver.findElement(By.name("emailForBusinessConfirmations")).clear();
+	driver.findElement(By.name("emailForBusinessConfirmations")).sendKeys(EmailGeschaefte);
+
+	driver.findElement(By.name("streetName")).click();
+	driver.findElement(By.name("streetName")).clear();
+	driver.findElement(By.name("streetName")).sendKeys(Str);
+
+	driver.findElement(By.name("houseNumber")).click();
+	driver.findElement(By.name("houseNumber")).clear();
+    	driver.findElement(By.name("houseNumber")).sendKeys(HausNr);
+
+	driver.findElement(By.name("postCode")).click();
+	driver.findElement(By.name("postCode")).clear();
+	driver.findElement(By.name("postCode")).sendKeys(PLZ);
+
+	driver.findElement(By.name("location")).click();
+        driver.findElement(By.name("location")).clear();
+	driver.findElement(By.name("location")).sendKeys(Ort);
+
+	driver.findElement(By.name("addressAddition")).click();
+	driver.findElement(By.name("addressAddition")).clear();
+	driver.findElement(By.name("addressAddition")).sendKeys(Adresszusatz);

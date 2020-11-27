@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- bisherige Daten aus D:\IR-WebRisk-Testdaten löschen -->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PHV-Ablauftesttest">
+	<test name="WebRiskBasisTestPHVVorbereitung für PDF-Druck">
+		<parameter name="Ablaufart" value="PDF-Druck"></parameter>
+		<classes>
+			<class name="WebRiskTests.WebRiskBasisTestPHVOK" />
+		</classes>
+	</test>
+	<test name="WebRiskBasisTestPHVVorbereitung für Applitools">
+		<parameter name="Ablaufart" value="Applitools"></parameter>
+		<classes>
+			<class name="WebRiskTests.WebRiskBasisTestPHVOK" />
+		</classes>
+	</test>
+</suite> <!-- Smoketest -->

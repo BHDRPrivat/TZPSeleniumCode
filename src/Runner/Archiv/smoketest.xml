@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- bisherige Daten aus D:\IR-WebRisk-Testdaten löschen -->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoketest">
+   <test name="WebRiskBasisTestPHVVorbereitung">
+   <parameter name="Ablaufart" value="PDF-Druck"></parameter>
+		<classes>
+    		<class name="WebRiskSteuerung.WebRishPHVTestSteuerung" />
+		</classes>
+	</test>
+	<test name="WebRiskBasisTestPHVOK">
+		<classes>
+    		<class name="WebRiskSteuerung.WebRishPHVTestSteuerung" />
+		</classes>
+	</test>
+	
+	
+	<test name="WebRiskBasisTestUnfallOK">
+		<classes>
+			<class name="WebRiskTests.WebRiskBasisTestUnfallOK" />
+		</classes>
+	</test>
+	<!-- Nachfolgenden Test nicht ausführen, Es werden Anträge generiert   
+	<test name="WebRiskEndkundeTestPHVOK">
+		<classes>
+			<class name="WebRiskTests.WebRiskEndkundeTestPHVOK" />
+		</classes>
+	</test> --><!-- SelectTest -->
+</suite> <!-- Smoketest -->

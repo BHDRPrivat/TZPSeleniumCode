@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [PHV-Ablauftesttest]">
+  <test thread-count="5" name="WebRiskBasisTestPHVVorbereitung für PDF-Druck(failed)">
+    <parameter name="Ablaufart" value="PDF-Druck"/>
+    <classes>
+      <class name="WebRiskTests.WebRiskBasisTestPHVOK">
+        <methods>
+          <include name="tearDown"/>
+          <include name="BasisRisiko" invocation-numbers="0 1"/>
+          <include name="ablaufartFestlegen"/>
+        </methods>
+      </class> <!-- WebRiskTests.WebRiskBasisTestPHVOK -->
+    </classes>
+  </test> <!-- WebRiskBasisTestPHVVorbereitung für PDF-Druck(failed) -->
+  <test thread-count="5" name="WebRiskBasisTestPHVVorbereitung für Applitools(failed)">
+    <parameter name="Ablaufart" value="Applitools"/>
+    <classes>
+      <class name="WebRiskTests.WebRiskBasisTestPHVOK">
+        <methods>
+          <include name="tearDown"/>
+          <include name="BasisRisiko" invocation-numbers="0 1"/>
+          <include name="ablaufartFestlegen"/>
+        </methods>
+      </class> <!-- WebRiskTests.WebRiskBasisTestPHVOK -->
+    </classes>
+  </test> <!-- WebRiskBasisTestPHVVorbereitung für Applitools(failed) -->
+</suite> <!-- Failed suite [PHV-Ablauftesttest] -->

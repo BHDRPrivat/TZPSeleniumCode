@@ -1,0 +1,40 @@
+	@id='menu-depositTypeId'
+	Typ der Einlagesicherung:
+	 Private Banken
+	 Keine Einlagesicherung
+	 Ausländische Einlagesicherung
+	 Sicherungseinrichtung des BVR
+	 Sicherungssystem deutscher Sparkassen- und Giroverband e.V.
+	 VÖB-Einlagesicherungsfonds
+
+	driver.findElement(By.name("minimumVolume")).click();
+	driver.findElement(By.name("minimumVolume")).clear();
+	driver.findElement(By.name("minimumVolume")).sendKeys(MinVolumen);  //Format '100 €'
+    
+	@id='menu-rating1AgencyId'
+    	Rating-Agentur:
+	 Moody's
+	 S&P
+	 Fitch
+	 Credit Reform
+	 Euler Hermes
+	 Kein Rating
+	 
+	@id='menu-rating1ValueId'
+	Rating-Klasse (Verschiedene Rating-Klassen für jeder Agentur)
+
+    	driver.findElement(By.id("depositAmountInput")).click();
+	driver.findElement(By.id("depositAmountInput")).clear();
+	driver.findElement(By.id("depositAmountInput")).sendKeys(EinlagesicherungHoehe); //Entweder Format '100 €' oder 'Unbegrenzt'
+  
+	@id='menu-rating2AgencyId'
+    	Rating-Agentur:
+	 Moody's
+	 S&P
+	 Fitch
+	 Credit Reform
+	 Euler Hermes
+	 Kein Rating
+	 
+	@id='menu-rating2ValueId'
+	Rating-Klasse (Verschiedene Rating-Klassen für jeder Agentur)

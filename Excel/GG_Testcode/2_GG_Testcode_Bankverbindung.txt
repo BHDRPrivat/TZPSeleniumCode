@@ -1,0 +1,15 @@
+	driver.findElement(By.name("bank")).click();
+	driver.findElement(By.name("bank")).clear();
+	driver.findElement(By.name("bank")).sendKeys(Bank);
+
+	driver.findElement(By.name("bic")).click();
+	driver.findElement(By.name("bic")).clear();
+	driver.findElement(By.name("bic")).sendKeys(BIC);
+    
+	driver.findElement(By.name("iban")).click();
+	driver.findElement(By.name("iban")).clear();
+    	driver.findElement(By.name("iban")).sendKeys(IBAN);
+   
+	driver.findElement(By.name("recipientName")).click();
+	driver.findElement(By.name("recipientName")).clear();
+    	driver.findElement(By.name("recipientName")).sendKeys(Kontoinhaber);

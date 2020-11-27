@@ -1,0 +1,61 @@
+	driver.findElement(By.name("companyName")).click();
+	driver.findElement(By.name("companyName")).clear();
+	driver.findElement(By.name("companyName")).sendKeys(Unternehmensname);
+	
+	@id='menu-customerGroupId'
+	Kundengruppe:
+	 Anstalten des öffentlichen Rechts
+	 Berufsgenossenschaften
+	 Berufsständige Versorgungswerke
+	 Bezirksregierungen
+	 Bundesländer
+	 Eigenbetriebe von Kommunen
+	 Gewerkschaften
+	 Kommunale Stiftungen
+	 Kommunalnahe Unternehmen (GmbH)
+	 Kommunen
+	 Körperschaften des öffentlichen Rechts
+	 Krankenkassen
+	 Landkreise
+	 Pensionskassen
+	 Unternehmen (GmbH)
+	 Verbände
+	 Verbandsgemeinden
+	 Vereine kraft staatlicher Verleihung
+
+
+
+
+	
+	@id='menu-country'
+	Land:
+	 Deutschland
+	 Österreich
+
+	driver.findElement(By.name("website")).click();
+	driver.findElement(By.name("website")).clear();
+	driver.findElement(By.name("website")).sendKeys(Webseite);
+
+	driver.findElement(By.name("emailForBusinessConfirmations")).click();
+	driver.findElement(By.name("emailForBusinessConfirmations")).clear();
+	driver.findElement(By.name("emailForBusinessConfirmations")).sendKeys(EmailGeschaefte);
+
+	driver.findElement(By.name("street")).click();
+	driver.findElement(By.name("street")).clear();
+	driver.findElement(By.name("street")).sendKeys(Str);
+
+	driver.findElement(By.name("houseNumber")).click();
+	driver.findElement(By.name("houseNumber")).clear();
+    	driver.findElement(By.name("houseNumber")).sendKeys(HausNr);
+
+	driver.findElement(By.name("postCode")).click();
+	driver.findElement(By.name("postCode")).clear();
+	driver.findElement(By.name("postCode")).sendKeys(PLZ);
+
+	driver.findElement(By.name("location")).click();
+        driver.findElement(By.name("location")).clear();
+	driver.findElement(By.name("location")).sendKeys(Ort);
+
+	driver.findElement(By.name("addressAddition")).click();
+	driver.findElement(By.name("addressAddition")).clear();
+	driver.findElement(By.name("addressAddition")).sendKeys(Adresszusatz);

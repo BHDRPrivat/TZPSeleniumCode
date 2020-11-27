@@ -1,0 +1,25 @@
+	
+	@Test(dataProvider = "TZP_Stamm_GG")
+	public void TZP_Stamm_GG(String Unternehmensname, String Kundengruppe, String LEI,
+				String Land, String Webseite, String EmailGeschaefte, String Str,
+                                String HausNr, String PLZ, String Ort, String Adresszusatz,
+				String Bank, String BIC, String IBAN, String Kontoinhaber,
+				String Anrede, String Vorname, String TelefonNr, String FaxNr, String Titel, 
+				String Nachname,  String EmailLogin, String Datum_1) throws Exception {
+
+
+	}
+
+
+	@Test(dataProvider = "TZP_Stamm_GN")
+	public void TZP_Stamm_GN(String Unternehmensname, String LEI,
+				String Land, String Webseite, String EmailGeschaefte, String Str,
+                                String HausNr, String PLZ, String Ort, String Adresszusatz,
+				String Bank, String BIC, String IBAN, String Kontoinhaber,
+				String EinlagesicherungTyp, String MinVolumen, String Agentur_1, String Rating_1, 
+				String EinlagesicherungHoehe, String Agentur_2, String Rating_2,
+				String Anrede, String Vorname, String TelefonNr, String FaxNr, String Titel, 
+				String Nachname,  String EmailLogin, String Datum_1) throws Exception {
+
+
+	}

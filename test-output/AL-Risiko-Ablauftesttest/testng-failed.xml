@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [AL-Risiko-Ablauftesttest]">
+  <test thread-count="5" name="AL-Test-Risiko für Applitools(failed)">
+    <parameter name="Ablaufart" value="Applitool"/>
+    <classes>
+      <class name="AlteLeipziger.AlteLeipzigerRisikoLebensversicherung">
+        <methods>
+          <include name="tearDown"/>
+          <include name="testAlteLeipzigerRisikoLebensversicherung"/>
+          <include name="Setup"/>
+        </methods>
+      </class> <!-- AlteLeipziger.AlteLeipzigerRisikoLebensversicherung -->
+    </classes>
+  </test> <!-- AL-Test-Risiko für Applitools(failed) -->
+  <test thread-count="5" name="AL-Test-Risiko fuer PDF-Druck(failed)">
+    <parameter name="Ablaufart" value="PDF-Druck"/>
+    <classes>
+      <class name="AlteLeipziger.AlteLeipzigerRisikoLebensversicherung">
+        <methods>
+          <include name="tearDown"/>
+          <include name="testAlteLeipzigerRisikoLebensversicherung"/>
+          <include name="Setup"/>
+        </methods>
+      </class> <!-- AlteLeipziger.AlteLeipzigerRisikoLebensversicherung -->
+    </classes>
+  </test> <!-- AL-Test-Risiko fuer PDF-Druck(failed) -->
+</suite> <!-- Failed suite [AL-Risiko-Ablauftesttest] -->

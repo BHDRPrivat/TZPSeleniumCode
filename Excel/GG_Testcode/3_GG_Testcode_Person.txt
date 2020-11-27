@@ -1,0 +1,30 @@
+	@id='menu-salutation'
+	Anrede:
+	 Herr
+	 Frau
+
+	driver.findElement(By.name("firstName")).click();
+	driver.findElement(By.name("firstName")).clear();
+	driver.findElement(By.name("firstName")).sendKeys(Vorname);
+
+	driver.findElement(By.name("phone")).click();
+    	driver.findElement(By.name("phone")).clear();
+    	driver.findElement(By.name("phone")).sendKeys(TelefonNr);
+
+	driver.findElement(By.name("fax")).click();
+	driver.findElement(By.name("fax")).clear();
+	driver.findElement(By.name("fax")).sendKeys("FaxNr");
+
+	@id='menu-title'
+	Titel:
+	 Kein
+	 Dr.
+	 Prof.Dr.
+
+	driver.findElement(By.name("lastName")).click();
+	driver.findElement(By.name("lastName")).clear();
+	driver.findElement(By.name("lastName")).sendKeys(Nachname);
+	
+	driver.findElement(By.name("email")).click();
+	driver.findElement(By.name("email")).clear();
+	driver.findElement(By.name("email")).sendKeys(EmailLogin);
