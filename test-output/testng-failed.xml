@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TopZinsPortal.TZPRegGG">
+      <class name="TopZinsPortal.TZPStammGG">
         <methods>
-          <include name="Setup"/>
-          <include name="TZRegGGTest" invocation-numbers="0 1 2"/>
+          <include name="TZP_Stamm_GG" invocation-numbers="2"/>
           <include name="tearDown"/>
+          <include name="Setup"/>
         </methods>
-      </class> <!-- TopZinsPortal.TZPRegGG -->
+      </class> <!-- TopZinsPortal.TZPStammGG -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

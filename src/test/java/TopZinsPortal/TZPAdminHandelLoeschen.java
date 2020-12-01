@@ -157,15 +157,15 @@ public class TZPAdminHandelLoeschen {
 		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", Passwort, test);
 
  		// Button "Anmelden auswählen"
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]");
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 		
         if (Handel) {
 		
 		//Button "Handel" in menu clicken
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, '"+ Menue+ "')]");
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, '"+ Menue+ "')]", test);
 
 		// Die Anzeige auf 100 erhöhen
-		Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//div[contains(@id,'mui')]", "//li[contains(text(),'", ZeilenProSeite);
+		Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//div[contains(@id,'mui')]", "//li[contains(text(),'", ZeilenProSeite, test);
 		
 		
 		//Firmenname in das Suchfeld eingeben
@@ -175,20 +175,20 @@ public class TZPAdminHandelLoeschen {
 		// Der Icon löschen hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld
 		// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
 		xpathvalue="//div[text() = '" + Unternehmensname +"']//ancestor::div[contains(@class, 'jss')]//button[contains(@class, 'MuiButtonBase-root MuiIconButton-root')][1]";
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue);
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);
 		// TSonderzeit zum Hochladen
 		Thread.sleep(3 * Zeitspanne);
 		
 
 		// Button auswählen
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Bestätigen']//ancestor::button[@tabindex='0']");
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Bestätigen']//ancestor::button[@tabindex='0']", test);
 		// TSonderzeit zum löschen
 		Thread.sleep(3 * Zeitspanne);
 		
         }
 		
 		//Button "INAKTIV" in menu clicken
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, '"+ Menue2+ "')]");
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, '"+ Menue2+ "')]", test);
 		
 		
 		//Firmenname in das Suchfeld eingeben
@@ -197,12 +197,12 @@ public class TZPAdminHandelLoeschen {
 		// Der Icon löschen hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld
 		// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
 		xpathvalue="//div[text() = '" + Unternehmensname +"']//ancestor::div[contains(@class, 'jss')]//button[contains(@class, 'MuiButtonBase-root MuiIconButton-root')][1]";
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue);
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);
 		// TSonderzeit zum Hochladen
 		Thread.sleep(3 * Zeitspanne);		
 		
 		// Button auswählen
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Bestätigen']//ancestor::button[@tabindex='0']");
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Bestätigen']//ancestor::button[@tabindex='0']", test);
 		// TSonderzeit zum löschen
 		Thread.sleep(3 * Zeitspanne);		
 		

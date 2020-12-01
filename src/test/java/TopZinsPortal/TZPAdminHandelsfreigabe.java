@@ -156,14 +156,14 @@ public class TZPAdminHandelsfreigabe {
 		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", Passwort, test);
 
  		// Button "Anmelden auswählen"
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]");
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 		
 
 		//Button "Daten komplett" in menu clicken
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, '"+ Menue+ "')]");
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, '"+ Menue+ "')]", test);
 
 		// Die Anzeige auf 100 erhöhen
-		Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//div[contains(@id,'mui')]", "//li[contains(text(),'", ZeilenProSeite);
+		Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//div[contains(@id,'mui')]", "//li[contains(text(),'", ZeilenProSeite, test);
 		
 		
 		//Firmenname in das Suchfeld eingeben
@@ -173,22 +173,22 @@ public class TZPAdminHandelsfreigabe {
 		// Der Stift für das Laden der Daten hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld
 		// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
 		String xpathvalue="//div[text() = '" + Unternehmensname +"']//ancestor::tr[contains(@class, 'MuiTableRow-root MuiTableRow-hover')]//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary']";
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue);
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);
 		// TSonderzeit zum Hochladen
 		Thread.sleep(3 * Zeitspanne);
 		
 		 // Direktsprung auf Dokumente
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@href='#/masterdata/documents']");
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@href='#/masterdata/documents']", test);
 		
 			
 		// Haken setzen für Dokumentenkontrolle des Admins's 
-		Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'registerExtractStatute']");
-		Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'identityCard']");
-		Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'tradingLicense']"); 
+		Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'registerExtractStatute']", test);
+		Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'identityCard']", test);
+		Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'tradingLicense']", test); 
 		
 		
 		// Button Freigeben auswählen
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Freigeben']//ancestor::button[@tabindex='0']");
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Freigeben']//ancestor::button[@tabindex='0']", test);
 		// TSonderzeit zum Hochladen
 		Thread.sleep(3 * Zeitspanne);
 	

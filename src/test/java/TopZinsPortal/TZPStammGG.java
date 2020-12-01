@@ -40,7 +40,7 @@ public class TZPStammGG {
 		// Zu Testzwecken, direktsprung auf das Hochladen der PDF-dateien
 		// Wenn alle Stammdaten eingegeben wurden, kann mit false direkt auf Dokumente zugegriffen werden
 		// Boolean MissingData = true;
-		Boolean MissingData = true;
+		Boolean MissingData = false;
 		
 		// Klassenvariablen
 		ExtentHtmlReporter htmlReporter = null;
@@ -178,10 +178,10 @@ public class TZPStammGG {
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", Passwort, test);
 
      		// Button "Registrieren auswählen"
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]");
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 			
      		// Button "Vollständige Registrierung auswählen"
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@data-test, 'logout-dsgvo-button')]");
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@data-test, 'logout-dsgvo-button')]", test);
 			
 			if (MissingData) {
 			
@@ -190,13 +190,13 @@ public class TZPStammGG {
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "companyName", Unternehmensname, test);
 			
 			// Auswahl Kundengruppe
-			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id=\"mui-component-select-customerGroupId\"]", "//li[contains(text(),'", Kundengruppe);
+			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id=\"mui-component-select-customerGroupId\"]", "//li[contains(text(),'", Kundengruppe, test);
 			
 			// Auswahl LEI
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "lei", LEI, test);
 
 			// Auswahl Land
-			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id=\"mui-component-select-country\"]", "//li[contains(text(),'", Land);
+			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id=\"mui-component-select-country\"]", "//li[contains(text(),'", Land, test);
 						
 	        // Auswahl Webseite, Geschäfts-Email, Straße, Nr., PLZ, Ort, Adresszusatz
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "website", Webseite, test);
@@ -208,7 +208,7 @@ public class TZPStammGG {
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "addressAddition", Adresszusatz, test);
 			
      		// Button "Weiter" auswählen
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]");
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 			
 			// Reiter Bankverbindung ausfüllen
 			// Bank-Daten
@@ -219,7 +219,7 @@ public class TZPStammGG {
 			
 
      		// Button "Weiter" auswählen
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]");
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 			
 			// Reiter Person ausfüllen
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "firstName", Vorname, test);
@@ -231,12 +231,12 @@ public class TZPStammGG {
 			
 		
      		// Button "Weiter" auswählen
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]");
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 			
 			} // IF-Ende für Missing Data
 			else {
 			 // Direktsprung auf Dokumente
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@href='#/masterdata/documents']");
+				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@href='#/masterdata/documents']", test);
 			}
 				
 				
@@ -253,12 +253,12 @@ public class TZPStammGG {
 			
 				
 			// Hochladen auswählen		
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Hochladen']//ancestor::button[@tabindex='0']");
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Hochladen']//ancestor::button[@tabindex='0']", test);
 			// TSonderzeit zum Hochladen
 			Thread.sleep(3 * Zeitspanne);
 			
 			// Handelsfreigabe beantragn		
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Handelsberechtigung anfordern']//ancestor::button[@tabindex='0']");
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Handelsberechtigung anfordern']//ancestor::button[@tabindex='0']", test);
 			// TSonderzeit zum Hochladen
 			Thread.sleep(3 * Zeitspanne);			
 			
