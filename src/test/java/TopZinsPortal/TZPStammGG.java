@@ -137,7 +137,7 @@ public class TZPStammGG {
 		
 		// @Test
 		@Test(dataProvider = "TZPStammGG")
-		public void TZP_Stamm_GG(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Unternehmensname, String Kundengruppe, String LEI,
+		public void TZPStammGG(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Unternehmensname, String Kundengruppe, String LEI,
 					String Land, String Webseite, String EmailGeschaefte, String Str, String HausNr, String PLZ, String Ort, String Adresszusatz,
 					String Bank, String BIC, String IBAN, String Kontoinhaber,
 					String Anrede, String Vorname, String TelefonNr, String FaxNr, String Titel, 
