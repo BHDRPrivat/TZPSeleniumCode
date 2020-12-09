@@ -85,7 +85,7 @@ public class TZPRegGN {
 		// verglichen werden. "==" steht für die Überprüfung des Speicherorts
 
         // Aufruf des Browser-Setups 
-		driver = TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
+		driver = Utils.TZPSetupBrowser.BrowserSetup(StandardBrowser, SpeicherpfadTestdokumente);
 	}
 
 	@DataProvider(name = "TZPRegGN")
@@ -93,6 +93,7 @@ public class TZPRegGN {
 		// Ermittelt den Pfad des aktuellen Projekts
 		String projectpath = System.getProperty("user.dir");
 		// Zugriff auf die korrekten Exceldaten
+		System.out.println("Projektpfad :" + projectpath);
 		
 		TestdatenExceldatei = "\\Excel\\TopZinsPortalRegGN.xls";
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?> <!-- bisherige Daten aus D:\IR-WebRisk-Testdaten löschen -->
-<!--! DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"> -->
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="AL-Risiko-Ablauftesttest">
 	<test name="AL-Test-Risiko für Applitools">
 		<parameter name="Ablaufart" value="Applitool"></parameter>
@@ -7,12 +7,10 @@
 			<class name="AlteLeipziger.AlteLeipzigerRisikoLebensversicherung" />
 		</classes>
 	</test>
-
 	<test name="AL-Test-Risiko fuer PDF-Druck">
 		<parameter name="Ablaufart" value="PDF-Druck"></parameter>
 		<classes>
 			<class name="AlteLeipziger.AlteLeipzigerRisikoLebensversicherung" />
 		</classes>
 	</test>
-
-</suite> <!-- Smoketest -->
+</suite> <!-- Smoketest Prozesse GG-->

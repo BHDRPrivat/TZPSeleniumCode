@@ -25,4 +25,4 @@
 			<class name="TopZinsPortal.TZPAdminHandelLoeschen" />
 		</classes>
     </test>
-</suite> <!-- Smoketest Prozesse GG-->
+</suite> <!-- Smoketest Prozesse Registrierungsdurchlauf-->

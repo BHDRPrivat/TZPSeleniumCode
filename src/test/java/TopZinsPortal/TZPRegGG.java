@@ -29,7 +29,7 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 public class TZPRegGG {
 // Der Registrierungsprozess eines Geldgebers wird Excel-Datengetrieben durchlaufen
 
-	private WebDriver driver = null;
+	public static WebDriver driver;
 	private Integer Zeitspanne;
 	private String BaseUrl;
 	public String StandardBrowser;
@@ -53,7 +53,7 @@ public class TZPRegGG {
 
 		if (htmlReporter == null) {
 			// start reporters
-			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal " + Ablaufart + ".html");
+			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Registrierung - " + Ablaufart + ".html");
 			// create ExtentReports and attach reporter(s)
 			extent = new ExtentReports();
 			extent.attachReporter(htmlReporter);
@@ -66,7 +66,7 @@ public class TZPRegGG {
 
 		StandardBrowser = "Chrome";
 		// StandardBrowser = "Firefox";
-		Zeitspanne = 500;
+		Zeitspanne = 800;
 
 		BaseUrl = TZPBeforeTest.Umgebung() + "/portal/registrierungGeldgeber";
 
@@ -75,7 +75,7 @@ public class TZPRegGG {
 		// verglichen werden. "==" steht für die Überprüfung des Speicherorts
 
 		// Aufruf des Browser-Setups
-		driver = TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
+		driver = Utils.TZPSetupBrowser.BrowserSetup(StandardBrowser, SpeicherpfadTestdokumente);
 
 	}
 
@@ -125,10 +125,11 @@ public class TZPRegGG {
 
 	// @Test
 	@Test(dataProvider = "TZPRegGG")
-	public void TZRegGGTest(String teststep, String Unternehmensname, String Anrede, String Titel, String Vorname,
+	public void TZRegGGTest(String teststep, String Aktiv, String Unternehmensname, String Anrede, String Titel, String Vorname,
 			String Nachname, String TelefonNummer, String Emailadresse, String EmailConfirm, String Passwort,
 			String Datenschutz, String BtnRegistrien, String BtnAbbrechen) throws Exception {
 
+		if (Aktiv.equals("Ja")) {
 		// Mock
 		// String teststep = "AL-R1";
 
@@ -221,7 +222,9 @@ public class TZPRegGG {
 		eyes = null;
 
 		// Neu Starten
-		Setup(null);
+		Setup(AblaufartGlobal);
+		
+		} // Nur wenn Aktiv "Ja" ist durchlaufen
 
 	}
 

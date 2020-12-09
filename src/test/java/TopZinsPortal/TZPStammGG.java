@@ -17,7 +17,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import Utils.ExcelUtilsJXL;
-import Utils.TZPSetupBrowser;
+import Utils.SeleniumUtils;
 import jxl.read.biff.BiffException;
 
 public class TZPStammGG {
@@ -25,32 +25,30 @@ public class TZPStammGG {
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
 	
-		private WebDriver driver = null;
-		private Integer Zeitspanne;
-		private String BaseUrl;
-		public String StandardBrowser;
-		public String SpeicherpfadTestdokumente;
-		public static String TestdatenExceldatei;
-		public String xpathvalue;
-		// Für AutoIT
-		String workingDir;
-		String autoitscriptpath;
-		String filepath;
+	public static WebDriver driver;
+	private Integer Zeitspanne;
+	private String BaseUrl;
+	public String StandardBrowser;
+	public String SpeicherpfadTestdokumente;
+	public static String TestdatenExceldatei;
+	public static String projectpath = null;
+
+	// Klassenvariablen
+	ExtentHtmlReporter htmlReporter = null;
+	ExtentReports extent;
+
+	public String AblaufartGlobal;
+
+	//public ChromeDevToolsService devToolsService = null;
+	// Variable für Applitools
+	public Eyes eyes = null;
 		
 		// Zu Testzwecken, direktsprung auf das Hochladen der PDF-dateien
 		// Wenn alle Stammdaten eingegeben wurden, kann mit false direkt auf Dokumente zugegriffen werden
 		// Boolean MissingData = true;
-		Boolean MissingData = false;
+		Boolean MissingData = true;
 		
-		// Klassenvariablen
-		ExtentHtmlReporter htmlReporter = null;
-		ExtentReports extent;
 
-		public String Ablaufart;
-
-		//public ChromeDevToolsService devToolsService = null;
-		// Variable für Applitools
-		public Eyes eyes = null;
 
 		@Parameters({ "Ablaufart" })
 		@BeforeTest
@@ -58,43 +56,33 @@ public class TZPStammGG {
 
 			if (htmlReporter == null) {
 				// start reporters
-				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Stammdaten - " + Ablaufart + ".html");
+				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Regitrierung" + Ablaufart + ".html");
 				// create ExtentReports and attach reporter(s)
 				extent = new ExtentReports();
 				extent.attachReporter(htmlReporter);
 			}
-			
+			AblaufartGlobal = Ablaufart;
+
 			// Hinweis: Für direkte Testläufe
 			// Applitools und PDF-Druck dürfen nicht gleichzeitig ablaufen
 			// Es kommt zu Fehlermeldungen
 
-			this.Ablaufart = "PDF-Druck";
-			System.out.println(Ablaufart);
 			StandardBrowser = "Chrome";
 			// StandardBrowser = "Firefox";
-			Zeitspanne = 500;
-
-			// Hinweis: Für direkte Testläufe
-			// Applitools und PDF-Druck dürfen nicht gleichzeitig ablaufen
-			// Es kommt zu Fehlermeldungen
-			
-			workingDir = System.getProperty("user.dir");
-			autoitscriptpath = workingDir + "\\AutoIT\\" + "File_upload_selenium_webdriver.au";
-			filepath = workingDir + "\\DummyPDF\\PDF-Dummy.pdf";
+			Zeitspanne = 800;
 
 			BaseUrl = TZPBeforeTest.Umgebung() + "/portal/login";
-			
-			System.out.println("BaseURL=" + BaseUrl);
-			
-			SpeicherpfadTestdokumente = workingDir + "\\test-output\\PDFOutput\\";
+
+			SpeicherpfadTestdokumente = "F:\\BHDR\\TopZinsPortalTest\\PDFDokumente\\";
 			// Wichtiger Hinweis: In Java dürfen generische Strings nicht mit "=="
 			// verglichen werden. "==" steht für die Überprüfung des Speicherorts
 
-	        // Aufruf des Browser-Setups 
-			driver = TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
+			// Aufruf des Browser-Setups
+			driver = Utils.TZPSetupBrowser.BrowserSetup(StandardBrowser, SpeicherpfadTestdokumente);
+
 		
 		}
-
+		
 		private void TZPBeforeTest(String baseUrl2) {
 			// TODO Auto-generated method stub
 			
@@ -162,7 +150,7 @@ public class TZPStammGG {
 			// String teststep = "AL-R1";
 
 			// creates a toggle for the given test, adds all log events under it
-			ExtentTest test = extent.createTest("TZPStammGG: " + Teststep + " - " + Ablaufart,
+			ExtentTest test = extent.createTest("TZPStammGG: " + Teststep + " - " + AblaufartGlobal,
 					"Stammdateneingabe des Geldgebers");
 
 			driver.get(BaseUrl);
@@ -174,7 +162,7 @@ public class TZPStammGG {
 			
 			
 			// Login mit gültigen Daten
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", Emailadresse, test);
+			SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", Emailadresse, test);
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", Passwort, test);
 
      		// Button "Registrieren auswählen"
@@ -269,7 +257,7 @@ public class TZPStammGG {
 			eyes = null;
 
 			// Neu Starten
-			Setup(null);
+			Setup(AblaufartGlobal);
 
 		} // Nur wenn Aktic "Ja" ist durchlaufen
 

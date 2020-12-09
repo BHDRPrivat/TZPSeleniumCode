@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.applitools.eyes.selenium.Eyes;
@@ -42,34 +44,29 @@ public class TZPAdminHandelLoeschen {
 	ExtentHtmlReporter htmlReporter = null;
 	ExtentReports extent;
 
-	public String Ablaufart;
+	public static String AblaufartGlobal;
 
-	//public ChromeDevToolsService devToolsService = null;
+	// public ChromeDevToolsService devToolsService = null;
 	// Variable für Applitools
 	public Eyes eyes = null;
 
-	// @Parameters({ "Ablaufart" })
-	
+	@Parameters({ "Ablaufart" })
 	@BeforeTest
-	public void Setup() throws InterruptedException, IOException {
+	public void Setup(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
 
 		if (htmlReporter == null) {
 			// start reporters
-			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal " + Ablaufart + ".html");
+			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Regitrierung" + Ablaufart + ".html");
 			// create ExtentReports and attach reporter(s)
 			extent = new ExtentReports();
 			extent.attachReporter(htmlReporter);
 		}
-		
-		// Hinweis: Für direkte Testläufe
-		// Applitools und PDF-Druck dürfen nicht gleichzeitig ablaufen
-		// Es kommt zu Fehlermeldungen
+		AblaufartGlobal = Ablaufart;
 
-		this.Ablaufart = "PDF-Druck";
-		System.out.println(Ablaufart);
+		System.out.println("Admin löschen: " + Ablaufart);
 		StandardBrowser = "Chrome";
 		// StandardBrowser = "Firefox";
-		Zeitspanne = 500;
+		Zeitspanne = 800;
 
 		// Hinweis: Für direkte Testläufe
 		// Applitools und PDF-Druck dürfen nicht gleichzeitig ablaufen
@@ -86,7 +83,7 @@ public class TZPAdminHandelLoeschen {
 		// verglichen werden. "==" steht für die Überprüfung des Speicherorts
 
         // Aufruf des Browser-Setups 
-		driver = TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
+		driver = TZPSetupBrowser.BrowserSetup(StandardBrowser, SpeicherpfadTestdokumente);
 	
 	}
 
@@ -143,7 +140,7 @@ public class TZPAdminHandelLoeschen {
 		if (Aktiv.equals("Ja")) {	
 		
 		// creates a toggle for the given test, adds all log events under it
-		ExtentTest test = extent.createTest("TZPAdminHandelLöschen: " + Teststep + " - " + Ablaufart,
+		ExtentTest test = extent.createTest("TZPAdminHandelLöschen: " + Teststep + " - " + AblaufartGlobal,
 				"Löschen eines Anwenders");
 
 		driver.get(BaseUrl);
@@ -214,7 +211,7 @@ public class TZPAdminHandelLoeschen {
 		eyes = null;
 
 		// Neu Starten
-		Setup();
+		Setup(AblaufartGlobal);
 		} // Nur wenn Aktic "Ja" ist durchlaufen
 		
 	}

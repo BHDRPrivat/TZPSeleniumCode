@@ -18,11 +18,15 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TZPSetupBrowser {
 	
-	public static WebDriver BrowserSetup(WebDriver driver, String StandardBrowser, String SpeicherpfadTestdokumente) throws InterruptedException, IOException {
+	public static WebDriver BrowserSetup(String StandardBrowser, String SpeicherpfadTestdokumente) throws InterruptedException, IOException {
 
-		if ((driver == null) && (StandardBrowser.equals("Chrome"))) {
+		WebDriver driver = null;
+		
+		if (StandardBrowser.equals("Chrome")) {
 
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\chromedriver.exe");
+			
+			
+			//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\chromedriver.exe");
 			
 		    // Die Verwendung des WebDrivermanager
 		    WebDriverManager.chromedriver().setup();
@@ -65,7 +69,7 @@ public class TZPSetupBrowser {
 			System.out.println("In Chrome gelaufen");
 		}
 
-		if ((driver == null) && (StandardBrowser.equals("Firefox"))) {
+		if (StandardBrowser.equals("Firefox")) {
 
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
