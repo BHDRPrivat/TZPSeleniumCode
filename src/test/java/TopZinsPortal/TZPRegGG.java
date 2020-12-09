@@ -125,7 +125,7 @@ public class TZPRegGG {
 
 	// @Test
 	@Test(dataProvider = "TZPRegGG")
-	public void TZRegGGTest(String teststep, String Aktiv, String Unternehmensname, String Anrede, String Titel, String Vorname,
+	public void TZPRegGGTest(String teststep, String Aktiv, String Unternehmensname, String Anrede, String Titel, String Vorname,
 			String Nachname, String TelefonNummer, String Emailadresse, String EmailConfirm, String Passwort,
 			String Datenschutz, String BtnRegistrien, String BtnAbbrechen) throws Exception {
 
