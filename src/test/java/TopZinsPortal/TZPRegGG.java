@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -12,6 +13,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.applitools.eyes.selenium.Eyes;
 import com.aventstack.extentreports.ExtentReports;
@@ -20,7 +22,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import Utils.ExcelUtilsJXL;
-import Utils.TZPSetupBrowser;
+import junit.framework.Assert;
 import jxl.read.biff.BiffException;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
@@ -36,6 +38,7 @@ public class TZPRegGG {
 	public String SpeicherpfadTestdokumente;
 	public static String TestdatenExceldatei;
 	public static String projectpath = null;
+	public SoftAssert softassert = new SoftAssert();
 
 	// Klassenvariablen
 	ExtentHtmlReporter htmlReporter = null;
@@ -216,6 +219,20 @@ public class TZPRegGG {
 		Thread.sleep(3 * Zeitspanne);
 		FullPageScreenshotAShotSelenium("\\Reg GG\\Nach-Registrierung-Button", teststep);
 
+		
+//		// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
+//		// Programm läuft weiter
+//		softassert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed()));
+//		softassert.assertAll();
+//		
+
+		// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
+		// Programm läuft nicht weiter
+		Assert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed()));
+		Thread.sleep(3 * Zeitspanne);
+		
+		
+		
 		driver.close();
 		// Für den Teardown
 		driver = null;

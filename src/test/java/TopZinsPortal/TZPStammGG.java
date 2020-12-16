@@ -134,7 +134,7 @@ public class TZPStammGG {
 			return data;
 		}
 
-		
+
 		// @Test
 		@Test(dataProvider = "TZPStammGG")
 		public void TZPStammGG(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Unternehmensname, String Kundengruppe, String LEI,

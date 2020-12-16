@@ -21,7 +21,7 @@ import Utils.ExcelUtilsJXL;
 import Utils.TZPSetupBrowser;
 import jxl.read.biff.BiffException;
 
-public class TZPAdminHandelLoeschen {
+public class TZPAdminUserLoeschen {
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
 	
@@ -134,7 +134,7 @@ public class TZPAdminHandelLoeschen {
 	
 	// @Test
 	@Test(dataProvider = "TZPAdminHandelLoeschen")
-	public void TZP_Admin_Handelsfreigabe(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Menue, String ZeilenProSeite, String Unternehmensname,  
+	public void TZPAdminUserLoeschenTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Menue, String ZeilenProSeite, String Unternehmensname,  
 		String Menue2) throws Exception {
 
 		if (Aktiv.equals("Ja")) {	

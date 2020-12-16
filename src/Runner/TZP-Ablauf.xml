@@ -19,10 +19,10 @@
 			<class name="TopZinsPortal.TZPAdminHandelsfreigabe" />
 		</classes>
     </test>
-    <test name="TZP-Admin-HandelLoeschen">
+<!--     <test name="TZP-Admin-HandelLoeschen">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPAdminHandelLoeschen" />
 		</classes>
-    </test>
+    </test> -->
 </suite> <!-- Smoketest Prozesse Registrierungsdurchlauf-->

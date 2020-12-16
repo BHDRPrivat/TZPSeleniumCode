@@ -62,8 +62,8 @@ public class TZPSetupBrowser {
 
 			driver = new ChromeDriver(options);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			driver.manage().window().maximize();
-			driver.manage().window().fullscreen();
+//			driver.manage().window().maximize();
+//			driver.manage().window().fullscreen();
 
 			// devToolsService = DevToolsService.getDevToolsService(driver);
 			System.out.println("In Chrome gelaufen");
@@ -83,8 +83,8 @@ public class TZPSetupBrowser {
 			fxProfile.setPreference("browser.download.dir", SpeicherpfadTestdokumente);
 			fxProfile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/csv");
 			driver = new FirefoxDriver();
-			driver.manage().window().maximize();
-			driver.manage().window().fullscreen();
+//			driver.manage().window().maximize();
+//			driver.manage().window().fullscreen();
 
 		}
 		return driver;

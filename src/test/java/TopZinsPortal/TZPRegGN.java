@@ -1,25 +1,19 @@
 package TopZinsPortal;
 
+import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.concurrent.TimeUnit;
+
+import javax.imageio.ImageIO;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.applitools.eyes.selenium.Eyes;
 import com.aventstack.extentreports.ExtentReports;
@@ -27,77 +21,74 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-
 import Utils.ExcelUtilsJXL;
-import Utils.TZPSetupBrowser;
+import junit.framework.Assert;
 import jxl.read.biff.BiffException;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class TZPRegGN {
 // Der Registrierungsprozess eines Geldgebers wird Excel-Datengetrieben durchlaufen
-	
-	private WebDriver driver = null;
+
+	public static WebDriver driver;
 	private Integer Zeitspanne;
 	private String BaseUrl;
 	public String StandardBrowser;
 	public String SpeicherpfadTestdokumente;
 	public static String TestdatenExceldatei;
+	public static String projectpath = null;
+	public SoftAssert softassert = new SoftAssert();
 
 	// Klassenvariablen
 	ExtentHtmlReporter htmlReporter = null;
 	ExtentReports extent;
 
-	public String Ablaufart;
+	public static String AblaufartGlobal;
 
-	//public ChromeDevToolsService devToolsService = null;
+	// public ChromeDevToolsService devToolsService = null;
 	// Variable für Applitools
 	public Eyes eyes = null;
 
-	// @Parameters({ "Ablaufart" })
-	
+	@Parameters({ "Ablaufart" })
 	@BeforeTest
-	public void Setup() throws InterruptedException, IOException {
+	public void Setup(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
 
 		if (htmlReporter == null) {
 			// start reporters
-			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Reg. GG - " + Ablaufart + ".html");
+			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Registrierung - " + Ablaufart + ".html");
 			// create ExtentReports and attach reporter(s)
 			extent = new ExtentReports();
 			extent.attachReporter(htmlReporter);
 		}
-		
+		AblaufartGlobal = Ablaufart;
+
 		// Hinweis: Für direkte Testläufe
 		// Applitools und PDF-Druck dürfen nicht gleichzeitig ablaufen
 		// Es kommt zu Fehlermeldungen
 
-		this.Ablaufart = "Applitools";
-		System.out.println(Ablaufart);
 		StandardBrowser = "Chrome";
-		Zeitspanne = 500;
-
-		// Hinweis: Für direkte Testläufe
-		// Applitools und PDF-Druck dürfen nicht gleichzeitig ablaufen
-		// Es kommt zu Fehlermeldungen
+		// StandardBrowser = "Firefox";
+		Zeitspanne = 800;
 
 		BaseUrl = TZPBeforeTest.Umgebung() + "/portal/registrierungGeldnehmer";
-		
+
 		SpeicherpfadTestdokumente = "F:\\BHDR\\TopZinsPortalTest\\PDFDokumente\\";
 		// Wichtiger Hinweis: In Java dürfen generische Strings nicht mit "=="
 		// verglichen werden. "==" steht für die Überprüfung des Speicherorts
 
-        // Aufruf des Browser-Setups 
+		// Aufruf des Browser-Setups
 		driver = Utils.TZPSetupBrowser.BrowserSetup(StandardBrowser, SpeicherpfadTestdokumente);
+
 	}
 
 	@DataProvider(name = "TZPRegGN")
 	public static Object[][] getData() throws BiffException {
 		// Ermittelt den Pfad des aktuellen Projekts
-		String projectpath = System.getProperty("user.dir");
+		projectpath = System.getProperty("user.dir");
 		// Zugriff auf die korrekten Exceldaten
-		System.out.println("Projektpfad :" + projectpath);
-		
 		TestdatenExceldatei = "\\Excel\\TopZinsPortalRegGN.xls";
 
-		
 		// Ablaufpräsentation
 		// TestdatenExceldatei = "\\Excel\\AL-Risiko-Testdaten-V1-Fehler.xlsx";
 
@@ -112,11 +103,11 @@ public class TZPRegGN {
 
 		int rowCount = excel.getRowCount();
 		int colCount = excel.getColCount();
-		
+
 		System.out.println("Zeile=" + rowCount + "Spalte=" + colCount + "String Wert: ");
 
 		// 2 Dimensionales Object-Array erzeugen
-		Object data[][] = new Object[rowCount-1][colCount];
+		Object data[][] = new Object[rowCount - 1][colCount];
 
 		// �ber alle Zeilen laufen (i=1, da i=0 die Headerzeile)
 		for (int i = 1; i < rowCount; i++) {
@@ -125,9 +116,9 @@ public class TZPRegGN {
 
 				String cellData = excel.getExcelDataString(i, j);
 				data[i - 1][j] = cellData;
-				
+
 				System.out.println("Pro Zeile=" + i + "Pro Spalte=" + j + "Pro String Wert: " + cellData);
-				
+
 				// Werte in einer Zeile anzeigen
 				// System.out.print(cellData + " | ");
 			}
@@ -135,128 +126,125 @@ public class TZPRegGN {
 		return data;
 	}
 
-	
 	// @Test
 	@Test(dataProvider = "TZPRegGN")
-	public void TZRegGGTest(String teststep, String Unternehmensname, String Anrede,
-			String Vorname, String Nachname, String TelefonNummer, String Emailadresse, String Passwort,
+	public void TZPRegGNTest(String teststep, String Aktiv, String Unternehmensname, String Anrede, String Titel, String Vorname,
+			String Nachname, String TelefonNummer, String Emailadresse, String EmailConfirm, String Passwort,
 			String Datenschutz, String BtnRegistrien, String BtnAbbrechen) throws Exception {
 
+		if (Aktiv.equals("Ja")) {
 		// Mock
 		// String teststep = "AL-R1";
 
 		// creates a toggle for the given test, adds all log events under it
-		ExtentTest test = extent.createTest("TZRegGG: " + teststep + " - " + Ablaufart,
-				"Registrierung des Geldgebers");
+		ExtentTest test = extent.createTest("TZPRegGN: " + teststep + " - " + AblaufartGlobal,
+				"Registrierung von Geldnehmern (GN)");
 
 		driver.get(BaseUrl);
-		// TZRegGG-Eingabemaske
+		// TZRegGN-Eingabemaske
 		Thread.sleep(3 * Zeitspanne);
 		test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
 
-	    driver.findElement(By.name("companyName")).click();
-	    driver.findElement(By.name("companyName")).clear();
-	    driver.findElement(By.name("companyName")).sendKeys(Unternehmensname);
-		// Zeitspanne setzen
-		Thread.sleep(2 * Zeitspanne);
-	    
-	    
-		// Zuerst auf das übergeordnete div klicken
-		driver.findElement(By.xpath("//div[contains(@class, 'MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl')]")).click();
-		if (Anrede.equals("Herr")) {
-		 // Element aus der Liste auswählen
-		 driver.findElement(By.xpath("//*[@id=\"menu-gender\"]/div[3]/ul/li[1]")).click();
-		} 
-		if (Anrede.equals("Frau")) {
-		     // Auswahl Frau
-			 driver.findElement(By.xpath("//*[@id=\"menu-gender\"]/div[3]/ul/li[2]")).click();
-		} 
-		//*[@id="menu-gender"]/div[3]/ul/li[1]
-		
-		//driver.findElement(By.name("mui-component-select-gender")).click();
-	    // driver.findElement(By.name("gender")).click();
-	    // }
-		// Zeitspanne setzen
-		Thread.sleep(2 * Zeitspanne);
-	    
-	    driver.findElement(By.name("firstName")).click();
-	    driver.findElement(By.name("firstName")).clear();
-	    driver.findElement(By.name("firstName")).sendKeys(Vorname);
-	    
-	    driver.findElement(By.name("firstName")).click();   
-	    driver.findElement(By.name("lastName")).clear();
-	    driver.findElement(By.name("lastName")).sendKeys(Nachname);
-	    
-	    driver.findElement(By.name("tel")).click();;
-	    driver.findElement(By.name("tel")).clear();
-	    driver.findElement(By.name("tel")).sendKeys(TelefonNummer);
-	    
-	    driver.findElement(By.name("email")).click();
-	    driver.findElement(By.name("email")).clear();
-	    driver.findElement(By.name("email")).sendKeys(Emailadresse);
-	    
-	    driver.findElement(By.name("emailConfirm")).click();
-	    driver.findElement(By.name("emailConfirm")).clear();
-	    driver.findElement(By.name("emailConfirm")).sendKeys(Emailadresse);
-	    
-	    driver.findElement(By.name("password")).click();
-	    driver.findElement(By.name("password")).clear();
-	    driver.findElement(By.name("password")).sendKeys(Passwort);
-	    
+		// Unternehmensname
+		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "companyName", Unternehmensname, test);
+
+		// Auswahl Anrede
+		Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id=\"mui-component-select-gender\"]",
+				"//li[contains(text(),'", Anrede, test);
+
+		// Auswahl Titel
+		Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id=\"mui-component-select-title\"]",
+				"//li[contains(text(),'", Titel, test);
+
+		// *[@id="menu-gender"]/div[3]/ul/li[1]
+
+		// Vorname
+		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "firstName", Vorname, test);
+
+		// Nachname
+		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "lastName", Nachname, test);
+
+		// Telefonnummer
+		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "tel", TelefonNummer, test);
+
+		// E-Mail
+		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", Emailadresse, test);
+
+		// E-Mail Bestätigung
+		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "emailConfirm", EmailConfirm, test);
+
+		// Passwort
+		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", Passwort, test);
+
+		// Screenshot aufnehmen
+		Thread.sleep(3 * Zeitspanne);
+		FullPageScreenshotAShotSelenium("\\Reg GN\\Eingabe-Reg-Werte-GN", teststep);
+
 		// Zuerst auf das übergeordnete fieldset klicken
-		driver.findElement(By.xpath("//fieldset[contains(@class, 'MuiFormControl-root MuiFormControl-marginDense')]")).click();
-		// Zeitspanne setzen
-		Thread.sleep(2 * Zeitspanne);
-		
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
+				"//fieldset[contains(@class, 'MuiFormControl-root MuiFormControl-marginDense')]", test);
+
 		// Datenschutz öffnet sich
 		// Button Schliessen auswählen
-		// Beachte, der Tag-Classname ist nicht eindeutig und sollte nicht verwendet werden!
+		// Beachte, der Tag-Classname ist nicht eindeutig und sollte nicht verwendet
+		// werden!
 		// Daher der zugriff über den Tag "data-test"
-		driver.findElement(By.xpath("//button[contains(@data-test, 'accept-dsgvo-button')]")).click();
-		// Zeitspanne setzen
-		Thread.sleep(1 * Zeitspanne);
-		
-		
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
+				"//button[contains(@data-test, 'accept-dsgvo-button')]", test);
+
 //      Bei Fehler not Clickable at point (X, Y) kann nachfolgender Code verwendet werden:
 //		WebElement element = driver.findElement(By.xpath("//input[contains(@class, 'jss277')]"));
 //		Actions actions = new Actions(driver);
 //		actions.moveToElement(element).click().build().perform();
-		
+
 		// Der vollständie Name ändert sich mit einer willkürlichen Nummer nach dem jss
-		// Ohne die jss-Kennzeichnung ist das Element nihct eindeutig. 
-		 driver.findElement(By.xpath("//label[contains(@class, 'MuiFormControlLabel-root jss')]")).click();
- 		// Zeitspanne setzen
-		Thread.sleep(1 * Zeitspanne);			
-		
+		// Ohne die jss-Kennzeichnung ist das Element nihct eindeutig.
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
+				"//label[contains(@class, 'MuiFormControlLabel-root jss')]", test);
 
 		// Button Schliessen auswählen
-		// Beachte, der Tag-Classname ist nicht eindeutig und sollte nicht verwendet werden!
+		// Beachte, der Tag-Classname ist nicht eindeutig und sollte nicht verwendet
+		// werden!
 		// Daher der zugriff über den Tag "data-test"
-		driver.findElement(By.xpath("//button[contains(@data-test, 'accept-dsgvo-button')]")).click();
-		// Zeitspanne setzen
-		Thread.sleep(1 * Zeitspanne);
-		
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
+				"//button[contains(@data-test, 'accept-dsgvo-button')]", test);
+
 		// Button "Registrieren auswählen"
-		driver.findElement(By.xpath("//button[contains(@type, 'submit')]")).click();
-		// Zeitspanne setzen
-		Thread.sleep(4 * Zeitspanne);
-		
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
+
 		// Kontrolle, ob Bestätigung angezeigt wird.
 		// Noch zu programmieren
+
+		// Screenshot aufnehmen
+		Thread.sleep(3 * Zeitspanne);
+		FullPageScreenshotAShotSelenium("\\Reg GN\\Nach-Registrierung-Button", teststep);
+
+		
+//		// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
+//		// Programm läuft weiter
+//		softassert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed()));
+//		softassert.assertAll();
+//		
+
+		// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
+		// Programm läuft nicht weiter
+		Assert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed()));
 		
 		
-//		driver.close();
-//		// Für den Teardown
-//		driver = null;
-//		eyes = null;
-//
-//		// Neu Starten
-//		Setup();
+		
+		
+		driver.close();
+		// Für den Teardown
+		driver = null;
+		eyes = null;
+
+		// Neu Starten
+		Setup(AblaufartGlobal);
+		
+		} // Nur wenn Aktiv "Ja" ist durchlaufen
 
 	}
 
-	
-	
 	public void ApplitoolsAufnahme(String Ablaufart, String teststep) {
 		if (Ablaufart.equals("Applitool")) {
 			// Applitools vorbereiten
@@ -306,6 +294,16 @@ public class TZPRegGN {
 //		}
 //	}
 
+	public void FullPageScreenshotAShotSelenium(String Kennzeichnung, String teststep) throws IOException {
+
+		Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(100))
+				.takeScreenshot(driver);
+		// Screenshot screenshot = new
+		// AShot().shootingStrategy(ShootingStrategies.scaling(2)).takeScreenshot(driver);
+		ImageIO.write(screenshot.getImage(), "PNG",
+				new File(projectpath + "\\screenshots\\" + Kennzeichnung + " " + teststep + ".png"));
+
+	}
 
 	@AfterTest
 	public void tearDown() throws InterruptedException {
@@ -316,7 +314,7 @@ public class TZPRegGN {
 		Thread.sleep(3000);
 		System.out.println("Test erfolgreich druchlaufen");
 		if (driver != null) {
-		//	driver.quit();
+			driver.quit();
 		}
 		if (eyes != null) {
 			eyes.close();

@@ -137,7 +137,7 @@ public class TZPAdminHandelsfreigabe {
 	
 	// @Test
 	@Test(dataProvider = "TZPAdminHandelsfreigabe")
-	public void TZP_Admin_Handelsfreigabe(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Menue, String ZeilenProSeite, String Unternehmensname) throws Exception {
+	public void TZPAdminHandelsfreigabeTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Menue, String ZeilenProSeite, String Unternehmensname) throws Exception {
 
 		if (Aktiv.equals("Ja")) {	
 		
