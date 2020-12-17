@@ -39,7 +39,21 @@ public class SeleniumUtils {
 			Thread.sleep(2 * Zeitspanne);
 			
 		}
+		if 	(HTMLSelector.equals("id")) {
+			driver.findElement(By.id(ObjektPath)).click();
+			//Löscht vorhande Einträge sicherer als clear()  
+			driver.findElement(By.id(ObjektPath)).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+			// Für Firefox
+			driver.findElement(By.id(ObjektPath)).clear();
+        	driver.findElement(By.id(ObjektPath)).sendKeys(Inputwert);
+        	test.log(Status.INFO, "Eintrag in " +ObjektPath  + " mit Wert: " + Inputwert);
+        	// Zeitspanne setzen
+			Thread.sleep(2 * Zeitspanne);
 			
+		}
+		
+		
+		
 	} catch (NoSuchElementException e) {
 		// Fehlerbehandlung einfügen
 		test.log(Status.FAIL, "Eintrag in " +ObjektPath  + " mit Wert: " + Inputwert);
