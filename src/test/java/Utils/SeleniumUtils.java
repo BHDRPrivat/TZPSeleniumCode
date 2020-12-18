@@ -145,6 +145,56 @@ public class SeleniumUtils {
 
 	}
 
+
+	public static void PDFUploadListe(WebDriver driver, Integer Zeitspanne, String HTMLSelector, String ObjektPath, String Suchbegriff, String Bereich, String DatumEintrag, ExtentTest test) throws InterruptedException, IOException {
+		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
+		try {
+		// Für AutoIT
+		String workingDir;
+		String autoitscriptpath;
+		String filepath;
+		String xpathvalue;
+		
+		workingDir = System.getProperty("user.dir");
+		autoitscriptpath = workingDir + "\\AutoIT\\" + "File_upload_selenium_webdriver.au";
+		filepath = workingDir + "\\DummyPDF\\PDF-Dummy.pdf";
+		
+		xpathvalue="//*[@id=\"mui-component-select-docType\"]//ancestor::div[contains(@class, 'jss')]" + Bereich + "//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary']";
+		System.out.println("Zugriff = " + xpathvalue);
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);
+		test.log(Status.INFO, "Auswahl des Objektes: " +ObjektPath);
+		// TSonderzeit zum Hochladen
+		Thread.sleep(3 * Zeitspanne);
+		
+
+		// Auf das Leerzeichen vor " \" achten!
+		Runtime.getRuntime().exec("cmd.exe /c Start AutoIt3.exe " + autoitscriptpath + " \""	+ filepath + "\"");
+		test.log(Status.INFO, "PDF-Datei auswählen: " +" cmd.exe /c Start AutoIt3.exe " + autoitscriptpath + " \""	+ filepath + "\"");
+		// TSonderzeit zum Hochladen
+		Thread.sleep(3 * Zeitspanne);
+		
+
+		// Datum ins Ausstellungsdatum, erst nachdem das Dokument hochgeladen wurde 
+		// xpathvalue ="//input[contains(@value, '" + Suchbegriff + "')]//ancestor::div[contains(@class, 'jss')]" + Bereich +"//input[contains(@class, 'MuiOutlinedInput-inputAdornedEnd')]";
+		
+		xpathvalue ="//*[@id=\"mui-component-select-docType\"]//ancestor::div[contains(@class, 'jss')]" + Bereich + "//label[text()='Ausstellungsdatum']//following::input[contains(@class, 'MuiOutlinedInput-inputAdornedEnd')]";
+		
+		
+		System.out.println("Zugriff = " + xpathvalue);
+		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", xpathvalue, DatumEintrag, test);	
+		test.log(Status.INFO, "Datum eintragen: " +DatumEintrag + " in Objekt: " + xpathvalue);
+		// TSonderzeit zum Hochladen
+		Thread.sleep(1* Zeitspanne);
+	    } catch (NoSuchElementException e) {
+		// Fehlerbehandlung einfügen
+		test.log(Status.FAIL, "Auswahl des Objektes: " + ObjektPath);
+		test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
+		System.out.println("Gemeldeter Fehler: " + e);
+	}
+
+	}
+	
+	
 	
 	
 	public static void ListenAuswahl(WebDriver driver, Integer Zeitspanne, String HTMLSelector, String ObjektPath, String ObjektPathListe, String Listenelement, ExtentTest test) throws InterruptedException {

@@ -21,7 +21,7 @@ import Utils.ExcelUtilsJXL;
 import Utils.TZPSetupBrowser;
 import jxl.read.biff.BiffException;
 
-public class TZPAdminHandelsfreigabe {
+public class TZPAdminHandelsfreigabeGG {
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
 	
@@ -90,13 +90,13 @@ public class TZPAdminHandelsfreigabe {
 	
 	}
 
-	@DataProvider(name = "TZPAdminHandelsfreigabe")
+	@DataProvider(name = "TZPAdminHandelsfreigabeGG")
 	public static Object[][] getData() throws BiffException {
 		// Ermittelt den Pfad des aktuellen Projekts
 		String projectpath = System.getProperty("user.dir");
 		// Zugriff auf die zugehörigen Exceldaten
 		
-		TestdatenExceldatei = "\\Excel\\TopZinsPortalAdminHandelsfreigabe.xls";
+		TestdatenExceldatei = "\\Excel\\TopZinsPortalAdminHandelsfreigabeGG.xls";
 
 
 		String excelPath = projectpath + TestdatenExceldatei;
@@ -136,14 +136,14 @@ public class TZPAdminHandelsfreigabe {
 
 	
 	// @Test
-	@Test(dataProvider = "TZPAdminHandelsfreigabe")
-	public void TZPAdminHandelsfreigabeTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Menue, String ZeilenProSeite, String Unternehmensname) throws Exception {
+	@Test(dataProvider = "TZPAdminHandelsfreigabeGG")
+	public void TZPAdminHandelsfreigabeGGTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Menue, String ZeilenProSeite, String Unternehmensname) throws Exception {
 
 		if (Aktiv.equals("Ja")) {	
 		
 		
 		// creates a toggle for the given test, adds all log events under it
-		ExtentTest test = extent.createTest("TZPAdminHndelsfreigabe: " + Teststep + " - " + AblaufartGlobal,
+		ExtentTest test = extent.createTest("TZPAdminHndelsfreigabeGG: " + Teststep + " - " + AblaufartGlobal,
 				"Handelsfreigabe durch Admin");
 
 		driver.get(BaseUrl);
