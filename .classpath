@@ -25,7 +25,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
-	<classpathentry kind="lib" path="F:/BHDR/java/Java-Erweiterungen/AutoIT/AutoItX4Java.jar"/>
 	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
@@ -37,6 +36,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="F:/BHDR/java/Java-Erweiterungen/Ashot/ashot-1.5.4.jar"/>
+	<classpathentry kind="lib" path="AutoIT/AutoItX4Java.jar"/>
+	<classpathentry kind="lib" path="Ashot/ashot-1.5.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

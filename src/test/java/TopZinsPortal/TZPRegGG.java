@@ -22,6 +22,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import Utils.ExcelUtilsJXL;
+import Utils.TZPBeforeTest;
 import junit.framework.Assert;
 import jxl.read.biff.BiffException;
 import ru.yandex.qatools.ashot.AShot;
@@ -128,7 +129,7 @@ public class TZPRegGG {
 
 	// @Test
 	@Test(dataProvider = "TZPRegGG")
-	public void TZPRegGGTest(String teststep, String Aktiv, String Unternehmensname, String Anrede, String Titel, String Vorname,
+	public void TZPRegGGTest(String Teststep, String Aktiv, String Unternehmensname, String Anrede, String Titel, String Vorname,
 			String Nachname, String TelefonNummer, String Emailadresse, String EmailConfirm, String Passwort,
 			String Datenschutz, String BtnRegistrien, String BtnAbbrechen) throws Exception {
 
@@ -137,7 +138,7 @@ public class TZPRegGG {
 		// String teststep = "AL-R1";
 
 		// creates a toggle for the given test, adds all log events under it
-		ExtentTest test = extent.createTest("TZPRegGG: " + teststep + " - " + AblaufartGlobal,
+		ExtentTest test = extent.createTest("TZPRegGG: " + Teststep + " - " + AblaufartGlobal,
 				"Registrierung von Geldgebern (GG)");
 
 		driver.get(BaseUrl);
@@ -178,7 +179,7 @@ public class TZPRegGG {
 
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);
-		FullPageScreenshotAShotSelenium("\\Reg GG\\Eingabe-Reg-Werte-GG", teststep);
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GG\\Eingabe-Reg-Werte-GG", Teststep, test);
 
 		// Zuerst auf das übergeordnete fieldset klicken
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
@@ -217,7 +218,7 @@ public class TZPRegGG {
 
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);
-		FullPageScreenshotAShotSelenium("\\Reg GG\\Nach-Registrierung-Button", teststep);
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath,"\\Reg GG\\Nach-Registrierung-Button", Teststep, test );
 
 		
 //		// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
@@ -276,34 +277,6 @@ public class TZPRegGG {
 		}
 	}
 
-//	public void ScreenshotAufnahme(String Ablaufart, ChromeDevToolsService devToolsService, String bildPath)
-//			throws InterruptedException {
-//		if (Ablaufart.equals("PDF-Druck")) {
-//			// Screenshot erzeugen;
-//			Thread.sleep(Zeitspanne);
-//
-//			try {
-//				// Take full screen
-//
-//				FullScreenshot.captureFullPageScreenshot(devToolsService, bildPath);
-//			} catch (AssertionError e) {
-//				System.out.println(e);
-//			}
-//
-//			Thread.sleep(Zeitspanne);
-//		}
-//	}
-
-	public void FullPageScreenshotAShotSelenium(String Kennzeichnung, String teststep) throws IOException {
-
-		Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(100))
-				.takeScreenshot(driver);
-		// Screenshot screenshot = new
-		// AShot().shootingStrategy(ShootingStrategies.scaling(2)).takeScreenshot(driver);
-		ImageIO.write(screenshot.getImage(), "PNG",
-				new File(projectpath + "\\screenshots\\" + Kennzeichnung + " " + teststep + ".png"));
-
-	}
 
 	@AfterTest
 	public void tearDown() throws InterruptedException {

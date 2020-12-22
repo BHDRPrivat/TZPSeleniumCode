@@ -1,6 +1,9 @@
 package Utils;
 
+import java.io.File;
 import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -9,6 +12,10 @@ import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class SeleniumUtils {
 
@@ -216,4 +223,47 @@ public class SeleniumUtils {
 		System.out.println("Gemeldeter Fehler: " + e);
 	}
 	}	
+
+	public static void FullPageScreenshotAShotSelenium(WebDriver driver, String projectpath,  String Kennzeichnung, String teststep, ExtentTest test) throws IOException {
+		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
+		try {
+		Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(100))
+				.takeScreenshot(driver);
+		// Screenshot screenshot = new
+		// AShot().shootingStrategy(ShootingStrategies.scaling(2)).takeScreenshot(driver);
+		ImageIO.write(screenshot.getImage(), "PNG",
+				new File(projectpath + "\\screenshots\\" + Kennzeichnung + " " + teststep + ".png"));
+		test.log(Status.INFO, "Screenshot aufgenommen: " + projectpath + "\\screenshots\\" + Kennzeichnung + " " + teststep + ".png");
+		
+	} catch (NoSuchElementException e) {
+		// Fehlerbehandlung einfügen
+		test.log(Status.FAIL, "Versuch Screenshot: " +  projectpath + "\\screenshots\\" + Kennzeichnung + " " + teststep + ".png");
+		test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
+		System.out.println("Gemeldeter Fehler: " + e);
+	}
+	}	
+
+	
+//	public void ScreenshotAufnahme(String Ablaufart, ChromeDevToolsService devToolsService, String bildPath)
+//	throws InterruptedException {
+//if (Ablaufart.equals("PDF-Druck")) {
+//	// Screenshot erzeugen;
+//	Thread.sleep(Zeitspanne);
+//
+//	try {
+//		// Take full screen
+//
+//		FullScreenshot.captureFullPageScreenshot(devToolsService, bildPath);
+//	} catch (AssertionError e) {
+//		System.out.println(e);
+//	}
+//
+//	Thread.sleep(Zeitspanne);
+//}
+//}
+	
+	
 }
+
+
+

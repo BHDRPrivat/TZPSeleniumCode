@@ -18,6 +18,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import Utils.ExcelUtilsJXL;
+import Utils.TZPBeforeTest;
 import Utils.TZPSetupBrowser;
 import jxl.read.biff.BiffException;
 
@@ -25,7 +26,7 @@ public class TZPAdminUserLoeschen {
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
 	
-	private WebDriver driver = null;
+	public WebDriver driver;
 	private Integer Zeitspanne;
 	private String BaseUrl;
 	public String StandardBrowser;
@@ -56,7 +57,7 @@ public class TZPAdminUserLoeschen {
 
 		if (htmlReporter == null) {
 			// start reporters
-			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Regitrierung" + Ablaufart + ".html");
+			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Admin User Löschen " + Ablaufart + ".html");
 			// create ExtentReports and attach reporter(s)
 			extent = new ExtentReports();
 			extent.attachReporter(htmlReporter);
@@ -87,13 +88,13 @@ public class TZPAdminUserLoeschen {
 	
 	}
 
-	@DataProvider(name = "TZPAdminHandelLoeschen")
+	@DataProvider(name = "TZPAdminLoeschen")
 	public static Object[][] getData() throws BiffException {
 		// Ermittelt den Pfad des aktuellen Projekts
 		String projectpath = System.getProperty("user.dir");
 		// Zugriff auf die zugehörigen Exceldaten
 		
-		TestdatenExceldatei = "\\Excel\\TopZinsPortalAdminHandelLoeschen.xls";
+		TestdatenExceldatei = "\\Excel\\TopZinsPortalAdminLoeschen.xls";
 
 
 		String excelPath = projectpath + TestdatenExceldatei;
@@ -133,14 +134,14 @@ public class TZPAdminUserLoeschen {
 
 	
 	// @Test
-	@Test(dataProvider = "TZPAdminHandelLoeschen")
+	@Test(dataProvider = "TZPAdminLoeschen")
 	public void TZPAdminUserLoeschenTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Menue, String ZeilenProSeite, String Unternehmensname,  
 		String Menue2) throws Exception {
 
 		if (Aktiv.equals("Ja")) {	
 		
 		// creates a toggle for the given test, adds all log events under it
-		ExtentTest test = extent.createTest("TZPAdminHandelLöschen: " + Teststep + " - " + AblaufartGlobal,
+		ExtentTest test = extent.createTest("TZPAdminLöschen: " + Teststep + " - " + AblaufartGlobal,
 				"Löschen eines Anwenders");
 
 		driver.get(BaseUrl);
@@ -155,34 +156,6 @@ public class TZPAdminUserLoeschen {
 
  		// Button "Anmelden auswählen"
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
-		
-        if (Handel) {
-		
-		//Button "Handel" in menu clicken
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, '"+ Menue+ "')]", test);
-
-		// Die Anzeige auf 100 erhöhen
-		Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//div[contains(@id,'mui')]", "//li[contains(text(),'", ZeilenProSeite, test);
-		
-		
-		//Firmenname in das Suchfeld eingeben
-		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search", Unternehmensname, test);
-		
-		
-		// Der Icon löschen hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld
-		// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
-		xpathvalue="//div[text() = '" + Unternehmensname +"']//ancestor::div[contains(@class, 'jss')]//button[contains(@class, 'MuiButtonBase-root MuiIconButton-root')][1]";
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);
-		// TSonderzeit zum Hochladen
-		Thread.sleep(3 * Zeitspanne);
-		
-
-		// Button auswählen
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Bestätigen']//ancestor::button[@tabindex='0']", test);
-		// TSonderzeit zum löschen
-		Thread.sleep(3 * Zeitspanne);
-		
-        }
 		
 		//Button "INAKTIV" in menu clicken
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, '"+ Menue2+ "')]", test);
@@ -249,23 +222,6 @@ public class TZPAdminUserLoeschen {
 		}
 	}
 
-//	public void ScreenshotAufnahme(String Ablaufart, ChromeDevToolsService devToolsService, String bildPath)
-//			throws InterruptedException {
-//		if (Ablaufart.equals("PDF-Druck")) {
-//			// Screenshot erzeugen;
-//			Thread.sleep(Zeitspanne);
-//
-//			try {
-//				// Take full screen
-//
-//				FullScreenshot.captureFullPageScreenshot(devToolsService, bildPath);
-//			} catch (AssertionError e) {
-//				System.out.println(e);
-//			}
-//
-//			Thread.sleep(Zeitspanne);
-//		}
-//	}
 
 
 	@AfterTest

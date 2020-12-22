@@ -1,4 +1,4 @@
-package TopZinsPortal;
+package Utils;
 
 public class TZPBeforeTest {
 	

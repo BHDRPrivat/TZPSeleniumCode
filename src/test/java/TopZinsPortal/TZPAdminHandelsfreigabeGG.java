@@ -18,6 +18,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import Utils.ExcelUtilsJXL;
+import Utils.TZPBeforeTest;
 import Utils.TZPSetupBrowser;
 import jxl.read.biff.BiffException;
 
@@ -25,12 +26,13 @@ public class TZPAdminHandelsfreigabeGG {
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
 	
-	private WebDriver driver = null;
+	private WebDriver driver;
 	private Integer Zeitspanne;
 	private String BaseUrl;
 	public String StandardBrowser;
 	public String SpeicherpfadTestdokumente;
 	public static String TestdatenExceldatei;
+	public static String projectpath = null;
 	// Für AutoIT
 	String workingDir;
 	String autoitscriptpath;
@@ -55,7 +57,7 @@ public class TZPAdminHandelsfreigabeGG {
 
 		if (htmlReporter == null) {
 			// start reporters
-			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Regitrierung" + Ablaufart + ".html");
+			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Admin HandelsfreigabeGG: " + Ablaufart + ".html");
 			// create ExtentReports and attach reporter(s)
 			extent = new ExtentReports();
 			extent.attachReporter(htmlReporter);
@@ -92,6 +94,9 @@ public class TZPAdminHandelsfreigabeGG {
 
 	@DataProvider(name = "TZPAdminHandelsfreigabeGG")
 	public static Object[][] getData() throws BiffException {
+		// Ermittelt den Pfad des aktuellen Projekts
+		projectpath = System.getProperty("user.dir");
+		
 		// Ermittelt den Pfad des aktuellen Projekts
 		String projectpath = System.getProperty("user.dir");
 		// Zugriff auf die zugehörigen Exceldaten
@@ -170,6 +175,10 @@ public class TZPAdminHandelsfreigabeGG {
 		//Firmenname in das Suchfeld eingeben
 		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search", Unternehmensname, test);
 		
+		// Screenshot aufnehmen
+		Thread.sleep(3 * Zeitspanne);
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Admin Handelsfreigabe\\AmdinHandlefreigabe-GG-Auswahl", Teststep, test);
+		
 		
 		// Der Stift für das Laden der Daten hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld
 		// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
@@ -187,6 +196,9 @@ public class TZPAdminHandelsfreigabeGG {
 		Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'identityCard']", test);
 		Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'tradingLicense']", test); 
 		
+		// Screenshot aufnehmen
+		Thread.sleep(3 * Zeitspanne);
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Admin Handelsfreigabe\\AmdinHandlefreigabe-GG-Haken", Teststep, test);
 		
 		// Button Freigeben auswählen
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Freigeben']//ancestor::button[@tabindex='0']", test);
