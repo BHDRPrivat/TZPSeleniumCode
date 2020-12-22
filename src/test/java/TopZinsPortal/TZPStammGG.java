@@ -57,7 +57,7 @@ public class TZPStammGG {
 
 			if (htmlReporter == null) {
 				// start reporters
-				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Regitrierung" + Ablaufart + ".html");
+				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Stammdaten GG - " + Ablaufart + ".html");
 				// create ExtentReports and attach reporter(s)
 				extent = new ExtentReports();
 				extent.attachReporter(htmlReporter);
@@ -79,7 +79,7 @@ public class TZPStammGG {
 			// verglichen werden. "==" steht für die Überprüfung des Speicherorts
 
 			// Aufruf des Browser-Setups
-			driver = Utils.TZPSetupBrowser.BrowserSetup(StandardBrowser, SpeicherpfadTestdokumente);
+			driver = Utils.TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
 
 		
 		}

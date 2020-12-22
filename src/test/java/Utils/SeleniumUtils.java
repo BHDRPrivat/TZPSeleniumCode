@@ -6,6 +6,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -227,14 +228,19 @@ public class SeleniumUtils {
 	public static void FullPageScreenshotAShotSelenium(WebDriver driver, String projectpath,  String Kennzeichnung, String teststep, ExtentTest test) throws IOException {
 		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
 		try {
-		Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(100))
+		    // für die Aufnahme den Zoom verkleinern
+			JavascriptExecutor executor = (JavascriptExecutor)driver;
+			executor.executeScript("document.body.style.zoom = '75%';");
+			Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(100))
 				.takeScreenshot(driver);
 		// Screenshot screenshot = new
 		// AShot().shootingStrategy(ShootingStrategies.scaling(2)).takeScreenshot(driver);
 		ImageIO.write(screenshot.getImage(), "PNG",
 				new File(projectpath + "\\screenshots\\" + Kennzeichnung + " " + teststep + ".png"));
 		test.log(Status.INFO, "Screenshot aufgenommen: " + projectpath + "\\screenshots\\" + Kennzeichnung + " " + teststep + ".png");
-		
+		// Für den weiteren Ablauf Zoom wieder auf 100% setzen
+		executor.executeScript("document.body.style.zoom = '100%';");
+
 	} catch (NoSuchElementException e) {
 		// Fehlerbehandlung einfügen
 		test.log(Status.FAIL, "Versuch Screenshot: " +  projectpath + "\\screenshots\\" + Kennzeichnung + " " + teststep + ".png");
@@ -244,23 +250,7 @@ public class SeleniumUtils {
 	}	
 
 	
-//	public void ScreenshotAufnahme(String Ablaufart, ChromeDevToolsService devToolsService, String bildPath)
-//	throws InterruptedException {
-//if (Ablaufart.equals("PDF-Druck")) {
-//	// Screenshot erzeugen;
-//	Thread.sleep(Zeitspanne);
-//
-//	try {
-//		// Take full screen
-//
-//		FullScreenshot.captureFullPageScreenshot(devToolsService, bildPath);
-//	} catch (AssertionError e) {
-//		System.out.println(e);
-//	}
-//
-//	Thread.sleep(Zeitspanne);
-//}
-//}
+
 	
 	
 }

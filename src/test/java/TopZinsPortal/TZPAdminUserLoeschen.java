@@ -26,7 +26,7 @@ public class TZPAdminUserLoeschen {
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
 	
-	public WebDriver driver;
+	public static WebDriver driver;
 	private Integer Zeitspanne;
 	private String BaseUrl;
 	public String StandardBrowser;
@@ -57,7 +57,7 @@ public class TZPAdminUserLoeschen {
 
 		if (htmlReporter == null) {
 			// start reporters
-			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Admin User Löschen " + Ablaufart + ".html");
+			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Admin User Löschen - " + Ablaufart + ".html");
 			// create ExtentReports and attach reporter(s)
 			extent = new ExtentReports();
 			extent.attachReporter(htmlReporter);
@@ -84,7 +84,7 @@ public class TZPAdminUserLoeschen {
 		// verglichen werden. "==" steht für die Überprüfung des Speicherorts
 
         // Aufruf des Browser-Setups 
-		driver = TZPSetupBrowser.BrowserSetup(StandardBrowser, SpeicherpfadTestdokumente);
+		driver = TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
 	
 	}
 

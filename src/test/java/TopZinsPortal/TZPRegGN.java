@@ -79,7 +79,7 @@ public class TZPRegGN {
 		// verglichen werden. "==" steht für die Überprüfung des Speicherorts
 
 		// Aufruf des Browser-Setups
-		driver = Utils.TZPSetupBrowser.BrowserSetup(StandardBrowser, SpeicherpfadTestdokumente);
+		driver = Utils.TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
 
 	}
 

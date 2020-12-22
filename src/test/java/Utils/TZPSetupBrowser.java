@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,10 +19,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TZPSetupBrowser {
 	
-	public static WebDriver BrowserSetup(String StandardBrowser, String SpeicherpfadTestdokumente) throws InterruptedException, IOException {
+	public static WebDriver BrowserSetup(WebDriver driver, String StandardBrowser, String SpeicherpfadTestdokumente) throws InterruptedException, IOException {
 
-		WebDriver driver = null;
-		
+			
 		if (StandardBrowser.equals("Chrome")) {
 
 			
@@ -30,7 +30,7 @@ public class TZPSetupBrowser {
 			
 		    // Die Verwendung des WebDrivermanager
 		    WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			// driver = new ChromeDriver();
 			
 			// Normaler driver, falls WebdriverMamnager zu einer Fehlermeldung führt.
 			// driver = new ChromeDriver();
@@ -64,7 +64,9 @@ public class TZPSetupBrowser {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //			driver.manage().window().maximize();
 //			driver.manage().window().fullscreen();
-
+//			JavascriptExecutor executor = (JavascriptExecutor)driver;
+//			executor.executeScript("document.body.style.zoom = '67%';");
+//			
 			// devToolsService = DevToolsService.getDevToolsService(driver);
 			System.out.println("In Chrome gelaufen");
 		}
@@ -72,7 +74,7 @@ public class TZPSetupBrowser {
 		if (StandardBrowser.equals("Firefox")) {
 
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			// driver = new FirefoxDriver();
 			
 			
 			// driver = new FirefoxDriver();

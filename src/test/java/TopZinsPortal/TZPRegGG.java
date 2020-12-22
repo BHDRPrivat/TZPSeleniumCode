@@ -1,9 +1,8 @@
 package TopZinsPortal;
 
-import java.io.File;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
-
-import javax.imageio.ImageIO;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,9 +24,6 @@ import Utils.ExcelUtilsJXL;
 import Utils.TZPBeforeTest;
 import junit.framework.Assert;
 import jxl.read.biff.BiffException;
-import ru.yandex.qatools.ashot.AShot;
-import ru.yandex.qatools.ashot.Screenshot;
-import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class TZPRegGG {
 // Der Registrierungsprozess eines Geldgebers wird Excel-Datengetrieben durchlaufen
@@ -79,8 +75,10 @@ public class TZPRegGG {
 		// verglichen werden. "==" steht für die Überprüfung des Speicherorts
 
 		// Aufruf des Browser-Setups
-		driver = Utils.TZPSetupBrowser.BrowserSetup(StandardBrowser, SpeicherpfadTestdokumente);
+		driver = Utils.TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
 
+
+		
 	}
 
 	@DataProvider(name = "TZPRegGG")
@@ -141,7 +139,30 @@ public class TZPRegGG {
 		ExtentTest test = extent.createTest("TZPRegGG: " + Teststep + " - " + AblaufartGlobal,
 				"Registrierung von Geldgebern (GG)");
 
+		
+
 		driver.get(BaseUrl);
+//		JavascriptExecutor executor = (JavascriptExecutor)driver;
+//		executor.executeScript("document.body.style.zoom = '67%';");
+//      Problem durch die Verkleinerung erfolgt kein Zugriff mehr auf die Objekte 		
+
+
+//		WebElement zoomPage = driver.findElement(By.tagName("html"));
+//	       zoomPage.sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD));
+//	       zoomPage.sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD));
+//	       zoomPage.sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD));
+	    
+//		Thread.sleep(3 * Zeitspanne);
+//		Robot robot = new Robot();
+//		System.out.println("About to zoom out");
+//		for (int i = 0; i < 4; i++) {
+//			robot.keyPress(KeyEvent.VK_CONTROL);
+//			robot.keyPress(KeyEvent.VK_SUBTRACT);
+//			robot.keyRelease(KeyEvent.VK_SUBTRACT);
+//			robot.keyRelease(KeyEvent.VK_CONTROL);
+//		}
+		
+		
 		// TZRegGG-Eingabemaske
 		Thread.sleep(3 * Zeitspanne);
 		test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);

@@ -26,7 +26,7 @@ public class TZPAdminHandelsfreigabeGG {
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
 	
-	private WebDriver driver;
+	public static WebDriver driver;
 	private Integer Zeitspanne;
 	private String BaseUrl;
 	public String StandardBrowser;
@@ -57,7 +57,7 @@ public class TZPAdminHandelsfreigabeGG {
 
 		if (htmlReporter == null) {
 			// start reporters
-			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Admin HandelsfreigabeGG: " + Ablaufart + ".html");
+			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Admin HandelsfreigabeGG - " + Ablaufart + ".html");
 			// create ExtentReports and attach reporter(s)
 			extent = new ExtentReports();
 			extent.attachReporter(htmlReporter);
@@ -88,7 +88,7 @@ public class TZPAdminHandelsfreigabeGG {
 		// verglichen werden. "==" steht für die Überprüfung des Speicherorts
 
         // Aufruf des Browser-Setups 
-		driver = TZPSetupBrowser.BrowserSetup(StandardBrowser, SpeicherpfadTestdokumente);
+		driver = TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
 	
 	}
 
@@ -175,10 +175,11 @@ public class TZPAdminHandelsfreigabeGG {
 		//Firmenname in das Suchfeld eingeben
 		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search", Unternehmensname, test);
 		
+		
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);
 		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Admin Handelsfreigabe\\AmdinHandlefreigabe-GG-Auswahl", Teststep, test);
-		
+		Thread.sleep(3 * Zeitspanne);
 		
 		// Der Stift für das Laden der Daten hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld
 		// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 

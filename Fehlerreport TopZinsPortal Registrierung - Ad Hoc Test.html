@@ -46,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Dec 11, 2020 12:29:34 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Dec 22, 2020 05:48:28 PM</span>
 				</a>
 			</li>
 			<li>
@@ -72,6 +72,7 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -122,10 +123,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>3</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='80%'><span class='strong'>4</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='20%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -140,7 +141,7 @@
 					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>45</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='28.571%'>4</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='71.429%'>10</span> others
 				</div>
 			</div>
 		</div>
@@ -155,19 +156,19 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>TZPRegGN: TZRegGG-TF-001 - Ad Hoc Test</span>
-						<span class='test-time'>Dec 11, 2020 12:29:43 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-name'>TZPRegGG: TZPRegGG-TF-001 - Ad Hoc Test</span>
+						<span class='test-time'>Dec 22, 2020 05:48:33 PM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Dec 11, 2020 12:29:43 PM</span>
-	<span class='label end-time'>Dec 11, 2020 12:30:23 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 39s+748ms</span>
+	<span class='label start-time'>Dec 22, 2020 05:48:33 PM</span>
+	<span class='label end-time'>Dec 22, 2020 05:49:18 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 45s+79ms</span>
 </div>
-	<div class='test-desc'>Registrierung von Geldnehmern (GN) </div>
+	<div class='test-desc'>Registrierung von Geldgebern (GG) </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
 			<thead>
@@ -180,78 +181,89 @@
 			<tbody>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:29:47 PM</td>
-					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://52.59.225.49/portal/registrierungGeldnehmer</td>
+					<td class='timestamp'>5:48:40 PM</td>
+					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://52.59.225.49/portal/registrierungGeldgeber</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:29:48 PM</td>
-					<td class='step-details'>Eintrag in companyName mit Wert: Lidiia-GN-DGSVO</td>
+					<td class='timestamp'>5:48:40 PM</td>
+					<td class='step-details'>Eintrag in companyName mit Wert: BHDR-GG-DGSVO</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:48:52 PM</td>
+					<td class='step-details'>Auswahl des Objektes: //*[@id="mui-component-select-gender"]</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:48:52 PM</td>
+					<td class='step-details'>Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//li[contains(text(),'Herr')]"}
+  (Session info: chrome=87.0.4280.88)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:65453}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 32933ac036349fa77dce3b7151b3dc1f
+*** Element info: {Using=xpath, value=//li[contains(text(),'Herr')]}</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:49:02 PM</td>
+					<td class='step-details'>Auswahl des Objektes: //*[@id="mui-component-select-title"]</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>5:49:02 PM</td>
+					<td class='step-details'>Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//li[contains(text(),'Dr.')]"}
+  (Session info: chrome=87.0.4280.88)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:65453}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 32933ac036349fa77dce3b7151b3dc1f
+*** Element info: {Using=xpath, value=//li[contains(text(),'Dr.')]}</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:29:49 PM</td>
-					<td class='step-details'>Im Listenelement: //li[contains(text(),' Ausgwählt: Frau</td>
+					<td class='timestamp'>5:49:03 PM</td>
+					<td class='step-details'>Eintrag in firstName mit Wert: BHDR-GG-DGSVO Vorname</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:29:51 PM</td>
-					<td class='step-details'>Im Listenelement: //li[contains(text(),' Ausgwählt: Dr.</td>
+					<td class='timestamp'>5:49:05 PM</td>
+					<td class='step-details'>Eintrag in lastName mit Wert: BHDR-GG-DGSVO Nachname</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:29:53 PM</td>
-					<td class='step-details'>Eintrag in firstName mit Wert: Lidiia eins</td>
+					<td class='timestamp'>5:49:07 PM</td>
+					<td class='step-details'>Eintrag in tel mit Wert: 0611 97381 63</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:29:55 PM</td>
-					<td class='step-details'>Eintrag in lastName mit Wert: Ananchenko eins</td>
+					<td class='timestamp'>5:49:09 PM</td>
+					<td class='step-details'>Eintrag in email mit Wert: BHDR-GG-DGSVO@forsa-gmbh.de</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:29:57 PM</td>
-					<td class='step-details'>Eintrag in tel mit Wert: 0611 11 11 11</td>
+					<td class='timestamp'>5:49:11 PM</td>
+					<td class='step-details'>Eintrag in emailConfirm mit Wert: BHDR-GG-DGSVO@forsa-gmbh.de</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:00 PM</td>
-					<td class='step-details'>Eintrag in email mit Wert: lidiia1@forsa.de</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:02 PM</td>
-					<td class='step-details'>Eintrag in emailConfirm mit Wert: lidiia1@forsa.de</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:04 PM</td>
+					<td class='timestamp'>5:49:13 PM</td>
 					<td class='step-details'>Eintrag in password mit Wert: Test12345!</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:09 PM</td>
+					<td class='timestamp'>5:49:18 PM</td>
+					<td class='step-details'>Screenshot aufgenommen: C:\Users\b.dikmen\git\TZPSeleniumCode\TopZinsPortalTestablauf\screenshots\\Reg GG\Eingabe-Reg-Werte-GG TZPRegGG-TF-001.png</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:49:18 PM</td>
 					<td class='step-details'>Auswahl des Objektes: //fieldset[contains(@class, 'MuiFormControl-root MuiFormControl-marginDense')]</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:13 PM</td>
-					<td class='step-details'>Auswahl des Objektes: //button[contains(@data-test, 'accept-dsgvo-button')]</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:16 PM</td>
-					<td class='step-details'>Auswahl des Objektes: //label[contains(@class, 'MuiFormControlLabel-root jss')]</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:19 PM</td>
-					<td class='step-details'>Auswahl des Objektes: //button[contains(@data-test, 'accept-dsgvo-button')]</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:23 PM</td>
-					<td class='step-details'>Auswahl des Objektes: //button[contains(@type, 'submit')]</td>
 				</tr>
 			</tbody>
 		</table>
@@ -262,210 +274,68 @@
 				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
 					<div class='test-heading'>
-						<span class='test-name'>TZPRegGN: TZRegGG-TF-001 - Ad Hoc Test</span>
-						<span class='test-time'>Dec 11, 2020 12:30:37 PM</span>
+						<span class='test-name'>TZPRegGG: TZPRegGG-TF-002 - Ad Hoc Test</span>
+						<span class='test-time'>Dec 22, 2020 05:49:34 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Dec 11, 2020 12:30:37 PM</span>
-	<span class='label end-time'>Dec 11, 2020 12:31:17 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 40s+260ms</span>
+	<span class='label start-time'>Dec 22, 2020 05:49:34 PM</span>
+	<span class='label end-time'>Dec 22, 2020 05:49:34 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
-	<div class='test-desc'>Registrierung von Geldnehmern (GN) </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:41 PM</td>
-					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://52.59.225.49/portal/registrierungGeldnehmer</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:42 PM</td>
-					<td class='step-details'>Eintrag in companyName mit Wert: Lidiia-GN-DatenKomplett</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:44 PM</td>
-					<td class='step-details'>Im Listenelement: //li[contains(text(),' Ausgwählt: Frau</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:46 PM</td>
-					<td class='step-details'>Im Listenelement: //li[contains(text(),' Ausgwählt:</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:48 PM</td>
-					<td class='step-details'>Eintrag in firstName mit Wert: Lidiia zwei</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:50 PM</td>
-					<td class='step-details'>Eintrag in lastName mit Wert: Ananchenko zwei</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:52 PM</td>
-					<td class='step-details'>Eintrag in tel mit Wert: 0611 11 11 11</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:54 PM</td>
-					<td class='step-details'>Eintrag in email mit Wert: lidiia2@forsa.de</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:56 PM</td>
-					<td class='step-details'>Eintrag in emailConfirm mit Wert: lidiia2@forsa.de</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:30:58 PM</td>
-					<td class='step-details'>Eintrag in password mit Wert: Test12345!</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:04 PM</td>
-					<td class='step-details'>Auswahl des Objektes: //fieldset[contains(@class, 'MuiFormControl-root MuiFormControl-marginDense')]</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:07 PM</td>
-					<td class='step-details'>Auswahl des Objektes: //button[contains(@data-test, 'accept-dsgvo-button')]</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:10 PM</td>
-					<td class='step-details'>Auswahl des Objektes: //label[contains(@class, 'MuiFormControlLabel-root jss')]</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:14 PM</td>
-					<td class='step-details'>Auswahl des Objektes: //button[contains(@data-test, 'accept-dsgvo-button')]</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:17 PM</td>
-					<td class='step-details'>Auswahl des Objektes: //button[contains(@type, 'submit')]</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+	<div class='test-desc'>Registrierung von Geldgebern (GG) </div>
 					</div>
 				</li>
 				
 				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
 					<div class='test-heading'>
-						<span class='test-name'>TZPRegGN: TZRegGG-TF-001 - Ad Hoc Test</span>
-						<span class='test-time'>Dec 11, 2020 12:31:31 PM</span>
+						<span class='test-name'>TZPRegGG: TZPRegGG-TF-003 - Ad Hoc Test</span>
+						<span class='test-time'>Dec 22, 2020 05:49:46 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Dec 11, 2020 12:31:31 PM</span>
-	<span class='label end-time'>Dec 11, 2020 12:32:10 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 38s+961ms</span>
+	<span class='label start-time'>Dec 22, 2020 05:49:46 PM</span>
+	<span class='label end-time'>Dec 22, 2020 05:49:46 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
-	<div class='test-desc'>Registrierung von Geldnehmern (GN) </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:35 PM</td>
-					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://52.59.225.49/portal/registrierungGeldnehmer</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:35 PM</td>
-					<td class='step-details'>Eintrag in companyName mit Wert: Lidiia-GN-Handel</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:37 PM</td>
-					<td class='step-details'>Im Listenelement: //li[contains(text(),' Ausgwählt: Frau</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:39 PM</td>
-					<td class='step-details'>Im Listenelement: //li[contains(text(),' Ausgwählt:</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:41 PM</td>
-					<td class='step-details'>Eintrag in firstName mit Wert: Lidiia drei</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:43 PM</td>
-					<td class='step-details'>Eintrag in lastName mit Wert: Ananchenko drei</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:45 PM</td>
-					<td class='step-details'>Eintrag in tel mit Wert: 0611 11 11 11</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:47 PM</td>
-					<td class='step-details'>Eintrag in email mit Wert: lidiia3@forsa.de</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:49 PM</td>
-					<td class='step-details'>Eintrag in emailConfirm mit Wert: lidiia3@forsa.de</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:51 PM</td>
-					<td class='step-details'>Eintrag in password mit Wert: Test12345!</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:31:57 PM</td>
-					<td class='step-details'>Auswahl des Objektes: //fieldset[contains(@class, 'MuiFormControl-root MuiFormControl-marginDense')]</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:32:00 PM</td>
-					<td class='step-details'>Auswahl des Objektes: //button[contains(@data-test, 'accept-dsgvo-button')]</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:32:03 PM</td>
-					<td class='step-details'>Auswahl des Objektes: //label[contains(@class, 'MuiFormControlLabel-root jss')]</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:32:07 PM</td>
-					<td class='step-details'>Auswahl des Objektes: //button[contains(@data-test, 'accept-dsgvo-button')]</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:32:10 PM</td>
-					<td class='step-details'>Auswahl des Objektes: //button[contains(@type, 'submit')]</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+	<div class='test-desc'>Registrierung von Geldgebern (GG) </div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>TZPRegGG: TZPRegGG-TF-004 - Ad Hoc Test</span>
+						<span class='test-time'>Dec 22, 2020 05:49:58 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2020 05:49:58 PM</span>
+	<span class='label end-time'>Dec 22, 2020 05:49:58 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Registrierung von Geldgebern (GG) </div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>TZPRegGG: TZPRegGG-TF-005 - Ad Hoc Test</span>
+						<span class='test-time'>Dec 22, 2020 05:50:10 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2020 05:50:10 PM</span>
+	<span class='label end-time'>Dec 22, 2020 05:50:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+</div>
+	<div class='test-desc'>Registrierung von Geldgebern (GG) </div>
 					</div>
 				</li>
 			</ul>
@@ -503,31 +373,31 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>3</div>
+					<div class='panel-lead'>5</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>45</div>
+					<div class='panel-lead'>14</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Dec 11, 2020 12:29:34 PM</div>
+					<div class='panel-lead'>Dec 22, 2020 05:48:28 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Dec 11, 2020 12:32:24 PM</div>
+			 		<div class='panel-lead'>Dec 22, 2020 05:50:22 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 2m 49s+859ms</div>
+					<div class='panel-lead'>0h 1m 54s+336ms</div>
 				</div>
 			</div>
 		</div>
@@ -540,22 +410,22 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 3,
-				failParent: 0,
+				passParent: 4,
+				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 0,
+				exceptionsParent: 1,
 				
 				passChild: 0,
-				failChild: 0,
+				failChild: 4,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
-				infoChild: 45,
-				exceptionsChild: 0,
+				infoChild: 10,
+				exceptionsChild: 4,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,

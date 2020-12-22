@@ -7,22 +7,34 @@
 			<class name="TopZinsPortal.TZPRegGG" />
 		</classes>
 	</test>
+    <test name="TZP-Login-GG">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPLoginGG" />
+		</classes>
+    </test>	
     <test name="TZP-Stammdaten-GG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPStammGG" />
 		</classes>
     </test>
-    <test name="TZP-Admin-Handelsfreigabe">
+    <test name="TZP-Admin-HandelsfreigabeGG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
-			<class name="TopZinsPortal.TZPAdminHandelsfreigabe" />
+			<class name="TopZinsPortal.TZPAdminHandelsfreigabeGG" />
 		</classes>
     </test>
-<!--     <test name="TZP-Admin-HandelLoeschen">
+    <test name="TZP-Admin-Deaktivieren">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
-			<class name="TopZinsPortal.TZPAdminHandelLoeschen" />
+			<class name="TopZinsPortal.TZPAdminUserDeaktivieren" />
 		</classes>
-    </test> -->
+    </test> 
+    <test name="TZP-Admin-Loeschen">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPAdminUserLoeschen" />
+		</classes>
+    </test> 
 </suite> <!-- Smoketest Prozesse Registrierungsdurchlauf-->
