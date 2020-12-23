@@ -53,7 +53,7 @@ public class TZPRegGG {
 
 		if (htmlReporter == null) {
 			// start reporters
-			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Registrierung - " + Ablaufart + ".html");
+			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Registrierung GG - " + Ablaufart + ".html");
 			// create ExtentReports and attach reporter(s)
 			extent = new ExtentReports();
 			extent.attachReporter(htmlReporter);
@@ -142,26 +142,6 @@ public class TZPRegGG {
 		
 
 		driver.get(BaseUrl);
-//		JavascriptExecutor executor = (JavascriptExecutor)driver;
-//		executor.executeScript("document.body.style.zoom = '67%';");
-//      Problem durch die Verkleinerung erfolgt kein Zugriff mehr auf die Objekte 		
-
-
-//		WebElement zoomPage = driver.findElement(By.tagName("html"));
-//	       zoomPage.sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD));
-//	       zoomPage.sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD));
-//	       zoomPage.sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD));
-	    
-//		Thread.sleep(3 * Zeitspanne);
-//		Robot robot = new Robot();
-//		System.out.println("About to zoom out");
-//		for (int i = 0; i < 4; i++) {
-//			robot.keyPress(KeyEvent.VK_CONTROL);
-//			robot.keyPress(KeyEvent.VK_SUBTRACT);
-//			robot.keyRelease(KeyEvent.VK_SUBTRACT);
-//			robot.keyRelease(KeyEvent.VK_CONTROL);
-//		}
-		
 		
 		// TZRegGG-Eingabemaske
 		Thread.sleep(3 * Zeitspanne);
@@ -177,8 +157,6 @@ public class TZPRegGG {
 		// Auswahl Titel
 		Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id=\"mui-component-select-title\"]",
 				"//li[contains(text(),'", Titel, test);
-
-		// *[@id="menu-gender"]/div[3]/ul/li[1]
 
 		// Vorname
 		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "firstName", Vorname, test);
@@ -201,6 +179,7 @@ public class TZPRegGG {
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);
 		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GG\\Eingabe-Reg-Werte-GG", Teststep, test);
+		Thread.sleep(3 * Zeitspanne);
 
 		// Zuerst auf das übergeordnete fieldset klicken
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
@@ -231,28 +210,21 @@ public class TZPRegGG {
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
 				"//button[contains(@data-test, 'accept-dsgvo-button')]", test);
 
+
 		// Button "Registrieren auswählen"
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 
-		// Kontrolle, ob Bestätigung angezeigt wird.
-		// Noch zu programmieren
-
+	
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);
 		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath,"\\Reg GG\\Nach-Registrierung-Button", Teststep, test );
+		Thread.sleep(3 * Zeitspanne);
 
-		
-//		// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
-//		// Programm läuft weiter
-//		softassert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed()));
-//		softassert.assertAll();
-//		
-
+		// Kontrolle, ob Bestätigung angezeigt wird.
 		// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
 		// Programm läuft nicht weiter
 		Assert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed()));
-		Thread.sleep(3 * Zeitspanne);
-		
+		Thread.sleep(3 * Zeitspanne);	
 		
 		
 		driver.close();

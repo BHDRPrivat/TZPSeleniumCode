@@ -57,7 +57,7 @@ public class TZPRegGN {
 
 		if (htmlReporter == null) {
 			// start reporters
-			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Registrierung - " + Ablaufart + ".html");
+			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Registrierung GN - " + Ablaufart + ".html");
 			// create ExtentReports and attach reporter(s)
 			extent = new ExtentReports();
 			extent.attachReporter(htmlReporter);
@@ -129,7 +129,7 @@ public class TZPRegGN {
 
 	// @Test
 	@Test(dataProvider = "TZPRegGN")
-	public void TZPRegGNTest(String teststep, String Aktiv, String Unternehmensname, String Anrede, String Titel, String Vorname,
+	public void TZPRegGNTest(String Teststep, String Aktiv, String Unternehmensname, String Anrede, String Titel, String Vorname,
 			String Nachname, String TelefonNummer, String Emailadresse, String EmailConfirm, String Passwort,
 			String Datenschutz, String BtnRegistrien, String BtnAbbrechen) throws Exception {
 
@@ -138,7 +138,7 @@ public class TZPRegGN {
 		// String teststep = "AL-R1";
 
 		// creates a toggle for the given test, adds all log events under it
-		ExtentTest test = extent.createTest("TZPRegGN: " + teststep + " - " + AblaufartGlobal,
+		ExtentTest test = extent.createTest("TZPRegGN: " + Teststep + " - " + AblaufartGlobal,
 				"Registrierung von Geldnehmern (GN)");
 
 		driver.get(BaseUrl);
@@ -156,8 +156,6 @@ public class TZPRegGN {
 		// Auswahl Titel
 		Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id=\"mui-component-select-title\"]",
 				"//li[contains(text(),'", Titel, test);
-
-		// *[@id="menu-gender"]/div[3]/ul/li[1]
 
 		// Vorname
 		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "firstName", Vorname, test);
@@ -179,7 +177,8 @@ public class TZPRegGN {
 
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);
-		FullPageScreenshotAShotSelenium("\\Reg GN\\Eingabe-Reg-Werte-GN", teststep);
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GN\\Eingabe-Reg-Werte-GN", Teststep, test);
+		Thread.sleep(3 * Zeitspanne);
 
 		// Zuerst auf das übergeordnete fieldset klicken
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
@@ -210,28 +209,23 @@ public class TZPRegGN {
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
 				"//button[contains(@data-test, 'accept-dsgvo-button')]", test);
 
+
+	
 		// Button "Registrieren auswählen"
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 
-		// Kontrolle, ob Bestätigung angezeigt wird.
-		// Noch zu programmieren
 
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);
-		FullPageScreenshotAShotSelenium("\\Reg GN\\Nach-Registrierung-Button", teststep);
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GN\\Eingabe-Reg-Werte-GN", Teststep, test);
+		Thread.sleep(3 * Zeitspanne);
 
 		
-//		// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
-//		// Programm läuft weiter
-//		softassert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed()));
-//		softassert.assertAll();
-//		
-
+		// Kontrolle, ob Bestätigung angezeigt wird.
 		// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
 		// Programm läuft nicht weiter
-		Assert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed()));
-		
-		
+		Assert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed()));	
+		Thread.sleep(3 * Zeitspanne);
 		
 		
 		driver.close();

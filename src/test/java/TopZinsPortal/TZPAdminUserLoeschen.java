@@ -20,6 +20,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import Utils.ExcelUtilsJXL;
 import Utils.TZPBeforeTest;
 import Utils.TZPSetupBrowser;
+import junit.framework.Assert;
 import jxl.read.biff.BiffException;
 
 public class TZPAdminUserLoeschen {
@@ -32,6 +33,7 @@ public class TZPAdminUserLoeschen {
 	public String StandardBrowser;
 	public String SpeicherpfadTestdokumente;
 	public static String TestdatenExceldatei;
+	public static String projectpath = null;
 	// Für AutoIT
 	String workingDir;
 	String autoitscriptpath;
@@ -91,7 +93,7 @@ public class TZPAdminUserLoeschen {
 	@DataProvider(name = "TZPAdminLoeschen")
 	public static Object[][] getData() throws BiffException {
 		// Ermittelt den Pfad des aktuellen Projekts
-		String projectpath = System.getProperty("user.dir");
+		projectpath = System.getProperty("user.dir");
 		// Zugriff auf die zugehörigen Exceldaten
 		
 		TestdatenExceldatei = "\\Excel\\TopZinsPortalAdminLoeschen.xls";
@@ -160,6 +162,11 @@ public class TZPAdminUserLoeschen {
 		//Button "INAKTIV" in menu clicken
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, '"+ Menue2+ "')]", test);
 		
+		// Screenshot aufnehmen
+		Thread.sleep(3 * Zeitspanne);
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath,"\\Admin UserLoeschen\\Nach-INAKTIV-Register", Teststep, test );
+		Thread.sleep(3 * Zeitspanne);
+		
 		
 		//Firmenname in das Suchfeld eingeben
 		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search", Unternehmensname, test);		
@@ -167,6 +174,9 @@ public class TZPAdminUserLoeschen {
 		// Der Icon löschen hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld
 		// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
 		xpathvalue="//div[text() = '" + Unternehmensname +"']//ancestor::div[contains(@class, 'jss')]//button[contains(@class, 'MuiButtonBase-root MuiIconButton-root')][1]";
+		// prüfen, ob Element vorhanden
+		Assert.assertTrue((driver.findElement(By.xpath(xpathvalue)).isDisplayed()));
+		
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);
 		// TSonderzeit zum Hochladen
 		Thread.sleep(3 * Zeitspanne);		
@@ -176,9 +186,12 @@ public class TZPAdminUserLoeschen {
 		// TSonderzeit zum löschen
 		Thread.sleep(3 * Zeitspanne);		
 		
-
+		// Screenshot aufnehmen
+		Thread.sleep(3 * Zeitspanne);
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath,"\\Admin UserLoeschen\\Nach-Bestätigen-Button", Teststep, test );
+		Thread.sleep(3 * Zeitspanne);
 		
-		// driver.close();
+		driver.close();
 		// Für den Teardown
 		driver = null;
 		eyes = null;

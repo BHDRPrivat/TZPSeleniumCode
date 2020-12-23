@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
+import junit.framework.Assert;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
@@ -67,6 +68,7 @@ public class SeleniumUtils {
 		test.log(Status.FAIL, "Eintrag in " +ObjektPath  + " mit Wert: " + Inputwert);
 		test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 		System.out.println("Gemeldeter Fehler: " + e);
+		Assert.assertTrue("Gemeldeter Fehler: " + e, false);
 	}
 	}
 	
@@ -85,6 +87,7 @@ public class SeleniumUtils {
 			test.log(Status.FAIL, "Auswahl des Objektes: " + ObjektPath);
 			test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 			System.out.println("Gemeldeter Fehler: " + e);
+			Assert.assertTrue("Gemeldeter Fehler: " + e, false);
 		}
 	}
 
@@ -101,6 +104,7 @@ public class SeleniumUtils {
 			test.log(Status.FAIL, "Auswahl des Objektes: " + ObjektPath);
 			test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 			System.out.println("Gemeldeter Fehler: " + e);
+			Assert.assertTrue("Gemeldeter Fehler: " + e, false);
 		}
 	}
 	
@@ -149,6 +153,7 @@ public class SeleniumUtils {
 		test.log(Status.FAIL, "Auswahl des Objektes: " + ObjektPath);
 		test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 		System.out.println("Gemeldeter Fehler: " + e);
+		Assert.assertTrue("Gemeldeter Fehler: " + e, false);
 	}
 
 	}
@@ -198,6 +203,7 @@ public class SeleniumUtils {
 		test.log(Status.FAIL, "Auswahl des Objektes: " + ObjektPath);
 		test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 		System.out.println("Gemeldeter Fehler: " + e);
+		Assert.assertTrue("Gemeldeter Fehler: " + e, false);
 	}
 
 	}
@@ -222,6 +228,7 @@ public class SeleniumUtils {
 		test.log(Status.FAIL, "Auswahl des Objektes: " + ObjektPath);
 		test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 		System.out.println("Gemeldeter Fehler: " + e);
+		Assert.assertTrue("Gemeldeter Fehler: " + e, false);
 	}
 	}	
 
@@ -230,7 +237,7 @@ public class SeleniumUtils {
 		try {
 		    // für die Aufnahme den Zoom verkleinern
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
-			executor.executeScript("document.body.style.zoom = '75%';");
+			executor.executeScript("document.body.style.zoom = '65%';");
 			Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(100))
 				.takeScreenshot(driver);
 		// Screenshot screenshot = new
@@ -246,6 +253,7 @@ public class SeleniumUtils {
 		test.log(Status.FAIL, "Versuch Screenshot: " +  projectpath + "\\screenshots\\" + Kennzeichnung + " " + teststep + ".png");
 		test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 		System.out.println("Gemeldeter Fehler: " + e);
+		Assert.assertTrue("Gemeldeter Fehler: " + e, false);
 	}
 	}	
 

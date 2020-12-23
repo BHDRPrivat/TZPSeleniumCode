@@ -20,6 +20,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import Utils.ExcelUtilsJXL;
 import Utils.TZPBeforeTest;
 import Utils.TZPSetupBrowser;
+import junit.framework.Assert;
 import jxl.read.biff.BiffException;
 
 public class TZPAdminHandelsfreigabeGG {
@@ -206,8 +207,26 @@ public class TZPAdminHandelsfreigabeGG {
 		// TSonderzeit zum Hochladen
 		Thread.sleep(3 * Zeitspanne);
 	
+		// Prüfen ob User in Register "Mit Handelsberechtigung" vorhanden ist?
+		//Button "Daten komplett" in menu clicken
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'MIT HANDELSBERCHTIGUNG')]", test);
 		
-		// driver.close();
+		// Die Anzeige auf 100 erhöhen
+		Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//div[contains(@id,'mui')]", "//li[contains(text(),'", ZeilenProSeite, test);
+		
+		//Firmenname in das Suchfeld eingeben
+		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search", Unternehmensname, test);
+		
+		// Der Stift für das Laden der Daten hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld
+		// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
+	    xpathvalue="//div[text() = '" + Unternehmensname +"']//ancestor::tr[contains(@class, 'MuiTableRow-root MuiTableRow-hover')]//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary']";
+		
+		// Programm läuft nicht weiter
+		Assert.assertTrue((driver.findElement(By.xpath(xpathvalue)).isDisplayed()));
+		Thread.sleep(3 * Zeitspanne);	
+		
+		
+		driver.close();
 		// Für den Teardown
 		driver = null;
 		eyes = null;

@@ -2,6 +2,7 @@ package TopZinsPortal;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -19,6 +20,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import Utils.ExcelUtilsJXL;
 import Utils.SeleniumUtils;
 import Utils.TZPBeforeTest;
+import junit.framework.Assert;
 import jxl.read.biff.BiffException;
 
 public class TZPStammGG {
@@ -92,7 +94,7 @@ public class TZPStammGG {
 		@DataProvider(name = "TZPStammGG")
 		public static Object[][] getData() throws BiffException {
 			// Ermittelt den Pfad des aktuellen Projekts
-			String projectpath = System.getProperty("user.dir");
+			projectpath = System.getProperty("user.dir");
 			// Zugriff auf die zugehörigen Exceldaten
 			
 			TestdatenExceldatei = "\\Excel\\TopZinsPortalStammGG.xls";
@@ -138,7 +140,7 @@ public class TZPStammGG {
 
 		// @Test
 		@Test(dataProvider = "TZPStammGG")
-		public void TZPStammGG(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Unternehmensname, String Kundengruppe, String LEI,
+		public void TZPStammGGTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Unternehmensname, String Kundengruppe, String LEI,
 					String Land, String Webseite, String EmailGeschaefte, String Str, String HausNr, String PLZ, String Ort, String Adresszusatz,
 					String Bank, String BIC, String IBAN, String Kontoinhaber,
 					String Anrede, String Vorname, String TelefonNr, String FaxNr, String Titel, 
@@ -168,13 +170,19 @@ public class TZPStammGG {
 
      		// Button "Registrieren auswählen"
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
+			Thread.sleep(3 * Zeitspanne);
 			
      		// Button "Vollständige Registrierung auswählen"
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@data-test, 'logout-dsgvo-button')]", test);
 			
+			// Screenshot aufnehmen
+			Thread.sleep(3 * Zeitspanne);
+			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GG\\Login für die Stammdaten GG ", Teststep, test);
+			Thread.sleep(3 * Zeitspanne);
+			
 			if (MissingData) {
 			
-			
+			// Reiter Unternehmen
 			// Auswahl Unternehmensname
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "companyName", Unternehmensname, test);
 			
@@ -198,6 +206,18 @@ public class TZPStammGG {
 			
      		// Button "Weiter" auswählen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
+						
+			// Auswahl Register Unternehmen -> wurden die Daten sauber gespeichert?
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[contains(@data-test, 'Unternehmen')]", test);
+
+			// Screenshot aufnehmen
+			Thread.sleep(3 * Zeitspanne);
+			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GG\\Stammdaten GG 1-Unternehmen", Teststep, test);
+			Thread.sleep(3 * Zeitspanne);
+			
+     		// Button "Weiter" auswählen
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
+			
 			
 			// Reiter Bankverbindung ausfüllen
 			// Bank-Daten
@@ -206,9 +226,20 @@ public class TZPStammGG {
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "iban", IBAN, test);
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "recipientName", "iban", Kontoinhaber, test);
 			
-
-     		// Button "Weiter" auswählen
+			// Button "Weiter" auswählen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
+			
+			// Auswahl Register Bankverbindung -> wurden die Daten sauber gespeichert?
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[contains(@data-test, 'Bankverbindung')]", test);
+
+			// Screenshot aufnehmen
+			Thread.sleep(3 * Zeitspanne);
+			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GG\\Stammdaten GG 2-Bankverbindung", Teststep, test);
+			Thread.sleep(3 * Zeitspanne);
+			
+    		// Button "Weiter" auswählen
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);	
+			
 			
 			// Reiter Person ausfüllen
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "firstName", Vorname, test);
@@ -221,6 +252,19 @@ public class TZPStammGG {
 		
      		// Button "Weiter" auswählen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
+			
+			// Auswahl Register Person -> wurden die Daten sauber gespeichert?
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[contains(@data-test, 'Person')]", test);
+
+			// Screenshot aufnehmen
+			Thread.sleep(3 * Zeitspanne);
+			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GG\\Stammdaten GG 3-Person", Teststep, test);
+			Thread.sleep(3 * Zeitspanne);
+			
+    		// Button "Weiter" auswählen
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);	
+			
+		
 			
 			} // IF-Ende für Missing Data
 			else {
@@ -246,13 +290,38 @@ public class TZPStammGG {
 			// TSonderzeit zum Hochladen
 			Thread.sleep(3 * Zeitspanne);
 			
+			
+			// Kontrolle, ob kein Fehlertext angezeigt wird
+			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
+			// Programm läuft nicht weiter
+			Assert.assertFalse((driver.findElement(By.xpath("//p[text()='Bitte wählen Sie ein Dokument zum Hochladen aus']")).isDisplayed()));
+			Thread.sleep(3 * Zeitspanne);
+			
+				
+			// Screenshot aufnehmen
+			Thread.sleep(3 * Zeitspanne);
+			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GG\\Stammdaten GG 4-Dokumente hochladen ", Teststep, test);
+			Thread.sleep(3 * Zeitspanne);
+			
+			
 			// Handelsfreigabe beantragn		
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Handelsberechtigung anfordern']//ancestor::button[@tabindex='0']", test);
 			// TSonderzeit zum Hochladen
 			Thread.sleep(3 * Zeitspanne);			
 			
+			// Kontrolle, ob kein Fehlertext angezeigt wird
+			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
+			// Programm läuft nicht weiter
+			Assert.assertFalse((driver.findElement(By.xpath("//p[text()='Alle Pflichtfelder müsssenausgefüllt werden']")).isDisplayed()));
+			Thread.sleep(3 * Zeitspanne);
 			
-			// driver.close();
+			
+			// Screenshot aufnehmen
+			Thread.sleep(3 * Zeitspanne);
+			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GG\\Stammdaten GG 5-Handelfreigabe angefordert ", Teststep, test);
+			Thread.sleep(3 * Zeitspanne);
+	
+			driver.close();
 			// Für den Teardown
 			driver = null;
 			eyes = null;
@@ -294,24 +363,6 @@ public class TZPStammGG {
 				}
 			}
 		}
-
-//		public void ScreenshotAufnahme(String Ablaufart, ChromeDevToolsService devToolsService, String bildPath)
-//				throws InterruptedException {
-//			if (Ablaufart.equals("PDF-Druck")) {
-//				// Screenshot erzeugen;
-//				Thread.sleep(Zeitspanne);
-	//
-//				try {
-//					// Take full screen
-	//
-//					FullScreenshot.captureFullPageScreenshot(devToolsService, bildPath);
-//				} catch (AssertionError e) {
-//					System.out.println(e);
-//				}
-	//
-//				Thread.sleep(Zeitspanne);
-//			}
-//		}
 
 
 		@AfterTest
