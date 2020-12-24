@@ -164,7 +164,7 @@ public class TZPAdminUserLoeschen {
 		
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);
-		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath,"\\Admin UserLoeschen\\Nach-INAKTIV-Register", Teststep, test );
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,"\\Admin UserLoeschen\\Nach-INAKTIV-Register", Teststep, test );
 		Thread.sleep(3 * Zeitspanne);
 		
 		
@@ -188,7 +188,7 @@ public class TZPAdminUserLoeschen {
 		
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);
-		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath,"\\Admin UserLoeschen\\Nach-Bestätigen-Button", Teststep, test );
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,"\\Admin UserLoeschen\\Nach-Bestätigen-Button", Teststep, test );
 		Thread.sleep(3 * Zeitspanne);
 		
 		driver.close();
@@ -240,18 +240,8 @@ public class TZPAdminUserLoeschen {
 	@AfterTest
 	public void tearDown() throws InterruptedException {
 
-		// calling flush writes everything to the log file
-		extent.flush();
-
-		Thread.sleep(3000);
-		System.out.println("Test erfolgreich druchlaufen");
-		if (driver != null) {
-		//	driver.quit();
-		}
-		if (eyes != null) {
-			eyes.close();
-			eyes.abortIfNotClosed();
-		}
+        // Offene Bereiche Schließen
+		Utils.SeleniumUtils.BrowserBeenden(driver, Zeitspanne, extent,  eyes);
 	}
 
 }

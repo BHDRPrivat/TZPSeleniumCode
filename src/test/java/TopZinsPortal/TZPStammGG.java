@@ -177,7 +177,7 @@ public class TZPStammGG {
 			
 			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
-			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GG\\Login für die Stammdaten GG ", Teststep, test);
+			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GG\\Login für die Stammdaten GG ", Teststep, test);
 			Thread.sleep(3 * Zeitspanne);
 			
 			if (MissingData) {
@@ -212,7 +212,7 @@ public class TZPStammGG {
 
 			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
-			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GG\\Stammdaten GG 1-Unternehmen", Teststep, test);
+			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GG\\Stammdaten GG 1-Unternehmen", Teststep, test);
 			Thread.sleep(3 * Zeitspanne);
 			
      		// Button "Weiter" auswählen
@@ -234,7 +234,7 @@ public class TZPStammGG {
 
 			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
-			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GG\\Stammdaten GG 2-Bankverbindung", Teststep, test);
+			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GG\\Stammdaten GG 2-Bankverbindung", Teststep, test);
 			Thread.sleep(3 * Zeitspanne);
 			
     		// Button "Weiter" auswählen
@@ -258,7 +258,7 @@ public class TZPStammGG {
 
 			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
-			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GG\\Stammdaten GG 3-Person", Teststep, test);
+			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GG\\Stammdaten GG 3-Person", Teststep, test);
 			Thread.sleep(3 * Zeitspanne);
 			
     		// Button "Weiter" auswählen
@@ -294,13 +294,15 @@ public class TZPStammGG {
 			// Kontrolle, ob kein Fehlertext angezeigt wird
 			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
 			// Programm läuft nicht weiter
-			Assert.assertFalse((driver.findElement(By.xpath("//p[text()='Bitte wählen Sie ein Dokument zum Hochladen aus']")).isDisplayed()));
+			// Suche nach einem Text. Nicht findelement verwenden, da dieser einen Fehler auswirft
+			// Assert.assertFalse((driver.findElement(By.xpath("//p[text()='Bitte wählen Sie ein Dokument zum Hochladen aus']")).isDisplayed()));
+			Assert.assertEquals(driver.getPageSource().contains("Bitte wählen Sie ein Dokument zum Hochladen aus"), false);
 			Thread.sleep(3 * Zeitspanne);
 			
 				
 			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
-			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GG\\Stammdaten GG 4-Dokumente hochladen ", Teststep, test);
+			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GG\\Stammdaten GG 4-Dokumente hochladen ", Teststep, test);
 			Thread.sleep(3 * Zeitspanne);
 			
 			
@@ -312,13 +314,14 @@ public class TZPStammGG {
 			// Kontrolle, ob kein Fehlertext angezeigt wird
 			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
 			// Programm läuft nicht weiter
-			Assert.assertFalse((driver.findElement(By.xpath("//p[text()='Alle Pflichtfelder müsssenausgefüllt werden']")).isDisplayed()));
+			// Assert.assertFalse((driver.findElement(By.xpath("//p[text()='Alle Pflichtfelder müsssenausgefüllt werden']")).isDisplayed()));
+			Assert.assertEquals(driver.getPageSource().contains("Alle Pflichtfelder müsssenausgefüllt werden"), false);
 			Thread.sleep(3 * Zeitspanne);
 			
 			
 			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
-			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GG\\Stammdaten GG 5-Handelfreigabe angefordert ", Teststep, test);
+			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GG\\Stammdaten GG 5-Handelfreigabe angefordert ", Teststep, test);
 			Thread.sleep(3 * Zeitspanne);
 	
 			driver.close();
@@ -368,18 +371,8 @@ public class TZPStammGG {
 		@AfterTest
 		public void tearDown() throws InterruptedException {
 
-			// calling flush writes everything to the log file
-			extent.flush();
-
-			Thread.sleep(3000);
-			System.out.println("Test erfolgreich druchlaufen");
-			if (driver != null) {
-			//	driver.quit();
-			}
-			if (eyes != null) {
-				eyes.close();
-				eyes.abortIfNotClosed();
-			}
+	        // Offene Bereiche Schließen
+			Utils.SeleniumUtils.BrowserBeenden(driver, Zeitspanne, extent,  eyes);
 		}
 
 	}

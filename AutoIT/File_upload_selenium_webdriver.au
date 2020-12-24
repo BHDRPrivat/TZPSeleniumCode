@@ -1,3 +1,4 @@
 WinWaitActive("Öffnen") 
 Send($CmdLine[1])
 Send("{ENTER}")
+WinWaitClose("Öffnen")

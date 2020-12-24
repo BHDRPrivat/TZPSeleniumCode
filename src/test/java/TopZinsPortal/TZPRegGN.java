@@ -177,7 +177,7 @@ public class TZPRegGN {
 
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);
-		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GN\\Eingabe-Reg-Werte-GN", Teststep, test);
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GN\\Eingabe-Reg-Werte-GN", Teststep, test);
 		Thread.sleep(3 * Zeitspanne);
 
 		// Zuerst auf das übergeordnete fieldset klicken
@@ -217,7 +217,7 @@ public class TZPRegGN {
 
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);
-		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GN\\Eingabe-Reg-Werte-GN", Teststep, test);
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GN\\Eingabe-Reg-Werte-GN", Teststep, test);
 		Thread.sleep(3 * Zeitspanne);
 
 		
@@ -303,18 +303,8 @@ public class TZPRegGN {
 	@AfterTest
 	public void tearDown() throws InterruptedException {
 
-		// calling flush writes everything to the log file
-		extent.flush();
-
-		Thread.sleep(3000);
-		System.out.println("Test erfolgreich druchlaufen");
-		if (driver != null) {
-			driver.quit();
-		}
-		if (eyes != null) {
-			eyes.close();
-			eyes.abortIfNotClosed();
-		}
+        // Offene Bereiche Schließen
+		Utils.SeleniumUtils.BrowserBeenden(driver, Zeitspanne, extent,  eyes);
 	}
 
 }

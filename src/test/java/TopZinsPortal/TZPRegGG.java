@@ -178,7 +178,7 @@ public class TZPRegGG {
 
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);
-		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath, "\\Reg GG\\Eingabe-Reg-Werte-GG", Teststep, test);
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GG\\Eingabe-Reg-Werte-GG", Teststep, test);
 		Thread.sleep(3 * Zeitspanne);
 
 		// Zuerst auf das übergeordnete fieldset klicken
@@ -217,7 +217,7 @@ public class TZPRegGG {
 	
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);
-		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, projectpath,"\\Reg GG\\Nach-Registrierung-Button", Teststep, test );
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,"\\Reg GG\\Nach-Registrierung-Button", Teststep, test );
 		Thread.sleep(3 * Zeitspanne);
 
 		// Kontrolle, ob Bestätigung angezeigt wird.
@@ -273,19 +273,8 @@ public class TZPRegGG {
 
 	@AfterTest
 	public void tearDown() throws InterruptedException {
-
-		// calling flush writes everything to the log file
-		extent.flush();
-
-		Thread.sleep(3000);
-		System.out.println("Test erfolgreich druchlaufen");
-		if (driver != null) {
-			driver.quit();
-		}
-		if (eyes != null) {
-			eyes.close();
-			eyes.abortIfNotClosed();
-		}
+        // Offene Bereiche Schließen
+		Utils.SeleniumUtils.BrowserBeenden(driver, Zeitspanne, extent,  eyes);
 	}
 
 }
