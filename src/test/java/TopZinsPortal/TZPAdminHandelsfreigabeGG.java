@@ -65,16 +65,12 @@ public class TZPAdminHandelsfreigabeGG {
 			extent = new ExtentReports();
 			extent.attachReporter(htmlReporter);
 		}
-		AblaufartGlobal = Ablaufart;
 
-		// Hinweis: Für direkte Testläufe
-		// Applitools und PDF-Druck dürfen nicht gleichzeitig ablaufen
-		// Es kommt zu Fehlermeldungen
 
 		System.out.println("Handelsfreigabe: " + Ablaufart);
-		StandardBrowser = "Chrome";
-		// StandardBrowser = "Firefox";
-		Zeitspanne = 800;
+		AblaufartGlobal = Ablaufart;
+		StandardBrowser = Utils.TZPBeforeTest.BrowserArt();
+		Zeitspanne = Utils.TZPBeforeTest.Pausenzeit();
 
 		// Hinweis: Für direkte Testläufe
 		// Applitools und PDF-Druck dürfen nicht gleichzeitig ablaufen

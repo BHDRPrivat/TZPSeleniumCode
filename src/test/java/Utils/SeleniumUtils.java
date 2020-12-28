@@ -168,7 +168,7 @@ public class SeleniumUtils {
 
 	public static void PDFUploadListe(WebDriver driver, Integer Zeitspanne, String HTMLSelector, String ObjektPath, String Suchbegriff, String Bereich, String DatumEintrag, ExtentTest test) throws InterruptedException, IOException {
 		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
-		Thread.sleep(3 * Zeitspanne);
+		Thread.sleep(5 * Zeitspanne);
 		try {
 			// Für AutoIT
 			String workingDir;
@@ -185,7 +185,7 @@ public class SeleniumUtils {
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);
 			test.log(Status.INFO, "Auswahl des Objektes: " +ObjektPath);
 			// TSonderzeit zum Hochladen
-			Thread.sleep(3 * Zeitspanne);
+			Thread.sleep(5 * Zeitspanne);
 
 
 			// Auf das Leerzeichen vor " \" achten!
@@ -205,7 +205,8 @@ public class SeleniumUtils {
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", xpathvalue, DatumEintrag, test);	
 			test.log(Status.INFO, "Datum eintragen: " +DatumEintrag + " in Objekt: " + xpathvalue);
 			// TSonderzeit zum Hochladen
-			Thread.sleep(1* Zeitspanne);
+			Thread.sleep(5* Zeitspanne);
+			
 		} catch (NoSuchElementException e) {
 			// Fehlerbehandlung einfügen
 			test.log(Status.FAIL, "Auswahl des Objektes: " + ObjektPath);
@@ -247,7 +248,7 @@ public class SeleniumUtils {
 		try {
 			// für die Aufnahme den Zoom verkleinern
 			JavascriptExecutor executor = (JavascriptExecutor)driver;
-			executor.executeScript("document.body.style.zoom = '50%';");
+			executor.executeScript("document.body.style.zoom = '75%';");
 			Screenshot screenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(100))
 					.takeScreenshot(driver);
 			// Screenshot screenshot = new
@@ -257,6 +258,7 @@ public class SeleniumUtils {
 			test.log(Status.INFO, "Screenshot aufgenommen: " + projectpath + "\\screenshots\\" + Kennzeichnung + " " + teststep + ".png");
 			// Für den weiteren Ablauf Zoom wieder auf 100% setzen
 			executor.executeScript("document.body.style.zoom = '100%';");
+			Thread.sleep(3 * Zeitspanne);
 
 		} catch (NoSuchElementException e) {
 			// Fehlerbehandlung einfügen

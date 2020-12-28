@@ -66,11 +66,11 @@ public class TZPAdminUserLoeschen {
 		}
 		AblaufartGlobal = Ablaufart;
 
-		System.out.println("Admin löschen: " + Ablaufart);
-		StandardBrowser = "Chrome";
-		// StandardBrowser = "Firefox";
-		Zeitspanne = 800;
 
+    	StandardBrowser = Utils.TZPBeforeTest.BrowserArt();
+		Zeitspanne = Utils.TZPBeforeTest.Pausenzeit();
+
+		System.out.println("Admin löschen: " + Ablaufart);
 		// Hinweis: Für direkte Testläufe
 		// Applitools und PDF-Druck dürfen nicht gleichzeitig ablaufen
 		// Es kommt zu Fehlermeldungen

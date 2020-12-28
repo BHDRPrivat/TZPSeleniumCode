@@ -62,15 +62,10 @@ public class TZPRegGN {
 			extent = new ExtentReports();
 			extent.attachReporter(htmlReporter);
 		}
+
 		AblaufartGlobal = Ablaufart;
-
-		// Hinweis: Für direkte Testläufe
-		// Applitools und PDF-Druck dürfen nicht gleichzeitig ablaufen
-		// Es kommt zu Fehlermeldungen
-
-		StandardBrowser = "Chrome";
-		// StandardBrowser = "Firefox";
-		Zeitspanne = 800;
+		StandardBrowser = Utils.TZPBeforeTest.BrowserArt();
+		Zeitspanne = Utils.TZPBeforeTest.Pausenzeit();
 
 		BaseUrl = TZPBeforeTest.Umgebung() + "/portal/registrierungGeldnehmer";
 
