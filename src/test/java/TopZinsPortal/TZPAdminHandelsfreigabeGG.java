@@ -216,18 +216,11 @@ public class TZPAdminHandelsfreigabeGG {
 
 			// Firmenname in das Suchfeld eingeben
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search", Unternehmensname, test);
+			Thread.sleep(5 * Zeitspanne);
+			
 
-			// Der Stift für das Laden der Daten hat keine eindeutige ID. Der Zugriff
-			// erfolgt über den Eintrag im ersten Eingabefeld
-			// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen
-			xpathvalue = "//div[text() = '" + Unternehmensname
-					+ "']//ancestor::tr[contains(@class, 'MuiTableRow-root MuiTableRow-hover')]//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary']";
-
-			// Programm läuft nicht weiter
-			Assert.assertTrue((driver.findElement(By.xpath(xpathvalue)).isDisplayed()));
-			Thread.sleep(3 * Zeitspanne);
-
-			driver.close();
+		
+     		driver.close();
 			// Für den Teardown
 			driver = null;
 			eyes = null;

@@ -190,8 +190,12 @@ public class TZPStammGG {
 	        // Auswahl Webseite, Geschäfts-Email, Straße, Nr., PLZ, Ort, Adresszusatz
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "website", Webseite, test);
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "emailForBusinessConfirmations", EmailGeschaefte, test);
-			//Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "street", Str, test);
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "streetName", Str, test);
+			
+			// in der Stage-Version
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "street", Str, test);
+			
+			// In der 3-Version so benannt
+			// Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "streetName", Str, test);
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "houseNumber", HausNr, test);
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "postCode", PLZ, test);
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "location", Ort, test);
