@@ -55,7 +55,7 @@ public class TZPStammGG {
 
 		@Parameters({ "Ablaufart" })
 		@BeforeTest
-		public void Setup(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
+		public void SetupSeleniumTestdaten(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
 
 			if (htmlReporter == null) {
 				// start reporters
@@ -332,7 +332,7 @@ public class TZPStammGG {
 			eyes = null;
 
 			// Neu Starten
-			Setup(AblaufartGlobal);
+			SetupSeleniumTestdaten(AblaufartGlobal);
 
 		} // Nur wenn Aktic "Ja" ist durchlaufen
 
@@ -371,7 +371,7 @@ public class TZPStammGG {
 
 
 		@AfterTest
-		public void tearDown() throws InterruptedException {
+		public void BrowserTearDown() throws InterruptedException {
 
 	        // Offene Bereiche Schließen
 			Utils.SeleniumUtils.BrowserBeenden(driver, Zeitspanne, extent,  eyes);

@@ -55,7 +55,7 @@ public class TZPAdminUserLoeschen {
 
 	@Parameters({ "Ablaufart" })
 	@BeforeTest
-	public void Setup(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
+	public void SetupSeleniumTestdaten(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
 
 		if (htmlReporter == null) {
 			// start reporters
@@ -197,7 +197,7 @@ public class TZPAdminUserLoeschen {
 		eyes = null;
 
 		// Neu Starten
-		Setup(AblaufartGlobal);
+		SetupSeleniumTestdaten(AblaufartGlobal);
 		} // Nur wenn Aktic "Ja" ist durchlaufen
 		
 	}
@@ -238,7 +238,7 @@ public class TZPAdminUserLoeschen {
 
 
 	@AfterTest
-	public void tearDown() throws InterruptedException {
+	public void BrowserTearDown() throws InterruptedException {
 
         // Offene Bereiche Schließen
 		Utils.SeleniumUtils.BrowserBeenden(driver, Zeitspanne, extent,  eyes);

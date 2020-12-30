@@ -49,7 +49,7 @@ public class TZPRegGG {
 
 	@Parameters({ "Ablaufart" })
 	@BeforeTest
-	public void Setup(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
+	public void SetupSeleniumTestdaten(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
 
 		if (htmlReporter == null) {
 			// start reporters
@@ -227,7 +227,7 @@ public class TZPRegGG {
 		eyes = null;
 
 		// Neu Starten
-		Setup(AblaufartGlobal);
+		SetupSeleniumTestdaten(AblaufartGlobal);
 		
 		} // Nur wenn Aktiv "Ja" ist durchlaufen
 
@@ -266,7 +266,7 @@ public class TZPRegGG {
 
 
 	@AfterTest
-	public void tearDown() throws InterruptedException {
+	public void BrowserTearDown() throws InterruptedException {
         // Offene Bereiche Schließen
 		Utils.SeleniumUtils.BrowserBeenden(driver, Zeitspanne, extent,  eyes);
 	}
