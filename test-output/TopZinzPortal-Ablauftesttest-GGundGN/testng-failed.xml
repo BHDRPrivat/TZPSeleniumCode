@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TopZinzPortal-Ablauftesttest-GGundGN]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="TZP-Registrierung-GG(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPRegGG">
+        <methods>
+          <include name="Setup"/>
+          <include name="tearDown"/>
+          <include name="TZPRegGGTest" invocation-numbers="0 1 2 3 4 8 9 10 11 12"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPRegGG -->
+    </classes>
+  </test> <!-- TZP-Registrierung-GG(failed) -->
+  <test thread-count="5" name="TZP-Registrierung-GN(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPRegGN">
+        <methods>
+          <include name="TZPRegGNTest" invocation-numbers="3 4 5 6 7 8 9 10 11 12"/>
+          <include name="Setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPRegGN -->
+    </classes>
+  </test> <!-- TZP-Registrierung-GN(failed) -->
+  <test thread-count="5" name="TZP-Stammdaten-GG(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPStammGG">
+        <methods>
+          <include name="TZPStammGGTest" invocation-numbers="1 2 3 4"/>
+          <include name="tearDown"/>
+          <include name="Setup"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPStammGG -->
+    </classes>
+  </test> <!-- TZP-Stammdaten-GG(failed) -->
+  <test thread-count="5" name="TZP-Stammdaten-GN(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPStammGN">
+        <methods>
+          <include name="TZPStammGNTest" invocation-numbers="4 5 6 7"/>
+          <include name="Setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPStammGN -->
+    </classes>
+  </test> <!-- TZP-Stammdaten-GN(failed) -->
+  <test thread-count="5" name="TZP-Admin-HandelsfreigabeGG(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPAdminHandelsfreigabeGG">
+        <methods>
+          <include name="Setup"/>
+          <include name="tearDown"/>
+          <include name="TZPAdminHandelsfreigabeGGTest" invocation-numbers="0 2"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPAdminHandelsfreigabeGG -->
+    </classes>
+  </test> <!-- TZP-Admin-HandelsfreigabeGG(failed) -->
+  <test thread-count="5" name="TZP-Admin-HandelsfreigabeGN(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPAdminHandelsfreigabeGN">
+        <methods>
+          <include name="TZPAdminHandelsfreigabeGNTest" invocation-numbers="0 2"/>
+          <include name="tearDown"/>
+          <include name="Setup"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPAdminHandelsfreigabeGN -->
+    </classes>
+  </test> <!-- TZP-Admin-HandelsfreigabeGN(failed) -->
+  <test thread-count="5" name="TZP-Admin-Deaktivieren(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPAdminUserDeaktivieren">
+        <methods>
+          <include name="TZPAdminUserDeaktivierenTest" invocation-numbers="3 4 5 6 10 11 12 13"/>
+          <include name="Setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPAdminUserDeaktivieren -->
+    </classes>
+  </test> <!-- TZP-Admin-Deaktivieren(failed) -->
+  <test thread-count="5" name="TZP-Admin-Loeschen(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPAdminUserLoeschen">
+        <methods>
+          <include name="TZPAdminUserLoeschenTest" invocation-numbers="4 5 9 10"/>
+          <include name="Setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPAdminUserLoeschen -->
+    </classes>
+  </test> <!-- TZP-Admin-Loeschen(failed) -->
+</suite> <!-- Failed suite [TopZinzPortal-Ablauftesttest-GGundGN] -->

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TopZinzPortal-Ablauftesttest]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="TZP-Admin-Deaktivieren(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPAdminUserDeaktivieren">
+        <methods>
+          <include name="TZPAdminUserDeaktivierenTest" invocation-numbers="3 4"/>
+          <include name="Setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPAdminUserDeaktivieren -->
+    </classes>
+  </test> <!-- TZP-Admin-Deaktivieren(failed) -->
+  <test thread-count="5" name="TZP-Admin-Loeschen(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPAdminUserLoeschen">
+        <methods>
+          <include name="TZPAdminUserLoeschenTest" invocation-numbers="4"/>
+          <include name="Setup"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPAdminUserLoeschen -->
+    </classes>
+  </test> <!-- TZP-Admin-Loeschen(failed) -->
+</suite> <!-- Failed suite [TopZinzPortal-Ablauftesttest] -->
