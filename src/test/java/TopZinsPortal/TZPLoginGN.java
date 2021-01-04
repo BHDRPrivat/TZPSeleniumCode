@@ -136,7 +136,7 @@ public class TZPLoginGN {
 
 		// @Test
 		@Test(dataProvider = "TZPStammGN")
-		public void TZPLoginGN(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Unternehmensname, String LEI,
+		public void TZPLoginGNTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Unternehmensname, String LEI,
 				String Land, String Webseite, String EmailGeschaefte, String Str, String HausNr, String PLZ, String Ort, String Adresszusatz,
 				String Bank, String BIC, String IBAN, String Kontoinhaber,
 				String Anrede, String Vorname, String TelefonNr, 

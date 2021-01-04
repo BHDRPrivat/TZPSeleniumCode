@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>7/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>8/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Dec 29 15:23:50 CET 2020</td>
+<td>Started on:</td><td>Mon Jan 04 14:18:18 CET 2021</td>
 </tr>
-<tr><td>Total time:</td><td>81 seconds (81884 ms)</td>
+<tr><td>Total time:</td><td>133 seconds (133031 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,102 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='TopZinsPortal.TZPStammGN.TZPStammGNTest()'><b>TZPStammGNTest</b><br>Test class: TopZinsPortal.TZPStammGN<br>Parameters: TZStammGN-TF-005, Ja, BHDR-GN-DatenKomplett@forsa-gmbh.de, Test12345!, BHDR-GN-DatenKomplett, 54930084UKLVMY22DS16, Deutschland, www.online.de, BHDR-GN-DatenKomplett@forsa-gmbh.de, Am Großen Garten, 22-27, 65207, Köln, Adresszusatz, Ing Diba, INGDDEFFXXX, DE02500105170137075030 , BHDR-GN-DatenKomplett, Herr, Bahadir, 0611-451458, Prof.Dr., Dikmen, BHDR-GN-DatenKomplett@forsa-gmbh.de, Private Banken, 200000, 20000, 2000000000, Fitch, AAA, S&P, AAA, Dieses Feld ist prefilled und ist nicht editierbar, 23.08.1968</td>
-<td><div><pre>junit.framework.AssertionFailedError: Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[contains(@data-test, &apos;logout-dsgvo-button&apos;)]&quot;}
-  (Session info: chrome=87.0.4280.88)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;FORSA-VM31&apos;, ip: &apos;10.52.76.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:49469}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 76bc9ee5a62a981c86ea44fc4eee8463
-*** Element info: {Using=xpath, value=//button[contains(@data-test, &apos;logout-dsgvo-button&apos;)]}
-	at junit.framework.Assert.fail(Assert.java:47)
-	at junit.framework.Assert.assertTrue(Assert.java:20)
-	at Utils.SeleniumUtils.ButtonKlick(SeleniumUtils.java:94)
-	at TopZinsPortal.TZPStammGN.TZPStammGNTest(TZPStammGN.java:167)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:764)
-	at org.testng.TestRunner.run(TestRunner.java:585)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.runSuites(TestNG.java:1069)
-	at org.testng.TestNG.run(TestNG.java:1037)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1356054329", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1356054329'><pre>junit.framework.AssertionFailedError: Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[contains(@data-test, &apos;logout-dsgvo-button&apos;)]&quot;}
-  (Session info: chrome=87.0.4280.88)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;FORSA-VM31&apos;, ip: &apos;10.52.76.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:49469}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 76bc9ee5a62a981c86ea44fc4eee8463
-*** Element info: {Using=xpath, value=//button[contains(@data-test, &apos;logout-dsgvo-button&apos;)]}
-	at junit.framework.Assert.fail(Assert.java:47)
-	at junit.framework.Assert.assertTrue(Assert.java:20)
-	at Utils.SeleniumUtils.ButtonKlick(SeleniumUtils.java:94)
-	at TopZinsPortal.TZPStammGN.TZPStammGNTest(TZPStammGN.java:167)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:764)
-	at org.testng.TestRunner.run(TestRunner.java:585)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.runSuites(TestNG.java:1069)
-	at org.testng.TestNG.run(TestNG.java:1037)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>14</td>
-<td>TopZinsPortal.TZPStammGN@12468a38</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -191,9 +95,14 @@ Session ID: 76bc9ee5a62a981c86ea44fc4eee8463
 <td>0</td>
 <td>TopZinsPortal.TZPStammGN@12468a38</td></tr>
 <tr>
+<td title='TopZinsPortal.TZPStammGN.TZPStammGNTest()'><b>TZPStammGNTest</b><br>Test class: TopZinsPortal.TZPStammGN<br>Parameters: TZStammGN-TF-005, Ja, BHDR-GN-DatenKomplett@forsa-gmbh.de, Test12345!, BHDR-GN-DatenKomplett, 54930084UKLVMY22DS16, Deutschland, www.online.de, BHDR-GN-DatenKomplett@forsa-gmbh.de, Am Großen Garten, 22-27, 65207, Köln, Adresszusatz, Ing Diba, INGDDEFFXXX, DE02500105170137075030 , BHDR-GN-DatenKomplett, Herr, Bahadir, 0611-451458, Prof.Dr., Dikmen, BHDR-GN-DatenKomplett@forsa-gmbh.de, Private Banken, 200000, 20000, 2000000000, Fitch, AAA, S&P, AAA, Dieses Feld ist prefilled und ist nicht editierbar, 23.08.1968</td>
+<td></td>
+<td>64</td>
+<td>TopZinsPortal.TZPStammGN@12468a38</td></tr>
+<tr>
 <td title='TopZinsPortal.TZPStammGN.TZPStammGNTest()'><b>TZPStammGNTest</b><br>Test class: TopZinsPortal.TZPStammGN<br>Parameters: TZStammGN-TF-006, Ja, BHDR-GN-Handel@forsa-gmbh.de, Test12345!, BHDR-GN-Handel, 54930084UKLVMY22DS16, Deutschland, www.forsa.de, BHDR-GN-Handel@forsa-gmbh.de, Am Großen Garten, 389, 12345, Frankfurt, Adresszusatz, Ing Diba, INGDDEFFXXX, DE02500105170137075030 , BHDR-GN-Handel, Herr, Bahadir, 0611-451458, Prof.Dr., Dikmen, BHDR-GN-Handel@forsa-gmbh.de, Private Banken, 300000, 30000, 3000000000, ICV, AAA, S&P, AAA, Dieses Feld ist prefilled und ist nicht editierbar, 23.08.1968</td>
 <td></td>
-<td>58</td>
+<td>59</td>
 <td>TopZinsPortal.TZPStammGN@12468a38</td></tr>
 <tr>
 <td title='TopZinsPortal.TZPStammGN.TZPStammGNTest()'><b>TZPStammGNTest</b><br>Test class: TopZinsPortal.TZPStammGN<br>Parameters: TZStammGN-TF-007, Nein, Burk-GN-DatenKomplett@forsa-gmbh.de, Test12345!, Burk-GN-DatenKomplett, 54930084UKLVMY22DS16, Deutschland, www.forsa.de, Burk-GN-DatenKomplett@forsa-gmbh.de, Am Großen Garten, 22-27, 65207, Köln, Adresszusatz, Ing Diba, INGDDEFFXXX, DE02500105170137075030 , Burk-GN-DatenKomplett, Herr, Burkhard, 0611-451458, Prof.Dr., Sturm, Burk-GN-DatenKomplett@forsa-gmbh.de, Private Banken, 200000, 20000, 2000000000, Fitch, AAA, S&P, AAA, Dieses Feld ist prefilled und ist nicht editierbar, 01.01.1990</td>

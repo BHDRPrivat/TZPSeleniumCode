@@ -301,7 +301,9 @@ public class TZPStammGN {
 //			// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
 			// Alle anderen Zeilen können mit Standardwerten durchsucht werden. 
 			// Das erste Element ist ein Listenelement mit eigener Zugriffslogik.
+			Thread.sleep(5 * Zeitspanne);
 			Utils.SeleniumUtils.PDFUploadListe(driver, Zeitspanne, "xpath", "", Unternehmensname, "", Datum_1, test);
+			Thread.sleep(5 * Zeitspanne);
 			// Durch das erste Listenelement wird der nächste Zugriff bereits die zweite Gruppe
 			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Allgemeine Geschäftsbedingungen (AGBs)", "[2]", Datum_1, test);
 			
@@ -316,19 +318,19 @@ public class TZPStammGN {
 			// Programm läuft nicht weiter
 			// Assert.assertFalse((driver.findElement(By.xpath("//p[text()='Bitte wählen Sie ein Dokument zum Hochladen aus']")).isDisplayed()));
 			//Assert.assertEquals(driver.getPageSource().contains("Bitte wählen Sie ein Dokument zum Hochladen aus"), false);
-			Thread.sleep(3 * Zeitspanne);
+			// Thread.sleep(3 * Zeitspanne);
 			
 		
 			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
-			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GN\\Stammdaten GN 5-Dokumente hochladen ", Teststep, test);
-			Thread.sleep(3 * Zeitspanne);
+			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GN\\Stammdaten GN 2-Dokumente hochladen ", Teststep, test);
+			Thread.sleep(5 * Zeitspanne);
 			
 			// Hochladen auswählen	(Erneute für Ablauf mit GN -> gibt sonst keinen Ablauf )	
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Hochladen']//ancestor::button[@tabindex='0']", test);
 			
 			
-			Thread.sleep(3 * Zeitspanne);
+			Thread.sleep(5 * Zeitspanne);
 			// Handelsfreigabe beantragn		
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Handelsberechtigung anfordern']//ancestor::button[@tabindex='0']", test);
 			// TSonderzeit zum Hochladen
@@ -339,12 +341,12 @@ public class TZPStammGN {
 			// Programm läuft nicht weiter
 			// Assert.assertFalse((driver.findElement(By.xpath("//p[text()='Alle Pflichtfelder müsssenausgefüllt werden']")).isDisplayed()));
 			// Assert.assertEquals(driver.getPageSource().contains("Alle Pflichtfelder müsssenausgefüllt werden"), false);
-			Thread.sleep(3 * Zeitspanne);
+			// Thread.sleep(3 * Zeitspanne);
 			
 			// Screenshot aufnehmen
-			Thread.sleep(3 * Zeitspanne);
+			Thread.sleep(5 * Zeitspanne);
 			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GN\\Stammdaten GN 6-Handelfreigabe angefordert ", Teststep, test);
-			Thread.sleep(3 * Zeitspanne);
+			Thread.sleep(5 * Zeitspanne);
 	
 			driver.close();
 			// Für den Teardown
