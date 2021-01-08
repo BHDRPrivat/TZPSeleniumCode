@@ -281,12 +281,15 @@ public class TZPStammGG {
 			// Alle anderen Zeilen können mit Standardwerten durchsucht werden. 
 			
 			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", Unternehmensname, "", Datum_1, test);
+			Thread.sleep(5 * Zeitspanne);	
 			
 			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Personalausweis", "[2]", Datum_1, test);
+			Thread.sleep(5 * Zeitspanne);
 			
 			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Handelsberechtigung", "[2]", Datum_1, test);
+			Thread.sleep(5 * Zeitspanne);
 			
-			Thread.sleep(10 * Zeitspanne);	
+			Thread.sleep(5 * Zeitspanne);	
 			// Hochladen auswählen		
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Hochladen']//ancestor::button[@tabindex='0']", test);
 			// TSonderzeit zum Hochladen

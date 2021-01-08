@@ -1,4 +1,5 @@
 WinWaitActive("Öffnen") 
 Send($CmdLine[1])
 Send("{ENTER}")
+Sleep(1000)
 WinWaitClose("Öffnen")

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TopZinsPortal.TZPRegGG">
+      <class name="TopZinsPortal.TZPStammGN">
         <methods>
-          <include name="BrowserTearDown"/>
+          <include name="TZPStammGNTest" invocation-numbers="4 5 6 7"/>
           <include name="SetupSeleniumTestdaten"/>
-          <include name="TZPRegGGTest" invocation-numbers="0 1 2 3 4"/>
+          <include name="BrowserTearDown"/>
         </methods>
-      </class> <!-- TopZinsPortal.TZPRegGG -->
+      </class> <!-- TopZinsPortal.TZPStammGN -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

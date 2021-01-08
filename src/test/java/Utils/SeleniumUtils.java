@@ -81,7 +81,12 @@ public class SeleniumUtils {
 		Thread.sleep(3 * Zeitspanne);
 		try {
 			if 	(HTMLSelector.equals("xpath")) {
-				driver.findElement(By.xpath(ObjektPath)).click();
+				if (driver.findElement(By.xpath(ObjektPath)).isDisplayed()) {
+				 driver.findElement(By.xpath(ObjektPath)).click();
+				} else
+				{
+					driver.findElement(By.xpath(ObjektPath)).sendKeys(Keys.ENTER);
+				}	
 				test.log(Status.INFO, "Auswahl des Objektes: " +ObjektPath);
 				// Zeitspanne setzen
 				Thread.sleep(4 * Zeitspanne);

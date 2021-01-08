@@ -301,17 +301,17 @@ public class TZPStammGN {
 //			// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
 			// Alle anderen Zeilen können mit Standardwerten durchsucht werden. 
 			// Das erste Element ist ein Listenelement mit eigener Zugriffslogik.
-			Thread.sleep(5 * Zeitspanne);
+			Thread.sleep(3 * Zeitspanne);
 			Utils.SeleniumUtils.PDFUploadListe(driver, Zeitspanne, "xpath", "", Unternehmensname, "", Datum_1, test);
-			Thread.sleep(5 * Zeitspanne);
+			Thread.sleep(3 * Zeitspanne);
 			// Durch das erste Listenelement wird der nächste Zugriff bereits die zweite Gruppe
 			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Allgemeine Geschäftsbedingungen (AGBs)", "[2]", Datum_1, test);
 			
-			Thread.sleep(5 * Zeitspanne);
+			Thread.sleep(10 * Zeitspanne);
 			// Hochladen auswählen		
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Hochladen']//ancestor::button[@tabindex='0']", test);
 			// TSonderzeit zum Hochladen
-			Thread.sleep(10 * Zeitspanne);
+			Thread.sleep(3 * Zeitspanne);
 			
 			// Kontrolle, ob kein Fehlertext angezeigt wird
 			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
@@ -323,18 +323,19 @@ public class TZPStammGN {
 		
 			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
-			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GN\\Stammdaten GN 2-Dokumente hochladen ", Teststep, test);
-			Thread.sleep(5 * Zeitspanne);
+			 Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GN\\Stammdaten GN 2-Dokumente hochladen ", Teststep, test);
+			Thread.sleep(3 * Zeitspanne);
 			
-			// Hochladen auswählen	(Erneute für Ablauf mit GN -> gibt sonst keinen Ablauf )	
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Hochladen']//ancestor::button[@tabindex='0']", test);
-			
-			
+			// Hochladen auswählen	(Erneute für Ablauf mit GN -> gibt sonst keinen Ablauf 	
+			if (driver.findElement(By.xpath("//span[text()='Hochladen']//ancestor::button[@tabindex='0']")).isEnabled()) {
+			 Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Hochladen']//ancestor::button[@tabindex='0']", test);
+			}
+									
 			Thread.sleep(5 * Zeitspanne);
 			// Handelsfreigabe beantragn		
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Handelsberechtigung anfordern']//ancestor::button[@tabindex='0']", test);
 			// TSonderzeit zum Hochladen
-			Thread.sleep(10 * Zeitspanne);	
+			Thread.sleep(5 * Zeitspanne);	
 			
 			// Kontrolle, ob kein Fehlertext angezeigt wird
 			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
@@ -343,11 +344,18 @@ public class TZPStammGN {
 			// Assert.assertEquals(driver.getPageSource().contains("Alle Pflichtfelder müsssenausgefüllt werden"), false);
 			// Thread.sleep(3 * Zeitspanne);
 			
-			// Screenshot aufnehmen
+			// Screenshot aufnehmen 
 			Thread.sleep(5 * Zeitspanne);
-			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GN\\Stammdaten GN 6-Handelfreigabe angefordert ", Teststep, test);
+			 Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GN\\Stammdaten GN 6-Handelfreigabe angefordert ", Teststep, test);
 			Thread.sleep(5 * Zeitspanne);
-	
+
+			// Handelsberechtigung auswählen	(Erneute für Ablauf mit GN -> gibt sonst keinen Ablauf 	
+			if (driver.findElement(By.xpath("//span[text()='Handelsberechtigung anfordern']//ancestor::button[@tabindex='0']")).isEnabled()) {
+			 Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Handelsberechtigung anfordern']//ancestor::button[@tabindex='0']", test);
+			}
+			
+			
+			
 			driver.close();
 			// Für den Teardown
 			driver = null;
