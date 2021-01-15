@@ -81,14 +81,19 @@ public class SeleniumUtils {
 		Thread.sleep(3 * Zeitspanne);
 		try {
 			if 	(HTMLSelector.equals("xpath")) {
-				if (driver.findElement(By.xpath(ObjektPath)).isDisplayed()) {
-				 driver.findElement(By.xpath(ObjektPath)).click();
-				} else
-				{
-					driver.findElement(By.xpath(ObjektPath)).sendKeys(Keys.ENTER);
-				}	
-				test.log(Status.INFO, "Auswahl des Objektes: " +ObjektPath);
-				// Zeitspanne setzen
+				driver.findElement(By.xpath(ObjektPath)).click();
+				
+				// Hat keinen Effekt auf den Ablauf
+//				if (driver.findElement(By.xpath(ObjektPath)).isDisplayed()) {
+//				 driver.findElement(By.xpath(ObjektPath)).click();
+//				} else
+//				{
+//					// Beide Methoden zur Auswahl probieren
+//					driver.findElement(By.xpath(ObjektPath)).click();
+//					driver.findElement(By.xpath(ObjektPath)).sendKeys(Keys.ENTER);
+//				}	
+//				 test.log(Status.INFO, "Auswahl des Objektes: " + ObjektPath);
+//				// Zeitspanne setzen
 				Thread.sleep(4 * Zeitspanne);
 			}
 		} catch (NoSuchElementException e) {
