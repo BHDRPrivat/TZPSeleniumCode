@@ -68,7 +68,7 @@ public class TZPStammGG {
 			StandardBrowser = Utils.TZPBeforeTest.BrowserArt();
 			Zeitspanne = Utils.TZPBeforeTest.Pausenzeit();
 
-			BaseUrl = TZPBeforeTest.Umgebung() + "/portal/login";
+			BaseUrl = Utils.TZPBeforeTest.Umgebung() + "/portal/login";
 
 			SpeicherpfadTestdokumente = "F:\\BHDR\\TopZinsPortalTest\\PDFDokumente\\";
 			// Wichtiger Hinweis: In Java dürfen generische Strings nicht mit "=="
@@ -80,10 +80,6 @@ public class TZPStammGG {
 		
 		}
 		
-		private void TZPBeforeTest(String baseUrl2) {
-			// TODO Auto-generated method stub
-			
-		}
 
 		@DataProvider(name = "TZPStammGG")
 		public static Object[][] getData() throws BiffException {
