@@ -277,19 +277,19 @@ public class TZPStammGG {
 			// Alle anderen Zeilen können mit Standardwerten durchsucht werden. 
 			
 			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", Unternehmensname, "", Datum_1, test);
-			Thread.sleep(10 * Zeitspanne);	
+			Thread.sleep(3 * Zeitspanne);	
 			
 			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Personalausweis", "[2]", Datum_1, test);
-			Thread.sleep(10 * Zeitspanne);
+			Thread.sleep(3 * Zeitspanne);
 			
 			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Handelsberechtigung", "[2]", Datum_1, test);
-			Thread.sleep(10 * Zeitspanne);
+			Thread.sleep(3 * Zeitspanne);
 			
-			Thread.sleep(5 * Zeitspanne);	
+			Thread.sleep(3 * Zeitspanne);	
 			// Hochladen auswählen		
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Hochladen']//ancestor::button[@tabindex='0']", test);
 			// TSonderzeit zum Hochladen
-			Thread.sleep(10 * Zeitspanne);
+			Thread.sleep(3 * Zeitspanne);
 			
 			
 			// Kontrolle, ob kein Fehlertext angezeigt wird
@@ -304,26 +304,26 @@ public class TZPStammGG {
 			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
 			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GG\\Stammdaten GG 4-Dokumente hochladen ", Teststep, test);
-			Thread.sleep(10 * Zeitspanne);
+			Thread.sleep(3 * Zeitspanne);
 			
 			
 			// Handelsfreigabe beantragn		
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Handelsberechtigung anfordern']//ancestor::button[@tabindex='0']", test);
 			// TSonderzeit zum Hochladen
-			Thread.sleep(10 * Zeitspanne);			
+			Thread.sleep(3 * Zeitspanne);			
 			
 			// Kontrolle, ob kein Fehlertext angezeigt wird
 			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
 			// Programm läuft nicht weiter
 			// Assert.assertFalse((driver.findElement(By.xpath("//p[text()='Alle Pflichtfelder müsssenausgefüllt werden']")).isDisplayed()));
 			Assert.assertEquals(driver.getPageSource().contains("Alle Pflichtfelder müsssenausgefüllt werden"), false);
-			Thread.sleep(5 * Zeitspanne);
+			Thread.sleep(3 * Zeitspanne);
 			
 			
 			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
 			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GG\\Stammdaten GG 5-Handelfreigabe angefordert ", Teststep, test);
-			Thread.sleep(5 * Zeitspanne);
+			Thread.sleep(3 * Zeitspanne);
 	
 			driver.close();
 			// Für den Teardown

@@ -2,6 +2,8 @@ package Utils;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.imageio.ImageIO;
 
@@ -10,6 +12,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.applitools.eyes.selenium.Eyes;
 import com.aventstack.extentreports.ExtentReports;
@@ -22,7 +25,71 @@ import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class SeleniumUtils {
+	
+	public static void InputDatum(WebDriver driver, Integer Zeitspanne, String HTMLSelector, String ObjektPath, String Inputwert, ExtentTest test) throws InterruptedException {
+		// Inputwert zu einem gültigen und aktuellen Datum wandeln 
+		
+		System.out.println("Eingang: " + Inputwert);
+		if (Inputwert.equals("ActDatum")) {
+	        LocalDateTime now = LocalDateTime.now();
+	        DateTimeFormatter df;
+	        df = DateTimeFormatter.ofPattern("dd.MM.yyyy");     // 31.01.2016
+    		Inputwert = now.format(df);
+		}
+		System.out.println("Ausgang: " + Inputwert);
+		
+		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
+		Thread.sleep(3 * Zeitspanne);
+		try {	
+			if 	(HTMLSelector.equals("name")) {
+				driver.findElement(By.name(ObjektPath)).click();
+				//Löscht vorhande Einträge sicherer als clear()  
+				driver.findElement(By.name(ObjektPath)).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+				// Für Firefox
+				driver.findElement(By.name(ObjektPath)).clear();
+				driver.findElement(By.name(ObjektPath)).sendKeys(Inputwert);
+				test.log(Status.INFO, "Eintrag in " +ObjektPath  + " mit Wert: " + Inputwert);
+				// Zeitspanne setzen
+				Thread.sleep(2 * Zeitspanne);
 
+			}
+			if 	(HTMLSelector.equals("xpath")) {
+				driver.findElement(By.xpath(ObjektPath)).click();
+				//Löscht vorhande Einträge sicherer als clear()  
+				driver.findElement(By.xpath(ObjektPath)).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+				// Für Firefox
+				driver.findElement(By.xpath(ObjektPath)).clear();
+				driver.findElement(By.xpath(ObjektPath)).sendKeys(Inputwert);
+				test.log(Status.INFO, "Eintrag in " +ObjektPath  + " mit Wert: " + Inputwert);
+				// Zeitspanne setzen
+				Thread.sleep(2 * Zeitspanne);
+
+			}
+			if 	(HTMLSelector.equals("id")) {
+				driver.findElement(By.id(ObjektPath)).click();
+				//Löscht vorhande Einträge sicherer als clear()  
+				driver.findElement(By.id(ObjektPath)).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+				// Für Firefox
+				driver.findElement(By.id(ObjektPath)).clear();
+				driver.findElement(By.id(ObjektPath)).sendKeys(Inputwert);
+				test.log(Status.INFO, "Eintrag in " +ObjektPath  + " mit Wert: " + Inputwert);
+				// Zeitspanne setzen
+				Thread.sleep(2 * Zeitspanne);
+
+			}
+
+
+
+		} catch (NoSuchElementException e) {
+			// Fehlerbehandlung einfügen
+			test.log(Status.FAIL, "Eintrag in " +ObjektPath  + " mit Wert: " + Inputwert);
+			test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
+			System.out.println("Gemeldeter Fehler: " + e);
+			Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+		}
+	}
+	
+	
 	public static void InputText(WebDriver driver, Integer Zeitspanne, String HTMLSelector, String ObjektPath, String Inputwert, ExtentTest test) throws InterruptedException {
 		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
 		Thread.sleep(3 * Zeitspanne);
@@ -78,23 +145,24 @@ public class SeleniumUtils {
 
 	public static void ButtonKlick(WebDriver driver, Integer Zeitspanne, String HTMLSelector, String ObjektPath, ExtentTest test) throws InterruptedException {
 		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
-		Thread.sleep(3 * Zeitspanne);
+
 		try {
 			if 	(HTMLSelector.equals("xpath")) {
+				
+				JavascriptExecutor js = (JavascriptExecutor)driver;
+     			WebElement element = driver.findElement(By.xpath(ObjektPath));
+				
+				// Es erfolgt ein scrollen zum Element 
+				// Nur wenn es im sichtbaren Bereich liegt, kann Click ausgeführt werden
+				js.executeScript("arguments[0].scrollIntoViewIfNeeded(true);", element);
+     			// true -> nach unten scrollen
+				// false -> nach oben scrollen
+				Thread.sleep(2 * Zeitspanne);
+
 				driver.findElement(By.xpath(ObjektPath)).click();
 				
-				// Hat keinen Effekt auf den Ablauf
-//				if (driver.findElement(By.xpath(ObjektPath)).isDisplayed()) {
-//				 driver.findElement(By.xpath(ObjektPath)).click();
-//				} else
-//				{
-//					// Beide Methoden zur Auswahl probieren
-//					driver.findElement(By.xpath(ObjektPath)).click();
-//					driver.findElement(By.xpath(ObjektPath)).sendKeys(Keys.ENTER);
-//				}	
-//				 test.log(Status.INFO, "Auswahl des Objektes: " + ObjektPath);
-//				// Zeitspanne setzen
-				Thread.sleep(4 * Zeitspanne);
+				// Zeitspanne setzen
+				Thread.sleep(2 * Zeitspanne);
 			}
 		} catch (NoSuchElementException e) {
 			// Fehlerbehandlung einfügen
@@ -105,6 +173,39 @@ public class SeleniumUtils {
 		}
 	}
 
+	
+	public static void TabelleButtonKlick(WebDriver driver, Integer Zeitspanne, String HTMLSelector, String FirmaGN, String ZinssatzGG,  ExtentTest test) throws InterruptedException {
+		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
+		String ObjektPath ="Tabellen-Zugriff über " + FirmaGN + " und "+ ZinssatzGG;
+		try {
+			if 	(HTMLSelector.equals("xpath")) {
+				// Aus den Banknamen und den Zinsatz den xpath-Zugriff generieren.
+				// Vorlage  "//p[text()='FORSA Digital Bank']//ancestor::tr//div[contains(text(), '0,06')]//ancestor::td"
+				ObjektPath = null;
+				ObjektPath = "//p[text()='" + FirmaGN + "']//ancestor::tr//div[contains(text(), '" + ZinssatzGG + "')]//ancestor::td";
+				System.out.println("Tabellenzugriff: " + ObjektPath);
+				
+				// Es erfolt ein scrollen zum Element 
+				// Nur wenn es im sichtbaren Bereich liegt, kann Click ausgeführt werden
+  				JavascriptExecutor js = (JavascriptExecutor)driver;
+				WebElement element = driver.findElement(By.xpath(ObjektPath));
+				js.executeScript("arguments[0].scrollIntoViewIfNeeded(true);", element);
+				
+				Thread.sleep(2 * Zeitspanne);
+
+				driver.findElement(By.xpath(ObjektPath)).click();
+				
+				Thread.sleep(2 * Zeitspanne);
+	
+			}
+		} catch (NoSuchElementException e) {
+			// Fehlerbehandlung einfügen
+			test.log(Status.FAIL, "Auswahl des Objektes: " + ObjektPath);
+			test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
+			System.out.println("Gemeldeter Fehler: " + e);
+			Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+		}
+	}
 
 	public static void HakenKlick(WebDriver driver, Integer Zeitspanne, String HTMLSelector, String ObjektPath, ExtentTest test) throws InterruptedException {
 		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
@@ -252,6 +353,9 @@ public class SeleniumUtils {
 		}
 	}	
 
+	
+	
+	
 	public static void FullPageScreenshotAShotSelenium(WebDriver driver, Integer Zeitspanne, String projectpath,  String Kennzeichnung, String teststep, ExtentTest test) throws IOException, InterruptedException {
 		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
 		Thread.sleep(3 * Zeitspanne);

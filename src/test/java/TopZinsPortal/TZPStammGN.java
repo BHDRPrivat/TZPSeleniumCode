@@ -305,17 +305,17 @@ public class TZPStammGN {
 			Thread.sleep(3 * Zeitspanne);
 		
 			Utils.SeleniumUtils.PDFUploadListe(driver, Zeitspanne, "xpath", "", Unternehmensname, "", Datum_1, test);
-			Thread.sleep(10 * Zeitspanne);
+			Thread.sleep(3 * Zeitspanne);
 			// Durch das erste Listenelement wird der nächste Zugriff bereits die zweite Gruppe
 			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Allgemeine Geschäftsbedingungen (AGBs)", "[2]", Datum_1, test);
-    		Thread.sleep(10 * Zeitspanne);
+    		Thread.sleep(3 * Zeitspanne);
 	
     		// Hochladen auswählen		
-    		Thread.sleep(5 * Zeitspanne);
+    		Thread.sleep(3 * Zeitspanne);
     		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Hochladen']//ancestor::button[@tabindex='0']", test);
 			//System.out.println("erster Zugriff hochladen: ");
 			// TSonderzeit zum Hochladen
-			Thread.sleep(10 * Zeitspanne);
+			Thread.sleep(3 * Zeitspanne);
 			
 			// Kontrolle, ob kein Fehlertext angezeigt wird
 			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
@@ -326,11 +326,11 @@ public class TZPStammGN {
 			
 		
 			// Screenshot aufnehmen
-			Thread.sleep(10 * Zeitspanne);
+			Thread.sleep(3 * Zeitspanne);
 			  //System.out.println("Aufnahme 1");
 			 Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GN\\Stammdaten GN 5-Dokumente hochladen ", Teststep, test);
 			 // System.out.println("Aufnahme 2");
-			 Thread.sleep(10 * Zeitspanne);
+			 Thread.sleep(3* Zeitspanne);
 			
 			// Hochladen auswählen	(Erneute für Ablauf mit GN -> gibt sonst keinen Ablauf 
 			// System.out.println("vor if "); 
@@ -342,7 +342,7 @@ public class TZPStammGN {
 			 //System.out.println("zweiter Zugriff hochladen: ");
 			// }
 									
-			Thread.sleep(10 * Zeitspanne);
+			Thread.sleep(3 * Zeitspanne);
 			// Handelsfreigabe beantragn	
 			// System.out.println("vor Handelberechtigung ");
 			
@@ -350,7 +350,7 @@ public class TZPStammGN {
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Handelsberechtigung anfordern']//ancestor::button[@tabindex='0']", test);
 			// TSonderzeit zum freigeben
 			//System.out.println("erster Zugriff: " + driver.findElement(By.xpath("//span[text()='Handelsberechtigung anfordern']//ancestor::button[@tabindex='0']")).isEnabled());
-			Thread.sleep(10 * Zeitspanne);	
+			Thread.sleep(3 * Zeitspanne);	
 			
 			// Kontrolle, ob kein Fehlertext angezeigt wird
 			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
@@ -360,9 +360,9 @@ public class TZPStammGN {
 			// Thread.sleep(3 * Zeitspanne);
 			
 			// Screenshot aufnehmen 
-			Thread.sleep(10 * Zeitspanne);
+			Thread.sleep(3 * Zeitspanne);
 			 Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GN\\Stammdaten GN 6-Handelfreigabe angefordert ", Teststep, test);
-			Thread.sleep(10 * Zeitspanne);
+			Thread.sleep(3 * Zeitspanne);
 
 			// Handelsberechtigung auswählen	(Erneute für Ablauf mit GN -> gibt sonst keinen Ablauf 	
 //			if (driver.findElement(By.xpath("//span[text()='Handelsberechtigung anfordern']//ancestor::button[@tabindex='0']")).isEnabled()) {

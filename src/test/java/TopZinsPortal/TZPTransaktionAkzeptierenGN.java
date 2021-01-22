@@ -21,7 +21,7 @@ import Utils.ExcelUtilsJXL;
 import Utils.SeleniumUtils;
 import jxl.read.biff.BiffException;
 
-public class TZPTransaktionStartGG {
+public class TZPTransaktionAkzeptierenGN {
 	
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
@@ -137,43 +137,36 @@ public class TZPTransaktionStartGG {
 
 			// creates a toggle for the given test, adds all log events under it
 			ExtentTest test = extent.createTest("TZP_Transaktion: " + Teststep + " - " + AblaufartGlobal,
-					"Start einer Transaktion durch den Geldgeber");
+					"Akzeptieren einer Transaktion durch den Geldnehmer");
 
 			driver.get(BaseUrl);
 			// 1. Loginseite oeffnen
 			Thread.sleep(3 * Zeitspanne);
 			test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
 
-			// 2. Login Geldgeber, der eine handelsberechtigung hat, mit gueltigen Daten
-			SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", EmailadresseGG, test);
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", PasswortGG, test);
-
-     		// 3. Button "Login" auswaehlen
+					
+			// 9. Login entsprechenden Geldgeber mit gueltigen Daten
+			SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", EmailadresseGN, test);
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", PasswortGN, test);
+			
+     		// 9.1 Button "Login" auswaehlen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
-			
-			// 4. Ein Zinssatz in view "Alle Banken" auswaehlen
-			// Auf das Zellenelemnet mit Bankname und Zinssatz zugreifen
-			Utils.SeleniumUtils.TabelleButtonKlick(driver, Zeitspanne, "xpath", FirmaGN, ZinssatzGG, test); 
-			System.out.println("nach Buttonclick");
-			
-			// 5. Alle Pflichtfelder in Pop-up "Anfrage Termingeldanlage starten" ausfuellen
-			// 5.1 Volumen 
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//input[@inputmode='numeric']", VolumenGN, test);
-						
-			
-			// 5.2 Valuta
-			Utils.SeleniumUtils.InputDatum(driver, Zeitspanne, "xpath", "//Label[text() ='Valuta*']//following::input[contains(@class, 'MuiInput')]", Valuta, test);
 		
-			// 6.0 Button "Anfrage senden" klicken 
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
+			// 10. Alle Pflichtfelder bearbeiten 
+			// Geht auch ohne bearbeiten			
 			
+			// 11. Button "Angebot senden" klicken 
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='senden']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
 			
-			// 6.1 OK Button der neuen Meldung
+			Thread.sleep(3 * Zeitspanne);
+			
+			// 12. Button "Ja" in Pop-up klicken (class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//*[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']", test);
+			
+			// 12.1 OK Button der neuen Meldung
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
 			
-			
-			// 7. Geldgeber ausloggen
-			// Beispiel, wie man ein Element mit einem bestimmten Attribut finden kann -> webDriver.findElements(By.xpath("//element[@attribute='value']"))
+			// 13. Geldnehmer ausloggen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);  // Klicken auf ein Button mit dem Attribut data-test='logout-button'
 			
 			Thread.sleep(3 * Zeitspanne);

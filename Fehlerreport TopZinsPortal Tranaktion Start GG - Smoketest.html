@@ -46,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jan 19, 2021 11:53:03 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Jan 21, 2021 04:13:30 PM</span>
 				</a>
 			</li>
 			<li>
@@ -72,7 +72,6 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -123,10 +122,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='50%'><span class='strong'>1</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='50%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -141,7 +140,7 @@
 					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='40%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='60%'>3</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>3</span> others
 				</div>
 			</div>
 		</div>
@@ -156,19 +155,19 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
 					<div class='test-heading'>
-						<span class='test-name'>TZPStammGG: TZStammGG-TF-002 - Ad Hoc Test</span>
-						<span class='test-time'>Jan 19, 2021 11:53:08 AM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-name'>TZP_Transaktion: TZPTransaktionStartGG-TF-001 - Smoketest</span>
+						<span class='test-time'>Jan 21, 2021 04:13:34 PM</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jan 19, 2021 11:53:08 AM</span>
-	<span class='label end-time'>Jan 19, 2021 11:53:14 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+573ms</span>
+	<span class='label start-time'>Jan 21, 2021 04:13:34 PM</span>
+	<span class='label end-time'>Jan 21, 2021 04:13:37 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+886ms</span>
 </div>
-	<div class='test-desc'>Stammdateneingabe des Geldgebers </div>
+	<div class='test-desc'>Akzeptieren einer Transaktion durch den Geldnehmer </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
 			<thead>
@@ -181,53 +180,22 @@
 			<tbody>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>11:53:09 AM</td>
+					<td class='timestamp'>4:13:35 PM</td>
 					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://52.59.225.49/portal/login</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>11:53:10 AM</td>
-					<td class='step-details'>Eintrag in email mit Wert: BHDR-GG-DatenKomplett@forsa-gmbh.de</td>
+					<td class='timestamp'>4:13:36 PM</td>
+					<td class='step-details'>Eintrag in email mit Wert: BHDR-GN-Handel@Forsa-gmbh.de</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>11:53:11 AM</td>
+					<td class='timestamp'>4:13:37 PM</td>
 					<td class='step-details'>Eintrag in password mit Wert: Test12345!</td>
-				</tr>
-				<tr class='log' status='fail'>
-					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>11:53:14 AM</td>
-					<td class='step-details'>Auswahl des Objektes: //button[contains(@data-test, 'logout-dsgvo-button')]</td>
-				</tr>
-				<tr class='log' status='fail'>
-					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>11:53:14 AM</td>
-					<td class='step-details'>Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: Cannot locate an element using xpath=//button[contains(@data-test, 'logout-dsgvo-button')]
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
-Driver info: driver.version: RemoteWebDriver</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
-					<div class='test-heading'>
-						<span class='test-name'>TZPStammGG: TZStammGG-TF-003 - Ad Hoc Test</span>
-						<span class='test-time'>Jan 19, 2021 11:53:14 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jan 19, 2021 11:53:14 AM</span>
-	<span class='label end-time'>Jan 19, 2021 11:53:14 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-	<div class='test-desc'>Stammdateneingabe des Geldgebers </div>
 					</div>
 				</li>
 			</ul>
@@ -265,31 +233,31 @@ Driver info: driver.version: RemoteWebDriver</td>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>2</div>
+					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>5</div>
+					<div class='panel-lead'>3</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jan 19, 2021 11:53:03 AM</div>
+					<div class='panel-lead'>Jan 21, 2021 04:13:30 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jan 19, 2021 11:53:15 AM</div>
+			 		<div class='panel-lead'>Jan 21, 2021 04:13:43 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 11s+759ms</div>
+					<div class='panel-lead'>0h 0m 12s+317ms</div>
 				</div>
 			</div>
 		</div>
@@ -303,21 +271,21 @@ Driver info: driver.version: RemoteWebDriver</td>
 		<script>
 			var statusGroup = {
 				passParent: 1,
-				failParent: 1,
+				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 1,
+				exceptionsParent: 0,
 				
 				passChild: 0,
-				failChild: 2,
+				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 3,
-				exceptionsChild: 2,
+				exceptionsChild: 0,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,
