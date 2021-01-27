@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TopZinsPortal.TZPZinssatzVorgabeGN">
+      <class name="TopZinsPortal.TZPTransaktionStartGG">
         <methods>
+          <include name="TZPTransaktionStartGGTest" invocation-numbers="0"/>
           <include name="BrowserTearDown"/>
           <include name="SetupSeleniumTestdaten"/>
-          <include name="TZPZinssatzVorgabeGNTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- TopZinsPortal.TZPZinssatzVorgabeGN -->
+      </class> <!-- TopZinsPortal.TZPTransaktionStartGG -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

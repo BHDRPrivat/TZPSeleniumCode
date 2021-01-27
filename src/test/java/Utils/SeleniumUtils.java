@@ -158,9 +158,9 @@ public class SeleniumUtils {
 				
 				// Es erfolgt ein scrollen zum Element 
 				// Nur wenn es im sichtbaren Bereich liegt, kann Click ausgeführt werden
-				js.executeScript("arguments[0].scrollIntoViewIfNeeded(true);", element);
-     			// true -> nach unten scrollen
-				// false -> nach oben scrollen
+  				// Das Element mittig im Bildschirm positionieren, um den garantierten Zugriff zu erhalten.
+  				js.executeScript("arguments[0].scrollIntoView({block: \"center\", inline: \"center\"});", element);
+
 				Thread.sleep(2 * Zeitspanne);
 
 				driver.findElement(By.xpath(ObjektPath)).click();
@@ -189,16 +189,20 @@ public class SeleniumUtils {
 				ObjektPath = "//p[text()='" + FirmaGN + "']//ancestor::tr//div[contains(text(), '" + ZinssatzGG + "')]//ancestor::td";
 				System.out.println("Tabellenzugriff: " + ObjektPath);
 				
-				// Es erfolt ein scrollen zum Element 
+				// Es erfolgt ein Scrollen zum Element 
 				// Nur wenn es im sichtbaren Bereich liegt, kann Click ausgeführt werden
   				JavascriptExecutor js = (JavascriptExecutor)driver;
-				WebElement element = driver.findElement(By.xpath(ObjektPath));
-				js.executeScript("arguments[0].scrollIntoViewIfNeeded(true);", element);
+  				WebElement element = driver.findElement(By.xpath(ObjektPath));
+  				// Das Element mittig im Bildschirm positionieren, um den garantierten Zugriff zu erhalten.
+  				js.executeScript("arguments[0].scrollIntoView({block: \"center\", inline: \"center\"});", element);
+				// Führt nicht immer zum erfolg. Wenn das Obljekt im sichtbaren Bereich liegt, aber überlagert wird.
+  				// js.executeScript("arguments[0].scrollIntoViewIfNeeded({block: \"center\", inline: \"center\"});", element);
+			
 				
 				Thread.sleep(2 * Zeitspanne);
 
 				driver.findElement(By.xpath(ObjektPath)).click();
-				
+								
 				Thread.sleep(2 * Zeitspanne);
 	
 			}
