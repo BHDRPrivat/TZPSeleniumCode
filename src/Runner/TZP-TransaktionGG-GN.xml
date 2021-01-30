@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?> <!-- bisherige Daten aus D:\IR-WebRisk-Testdaten löschen -->
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="TopZinzPortal-Ablauftesttest">
+<suite name="TopZinzPortal-Transaktion-Ablauftesttest">
+	<test name="TZP-Zinssatz Vorgabe GN">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPZinssatzVorgabeGN" />
+		</classes>
+	</test>
 	<test name="TZP-Transaktion Start-GG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>

@@ -37,8 +37,8 @@ public class SeleniumUtils {
     		Inputwert = now.format(df);
 		}
 		System.out.println("Ausgang: " + Inputwert);
-		
 		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
+		
 		Thread.sleep(3 * Zeitspanne);
 		try {	
 			if 	(HTMLSelector.equals("name")) {
@@ -55,6 +55,7 @@ public class SeleniumUtils {
 			}
 			if 	(HTMLSelector.equals("xpath")) {
 				driver.findElement(By.xpath(ObjektPath)).click();
+				System.out.println(ObjektPath + "geklickt");
 				//Löscht vorhande Einträge sicherer als clear()  
 				driver.findElement(By.xpath(ObjektPath)).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
 				// Für Firefox
@@ -78,8 +79,13 @@ public class SeleniumUtils {
 
 			}
 
-
-
+			// Zur Wochenendkorrektur den Kalender-Icon 2 mal auswählen
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//label[text()='Valuta*']//following::button", test);
+			Thread.sleep(3 * Zeitspanne);
+			// Tabelle schließen druch Klick auf einen Kalendertag
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@class, 'MuiPickersDay')]", test);
+			System.out.println("Tag geklickt: ");
+	
 		} catch (NoSuchElementException e) {
 			// Fehlerbehandlung einfügen
 			test.log(Status.FAIL, "Eintrag in " +ObjektPath  + " mit Wert: " + Inputwert);
@@ -146,10 +152,42 @@ public class SeleniumUtils {
 		}
 	}
 
+	
+	protected static boolean isElementPresent(WebDriver driver, By by){
+        try{
+            driver.findElement(by);
+            return true;
+        }
+        catch(NoSuchElementException e){
+            return false;
+        }
+    }
 
+	
+	public static void OKButtonKlick(WebDriver driver, Integer Zeitspanne, ExtentTest test) throws InterruptedException {
+		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
+		// Zeitspanne setzen
+	
+	    // Nur wenn der "OK"-Button angezeigt wird, erfolgt ein Klick auf dem Button bevor es normal weiter geht. 
+		// Dann müssen die ganzen OK-klicks nicht seperat erfasst werden.
+
+		if ( isElementPresent(driver, By.xpath("//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]"))){
+			driver.findElement(By.xpath("//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]")).click(); 
+			Thread.sleep(2 * Zeitspanne);
+		} // Wenn "OK"-Vorhanden dann geklickt
+
+	
+	}	
+	
+	
+	
+	
 	public static void ButtonKlick(WebDriver driver, Integer Zeitspanne, String HTMLSelector, String ObjektPath, ExtentTest test) throws InterruptedException {
 		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
-
+		// Zeitspanne setzen
+	
+	
+			Thread.sleep(3 * Zeitspanne);
 		try {
 			if 	(HTMLSelector.equals("xpath")) {
 				
@@ -164,6 +202,7 @@ public class SeleniumUtils {
 				Thread.sleep(2 * Zeitspanne);
 
 				driver.findElement(By.xpath(ObjektPath)).click();
+				// System.out.println("Drin geklickt ");
 				
 				// Zeitspanne setzen
 				Thread.sleep(2 * Zeitspanne);
@@ -175,11 +214,14 @@ public class SeleniumUtils {
 			System.out.println("Gemeldeter Fehler: " + e);
 			Assert.assertTrue("Gemeldeter Fehler: " + e, false);
 		}
-	}
+		
+	}	
 
 	
 	public static void TabelleButtonKlick(WebDriver driver, Integer Zeitspanne, String HTMLSelector, String FirmaGN, String ZinssatzGG,  ExtentTest test) throws InterruptedException {
 		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
+		// Zeitspanne setzen
+		Thread.sleep(3 * Zeitspanne);
 		String ObjektPath ="Tabellen-Zugriff über " + FirmaGN + " und "+ ZinssatzGG;
 		try {
 			if 	(HTMLSelector.equals("xpath")) {
@@ -346,6 +388,15 @@ public class SeleniumUtils {
 			if 	(HTMLSelector.equals("xpath")) { 
 				// Zuerst muss auf das übergeordnete div geklickt werden
 				driver.findElement(By.xpath(ObjektPath)).click();
+				
+				// Es erfolgt ein Scrollen zum Element 
+				// Nur wenn es im sichtbaren Bereich liegt, kann Click ausgeführt werden
+  				JavascriptExecutor js = (JavascriptExecutor)driver;
+  				WebElement element = driver.findElement(By.xpath(ObjektPath));
+  				// Das Element mittig im Bildschirm positionieren, um den garantierten Zugriff zu erhalten.
+  				js.executeScript("arguments[0].scrollIntoView({block: \"center\", inline: \"center\"});", element);
+  				Thread.sleep(2 * Zeitspanne);	
+  				
 				// Es muss noch einmal auf das entsprechende Listenelement geklickt werden
 				driver.findElement(By.xpath(ObjektPathListe + Listenelement + "')]")).click();
 				test.log(Status.INFO, "Im Listenelement: " + ObjektPathListe + " Ausgwählt: " + Listenelement);

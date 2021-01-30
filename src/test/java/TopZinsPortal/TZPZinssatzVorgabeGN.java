@@ -189,15 +189,17 @@ public class TZPZinssatzVorgabeGN {
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Aktualisieren']//ancestor::button", test);
 			Thread.sleep(3 * Zeitspanne);
 			
-		    // OK von der Meldung wählen
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='OK']//ancestor::button", test);
+			// Button "OK" auswählen, wenn vorhanden
+			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
 
 	        // Button Veröffentlichen wählen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Veröffentlichen']//ancestor::button", test);
+     		Thread.sleep(5 * Zeitspanne);
 			
-			Thread.sleep(5 * Zeitspanne);
-			
-			
+			// Button "OK" auswählen, wenn vorhanden
+			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
+     		
+     		
 			driver.close();
 			// Für den Teardown
 			driver = null;

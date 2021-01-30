@@ -80,7 +80,7 @@ public class TZPTransaktionAkzeptierenGN {
 		}
 		
 
-		@DataProvider(name = "TZPTransaktionStartGG")
+		@DataProvider(name = "TZPTransaktionAkzeptierenGN")
 		public static Object[][] getData() throws BiffException {
 			// Ermittelt den Pfad des aktuellen Projekts
 			projectpath = System.getProperty("user.dir");
@@ -124,8 +124,8 @@ public class TZPTransaktionAkzeptierenGN {
 
 
 		// @Test
-		@Test(dataProvider = "TZPTransaktionStartGG")
-		public void TZPTransaktionStartGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
+		@Test(dataProvider = "TZPTransaktionAkzeptierenGN")
+		public void TZPTransaktionAkzeptierenGNTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
 		String ZinssatzGG, String Valuta, String Zinskonvention, String Zahlungsfrequenz, String EndeAnfrageGG1, 
 		String BtnAnfrageSendenGG1, String BtnAusloggenGG1, String FirmaGN, String EmailadresseGN, String PasswortGN, String VolumenGN, 
 		String ZinssatzGN, String EndeAnfrageGN1, String BtnAngebotSendenGN1, 
@@ -163,8 +163,8 @@ public class TZPTransaktionAkzeptierenGN {
 			// 12. Button "Ja" in Pop-up klicken (class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//*[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']", test);
 			
-			// 12.1 OK Button der neuen Meldung
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
+			// Button "OK" auswählen, wenn vorhanden
+			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
 			
 			// 13. Geldnehmer ausloggen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);  // Klicken auf ein Button mit dem Attribut data-test='logout-button'

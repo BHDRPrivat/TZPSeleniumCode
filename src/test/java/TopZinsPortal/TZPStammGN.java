@@ -196,6 +196,9 @@ public class TZPStammGN {
      		// Button "Weiter" auswählen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 			
+			// Button "OK" auswählen, wenn vorhanden
+			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
+			
 			// Auswahl Register Unternehmen -> wurden die Daten sauber gespeichert?
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[contains(@data-test, 'Unternehmen')]", test);
 
@@ -220,6 +223,9 @@ public class TZPStammGN {
 
      		// Button "Weiter" auswählen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
+
+			// Button "OK" auswählen, wenn vorhanden
+			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
 			
 			// Auswahl Register Bankverbindung -> wurden die Daten sauber gespeichert?
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[contains(@data-test, 'Bankverbindung')]", test);
@@ -246,6 +252,9 @@ public class TZPStammGN {
 
      		// Button "Weiter" auswählen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
+			
+			// Button "OK" auswählen, wenn vorhanden
+			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
 			
 			// Auswahl Register Person -> wurden die Daten sauber gespeichert?
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[contains(@data-test, 'Person')]", test);
@@ -278,7 +287,10 @@ public class TZPStammGN {
      		// Button "Weiter" auswählen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 			
-			// Auswahl Register Bankverbindung -> wurden die Daten sauber gespeichert?
+			// Button "OK" auswählen, wenn vorhanden
+			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
+			
+			// Auswahl Register -> wurden die Daten sauber gespeichert?
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[contains(@data-test, 'Geldnehmer')]", test);
 
 			// Screenshot aufnehmen
@@ -287,8 +299,9 @@ public class TZPStammGN {
 			Thread.sleep(3 * Zeitspanne);
 			
     		// Button "Weiter" auswählen
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);		
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);	
 			
+		
 		
 			} // IF-Ende für Missing Data
 			else {
@@ -316,6 +329,9 @@ public class TZPStammGN {
 			//System.out.println("erster Zugriff hochladen: ");
 			// TSonderzeit zum Hochladen
 			Thread.sleep(3 * Zeitspanne);
+			
+			// Button "OK" auswählen, wenn vorhanden
+			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
 			
 			// Kontrolle, ob kein Fehlertext angezeigt wird
 			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
@@ -351,6 +367,10 @@ public class TZPStammGN {
 			// TSonderzeit zum freigeben
 			//System.out.println("erster Zugriff: " + driver.findElement(By.xpath("//span[text()='Handelsberechtigung anfordern']//ancestor::button[@tabindex='0']")).isEnabled());
 			Thread.sleep(3 * Zeitspanne);	
+			
+			
+			// Button "OK" auswählen, wenn vorhanden
+			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
 			
 			// Kontrolle, ob kein Fehlertext angezeigt wird
 			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  

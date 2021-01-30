@@ -80,7 +80,7 @@ public class TZPTransaktionAkzeptierenGG {
 		}
 		
 
-		@DataProvider(name = "TZPTransaktionStartGG")
+		@DataProvider(name = "TZPTransaktionAkzeptierenGG")
 		public static Object[][] getData() throws BiffException {
 			// Ermittelt den Pfad des aktuellen Projekts
 			projectpath = System.getProperty("user.dir");
@@ -124,8 +124,8 @@ public class TZPTransaktionAkzeptierenGG {
 
 
 		// @Test
-		@Test(dataProvider = "TZPTransaktionStartGG")
-		public void TZPTransaktionStartGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
+		@Test(dataProvider = "TZPTransaktionAkzeptierenGG")
+		public void TZPTransaktionAkzeptierenGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
 		String ZinssatzGG, String Valuta, String Zinskonvention, String Zahlungsfrequenz, String EndeAnfrageGG1, 
 		String BtnAnfrageSendenGG1, String BtnAusloggenGG1, String FirmaGN, String EmailadresseGN, String PasswortGN, String VolumenGN, 
 		String ZinssatzGN, String EndeAnfrageGN1, String BtnAngebotSendenGN1, 

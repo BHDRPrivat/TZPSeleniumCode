@@ -190,6 +190,9 @@ public class TZPAdminUserDeaktivieren {
 		// TSonderzeit zum löschen
 		Thread.sleep(3 * Zeitspanne);
 		
+		// Button "OK" auswählen, wenn vorhanden
+		Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
+		
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);
 		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,"\\Admin UserDeaktivieren\\Nach-Bestätigen-Button", Teststep, test );

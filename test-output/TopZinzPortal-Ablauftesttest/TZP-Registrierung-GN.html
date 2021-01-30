@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>TZP-Registrierung-GN</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>18/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>17/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jan 25 13:59:22 CET 2021</td>
+<td>Started on:</td><td>Sat Jan 30 11:31:03 CET 2021</td>
 </tr>
-<tr><td>Total time:</td><td>113 seconds (113626 ms)</td>
+<tr><td>Total time:</td><td>123 seconds (123439 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,59 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-006, Ja, BHDR-GN-Handel, Herr, , BHDR-GN-Handel Vorname, BHDR-GN-Handel Nachname, 0611 11 11 11, BHDR-GN-Handel@forsa-gmbh.de, BHDR-GN-Handel@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
+<td><div><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at TopZinsPortal.TZPRegGN.TZPRegGNTest(TZPRegGN.java:222)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace42783426", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace42783426'><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.assertTrue(Assert.java:20)
+	at junit.framework.Assert.assertTrue(Assert.java:27)
+	at TopZinsPortal.TZPRegGN.TZPRegGNTest(TZPRegGN.java:222)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:764)
+	at org.testng.TestRunner.run(TestRunner.java:585)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.runSuites(TestNG.java:1069)
+	at org.testng.TestNG.run(TestNG.java:1037)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>21</td>
+<td>TopZinsPortal.TZPRegGN@6c64cb25</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -90,29 +143,24 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>TopZinsPortal.TZPRegGN@6c64cb25</td></tr>
 <tr>
-<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-004, Nein, BHDR-GN-DGSVO, Herr, Dr., BHDR-GN-DGSVO Vorname, BHDR-GN-DGSVO Nachname, 0611 11 11 11, BHDR-GN-DGSVO@forsa-gmbh.de, BHDR-GN-DGSVO@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
+<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-004, Ja, BHDR-GN-DGSVO, Herr, Dr., BHDR-GN-DGSVO Vorname, BHDR-GN-DGSVO Nachname, 0611 11 11 11, BHDR-GN-DGSVO@forsa-gmbh.de, BHDR-GN-DGSVO@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
 <td></td>
-<td>0</td>
+<td>24</td>
 <td>TopZinsPortal.TZPRegGN@6c64cb25</td></tr>
 <tr>
-<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-005, Nein, BHDR-GN-DatenKomplett, Herr, , BHDR-GN-DatenKomplett Vorname, BHDR-GN-DatenKomplett Nachname, 0611 11 11 11, BHDR-GN-DatenKomplett@forsa-gmbh.de, BHDR-GN-DatenKomplett@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
+<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-005, Ja, BHDR-GN-DatenKomplett, Herr, , BHDR-GN-DatenKomplett Vorname, BHDR-GN-DatenKomplett Nachname, 0611 11 11 11, BHDR-GN-DatenKomplett@forsa-gmbh.de, BHDR-GN-DatenKomplett@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
 <td></td>
-<td>0</td>
+<td>24</td>
 <td>TopZinsPortal.TZPRegGN@6c64cb25</td></tr>
 <tr>
-<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-006, Nein, BHDR-GN-Handel, Herr, , BHDR-GN-Handel Vorname, BHDR-GN-Handel Nachname, 0611 11 11 11, BHDR-GN-Handel@forsa-gmbh.de, BHDR-GN-Handel@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
+<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-007, Ja, BHDR-GN-Deaktiv, Frau, Dr., BHDR-GN-Deaktiv Vorname, BHDR-GN-Deaktiv Nachname, 06119738163, BHDR-GN-Deaktiv@forsa-gmbh.de, BHDR-GN-Deaktiv@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
 <td></td>
-<td>0</td>
+<td>22</td>
 <td>TopZinsPortal.TZPRegGN@6c64cb25</td></tr>
 <tr>
-<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-007, Nein, BHDR-GN-Deaktiv, Frau, Dr., BHDR-GN-Deaktiv Vorname, BHDR-GN-Deaktiv Nachname, 06119738163, BHDR-GN-Deaktiv@forsa-gmbh.de, BHDR-GN-Deaktiv@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
+<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-008, Ja, BHDR-GN-Loeschen, Frau, Dr., BHDR-GN-Loeschen Vorname, BHDR-GN-Loeschen Nachname, 06119738163, BHDR-GN-Loeschen@forsa-gmbh.de, BHDR-GN-Loeschen@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
 <td></td>
-<td>0</td>
-<td>TopZinsPortal.TZPRegGN@6c64cb25</td></tr>
-<tr>
-<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-008, Nein, BHDR-GN-Loeschen, Frau, Dr., BHDR-GN-Loeschen Vorname, BHDR-GN-Loeschen Nachname, 06119738163, BHDR-GN-Loeschen@forsa-gmbh.de, BHDR-GN-Loeschen@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
-<td></td>
-<td>0</td>
+<td>23</td>
 <td>TopZinsPortal.TZPRegGN@6c64cb25</td></tr>
 <tr>
 <td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-009, Nein, Burk-GN-DGSVO, Herr, Dr., Burk-GN-DGSVO Vorname, Burk-GN-DGSVO Nachname, 0611 11 11 11, Burk-GN-DGSVO@forsa-gmbh.de, Burk-GN-DGSVO@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
@@ -140,29 +188,29 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>TopZinsPortal.TZPRegGN@6c64cb25</td></tr>
 <tr>
-<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-014, Ja, Center-GN-DGSVO, Herr, Dr., Center-GN-DGSVO Vorname, Center-GN-DGSVO Nachname, 0611 11 11 11, Center-GN-DGSVO@forsa-gmbh.de, Center-GN-DGSVO@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
+<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-014, Nein, Centner-GN-DGSVO, Herr, Dr., Centner-GN-DGSVO Vorname, Centner-GN-DGSVO Nachname, 0611 11 11 11, Centner-GN-DGSVO@forsa-gmbh.de, Centner-GN-DGSVO@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
 <td></td>
-<td>21</td>
+<td>0</td>
 <td>TopZinsPortal.TZPRegGN@6c64cb25</td></tr>
 <tr>
-<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-015, Ja, Center-GN-DatenKomplett, Herr, , Center-GN-DatenKomplett Vorname, Center-GN-DatenKomplett Nachname, 0611 11 11 11, Center-GN-DatenKomplett@forsa-gmbh.de, Center-GN-DatenKomplett@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
+<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-015, Nein, Centner-GN-DatenKomplett, Herr, , Centner-GN-DatenKomplett Vorname, Centner-GN-DatenKomplett Nachname, 0611 11 11 11, Centner-GN-DatenKomplett@forsa-gmbh.de, Centner-GN-DatenKomplett@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
 <td></td>
-<td>20</td>
+<td>0</td>
 <td>TopZinsPortal.TZPRegGN@6c64cb25</td></tr>
 <tr>
-<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-016, Ja, Center-GN-Handel, Herr, , Center-GN-Handel Vorname, Center-GN-Handel Nachname, 0611 11 11 11, Center1@forsa-gmbh.de, Center1@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
+<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-016, Nein, Centner-GN-Handel, Herr, , Centner-GN-Handel Vorname, Centner-GN-Handel Nachname, 0611 11 11 11, Centner1@forsa-gmbh.de, Centner1@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
 <td></td>
-<td>20</td>
+<td>0</td>
 <td>TopZinsPortal.TZPRegGN@6c64cb25</td></tr>
 <tr>
-<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-017, Ja, Center-GN-Deaktiv, Frau, Dr., Center-GN-Deaktiv Vorname, Center-GN-Deaktiv Nachname, 06119738163, Center-GN-Deaktiv@forsa-gmbh.de, Center-GN-Deaktiv@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
+<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-017, Nein, Centner-GN-Deaktiv, Frau, Dr., Centner-GN-Deaktiv Vorname, Centner-GN-Deaktiv Nachname, 06119738163, Centner-GN-Deaktiv@forsa-gmbh.de, Centner-GN-Deaktiv@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
 <td></td>
-<td>20</td>
+<td>0</td>
 <td>TopZinsPortal.TZPRegGN@6c64cb25</td></tr>
 <tr>
-<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-018, Ja, Center-GN-Loeschen, Frau, Dr., Center-GN-Loeschen Vorname, Center-GN-Loeschen Nachname, 06119738163, Center-GN-Loeschen@forsa-gmbh.de, Center-GN-Loeschen@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
+<td title='TopZinsPortal.TZPRegGN.TZPRegGNTest()'><b>TZPRegGNTest</b><br>Test class: TopZinsPortal.TZPRegGN<br>Parameters: TZPRegGN-TF-018, Nein, Centner-GN-Loeschen, Frau, Dr., Centner-GN-Loeschen Vorname, Centner-GN-Loeschen Nachname, 06119738163, Centner-GN-Loeschen@forsa-gmbh.de, Centner-GN-Loeschen@forsa-gmbh.de, Test12345!, Ja, Ja, Nein</td>
 <td></td>
-<td>20</td>
+<td>0</td>
 <td>TopZinsPortal.TZPRegGN@6c64cb25</td></tr>
 </table><p>
 </body>

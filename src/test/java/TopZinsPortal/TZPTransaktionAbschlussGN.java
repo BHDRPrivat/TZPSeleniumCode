@@ -58,7 +58,7 @@ public class TZPTransaktionAbschlussGN {
 
 			if (htmlReporter == null) {
 				// start reporters
-				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Tranaktion Start GG - " + Ablaufart + ".html");
+				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Transaktion Abschluss GN - " + Ablaufart + ".html");
 				// create ExtentReports and attach reporter(s)
 				extent = new ExtentReports();
 				extent.attachReporter(htmlReporter);
@@ -80,7 +80,7 @@ public class TZPTransaktionAbschlussGN {
 		}
 		
 
-		@DataProvider(name = "TZPTransaktionStartGG")
+		@DataProvider(name = "TZPTransaktionAbschlussGN")
 		public static Object[][] getData() throws BiffException {
 			// Ermittelt den Pfad des aktuellen Projekts
 			projectpath = System.getProperty("user.dir");
@@ -124,8 +124,8 @@ public class TZPTransaktionAbschlussGN {
 
 
 		// @Test
-		@Test(dataProvider = "TZPTransaktionStartGG")
-		public void TZPTransaktionStartGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
+		@Test(dataProvider = "TZPTransaktionAbschlussGN")
+		public void TZPTransaktionAbschlussGNTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
 		String ZinssatzGG, String Valuta, String Zinskonvention, String Zahlungsfrequenz, String EndeAnfrageGG1, 
 		String BtnAnfrageSendenGG1, String BtnAusloggenGG1, String FirmaGN, String EmailadresseGN, String PasswortGN, String VolumenGN, 
 		String ZinssatzGN, String EndeAnfrageGN1, String BtnAngebotSendenGN1, 

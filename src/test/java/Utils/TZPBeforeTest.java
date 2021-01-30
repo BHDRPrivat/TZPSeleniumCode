@@ -27,7 +27,7 @@ public class TZPBeforeTest {
 	
 	public static Integer Pausenzeit() {
 		 // Festlegung der Zeitspanne  
-			return 80;
+			return 100;
 		}
 	
 	

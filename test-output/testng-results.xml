@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-27T17:23:16 CET" name="TopZinzPortal-Ablauftesttest" finished-at="2021-01-27T17:24:35 CET" duration-ms="79021">
+  <suite started-at="2021-01-30T13:58:53 CET" name="TopZinzPortal-Transaktion-Ablauftesttest" finished-at="2021-01-30T14:00:56 CET" duration-ms="122884">
     <groups>
     </groups>
-    <test started-at="2021-01-27T17:23:16 CET" name="TZP-Transaktion Start-GG" finished-at="2021-01-27T17:23:43 CET" duration-ms="26168">
-      <class name="TopZinsPortal.TZPTransaktionStartGG">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionStartGG@245b4bdc]" started-at="2021-01-27T17:23:16 CET" name="SetupSeleniumTestdaten" finished-at="2021-01-27T17:23:22 CET" duration-ms="5184" status="PASS">
+    <test started-at="2021-01-30T13:58:53 CET" name="TZP-Zinssatz Vorgabe GN" finished-at="2021-01-30T13:59:45 CET" duration-ms="51664">
+      <class name="TopZinsPortal.TZPZinssatzVorgabeGN">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPZinssatzVorgabeGN@245b4bdc]" started-at="2021-01-30T13:58:53 CET" name="SetupSeleniumTestdaten" finished-at="2021-01-30T13:58:56 CET" duration-ms="2699" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,142 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPTransaktionStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionStartGG@245b4bdc]" started-at="2021-01-27T17:23:22 CET" name="TZPTransaktionStartGGTest" data-provider="TZPTransaktionStartGG" finished-at="2021-01-27T17:23:37 CET" duration-ms="15580" status="PASS">
+        <test-method signature="TZPZinssatzVorgabeGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPZinssatzVorgabeGN@245b4bdc]" started-at="2021-01-30T13:58:56 CET" name="TZPZinssatzVorgabeGNTest" data-provider="TZPZinssatzVorgabeGN" finished-at="2021-01-30T13:59:41 CET" duration-ms="44432" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPZinssatzVorgabeGN-TF-001]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[BHDR-GN-Handel@forsa-gmbh.de]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,01]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[0,02]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[0,03]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[0,04]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[0.05]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[0.06]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[0.07]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[0.08]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[0,09]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[0,10]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[0,11]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[0.12]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[0.18]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[0.24]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[0.36]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[0.48]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[0.6]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPZinssatzVorgabeGNTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPZinssatzVorgabeGN@245b4bdc]" started-at="2021-01-30T13:59:41 CET" name="BrowserTearDown" finished-at="2021-01-30T13:59:45 CET" duration-ms="4383" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserTearDown -->
+      </class> <!-- TopZinsPortal.TZPZinssatzVorgabeGN -->
+    </test> <!-- TZP-Zinssatz Vorgabe GN -->
+    <test started-at="2021-01-30T13:59:45 CET" name="TZP-Transaktion Start-GG" finished-at="2021-01-30T14:00:11 CET" duration-ms="25375">
+      <class name="TopZinsPortal.TZPTransaktionStartGG">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionStartGG@2f9f7dcf]" started-at="2021-01-30T13:59:45 CET" name="SetupSeleniumTestdaten" finished-at="2021-01-30T13:59:47 CET" duration-ms="1479" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Smoketest]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetupSeleniumTestdaten -->
+        <test-method signature="TZPTransaktionStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionStartGG@2f9f7dcf]" started-at="2021-01-30T13:59:47 CET" name="TZPTransaktionStartGGTest" data-provider="TZPTransaktionStartGG" finished-at="2021-01-30T14:00:06 CET" duration-ms="19717" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -144,15 +279,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TZPTransaktionStartGGTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionStartGG@245b4bdc]" started-at="2021-01-27T17:23:37 CET" name="BrowserTearDown" finished-at="2021-01-27T17:23:43 CET" duration-ms="5234" status="PASS">
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionStartGG@2f9f7dcf]" started-at="2021-01-30T14:00:06 CET" name="BrowserTearDown" finished-at="2021-01-30T14:00:11 CET" duration-ms="4100" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
       </class> <!-- TopZinsPortal.TZPTransaktionStartGG -->
     </test> <!-- TZP-Transaktion Start-GG -->
-    <test started-at="2021-01-27T17:23:43 CET" name="TZP-Akzeptieren-GN" finished-at="2021-01-27T17:24:01 CET" duration-ms="18535">
+    <test started-at="2021-01-30T14:00:11 CET" name="TZP-Akzeptieren-GN" finished-at="2021-01-30T14:00:27 CET" duration-ms="16293">
       <class name="TopZinsPortal.TZPTransaktionAkzeptierenGN">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGN@5b8dfcc1]" started-at="2021-01-27T17:23:43 CET" name="SetupSeleniumTestdaten" finished-at="2021-01-27T17:23:46 CET" duration-ms="3554" status="PASS">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGN@42a48628]" started-at="2021-01-30T14:00:11 CET" name="SetupSeleniumTestdaten" finished-at="2021-01-30T14:00:12 CET" duration-ms="1395" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -163,7 +298,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPTransaktionStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGN@5b8dfcc1]" started-at="2021-01-27T17:23:46 CET" name="TZPTransaktionStartGGTest" data-provider="TZPTransaktionStartGG" finished-at="2021-01-27T17:23:57 CET" duration-ms="10894" status="PASS">
+        <test-method signature="TZPTransaktionAkzeptierenGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGN@42a48628]" started-at="2021-01-30T14:00:12 CET" name="TZPTransaktionAkzeptierenGNTest" data-provider="TZPTransaktionAkzeptierenGN" finished-at="2021-01-30T14:00:23 CET" duration-ms="10732" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -288,16 +423,16 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPTransaktionStartGGTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGN@5b8dfcc1]" started-at="2021-01-27T17:23:57 CET" name="BrowserTearDown" finished-at="2021-01-27T17:24:01 CET" duration-ms="4013" status="PASS">
+        </test-method> <!-- TZPTransaktionAkzeptierenGNTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGN@42a48628]" started-at="2021-01-30T14:00:23 CET" name="BrowserTearDown" finished-at="2021-01-30T14:00:27 CET" duration-ms="4087" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
       </class> <!-- TopZinsPortal.TZPTransaktionAkzeptierenGN -->
     </test> <!-- TZP-Akzeptieren-GN -->
-    <test started-at="2021-01-27T17:24:01 CET" name="TZP-Akzeptieren-GG" finished-at="2021-01-27T17:24:19 CET" duration-ms="17925">
+    <test started-at="2021-01-30T14:00:27 CET" name="TZP-Akzeptieren-GG" finished-at="2021-01-30T14:00:43 CET" duration-ms="15815">
       <class name="TopZinsPortal.TZPTransaktionAkzeptierenGG">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGG@7d8995e]" started-at="2021-01-27T17:24:01 CET" name="SetupSeleniumTestdaten" finished-at="2021-01-27T17:24:05 CET" duration-ms="3504" status="PASS">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGG@38d8f54a]" started-at="2021-01-30T14:00:27 CET" name="SetupSeleniumTestdaten" finished-at="2021-01-30T14:00:28 CET" duration-ms="1465" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -308,7 +443,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPTransaktionStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGG@7d8995e]" started-at="2021-01-27T17:24:05 CET" name="TZPTransaktionStartGGTest" data-provider="TZPTransaktionStartGG" finished-at="2021-01-27T17:24:15 CET" duration-ms="10287" status="PASS">
+        <test-method signature="TZPTransaktionAkzeptierenGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGG@38d8f54a]" started-at="2021-01-30T14:00:28 CET" name="TZPTransaktionAkzeptierenGGTest" data-provider="TZPTransaktionAkzeptierenGG" finished-at="2021-01-30T14:00:39 CET" duration-ms="10191" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -433,16 +568,16 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPTransaktionStartGGTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGG@7d8995e]" started-at="2021-01-27T17:24:15 CET" name="BrowserTearDown" finished-at="2021-01-27T17:24:19 CET" duration-ms="4054" status="PASS">
+        </test-method> <!-- TZPTransaktionAkzeptierenGGTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGG@38d8f54a]" started-at="2021-01-30T14:00:39 CET" name="BrowserTearDown" finished-at="2021-01-30T14:00:43 CET" duration-ms="4088" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
       </class> <!-- TopZinsPortal.TZPTransaktionAkzeptierenGG -->
     </test> <!-- TZP-Akzeptieren-GG -->
-    <test started-at="2021-01-27T17:24:19 CET" name="TZP-Abschluss-GN" finished-at="2021-01-27T17:24:35 CET" duration-ms="16318">
+    <test started-at="2021-01-30T14:00:43 CET" name="TZP-Abschluss-GN" finished-at="2021-01-30T14:00:56 CET" duration-ms="13664">
       <class name="TopZinsPortal.TZPTransaktionAbschlussGN">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAbschlussGN@3c19aaa5]" started-at="2021-01-27T17:24:19 CET" name="SetupSeleniumTestdaten" finished-at="2021-01-27T17:24:23 CET" duration-ms="3537" status="PASS">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAbschlussGN@4c371370]" started-at="2021-01-30T14:00:43 CET" name="SetupSeleniumTestdaten" finished-at="2021-01-30T14:00:44 CET" duration-ms="1417" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -453,7 +588,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPTransaktionStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAbschlussGN@3c19aaa5]" started-at="2021-01-27T17:24:23 CET" name="TZPTransaktionStartGGTest" data-provider="TZPTransaktionStartGG" finished-at="2021-01-27T17:24:31 CET" duration-ms="8788" status="PASS">
+        <test-method signature="TZPTransaktionAbschlussGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAbschlussGN@4c371370]" started-at="2021-01-30T14:00:44 CET" name="TZPTransaktionAbschlussGNTest" data-provider="TZPTransaktionAbschlussGN" finished-at="2021-01-30T14:00:52 CET" duration-ms="8095" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -578,12 +713,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPTransaktionStartGGTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionAbschlussGN@3c19aaa5]" started-at="2021-01-27T17:24:31 CET" name="BrowserTearDown" finished-at="2021-01-27T17:24:35 CET" duration-ms="3915" status="PASS">
+        </test-method> <!-- TZPTransaktionAbschlussGNTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionAbschlussGN@4c371370]" started-at="2021-01-30T14:00:52 CET" name="BrowserTearDown" finished-at="2021-01-30T14:00:56 CET" duration-ms="4078" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
       </class> <!-- TopZinsPortal.TZPTransaktionAbschlussGN -->
     </test> <!-- TZP-Abschluss-GN -->
-  </suite> <!-- TopZinzPortal-Ablauftesttest -->
+  </suite> <!-- TopZinzPortal-Transaktion-Ablauftesttest -->
 </testng-results>

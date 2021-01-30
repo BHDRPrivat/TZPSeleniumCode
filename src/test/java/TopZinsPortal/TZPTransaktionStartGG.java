@@ -164,12 +164,13 @@ public class TZPTransaktionStartGG {
 			// 5.2 Valuta
 			Utils.SeleniumUtils.InputDatum(driver, Zeitspanne, "xpath", "//Label[text() ='Valuta*']//following::input[contains(@class, 'MuiInput')]", Valuta, test);
 		
+		
 			// 6.0 Button "Anfrage senden" klicken 
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 			
 			
-			// 6.1 OK Button der neuen Meldung
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
+			// Button "OK" auswählen, wenn vorhanden
+			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
 			
 			
 			// 7. Geldgeber ausloggen

@@ -184,7 +184,10 @@ public class TZPAdminUserLoeschen {
 		// Button auswählen
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Bestätigen']//ancestor::button[@tabindex='0']", test);
 		// TSonderzeit zum löschen
-		Thread.sleep(3 * Zeitspanne);		
+		Thread.sleep(3 * Zeitspanne);	
+		
+		// Button "OK" auswählen, wenn vorhanden
+		Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
 		
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);

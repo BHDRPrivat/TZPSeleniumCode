@@ -210,13 +210,14 @@ public class TZPRegGG {
 
 	
 		// Screenshot aufnehmen
-		Thread.sleep(3 * Zeitspanne);
+		Thread.sleep(8 * Zeitspanne);
 		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,"\\Reg GG\\Nach-Registrierung-Button", Teststep, test );
-		Thread.sleep(3 * Zeitspanne);
+		Thread.sleep(8 * Zeitspanne);
 
 		// Kontrolle, ob Bestätigung angezeigt wird.
 		// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
 		// Programm läuft nicht weiter
+		Thread.sleep(3 * Zeitspanne);
 		Assert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed()));
 		Thread.sleep(3 * Zeitspanne);	
 		
