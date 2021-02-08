@@ -24,10 +24,23 @@ import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
+import java.util.*;
+
 public class SeleniumUtils {
 	
-	public static void InputDatum(WebDriver driver, Integer Zeitspanne, String HTMLSelector, String ObjektPath, String Inputwert, ExtentTest test) throws InterruptedException {
+	public static void InputDatum(WebDriver driver, Integer Zeitspanne, String HTMLSelector, String ObjektPath1, String ObjektPath2, String Inputwert, ExtentTest test) throws InterruptedException {
 		// Inputwert zu einem gültigen und aktuellen Datum wandeln 
+		Calendar myCal = new GregorianCalendar(); 
+		
+		// Zeit setzen mit Date:
+		myCal.setTime( new Date() );
+		// Einzelne Felder extrahieren:
+		int Jahr = myCal.get( Calendar.YEAR  );
+		int Monat = myCal.get( Calendar.MONTH ) + 1;           // nicht vergessen die 1 zu addieren
+		int Tag = myCal.get( Calendar.DATE  );
+
+		
+		System.out.println("Datum: " + Tag + "Monat: "+ Monat + "Jahr:" + Jahr);
 		
 		System.out.println("Eingang: " + Inputwert);
 		if (Inputwert.equals("ActDatum")) {
@@ -38,6 +51,8 @@ public class SeleniumUtils {
 		}
 		System.out.println("Ausgang: " + Inputwert);
 		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
+		
+		String ObjektPath = ObjektPath1 + ObjektPath2;
 		
 		Thread.sleep(3 * Zeitspanne);
 		try {	
@@ -78,12 +93,15 @@ public class SeleniumUtils {
 				Thread.sleep(2 * Zeitspanne);
 
 			}
+			
+			ObjektPath =ObjektPath1 + "//following::button";
 
 			// Zur Wochenendkorrektur den Kalender-Icon 2 mal auswählen
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//label[text()='Valuta*']//following::button", test);
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", ObjektPath, test);
+			System.out.println("Kalender-Icon geklickt: " + ObjektPath);
 			Thread.sleep(3 * Zeitspanne);
-			// Tabelle schließen druch Klick auf einen Kalendertag
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@class, 'MuiPickersDay')]", test);
+			// Tabelle schließen durch Klick auf den automatisch gewählten Kalendertag (dann kein Wochenende)
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@class, 'MuiPickersDay-daySelected')]", test);
 			System.out.println("Tag geklickt: ");
 	
 		} catch (NoSuchElementException e) {
@@ -198,11 +216,12 @@ public class SeleniumUtils {
 				// Nur wenn es im sichtbaren Bereich liegt, kann Click ausgeführt werden
   				// Das Element mittig im Bildschirm positionieren, um den garantierten Zugriff zu erhalten.
   				js.executeScript("arguments[0].scrollIntoView({block: \"center\", inline: \"center\"});", element);
-
+  				System.out.println("zur Mitte bewegt: "+ element);
+  				
 				Thread.sleep(2 * Zeitspanne);
 
 				driver.findElement(By.xpath(ObjektPath)).click();
-				// System.out.println("Drin geklickt ");
+				System.out.println("geklickt: "+ ObjektPath);
 				
 				// Zeitspanne setzen
 				Thread.sleep(2 * Zeitspanne);

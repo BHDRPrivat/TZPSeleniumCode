@@ -152,9 +152,13 @@ public class TZPTransaktionAkzeptierenGN {
      		// 9.1 Button "Login" auswaehlen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 		
-			// 10. Alle Pflichtfelder bearbeiten 
-			// Geht auch ohne bearbeiten			
+			// 10. zeit zum Aufbauen der Meldung 
+			Thread.sleep(5 * Zeitspanne);	
 			
+			// Kommentar eintragen
+			// Auch hierüber wird ein Scrollbalken verschoben.
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "comment", "Kommentar GN 1", test);
+		
 			// 11. Button "Angebot senden" klicken 
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='senden']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
 			

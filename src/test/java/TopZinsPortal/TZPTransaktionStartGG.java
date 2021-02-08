@@ -152,6 +152,12 @@ public class TZPTransaktionStartGG {
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 			
 			// 4. Ein Zinssatz in view "Alle Banken" auswaehlen
+			// Die Ansicht Alle Banken aufrufen
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='Übersicht']", test);
+			// Unterpunkt Alle Banken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@href='/portal/Uebersicht/alleBanken']", test);
+				
+			
 			// Auf das Zellenelemnet mit Bankname und Zinssatz zugreifen
 			Utils.SeleniumUtils.TabelleButtonKlick(driver, Zeitspanne, "xpath", FirmaGN, ZinssatzGG, test); 
 			System.out.println("nach Buttonclick");
@@ -162,7 +168,7 @@ public class TZPTransaktionStartGG {
 						
 			
 			// 5.2 Valuta
-			Utils.SeleniumUtils.InputDatum(driver, Zeitspanne, "xpath", "//Label[text() ='Valuta*']//following::input[contains(@class, 'MuiInput')]", Valuta, test);
+			Utils.SeleniumUtils.InputDatum(driver, Zeitspanne, "xpath", "//Label[text() ='Valuta*']","//following::input[contains(@class, 'MuiInput')]", Valuta, test);
 		
 		
 			// 6.0 Button "Anfrage senden" klicken 
