@@ -58,7 +58,7 @@ public class TZPTenderAngebotAnnehmenGG {
 
 			if (htmlReporter == null) {
 				// start reporters
-				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Tranaktion Start GG - " + Ablaufart + ".html");
+				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Tender Annahme GG - " + Ablaufart + ".html");
 				// create ExtentReports and attach reporter(s)
 				extent = new ExtentReports();
 				extent.attachReporter(htmlReporter);
@@ -80,7 +80,7 @@ public class TZPTenderAngebotAnnehmenGG {
 		}
 		
 
-		@DataProvider(name = "TZPTenderStartGG")
+		@DataProvider(name = "TenderAngebotAnnehmenGG")
 		public static Object[][] getData() throws BiffException {
 			// Ermittelt den Pfad des aktuellen Projekts
 			projectpath = System.getProperty("user.dir");
@@ -124,17 +124,20 @@ public class TZPTenderAngebotAnnehmenGG {
 
 
 		// @Test
-		@Test(dataProvider = "TZPTenderStartGG")
-		public void TZPTenderStartGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String EndeDatum, String	EndeUhrzeit,
-		String Geldnehmer, String VolumenGG, String Valuta, String Faelligkeit, String BtnBankenEinladenGG, String BtnAusloggenGG,
-		String EmailadresseGN1,	String PasswortGN1, String	ZinssatzGN1, String BtnAngebotSendenGN1, String	BtnJaGN1, String BtnAusloggenGN1,
-		String EmailadresseGN2,	String PasswortGN2, String	ZinssatzGN2, String BtnAngebotSendenGN2, String	BtnJaGN2, String BtnAusloggenGN2,
-		String EmailadresseGN3,	String PasswortGN3, String	ZinssatzGN3, String BtnAngebotSendenGN3, String	BtnJaGN3, String BtnAusloggenGN3,
-		String BtnAngebotAnnehmenGG, String	BtnJaGG
+		@Test(dataProvider = "TenderAngebotAnnehmenGG")
+		public void TZPTenderStartGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String EndeDatum, 
+		String	EndeUhrzeit, String Zinskonvention, String Zahlungsfrequenz, 		
+		String VolumenGG, String Valuta, String Faelligkeit1, String Faelligkeit2, String Faelligkeit3, String KommentarGG,
+		String FirmaGN1, String EmailadresseGN1,	String PasswortGN1, String	ZinssatzGN1,
+		String FirmaGN2, String EmailadresseGN2,	String PasswortGN2, String	ZinssatzGN2,
+		String FirmaGN3, String EmailadresseGN3,	String PasswortGN3, String	ZinssatzGN3,
+		String BtnAuswahlBestaetigenGG, String BtnBankenEinladenGG, String BtnAusloggenGG, 
+		String BtnAngebotSendenGN1, String	BtnAngebotAblehnenGN1, String BtnAngebotTelefonischGN1,
+		String BtnAngebotSendenGN2, String	BtnAngebotAblehnenGN2, String BtnAngebotTelefonischGN2,
+		String BtnAngebotSendenGN3, String	BtnAngebotAblehnenGN3, String BtnAngebotTelefonischGN3,
+	    String BtnAngebotAnnehmenGG, String	BtnAngebotAblehnenGG, String BtnAngebotTelefonischGG
 
-
-		) throws Exception {
-
+				) throws Exception {
 			
 			if (Aktiv.equals("Ja")) {
 				
@@ -156,13 +159,15 @@ public class TZPTenderAngebotAnnehmenGG {
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 				
 				// 2. Klicken auf Register "Auschreibung"
-				// driver.findElement(By.xpath("//a[@href='/portal/Ausschreibung']")).click();
+				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@data-test='Ausschreibungen']", test);
 				
-				// 3. Ein "Zinssatzt" auswählen
-				// ????
+				// 3. Tender auswählen
+				Utils.SeleniumUtils.AuschreibungGNAuswahl(driver, Zeitspanne,  VolumenGG, test);
 				
-				
-				
+				// 1 Zinssatz auswählen 
+				// Später den Zinssatz einer Bank auswählen
+				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//tbody//tr//td[2]", test);
+					
 				// 4. Klicken auf Button "Angebot annehmen"
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='annehmen']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
 				

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- bisherige Daten aus D:\IR-WebRisk-Testdaten löschen -->
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TopZinzPortal-Ausschreibung-Ablauftesttest">
+	<test name="TZP-Ausschreibung Start-GG">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPTenderStartGG" />
+		</classes>
+	</test>
+	<test name="TZP-Angebot-geben-GN">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPTenderAngebotSendenGN" />
+		</classes>
+    </test>
+    <test name="TZP-Angebot-Annehmen-GG">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPTenderAngebotAnnehmenGG" />
+		</classes>
+    </test>
+</suite> <!-- Smoketest Prozesse Registrierungsdurchlauf-->
+

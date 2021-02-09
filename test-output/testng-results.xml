@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-02-08T13:54:24 CET" name="TopZinzPortal-Transaktion-Ablauftesttest" finished-at="2021-02-08T13:56:20 CET" duration-ms="116399">
+  <suite started-at="2021-02-09T16:37:29 CET" name="TopZinzPortal-Ausschreibung-Ablauftesttest" finished-at="2021-02-09T16:39:07 CET" duration-ms="97500">
     <groups>
     </groups>
-    <test started-at="2021-02-08T13:54:24 CET" name="TZP-Zinssatz Vorgabe GN" finished-at="2021-02-08T13:55:06 CET" duration-ms="42774">
-      <class name="TopZinsPortal.TZPZinssatzVorgabeGN">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPZinssatzVorgabeGN@245b4bdc]" started-at="2021-02-08T13:54:24 CET" name="SetupSeleniumTestdaten" finished-at="2021-02-08T13:54:26 CET" duration-ms="2881" status="PASS">
+    <test started-at="2021-02-09T16:37:29 CET" name="TZP-Ausschreibung Start-GG" finished-at="2021-02-09T16:38:07 CET" duration-ms="37401">
+      <class name="TopZinsPortal.TZPTenderStartGG">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderStartGG@245b4bdc]" started-at="2021-02-09T16:37:29 CET" name="SetupSeleniumTestdaten" finished-at="2021-02-09T16:37:32 CET" duration-ms="2874" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,146 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPZinssatzVorgabeGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPZinssatzVorgabeGN@245b4bdc]" started-at="2021-02-08T13:54:27 CET" name="TZPZinssatzVorgabeGNTest" data-provider="TZPZinssatzVorgabeGN" finished-at="2021-02-08T13:55:02 CET" duration-ms="35246" status="PASS">
+        <test-method signature="TZPTenderStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderStartGG@245b4bdc]" started-at="2021-02-09T16:37:32 CET" name="TZPTenderStartGGTest" data-provider="TZPTenderStartGG" finished-at="2021-02-09T16:38:02 CET" duration-ms="29842" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPZinssatzVorgabeGN-TF-001]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[BHDR-GN-Handel]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[BHDR-GN-Handel@forsa-gmbh.de]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[0,01]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[0,02]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[0,03]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[0,04]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[0.05]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[0.06]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[0.07]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[0.08]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[0,09]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[0,10]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[0,11]]>
-              </value>
-            </param>
-            <param index="16">
-              <value>
-                <![CDATA[0.12]]>
-              </value>
-            </param>
-            <param index="17">
-              <value>
-                <![CDATA[0.18]]>
-              </value>
-            </param>
-            <param index="18">
-              <value>
-                <![CDATA[0.24]]>
-              </value>
-            </param>
-            <param index="19">
-              <value>
-                <![CDATA[0.36]]>
-              </value>
-            </param>
-            <param index="20">
-              <value>
-                <![CDATA[0.48]]>
-              </value>
-            </param>
-            <param index="21">
-              <value>
-                <![CDATA[0.6]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPZinssatzVorgabeGNTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPZinssatzVorgabeGN@245b4bdc]" started-at="2021-02-08T13:55:02 CET" name="BrowserTearDown" finished-at="2021-02-08T13:55:06 CET" duration-ms="4456" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BrowserTearDown -->
-      </class> <!-- TopZinsPortal.TZPZinssatzVorgabeGN -->
-    </test> <!-- TZP-Zinssatz Vorgabe GN -->
-    <test started-at="2021-02-08T13:55:06 CET" name="TZP-Transaktion Start-GG" finished-at="2021-02-08T13:55:32 CET" duration-ms="25572">
-      <class name="TopZinsPortal.TZPTransaktionStartGG">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionStartGG@2f9f7dcf]" started-at="2021-02-08T13:55:06 CET" name="SetupSeleniumTestdaten" finished-at="2021-02-08T13:55:08 CET" duration-ms="1538" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Smoketest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPTransaktionStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionStartGG@2f9f7dcf]" started-at="2021-02-08T13:55:08 CET" name="TZPTransaktionStartGGTest" data-provider="TZPTransaktionStartGG" finished-at="2021-02-08T13:55:28 CET" duration-ms="19862" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPTransaktionStartGG-TF-001]]>
+                <![CDATA[TZPTenderStartGG-TF-001]]>
               </value>
             </param>
             <param index="1">
@@ -177,100 +42,185 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[200000]]>
+                <![CDATA[ActDatum]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[0,07 %]]>
+                <![CDATA[18:00]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[ActDatum]]>
+                <![CDATA[30/360]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[act//360]]>
+                <![CDATA[endfällig]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[halbjährlich]]>
+                <![CDATA[433.564]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[ActDatum]]>
+                <![CDATA[ActDatum + 3]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[ActDatum + 10]]>
               </value>
             </param>
             <param index="11">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[ActDatum + 20]]>
               </value>
             </param>
             <param index="12">
               <value>
-                <![CDATA[BHDR-GN-Handel]]>
+                <![CDATA[ActDatum + 30]]>
               </value>
             </param>
             <param index="13">
               <value>
-                <![CDATA[BHDR-GN-Handel@Forsa-gmbh.de]]>
+                <![CDATA[Das ist ein Kommentar]]>
               </value>
             </param>
             <param index="14">
               <value>
-                <![CDATA[Test12345!]]>
+                <![CDATA[BHDR-GN-Handel]]>
               </value>
             </param>
             <param index="15">
               <value>
-                <![CDATA[500000]]>
+                <![CDATA[BHDR-GN-Handel@Forsa-gmbh.de]]>
               </value>
             </param>
             <param index="16">
               <value>
-                <![CDATA[2]]>
+                <![CDATA[Test12345!]]>
               </value>
             </param>
             <param index="17">
               <value>
-                <![CDATA[ActDatum + 3]]>
+                <![CDATA[1]]>
               </value>
             </param>
             <param index="18">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[Bank Testing]]>
               </value>
             </param>
             <param index="19">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[topzinsportal@forsa-gmbh.de]]>
               </value>
             </param>
             <param index="20">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[Test12345!]]>
               </value>
             </param>
             <param index="21">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="22">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[FORSA Digital Bank]]>
               </value>
             </param>
             <param index="23">
+              <value>
+                <![CDATA[sturm1@forsa-gmbh.de]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="40">
               <value>
                 <![CDATA[Ja]]>
               </value>
@@ -278,16 +228,16 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPTransaktionStartGGTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionStartGG@2f9f7dcf]" started-at="2021-02-08T13:55:28 CET" name="BrowserTearDown" finished-at="2021-02-08T13:55:32 CET" duration-ms="4089" status="PASS">
+        </test-method> <!-- TZPTenderStartGGTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTenderStartGG@245b4bdc]" started-at="2021-02-09T16:38:02 CET" name="BrowserTearDown" finished-at="2021-02-09T16:38:07 CET" duration-ms="4506" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
-      </class> <!-- TopZinsPortal.TZPTransaktionStartGG -->
-    </test> <!-- TZP-Transaktion Start-GG -->
-    <test started-at="2021-02-08T13:55:32 CET" name="TZP-Akzeptieren-GN" finished-at="2021-02-08T13:55:50 CET" duration-ms="17764">
-      <class name="TopZinsPortal.TZPTransaktionAkzeptierenGN">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGN@42a48628]" started-at="2021-02-08T13:55:32 CET" name="SetupSeleniumTestdaten" finished-at="2021-02-08T13:55:34 CET" duration-ms="1577" status="PASS">
+      </class> <!-- TopZinsPortal.TZPTenderStartGG -->
+    </test> <!-- TZP-Ausschreibung Start-GG -->
+    <test started-at="2021-02-09T16:38:07 CET" name="TZP-Angebot-geben-GN" finished-at="2021-02-09T16:38:46 CET" duration-ms="39436">
+      <class name="TopZinsPortal.TZPTenderAngebotSendenGN">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderAngebotSendenGN@5b8dfcc1]" started-at="2021-02-09T16:38:07 CET" name="SetupSeleniumTestdaten" finished-at="2021-02-09T16:38:08 CET" duration-ms="1564" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -298,11 +248,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPTransaktionAkzeptierenGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGN@42a48628]" started-at="2021-02-08T13:55:34 CET" name="TZPTransaktionAkzeptierenGNTest" data-provider="TZPTransaktionAkzeptierenGN" finished-at="2021-02-08T13:55:46 CET" duration-ms="12011" status="PASS">
+        <test-method signature="TZPTenderStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderAngebotSendenGN@5b8dfcc1]" started-at="2021-02-09T16:38:08 CET" name="TZPTenderStartGGTest" data-provider="TZPTenderAngebotSendenGN" finished-at="2021-02-09T16:38:42 CET" duration-ms="33255" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPTransaktionStartGG-TF-001]]>
+                <![CDATA[TZPTenderStartGG-TF-001]]>
               </value>
             </param>
             <param index="1">
@@ -322,100 +272,185 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[200000]]>
+                <![CDATA[ActDatum]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[0,07 %]]>
+                <![CDATA[18:00]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[ActDatum]]>
+                <![CDATA[30/360]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[act//360]]>
+                <![CDATA[endfällig]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[halbjährlich]]>
+                <![CDATA[433.564]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[ActDatum]]>
+                <![CDATA[ActDatum + 3]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[ActDatum + 10]]>
               </value>
             </param>
             <param index="11">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[ActDatum + 20]]>
               </value>
             </param>
             <param index="12">
               <value>
-                <![CDATA[BHDR-GN-Handel]]>
+                <![CDATA[ActDatum + 30]]>
               </value>
             </param>
             <param index="13">
               <value>
-                <![CDATA[BHDR-GN-Handel@Forsa-gmbh.de]]>
+                <![CDATA[Das ist ein Kommentar]]>
               </value>
             </param>
             <param index="14">
               <value>
-                <![CDATA[Test12345!]]>
+                <![CDATA[BHDR-GN-Handel]]>
               </value>
             </param>
             <param index="15">
               <value>
-                <![CDATA[500000]]>
+                <![CDATA[BHDR-GN-Handel@Forsa-gmbh.de]]>
               </value>
             </param>
             <param index="16">
               <value>
-                <![CDATA[2]]>
+                <![CDATA[Test12345!]]>
               </value>
             </param>
             <param index="17">
               <value>
-                <![CDATA[ActDatum + 3]]>
+                <![CDATA[1]]>
               </value>
             </param>
             <param index="18">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[Bank Testing]]>
               </value>
             </param>
             <param index="19">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[topzinsportal@forsa-gmbh.de]]>
               </value>
             </param>
             <param index="20">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[Test12345!]]>
               </value>
             </param>
             <param index="21">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="22">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[FORSA Digital Bank]]>
               </value>
             </param>
             <param index="23">
+              <value>
+                <![CDATA[sturm1@forsa-gmbh.de]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="40">
               <value>
                 <![CDATA[Ja]]>
               </value>
@@ -423,16 +458,16 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPTransaktionAkzeptierenGNTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGN@42a48628]" started-at="2021-02-08T13:55:46 CET" name="BrowserTearDown" finished-at="2021-02-08T13:55:50 CET" duration-ms="4091" status="PASS">
+        </test-method> <!-- TZPTenderStartGGTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTenderAngebotSendenGN@5b8dfcc1]" started-at="2021-02-09T16:38:42 CET" name="BrowserTearDown" finished-at="2021-02-09T16:38:46 CET" duration-ms="4535" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
-      </class> <!-- TopZinsPortal.TZPTransaktionAkzeptierenGN -->
-    </test> <!-- TZP-Akzeptieren-GN -->
-    <test started-at="2021-02-08T13:55:50 CET" name="TZP-Akzeptieren-GG" finished-at="2021-02-08T13:56:06 CET" duration-ms="16134">
-      <class name="TopZinsPortal.TZPTransaktionAkzeptierenGG">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGG@38d8f54a]" started-at="2021-02-08T13:55:50 CET" name="SetupSeleniumTestdaten" finished-at="2021-02-08T13:55:51 CET" duration-ms="1503" status="PASS">
+      </class> <!-- TopZinsPortal.TZPTenderAngebotSendenGN -->
+    </test> <!-- TZP-Angebot-geben-GN -->
+    <test started-at="2021-02-09T16:38:46 CET" name="TZP-Angebot-Annehmen-GG" finished-at="2021-02-09T16:39:07 CET" duration-ms="20624">
+      <class name="TopZinsPortal.TZPTenderAngebotAnnehmenGG">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderAngebotAnnehmenGG@7d8995e]" started-at="2021-02-09T16:38:46 CET" name="SetupSeleniumTestdaten" finished-at="2021-02-09T16:38:48 CET" duration-ms="1484" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -443,11 +478,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPTransaktionAkzeptierenGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGG@38d8f54a]" started-at="2021-02-08T13:55:51 CET" name="TZPTransaktionAkzeptierenGGTest" data-provider="TZPTransaktionAkzeptierenGG" finished-at="2021-02-08T13:56:02 CET" duration-ms="10494" status="PASS">
+        <test-method signature="TZPTenderStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderAngebotAnnehmenGG@7d8995e]" started-at="2021-02-09T16:38:48 CET" name="TZPTenderStartGGTest" data-provider="TenderAngebotAnnehmenGG" finished-at="2021-02-09T16:39:03 CET" duration-ms="14870" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPTransaktionStartGG-TF-001]]>
+                <![CDATA[TZPTenderStartGG-TF-001]]>
               </value>
             </param>
             <param index="1">
@@ -467,245 +502,185 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[200000]]>
+                <![CDATA[ActDatum]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[0,07 %]]>
+                <![CDATA[18:00]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[ActDatum]]>
+                <![CDATA[30/360]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[act//360]]>
+                <![CDATA[endfällig]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[halbjährlich]]>
+                <![CDATA[433.564]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[ActDatum]]>
+                <![CDATA[ActDatum + 3]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[ActDatum + 10]]>
               </value>
             </param>
             <param index="11">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[ActDatum + 20]]>
               </value>
             </param>
             <param index="12">
               <value>
-                <![CDATA[BHDR-GN-Handel]]>
+                <![CDATA[ActDatum + 30]]>
               </value>
             </param>
             <param index="13">
               <value>
-                <![CDATA[BHDR-GN-Handel@Forsa-gmbh.de]]>
+                <![CDATA[Das ist ein Kommentar]]>
               </value>
             </param>
             <param index="14">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[500000]]>
-              </value>
-            </param>
-            <param index="16">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="17">
-              <value>
-                <![CDATA[ActDatum + 3]]>
-              </value>
-            </param>
-            <param index="18">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="19">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="20">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="21">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="22">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="23">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPTransaktionAkzeptierenGGTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGG@38d8f54a]" started-at="2021-02-08T13:56:02 CET" name="BrowserTearDown" finished-at="2021-02-08T13:56:06 CET" duration-ms="4059" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BrowserTearDown -->
-      </class> <!-- TopZinsPortal.TZPTransaktionAkzeptierenGG -->
-    </test> <!-- TZP-Akzeptieren-GG -->
-    <test started-at="2021-02-08T13:56:06 CET" name="TZP-Abschluss-GN" finished-at="2021-02-08T13:56:20 CET" duration-ms="14079">
-      <class name="TopZinsPortal.TZPTransaktionAbschlussGN">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAbschlussGN@4c371370]" started-at="2021-02-08T13:56:06 CET" name="SetupSeleniumTestdaten" finished-at="2021-02-08T13:56:07 CET" duration-ms="1508" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Smoketest]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPTransaktionAbschlussGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAbschlussGN@4c371370]" started-at="2021-02-08T13:56:07 CET" name="TZPTransaktionAbschlussGNTest" data-provider="TZPTransaktionAbschlussGN" finished-at="2021-02-08T13:56:16 CET" duration-ms="8410" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPTransaktionStartGG-TF-001]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[BHDR-GG-Handel@Forsa-gmbh.de]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[200000]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[0,07 %]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[ActDatum]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[act//360]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[halbjährlich]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[ActDatum]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="12">
               <value>
                 <![CDATA[BHDR-GN-Handel]]>
               </value>
             </param>
-            <param index="13">
+            <param index="15">
               <value>
                 <![CDATA[BHDR-GN-Handel@Forsa-gmbh.de]]>
               </value>
             </param>
-            <param index="14">
+            <param index="16">
               <value>
                 <![CDATA[Test12345!]]>
               </value>
             </param>
-            <param index="15">
-              <value>
-                <![CDATA[500000]]>
-              </value>
-            </param>
-            <param index="16">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
             <param index="17">
               <value>
-                <![CDATA[ActDatum + 3]]>
+                <![CDATA[1]]>
               </value>
             </param>
             <param index="18">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[Bank Testing]]>
               </value>
             </param>
             <param index="19">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[topzinsportal@forsa-gmbh.de]]>
               </value>
             </param>
             <param index="20">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[Test12345!]]>
               </value>
             </param>
             <param index="21">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="22">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[FORSA Digital Bank]]>
               </value>
             </param>
             <param index="23">
+              <value>
+                <![CDATA[sturm1@forsa-gmbh.de]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="40">
               <value>
                 <![CDATA[Ja]]>
               </value>
@@ -713,12 +688,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPTransaktionAbschlussGNTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionAbschlussGN@4c371370]" started-at="2021-02-08T13:56:16 CET" name="BrowserTearDown" finished-at="2021-02-08T13:56:20 CET" duration-ms="4082" status="PASS">
+        </test-method> <!-- TZPTenderStartGGTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTenderAngebotAnnehmenGG@7d8995e]" started-at="2021-02-09T16:39:03 CET" name="BrowserTearDown" finished-at="2021-02-09T16:39:07 CET" duration-ms="4181" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
-      </class> <!-- TopZinsPortal.TZPTransaktionAbschlussGN -->
-    </test> <!-- TZP-Abschluss-GN -->
-  </suite> <!-- TopZinzPortal-Transaktion-Ablauftesttest -->
+      </class> <!-- TopZinsPortal.TZPTenderAngebotAnnehmenGG -->
+    </test> <!-- TZP-Angebot-Annehmen-GG -->
+  </suite> <!-- TopZinzPortal-Ausschreibung-Ablauftesttest -->
 </testng-results>

@@ -2,6 +2,7 @@ package TopZinsPortal;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -58,7 +59,7 @@ public class TZPTenderAngebotSendenGN {
 
 			if (htmlReporter == null) {
 				// start reporters
-				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Tranaktion Start GG - " + Ablaufart + ".html");
+				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Tender Angebot senden GN - " + Ablaufart + ".html");
 				// create ExtentReports and attach reporter(s)
 				extent = new ExtentReports();
 				extent.attachReporter(htmlReporter);
@@ -80,7 +81,7 @@ public class TZPTenderAngebotSendenGN {
 		}
 		
 
-		@DataProvider(name = "TZPTenderStartGG")
+		@DataProvider(name = "TZPTenderAngebotSendenGN")
 		public static Object[][] getData() throws BiffException {
 			// Ermittelt den Pfad des aktuellen Projekts
 			projectpath = System.getProperty("user.dir");
@@ -124,13 +125,18 @@ public class TZPTenderAngebotSendenGN {
 
 
 		// @Test
-		@Test(dataProvider = "TZPTenderStartGG")
-		public void TZPTenderStartGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String EndeDatum, String	EndeUhrzeit,
-		String Geldnehmer, String VolumenGG, String Valuta, String Faelligkeit, String BtnBankenEinladenGG, String BtnAusloggenGG,
-		String EmailadresseGN1,	String PasswortGN1, String	ZinssatzGN1, String BtnAngebotSendenGN1, String	BtnJaGN1, String BtnAusloggenGN1,
-		String EmailadresseGN2,	String PasswortGN2, String	ZinssatzGN2, String BtnAngebotSendenGN2, String	BtnJaGN2, String BtnAusloggenGN2,
-		String EmailadresseGN3,	String PasswortGN3, String	ZinssatzGN3, String BtnAngebotSendenGN3, String	BtnJaGN3, String BtnAusloggenGN3,
-		String BtnAngebotAnnehmenGG, String	BtnJaGG
+		@Test(dataProvider = "TZPTenderAngebotSendenGN")
+		public void TZPTenderStartGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String EndeDatum, 
+		String	EndeUhrzeit, String Zinskonvention, String Zahlungsfrequenz, 		
+		String VolumenGG, String Valuta, String Faelligkeit1, String Faelligkeit2, String Faelligkeit3, String KommentarGG,
+		String FirmaGN1, String EmailadresseGN1,	String PasswortGN1, String	ZinssatzGN1,
+		String FirmaGN2, String EmailadresseGN2,	String PasswortGN2, String	ZinssatzGN2,
+		String FirmaGN3, String EmailadresseGN3,	String PasswortGN3, String	ZinssatzGN3,
+		String BtnAuswahlBestaetigenGG, String BtnBankenEinladenGG, String BtnAusloggenGG, 
+		String BtnAngebotSendenGN1, String	BtnAngebotAblehnenGN1, String BtnAngebotTelefonischGN1,
+		String BtnAngebotSendenGN2, String	BtnAngebotAblehnenGN2, String BtnAngebotTelefonischGN2,
+		String BtnAngebotSendenGN3, String	BtnAngebotAblehnenGN3, String BtnAngebotTelefonischGN3,
+	    String BtnAngebotAnnehmenGG, String	BtnAngebotAblehnenGG, String BtnAngebotTelefonischGG
 
 
 		) throws Exception {
@@ -146,25 +152,50 @@ public class TZPTenderAngebotSendenGN {
 				// Loginseite oeffnen
 				Thread.sleep(3 * Zeitspanne);
 				test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
+	
 				
-				// BORROWER 1 SENDET OFFER
+				
+				
+				// BORROWER 1-3 SENDET OFFER
 				// 1. Login Borrower 1
-				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", EmailadresseGN1, test);
-				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", PasswortGN1, test);
+				// Mehrmals durchlaufen mit gesetzten Variablen
+				// Das array größer Dimensionieren als notwendig.
+				String[] EmailGN = new String[5];
+				EmailGN[1] = EmailadresseGN1;
+				EmailGN[2] = EmailadresseGN2;
+				EmailGN[3] = EmailadresseGN3;
+				String[] PassGN = new String[5];
+				PassGN[1] = PasswortGN1;
+				PassGN[2] = PasswortGN2;
+				PassGN[3] = PasswortGN3;
+				String[] ZinsGN = new String[5];
+				ZinsGN[1] = ZinssatzGN1;
+				ZinsGN[2] = ZinssatzGN2;
+				ZinsGN[3] = ZinssatzGN3;
+					
+				
+			    for (int Durchlauf = 1; Durchlauf < 4; Durchlauf++) {
+			    	
+			    				
+				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", EmailGN[Durchlauf], test);
+				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", PassGN[Durchlauf], test);
 				
 				// 1.1 Button "Einloggen" klicken
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 				
 				// 2. Klicken auf Register "Auschreibung"
-				// driver.findElement(By.xpath("//a[@href='/portal/Ausschreibung']")).click();
+				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@data-test='Ausschreibungen']", test);
 				
 				// 3. Tender auswählen
-				// ???
+				Utils.SeleniumUtils.AuschreibungGNAuswahl(driver, Zeitspanne,  VolumenGG, test);
 				
-				
-				
+				// Nur Angebot abgeben, falls erforderleich
+				if ((driver.findElement(By.xpath("//h5")).getText()).equals("Anfrage Ausschreibung")) {
+			
+			    System.out.println(driver.findElement(By.xpath("//h5")).getText());
+					
 				// 4. Feld "Zinssatz" ausfüllen
-				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//input[@inputmode='numeric']", ZinssatzGN1, test);
+				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//input[@inputmode='numeric']",ZinsGN[Durchlauf], test);
 				
 				// 5. Klicken auf Button "Angebot senden"
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='senden']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
@@ -174,117 +205,16 @@ public class TZPTenderAngebotSendenGN {
 				
 				// 6.1 Klicken auf Button "OK"
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
+				
+				} // Auschreibung durchgeführt?
 				
 				// 7. Borrower 1 ausloggen
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);
 				
-				// BORROWER 2 SENDET OFFER
-				// 1. Login Borrower 2
-				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", EmailadresseGN2, test);
-				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", PasswortGN2, test);
-				
-				// 1.1 Button "Einloggen" klicken
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
-				
-				// 2. Klicken auf Register "Auschreibung"
-				// driver.findElement(By.xpath("//a[@href='/portal/Ausschreibung']")).click();
-				
-				// 3. Tender auswählen
-				// ????
 				
 				
-				
-				
-				// 4. Feld "Zinssatz" ausfüllen
-				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//input[@inputmode='numeric']", ZinssatzGN2, test);
-				
-				// 5. Klicken auf Button "Angebot senden"
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='senden']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
-				
-				// 6. Klicken auf Button "Ja"
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Ja']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
-				
-				// 6.1 Klicken auf Button "OK"
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
-				
-				// 7. Borrower 2 ausloggen
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);
-				
-				// BORROWER 3 SENDET OFFER
-				// 1. Login Borrower 3
-				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", EmailadresseGN3, test);
-				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", PasswortGN3, test);
-				
-				// 1.1 Button "Einloggen" klicken
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
-				
-				// 2. Klicken auf Register "Auschreibung"
-				// driver.findElement(By.xpath("//a[@href='/portal/Ausschreibung']")).click();
-				
-				// 3. Tender auswählen 
-				// ???
-				
-				
-				
-				
-				// 4. Feld "Zinssatz" ausfüllen
-				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//input[@inputmode='numeric']", ZinssatzGN3, test);
-				
-				// 5. Klicken auf Button "Angebot senden"
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='senden']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
-				
-				// 6. Klicken auf Button "Ja"
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Ja']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
-				
-				// 6.1 Klicken auf Button "OK"
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
-				
-				// 7. Borrower 3 ausloggen
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);
-				
-				
-				
-			/*
-			// creates a toggle for the given test, adds all log events under it
-			ExtentTest test = extent.createTest("TZP_Transaktion: " + Teststep + " - " + AblaufartGlobal,
-					"Start einer Transaktion durch den Geldgeber");
+			    } // Ende for 
 
-			driver.get(BaseUrl);
-			// 1. Loginseite oeffnen
-			Thread.sleep(3 * Zeitspanne);
-			test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
-
-			// 2. Login Geldgeber, der eine handelsberechtigung hat, mit gueltigen Daten
-			SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", EmailadresseGG, test);
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", PasswortGG, test);
-
-     		// 3. Button "Login" auswaehlen
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
-			
-			// 4. Ein Zinssatz in view "Alle Banken" auswaehlen
-			// Auf das Zellenelemnet mit Bankname und Zinssatz zugreifen
-			Utils.SeleniumUtils.TabelleButtonKlick(driver, Zeitspanne, "xpath", FirmaGN, ZinssatzGG, test); 
-			System.out.println("nach Buttonclick");
-			
-			// 5. Alle Pflichtfelder in Pop-up "Anfrage Termingeldanlage starten" ausfuellen
-			// 5.1 Volumen 
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//input[@inputmode='numeric']", VolumenGN, test);
-						
-			
-			// 5.2 Valuta
-			Utils.SeleniumUtils.InputDatum(driver, Zeitspanne, "xpath", "//Label[text() ='Valuta*']//following::input[contains(@class, 'MuiInput')]", Valuta, test);
-		
-			// 6.0 Button "Anfrage senden" klicken 
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
-			
-			
-			// 6.1 OK Button der neuen Meldung
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
-			
-			
-			// 7. Geldgeber ausloggen
-			// Beispiel, wie man ein Element mit einem bestimmten Attribut finden kann -> webDriver.findElements(By.xpath("//element[@attribute='value']"))
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);  // Klicken auf ein Button mit dem Attribut data-test='logout-button'
 			
 			Thread.sleep(3 * Zeitspanne);
 						
@@ -295,7 +225,7 @@ public class TZPTenderAngebotSendenGN {
 			eyes = null;
 
 			// Neu Starten
-			SetupSeleniumTestdaten(AblaufartGlobal);*/
+			SetupSeleniumTestdaten(AblaufartGlobal);
 
 		} // Nur wenn Aktic "Ja" ist durchlaufen
 

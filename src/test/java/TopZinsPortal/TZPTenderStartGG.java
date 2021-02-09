@@ -23,6 +23,7 @@ import jxl.read.biff.BiffException;
 
 public class TZPTenderStartGG {
 	
+	// Beachte: Die Volumeneingabe des Geldgebers in der Exceldatei steuert den Ablauf.
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
 	
@@ -178,14 +179,18 @@ public class TZPTenderStartGG {
 				// Button klick zum öffnen der Maske
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//*[text()='Geldnehmer*']//following::button[contains(@class, 'MuiButtonBase-root')][1]", test);
 				
-				// Erster Schritt eine willkürliche Bank auswählen und Maske wieder schließen
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//tr[3]//input[contains(@class, 'jss')]", test);
+				// 3 Banken auswählen und Maske wieder schließen
+				Utils.SeleniumUtils.AusschreibungBankenAuswahl(driver, Zeitspanne, FirmaGN1,  test);
+				Utils.SeleniumUtils.AusschreibungBankenAuswahl(driver, Zeitspanne, FirmaGN2,  test);
+				Utils.SeleniumUtils.AusschreibungBankenAuswahl(driver, Zeitspanne, FirmaGN3,  test);
 				
 				// Auswahl annehmen
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Auswahl bestätigen']//ancestor::button", test);
 				
 							
 				// 4.4 Field "Volumen" ausfüllen
+				// In der Zahl der Exceleingabe die "." entfernen, da bei der Eingabe in das Feld eine Fehlinterpretion erfolgt.
+				VolumenGG = (VolumenGG.replace(".", ""));
 				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//Label[text() ='Volumen*']//following::input[contains(@class, 'MuiInput')]", VolumenGG, test);
 				
 				// 4.5 Field "Valuta" ausfüllen
@@ -202,7 +207,7 @@ public class TZPTenderStartGG {
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
 
 				// 6. Lender ausloggen
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);
+				// Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);
 				
 				Thread.sleep(10 * Zeitspanne);
 				

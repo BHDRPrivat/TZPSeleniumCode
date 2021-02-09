@@ -4,9 +4,11 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 
@@ -27,14 +29,62 @@ import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
-import java.lang.*;
-
 public class SeleniumUtils {
 	
-	
-	public static void TabellenAuswahl(WebDriver driver, Integer Zeitspanne, String Suchstring, ExtentTest test) throws InterruptedException {
+	public static void AuschreibungGNAuswahl(WebDriver driver, Integer Zeitspanne, String Suchstring, ExtentTest test) throws InterruptedException {
 		// Anhand eines Suchstring, wird die Auswahl des Tabellenelements angewählt
 		
+		List<WebElement> allAusschreibungen = driver.findElements(By.xpath("(//ul//p[3])"));
+		List<String> AuschreibungIDs = new ArrayList<String>();
+
+			
+		System.out.println("Suchstring: " + Suchstring );
+		Thread.sleep(3 * Zeitspanne);
+		// Ermittlung einer Position eines Eintrags
+		int position = 0;
+
+		for (WebElement AusschreibungID : allAusschreibungen) {
+			AuschreibungIDs.add(AusschreibungID.getText());
+		position++;
+		// überprüfen, ob der Wert vorhanden ist, nicht ob er gleich ist, da Anzeige aus Teilelementen zusammengebaut wird.
+		// Die Eingabe in der Excel-Tabelle muss als Text formatiert werden.
+		if (AusschreibungID.getText().contains(Suchstring)) {
+      	break;
+		}
+		}
+		System.out.println("position : " + position);
+		// Klick auf Button in der Zeile:
+    	Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "(//ul//p[3])[" + position +"]", test);
+		
+    	Thread.sleep(3 * Zeitspanne);
+		
+	}
+	
+	
+	
+	public static void AusschreibungBankenAuswahl(WebDriver driver, Integer Zeitspanne, String Suchstring, ExtentTest test) throws InterruptedException {
+		// Anhand eines Suchstring, wird die Auswahl des Tabellenelements angewählt
+		
+		List<WebElement> allBanks = driver.findElements(By.xpath("//tr//td[2]//p"));
+		List<String> bankIDs = new ArrayList<String>();
+
+		System.out.println("Suchstring: " + Suchstring );
+		Thread.sleep(3 * Zeitspanne);
+		// Ermittlung einer Position eines Eintrags
+		int position = 0;
+
+		for (WebElement bankID : allBanks) {
+		bankIDs.add(bankID.getText());
+		position++;
+		if (bankID.getText().equals(Suchstring)) {
+		break;
+		}
+		}
+		System.out.println("position : " + position);
+		// Klick auf Button in der Zeile:
+    	Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//tr[" + position +"]//input[contains(@class, 'jss')]", test);
+		
+    	Thread.sleep(3 * Zeitspanne);
 		
 	}
 	
