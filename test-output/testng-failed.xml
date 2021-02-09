@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [TopZinzPortal-Ablauftesttest]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="TZP-Admin-HandelsfreigabeGN(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
     <classes>
-      <class name="TopZinsPortal.TZPTransaktionAkzeptierenGN">
+      <class name="TopZinsPortal.TZPAdminHandelsfreigabeGN">
         <methods>
+          <include name="TZPAdminHandelsfreigabeGNTest" invocation-numbers="0"/>
           <include name="SetupSeleniumTestdaten"/>
           <include name="BrowserTearDown"/>
-          <include name="TZPTransaktionAkzeptierenGNTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- TopZinsPortal.TZPTransaktionAkzeptierenGN -->
+      </class> <!-- TopZinsPortal.TZPAdminHandelsfreigabeGN -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- TZP-Admin-HandelsfreigabeGN(failed) -->
+</suite> <!-- Failed suite [TopZinzPortal-Ablauftesttest] -->

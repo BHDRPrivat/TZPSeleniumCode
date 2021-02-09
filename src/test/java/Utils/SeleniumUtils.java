@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 import javax.imageio.ImageIO;
 
@@ -24,9 +27,16 @@ import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
-import java.util.*;
+import java.lang.*;
 
 public class SeleniumUtils {
+	
+	
+	public static void TabellenAuswahl(WebDriver driver, Integer Zeitspanne, String Suchstring, ExtentTest test) throws InterruptedException {
+		// Anhand eines Suchstring, wird die Auswahl des Tabellenelements angewählt
+		
+		
+	}
 	
 	public static void InputDatum(WebDriver driver, Integer Zeitspanne, String HTMLSelector, String ObjektPath1, String ObjektPath2, String Inputwert, ExtentTest test) throws InterruptedException {
 		// Inputwert zu einem gültigen und aktuellen Datum wandeln 
@@ -38,17 +48,58 @@ public class SeleniumUtils {
 		int Jahr = myCal.get( Calendar.YEAR  );
 		int Monat = myCal.get( Calendar.MONTH ) + 1;           // nicht vergessen die 1 zu addieren
 		int Tag = myCal.get( Calendar.DATE  );
-
+        // Variable für das Setzen einer führenden "0" bei einstelligen Angaben
+		String Tag$ ="";
+	    String Monat$ ="";
 		
-		System.out.println("Datum: " + Tag + "Monat: "+ Monat + "Jahr:" + Jahr);
+		System.out.println("Tag: " + Tag + " Monat: "+ Monat + " Jahr:" + Jahr);
+		
 		
 		System.out.println("Eingang: " + Inputwert);
 		if (Inputwert.equals("ActDatum")) {
 	        LocalDateTime now = LocalDateTime.now();
 	        DateTimeFormatter df;
-	        df = DateTimeFormatter.ofPattern("dd.MM.yyyy");     // 31.01.2016
-    		Inputwert = now.format(df);
+	        df = DateTimeFormatter.ofPattern("dd.MM.yyyy"); // Format: 31.01.2016
+      		Inputwert = now.format(df);
+    	}
+		// Die Verschiebung um Tage wird analysiert
+    	if ((Inputwert.substring(0, 10)).equals("ActDatum +")){
+			System.out.println("Spezialdatum: " + Inputwert);
+			// System.out.println("left 0 bis 10: " + Inputwert.substring(0, 10));
+			int ZusatzTage = Integer.valueOf((Inputwert.substring(10)).trim());
+			if (Tag+ZusatzTage > 28) {
+				Tag = ZusatzTage;
+				if (Monat < 11) {
+					Monat = Monat +1 ;					
+				}
+				else {
+					Monat = 1;
+					Jahr = Jahr + 1;
+				}
+			}
+			else {
+				Tag =Tag + ZusatzTage;
+			}
+			if (Tag < 10) {
+			 Tag$ = ("0" + Tag);
+			}
+			else {
+				Tag$ = String.valueOf(Tag);
+				}
+			if (Monat < 10) {	
+			   Monat$ = ("0" + Monat);	
+			}
+			else {
+				Monat$ = String.valueOf(Monat);
+			}
+			Inputwert = (Tag$ + "." + Monat$ + "." + Jahr);
 		}
+		
+	
+		
+		
+		
+		
 		System.out.println("Ausgang: " + Inputwert);
 		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
 		

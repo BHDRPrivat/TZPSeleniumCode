@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>18/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Jan 30 10:22:01 CET 2021</td>
+<td>Started on:</td><td>Mon Feb 08 13:17:16 CET 2021</td>
 </tr>
-<tr><td>Total time:</td><td>108 seconds (108936 ms)</td>
+<tr><td>Total time:</td><td>132 seconds (132702 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,19 +75,126 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: TZPRegGG-TF-002, Ja, BHDR-GG-DatenKomplett, Herr, Prof., BHDR-GG-DatenKomplett Vorname, BHDR-GG-DatenKomplett Nachanme, 0611-97381-63, BHDR-GG-DatenKomplett@forsa-gmbh.de, BHDR-GG-DatenKomplett@forsa-gmbh.de, Test12345!, Ja, Ja, nein</td>
-<td><div><pre>junit.framework.AssertionFailedError
-	at junit.framework.Assert.fail(Assert.java:47)
-	at junit.framework.Assert.assertTrue(Assert.java:20)
-	at junit.framework.Assert.assertTrue(Assert.java:27)
-	at TopZinsPortal.TZPRegGG.TZPRegGGTest(TZPRegGG.java:220)
+<td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: TZPRegGG-TF-005, Ja, BHDR-GG-Loeschen, Frau, Mag., BHDR-GG-Loeschen Vorname, BHDR-GG-Loeschen Nachname, 06119738163, BHDR-GG-Loeschen@forsa-gmbh.de, BHDR-GG-Loeschen@forsa-gmbh.de, Test12345!, Ja, Ja, nein</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: Chrome failed to start: crashed.
+  (unknown error: DevToolsActivePort file doesn&apos;t exist)
+  (The process started from chrome location C:\Program Files (x86)\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;FORSA-VM31&apos;, ip: &apos;10.52.76.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	GetHandleVerifier [0x00FAB963+483]
+	GetHandleVerifier [0x00FAB941+449]
+	GetHandleVerifier [0x01353308+3832712]
+	GetHandleVerifier [0x01369FA6+3926054]
+	GetHandleVerifier [0x01367D9C+3917340]
+	GetHandleVerifier [0x0138E7FE+4075646]
+	GetHandleVerifier [0x0138E56C+4074988]
+	GetHandleVerifier [0x0138B2EB+4062059]
+	GetHandleVerifier [0x0136ED14+3945876]
+	GetHandleVerifier [0x0136FBCE+3949646]
+	GetHandleVerifier [0x0136FB59+3949529]
+	Ordinal0 [0x00F6B5CC+46540]
+	Ordinal0 [0x00F69F53+40787]
+	Ordinal0 [0x00F69B12+39698]
+	GetHandleVerifier [0x01271468+2907368]
+	GetHandleVerifier [0x010B71EE+1096302]
+	GetHandleVerifier [0x01073E8D+821005]
+	GetHandleVerifier [0x0107396B+819691]
+	GetHandleVerifier [0x01073881+819457]
+	GetHandleVerifier [0x0109F463+998627]
+	BaseThreadInitThunk [0x76ACFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x779075F4+228]
+	RtlGetAppContainerNamedObjectPath [0x779075C4+180]
+
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:543)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at Utils.TZPSetupBrowser.BrowserSetup(TZPSetupBrowser.java:63)
+	at TopZinsPortal.TZPRegGG.SetupSeleniumTestdaten(TZPRegGG.java:72)
+	at TopZinsPortal.TZPRegGG.TZPRegGGTest(TZPRegGG.java:231)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace846072718", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace846072718'><pre>junit.framework.AssertionFailedError
-	at junit.framework.Assert.fail(Assert.java:47)
-	at junit.framework.Assert.assertTrue(Assert.java:20)
-	at junit.framework.Assert.assertTrue(Assert.java:27)
-	at TopZinsPortal.TZPRegGG.TZPRegGGTest(TZPRegGG.java:220)
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1865233297", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1865233297'><pre>org.openqa.selenium.WebDriverException: unknown error: Chrome failed to start: crashed.
+  (unknown error: DevToolsActivePort file doesn&apos;t exist)
+  (The process started from chrome location C:\Program Files (x86)\Google\Chrome\Application\chrome.exe is no longer running, so ChromeDriver is assuming that Chrome has crashed.)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;FORSA-VM31&apos;, ip: &apos;10.52.76.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	GetHandleVerifier [0x00FAB963+483]
+	GetHandleVerifier [0x00FAB941+449]
+	GetHandleVerifier [0x01353308+3832712]
+	GetHandleVerifier [0x01369FA6+3926054]
+	GetHandleVerifier [0x01367D9C+3917340]
+	GetHandleVerifier [0x0138E7FE+4075646]
+	GetHandleVerifier [0x0138E56C+4074988]
+	GetHandleVerifier [0x0138B2EB+4062059]
+	GetHandleVerifier [0x0136ED14+3945876]
+	GetHandleVerifier [0x0136FBCE+3949646]
+	GetHandleVerifier [0x0136FB59+3949529]
+	Ordinal0 [0x00F6B5CC+46540]
+	Ordinal0 [0x00F69F53+40787]
+	Ordinal0 [0x00F69B12+39698]
+	GetHandleVerifier [0x01271468+2907368]
+	GetHandleVerifier [0x010B71EE+1096302]
+	GetHandleVerifier [0x01073E8D+821005]
+	GetHandleVerifier [0x0107396B+819691]
+	GetHandleVerifier [0x01073881+819457]
+	GetHandleVerifier [0x0109F463+998627]
+	BaseThreadInitThunk [0x76ACFA29+25]
+	RtlGetAppContainerNamedObjectPath [0x779075F4+228]
+	RtlGetAppContainerNamedObjectPath [0x779075C4+180]
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$errorHandler$0(W3CHandshakeResponse.java:62)
+	at org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:543)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:181)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:168)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:157)
+	at Utils.TZPSetupBrowser.BrowserSetup(TZPSetupBrowser.java:63)
+	at TopZinsPortal.TZPRegGG.SetupSeleniumTestdaten(TZPRegGG.java:72)
+	at TopZinsPortal.TZPRegGG.TZPRegGGTest(TZPRegGG.java:231)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -117,7 +224,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>20</td>
+<td>26</td>
 <td>TopZinsPortal.TZPRegGG@245b4bdc</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -130,22 +237,22 @@ function toggleAllBoxes() {
 <tr>
 <td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: TZPRegGG-TF-001, Ja, BHDR-GG-DGSVO, Herr, Dr., BHDR-GG-DGSVO Vorname, BHDR-GG-DGSVO Nachname, 0611 97381 63, BHDR-GG-DGSVO@forsa-gmbh.de, BHDR-GG-DGSVO@forsa-gmbh.de, Test12345!, Ja, Ja, nein</td>
 <td></td>
-<td>20</td>
+<td>25</td>
+<td>TopZinsPortal.TZPRegGG@245b4bdc</td></tr>
+<tr>
+<td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: TZPRegGG-TF-002, Ja, BHDR-GG-DatenKomplett, Herr, Prof., BHDR-GG-DatenKomplett Vorname, BHDR-GG-DatenKomplett Nachanme, 0611-97381-63, BHDR-GG-DatenKomplett@forsa-gmbh.de, BHDR-GG-DatenKomplett@forsa-gmbh.de, Test12345!, Ja, Ja, nein</td>
+<td></td>
+<td>24</td>
 <td>TopZinsPortal.TZPRegGG@245b4bdc</td></tr>
 <tr>
 <td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: TZPRegGG-TF-003, Ja, BHDR-GG-Handel, Frau, , BHDR-GG-Handel Vorname, BHDR-GG-Handel Nachname, 06119738163, BHDR-GG-Handel@forsa-gmbh.de, BHDR-GG-Handel@forsa-gmbh.de, Test12345!, Ja, Ja, nein</td>
 <td></td>
-<td>19</td>
+<td>24</td>
 <td>TopZinsPortal.TZPRegGG@245b4bdc</td></tr>
 <tr>
 <td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: TZPRegGG-TF-004, Ja, BHDR-GG-Deaktiv, Frau, Prof. Dr., BHDR-GG-Deaktiv Vorname, BHDR-GG-Deaktiv Nachname, 06119738163, BHDR-GG-Deaktiv@forsa-gmbh.de, BHDR-GG-Deaktiv@forsa-gmbh.de, Test12345!, Ja, Ja, nein</td>
 <td></td>
-<td>20</td>
-<td>TopZinsPortal.TZPRegGG@245b4bdc</td></tr>
-<tr>
-<td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: TZPRegGG-TF-005, Ja, BHDR-GG-Loeschen, Frau, Mag., BHDR-GG-Loeschen Vorname, BHDR-GG-Loeschen Nachname, 06119738163, BHDR-GG-Loeschen@forsa-gmbh.de, BHDR-GG-Loeschen@forsa-gmbh.de, Test12345!, Ja, Ja, nein</td>
-<td></td>
-<td>20</td>
+<td>24</td>
 <td>TopZinsPortal.TZPRegGG@245b4bdc</td></tr>
 <tr>
 <td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: TZPRegGG-TF-006, Nein, BHDR-GG-DGSVO, Herr, Dr., BHDR-GG-DGSVO Vorname, BHDR-GG-DGSVO Nachname, 0611 11 11 11, b.dikmen.wi@gmail.com, b.dikmen.wi@gmail.com, Test12345!, Ja, Ja, nein</td>

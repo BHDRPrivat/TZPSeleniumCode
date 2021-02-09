@@ -175,11 +175,16 @@ public class TZPTenderStartGG {
 				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//Label[text() ='Ende der Ausschreibung (Uhrzeit)*']//following::input[contains(@class, 'MuiInput')][1]", EndeUhrzeit, test);
 
 				// 4.3 Drei Banken auswählen 
-				//????
-				Thread.sleep(10 * Zeitspanne);
+				// Button klick zum öffnen der Maske
+				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//*[text()='Geldnehmer*']//following::button[contains(@class, 'MuiButtonBase-root')][1]", test);
 				
+				// Erster Schritt eine willkürliche Bank auswählen und Maske wieder schließen
+				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//tr[3]//input[contains(@class, 'jss')]", test);
 				
+				// Auswahl annehmen
+				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Auswahl bestätigen']//ancestor::button", test);
 				
+							
 				// 4.4 Field "Volumen" ausfüllen
 				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//Label[text() ='Volumen*']//following::input[contains(@class, 'MuiInput')]", VolumenGG, test);
 				
@@ -192,11 +197,14 @@ public class TZPTenderStartGG {
 				// 5. Klicken auf Button "Banken einladen"
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 				
+			
+				// 7. Button "OK" klicken
+				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
+
 				// 6. Lender ausloggen
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);
 				
-								
-				
+				Thread.sleep(10 * Zeitspanne);
 				
 				
 				
