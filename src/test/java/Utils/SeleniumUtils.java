@@ -33,6 +33,7 @@ public class SeleniumUtils {
 	
 	public static void AuschreibungGNAuswahl(WebDriver driver, Integer Zeitspanne, String Suchstring, ExtentTest test) throws InterruptedException {
 		// Anhand eines Suchstring, wird die Auswahl des Tabellenelements angewählt
+		// Dei Eingabe in Excel muss mit "." erfolgen -> 200.000
 		
 		List<WebElement> allAusschreibungen = driver.findElements(By.xpath("(//ul//p[3])"));
 		List<String> AuschreibungIDs = new ArrayList<String>();
@@ -70,6 +71,10 @@ public class SeleniumUtils {
 
 		System.out.println("Suchstring: " + Suchstring );
 		Thread.sleep(3 * Zeitspanne);
+		if (Suchstring.equals("")) {
+			// Bei leeren Eintrag passiert nichts
+		}
+		else {
 		// Ermittlung einer Position eines Eintrags
 		int position = 0;
 
@@ -83,7 +88,7 @@ public class SeleniumUtils {
 		System.out.println("position : " + position);
 		// Klick auf Button in der Zeile:
     	Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//tr[" + position +"]//input[contains(@class, 'jss')]", test);
-		
+		}
     	Thread.sleep(3 * Zeitspanne);
 		
 	}

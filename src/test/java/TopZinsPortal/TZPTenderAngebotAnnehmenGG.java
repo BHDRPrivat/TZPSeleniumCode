@@ -125,7 +125,7 @@ public class TZPTenderAngebotAnnehmenGG {
 
 		// @Test
 		@Test(dataProvider = "TenderAngebotAnnehmenGG")
-		public void TZPTenderStartGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String EndeDatum, 
+		public void TZPTenderAngebotAnnehmenGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String EndeDatum, 
 		String	EndeUhrzeit, String Zinskonvention, String Zahlungsfrequenz, 		
 		String VolumenGG, String Valuta, String Faelligkeit1, String Faelligkeit2, String Faelligkeit3, String KommentarGG,
 		String FirmaGN1, String EmailadresseGN1,	String PasswortGN1, String	ZinssatzGN1,
@@ -160,7 +160,11 @@ public class TZPTenderAngebotAnnehmenGG {
 				
 				// 2. Klicken auf Register "Auschreibung"
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@data-test='Ausschreibungen']", test);
-				
+			
+				// Die Anzeige auf 100 erhöhen
+				Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//div[contains(@id,'mui')]",
+						"//li[contains(text(),'", "100", test);
+								
 				// 3. Tender auswählen
 				Utils.SeleniumUtils.AuschreibungGNAuswahl(driver, Zeitspanne,  VolumenGG, test);
 				

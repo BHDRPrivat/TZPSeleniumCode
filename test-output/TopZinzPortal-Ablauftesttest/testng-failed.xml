@@ -6,7 +6,7 @@
     <classes>
       <class name="TopZinsPortal.TZPAdminHandelsfreigabeGN">
         <methods>
-          <include name="TZPAdminHandelsfreigabeGNTest" invocation-numbers="0"/>
+          <include name="TZPAdminHandelsfreigabeGNTest" invocation-numbers="1"/>
           <include name="SetupSeleniumTestdaten"/>
           <include name="BrowserTearDown"/>
         </methods>

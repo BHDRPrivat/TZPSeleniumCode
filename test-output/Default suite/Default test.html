@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Feb 09 16:12:40 CET 2021</td>
+<td>Started on:</td><td>Tue Feb 16 13:21:27 CET 2021</td>
 </tr>
-<tr><td>Total time:</td><td>37 seconds (37302 ms)</td>
+<tr><td>Total time:</td><td>18 seconds (18806 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,96 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='TopZinsPortal.TZPAdminUserLoeschenGN.TZPAdminUserLoeschenTest()'><b>TZPAdminUserLoeschenTest</b><br>Test class: TopZinsPortal.TZPAdminUserLoeschenGN<br>Parameters: TZPAdminLoeschen-TF-002, Ja, topzins@forsa-gmbh.de, phaiweighui%Joteghe6, INAKTIV, 100, BHDR-GG-Loeschen, INAKTIV</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate an element using xpath=//div[text() = &apos;BHDR-GG-Loeschen&apos;]//ancestor::div[contains(@class, &apos;jss&apos;)]//button[contains(@class, &apos;MuiButtonBase-root MuiIconButton-root&apos;)][1]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;FORSA-VM31&apos;, ip: &apos;10.52.76.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at TopZinsPortal.TZPAdminUserLoeschenGN.TZPAdminUserLoeschenTest(TZPAdminUserLoeschenGN.java:178)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:764)
+	at org.testng.TestRunner.run(TestRunner.java:585)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.runSuites(TestNG.java:1069)
+	at org.testng.TestNG.run(TestNG.java:1037)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2088098699", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2088098699'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate an element using xpath=//div[text() = &apos;BHDR-GG-Loeschen&apos;]//ancestor::div[contains(@class, &apos;jss&apos;)]//button[contains(@class, &apos;MuiButtonBase-root MuiIconButton-root&apos;)][1]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;FORSA-VM31&apos;, ip: &apos;10.52.76.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at TopZinsPortal.TZPAdminUserLoeschenGN.TZPAdminUserLoeschenTest(TZPAdminUserLoeschenGN.java:178)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:764)
+	at org.testng.TestRunner.run(TestRunner.java:585)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.runSuites(TestNG.java:1069)
+	at org.testng.TestNG.run(TestNG.java:1037)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>11</td>
+<td>TopZinsPortal.TZPAdminUserLoeschenGN@12468a38</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -75,10 +165,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TopZinsPortal.TZPTenderStartGG.TZPTenderStartGGTest()'><b>TZPTenderStartGGTest</b><br>Test class: TopZinsPortal.TZPTenderStartGG<br>Parameters: TZPTenderStartGG-TF-001, Ja, BHDR-GG-Handel@Forsa-gmbh.de, Test12345!, ActDatum, 18:00, 30/360, endfällig, 433564, ActDatum + 3, ActDatum + 10, ActDatum + 20, ActDatum + 30, Das ist ein Kommentar, BHDR-GN-Handel, BHDR-GN-Handel@Forsa-gmbh.de, Test12345!, 1, Bank Testing, topzinsportal@forsa-gmbh.de, Test12345!, 2, FORSA Digital Bank, sturm1@forsa-gmbh.de, Test12345!, 3, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja</td>
+<td title='TopZinsPortal.TZPAdminUserLoeschenGN.TZPAdminUserLoeschenTest()'><b>TZPAdminUserLoeschenTest</b><br>Test class: TopZinsPortal.TZPAdminUserLoeschenGN<br>Parameters: TZPAdminLoeschen-TF-001, Nein, Admintest@forsa-gmbh.de, Test12345!, INAKTIV, 100, BHDR-GN-Loeschen, INAKTIV</td>
 <td></td>
-<td>29</td>
-<td>TopZinsPortal.TZPTenderStartGG@37afeb11</td></tr>
+<td>0</td>
+<td>TopZinsPortal.TZPAdminUserLoeschenGN@12468a38</td></tr>
+<tr>
+<td title='TopZinsPortal.TZPAdminUserLoeschenGN.TZPAdminUserLoeschenTest()'><b>TZPAdminUserLoeschenTest</b><br>Test class: TopZinsPortal.TZPAdminUserLoeschenGN<br>Parameters: TZPAdminLoeschen-TF-003, Nein, topzins@forsa-gmbh.de, Test12345!, INAKTIV, 100, BHDR-GG-Loeschen, INAKTIV</td>
+<td></td>
+<td>0</td>
+<td>TopZinsPortal.TZPAdminUserLoeschenGN@12468a38</td></tr>
 </table><p>
 </body>
 </html>

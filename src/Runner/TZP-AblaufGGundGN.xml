@@ -40,13 +40,13 @@
     <test name="TZP-Admin-Deaktivieren">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
-			<class name="TopZinsPortal.TZPAdminUserDeaktivieren" />
+			<class name="TopZinsPortal.TZPAdminUserDeaktivierenGG" />
 		</classes>
     </test> 
     <test name="TZP-Admin-Loeschen">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
-			<class name="TopZinsPortal.TZPAdminUserLoeschen" />
+			<class name="TopZinsPortal.TZPAdminUserLoeschenGG" />
 		</classes>
     </test> 
 </suite> <!-- Smoketest Prozesse Registrierungsdurchlauf-->

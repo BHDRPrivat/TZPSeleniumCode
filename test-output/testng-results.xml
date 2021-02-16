@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-02-09T16:37:29 CET" name="TopZinzPortal-Ausschreibung-Ablauftesttest" finished-at="2021-02-09T16:39:07 CET" duration-ms="97500">
+  <suite started-at="2021-02-16T16:13:18 CET" name="TopZinzPortal-Ausschreibung-Ablauftesttest" finished-at="2021-02-16T16:14:52 CET" duration-ms="94002">
     <groups>
     </groups>
-    <test started-at="2021-02-09T16:37:29 CET" name="TZP-Ausschreibung Start-GG" finished-at="2021-02-09T16:38:07 CET" duration-ms="37401">
+    <test started-at="2021-02-16T16:13:18 CET" name="TZP-Ausschreibung Start-GG" finished-at="2021-02-16T16:13:55 CET" duration-ms="37638">
       <class name="TopZinsPortal.TZPTenderStartGG">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderStartGG@245b4bdc]" started-at="2021-02-09T16:37:29 CET" name="SetupSeleniumTestdaten" finished-at="2021-02-09T16:37:32 CET" duration-ms="2874" status="PASS">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderStartGG@245b4bdc]" started-at="2021-02-16T16:13:18 CET" name="SetupSeleniumTestdaten" finished-at="2021-02-16T16:13:21 CET" duration-ms="2938" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPTenderStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderStartGG@245b4bdc]" started-at="2021-02-09T16:37:32 CET" name="TZPTenderStartGGTest" data-provider="TZPTenderStartGG" finished-at="2021-02-09T16:38:02 CET" duration-ms="29842" status="PASS">
+        <test-method signature="TZPTenderStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderStartGG@245b4bdc]" started-at="2021-02-16T16:13:21 CET" name="TZPTenderStartGGTest" data-provider="TZPTenderStartGG" finished-at="2021-02-16T16:13:51 CET" duration-ms="29964" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -62,7 +62,7 @@
             </param>
             <param index="8">
               <value>
-                <![CDATA[433.564]]>
+                <![CDATA[223.400]]>
               </value>
             </param>
             <param index="9">
@@ -112,12 +112,12 @@
             </param>
             <param index="18">
               <value>
-                <![CDATA[Bank Testing]]>
+                <![CDATA[Test Borrower]]>
               </value>
             </param>
             <param index="19">
               <value>
-                <![CDATA[topzinsportal@forsa-gmbh.de]]>
+                <![CDATA[lidaananchenko@ukr.net]]>
               </value>
             </param>
             <param index="20">
@@ -132,7 +132,7 @@
             </param>
             <param index="22">
               <value>
-                <![CDATA[FORSA Digital Bank]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="23">
@@ -229,15 +229,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TZPTenderStartGGTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTenderStartGG@245b4bdc]" started-at="2021-02-09T16:38:02 CET" name="BrowserTearDown" finished-at="2021-02-09T16:38:07 CET" duration-ms="4506" status="PASS">
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTenderStartGG@245b4bdc]" started-at="2021-02-16T16:13:51 CET" name="BrowserTearDown" finished-at="2021-02-16T16:13:55 CET" duration-ms="4548" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
       </class> <!-- TopZinsPortal.TZPTenderStartGG -->
     </test> <!-- TZP-Ausschreibung Start-GG -->
-    <test started-at="2021-02-09T16:38:07 CET" name="TZP-Angebot-geben-GN" finished-at="2021-02-09T16:38:46 CET" duration-ms="39436">
+    <test started-at="2021-02-16T16:13:55 CET" name="TZP-Angebot-geben-GN" finished-at="2021-02-16T16:14:30 CET" duration-ms="34736">
       <class name="TopZinsPortal.TZPTenderAngebotSendenGN">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderAngebotSendenGN@5b8dfcc1]" started-at="2021-02-09T16:38:07 CET" name="SetupSeleniumTestdaten" finished-at="2021-02-09T16:38:08 CET" duration-ms="1564" status="PASS">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderAngebotSendenGN@2f9f7dcf]" started-at="2021-02-16T16:13:55 CET" name="SetupSeleniumTestdaten" finished-at="2021-02-16T16:13:57 CET" duration-ms="1557" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -248,7 +248,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPTenderStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderAngebotSendenGN@5b8dfcc1]" started-at="2021-02-09T16:38:08 CET" name="TZPTenderStartGGTest" data-provider="TZPTenderAngebotSendenGN" finished-at="2021-02-09T16:38:42 CET" duration-ms="33255" status="PASS">
+        <test-method signature="TZPTenderAngebotSendenGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderAngebotSendenGN@2f9f7dcf]" started-at="2021-02-16T16:13:57 CET" name="TZPTenderAngebotSendenGNTest" data-provider="TZPTenderAngebotSendenGN" finished-at="2021-02-16T16:14:26 CET" duration-ms="28972" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -292,7 +292,7 @@
             </param>
             <param index="8">
               <value>
-                <![CDATA[433.564]]>
+                <![CDATA[223.400]]>
               </value>
             </param>
             <param index="9">
@@ -342,12 +342,12 @@
             </param>
             <param index="18">
               <value>
-                <![CDATA[Bank Testing]]>
+                <![CDATA[Test Borrower]]>
               </value>
             </param>
             <param index="19">
               <value>
-                <![CDATA[topzinsportal@forsa-gmbh.de]]>
+                <![CDATA[lidaananchenko@ukr.net]]>
               </value>
             </param>
             <param index="20">
@@ -362,7 +362,7 @@
             </param>
             <param index="22">
               <value>
-                <![CDATA[FORSA Digital Bank]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="23">
@@ -458,16 +458,16 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPTenderStartGGTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTenderAngebotSendenGN@5b8dfcc1]" started-at="2021-02-09T16:38:42 CET" name="BrowserTearDown" finished-at="2021-02-09T16:38:46 CET" duration-ms="4535" status="PASS">
+        </test-method> <!-- TZPTenderAngebotSendenGNTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTenderAngebotSendenGN@2f9f7dcf]" started-at="2021-02-16T16:14:26 CET" name="BrowserTearDown" finished-at="2021-02-16T16:14:30 CET" duration-ms="4122" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
       </class> <!-- TopZinsPortal.TZPTenderAngebotSendenGN -->
     </test> <!-- TZP-Angebot-geben-GN -->
-    <test started-at="2021-02-09T16:38:46 CET" name="TZP-Angebot-Annehmen-GG" finished-at="2021-02-09T16:39:07 CET" duration-ms="20624">
+    <test started-at="2021-02-16T16:14:30 CET" name="TZP-Angebot-Annehmen-GG" finished-at="2021-02-16T16:14:52 CET" duration-ms="21564">
       <class name="TopZinsPortal.TZPTenderAngebotAnnehmenGG">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderAngebotAnnehmenGG@7d8995e]" started-at="2021-02-09T16:38:46 CET" name="SetupSeleniumTestdaten" finished-at="2021-02-09T16:38:48 CET" duration-ms="1484" status="PASS">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderAngebotAnnehmenGG@42a48628]" started-at="2021-02-16T16:14:30 CET" name="SetupSeleniumTestdaten" finished-at="2021-02-16T16:14:32 CET" duration-ms="1593" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -478,7 +478,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPTenderStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderAngebotAnnehmenGG@7d8995e]" started-at="2021-02-09T16:38:48 CET" name="TZPTenderStartGGTest" data-provider="TenderAngebotAnnehmenGG" finished-at="2021-02-09T16:39:03 CET" duration-ms="14870" status="PASS">
+        <test-method signature="TZPTenderAngebotAnnehmenGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTenderAngebotAnnehmenGG@42a48628]" started-at="2021-02-16T16:14:32 CET" name="TZPTenderAngebotAnnehmenGGTest" data-provider="TenderAngebotAnnehmenGG" finished-at="2021-02-16T16:14:47 CET" duration-ms="15682" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -522,7 +522,7 @@
             </param>
             <param index="8">
               <value>
-                <![CDATA[433.564]]>
+                <![CDATA[223.400]]>
               </value>
             </param>
             <param index="9">
@@ -572,12 +572,12 @@
             </param>
             <param index="18">
               <value>
-                <![CDATA[Bank Testing]]>
+                <![CDATA[Test Borrower]]>
               </value>
             </param>
             <param index="19">
               <value>
-                <![CDATA[topzinsportal@forsa-gmbh.de]]>
+                <![CDATA[lidaananchenko@ukr.net]]>
               </value>
             </param>
             <param index="20">
@@ -592,7 +592,7 @@
             </param>
             <param index="22">
               <value>
-                <![CDATA[FORSA Digital Bank]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="23">
@@ -688,8 +688,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPTenderStartGGTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTenderAngebotAnnehmenGG@7d8995e]" started-at="2021-02-09T16:39:03 CET" name="BrowserTearDown" finished-at="2021-02-09T16:39:07 CET" duration-ms="4181" status="PASS">
+        </test-method> <!-- TZPTenderAngebotAnnehmenGGTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTenderAngebotAnnehmenGG@42a48628]" started-at="2021-02-16T16:14:47 CET" name="BrowserTearDown" finished-at="2021-02-16T16:14:52 CET" duration-ms="4208" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->

@@ -23,7 +23,7 @@ import Utils.TZPSetupBrowser;
 import junit.framework.Assert;
 import jxl.read.biff.BiffException;
 
-public class TZPAdminUserLoeschen {
+public class TZPAdminUserDeaktivierenGG {
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
 	
@@ -59,21 +59,16 @@ public class TZPAdminUserLoeschen {
 
 		if (htmlReporter == null) {
 			// start reporters
-			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Admin User Löschen - " + Ablaufart + ".html");
+			htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Admin User Dektivieren - " + Ablaufart + ".html");
 			// create ExtentReports and attach reporter(s)
 			extent = new ExtentReports();
 			extent.attachReporter(htmlReporter);
 		}
-		AblaufartGlobal = Ablaufart;
-
-
-    	StandardBrowser = Utils.TZPBeforeTest.BrowserArt();
-		Zeitspanne = Utils.TZPBeforeTest.Pausenzeit();
 
 		System.out.println("Admin löschen: " + Ablaufart);
-		// Hinweis: Für direkte Testläufe
-		// Applitools und PDF-Druck dürfen nicht gleichzeitig ablaufen
-		// Es kommt zu Fehlermeldungen
+		AblaufartGlobal = Ablaufart;
+		StandardBrowser = Utils.TZPBeforeTest.BrowserArt();
+		Zeitspanne = Utils.TZPBeforeTest.Pausenzeit();
 		
 		workingDir = System.getProperty("user.dir");
 		autoitscriptpath = workingDir + "\\AutoIT\\" + "File_upload_selenium_webdriver.au";
@@ -90,13 +85,13 @@ public class TZPAdminUserLoeschen {
 	
 	}
 
-	@DataProvider(name = "TZPAdminLoeschen")
+	@DataProvider(name = "TZPAdminDeaktivierenGG")
 	public static Object[][] getData() throws BiffException {
 		// Ermittelt den Pfad des aktuellen Projekts
 		projectpath = System.getProperty("user.dir");
 		// Zugriff auf die zugehörigen Exceldaten
 		
-		TestdatenExceldatei = "\\Excel\\TopZinsPortalAdminLoeschen.xls";
+		TestdatenExceldatei = "\\Excel\\TopZinsPortalAdminDeaktivierenGG.xls";
 
 
 		String excelPath = projectpath + TestdatenExceldatei;
@@ -136,14 +131,15 @@ public class TZPAdminUserLoeschen {
 
 	
 	// @Test
-	@Test(dataProvider = "TZPAdminLoeschen")
-	public void TZPAdminUserLoeschenTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Menue, String ZeilenProSeite, String Unternehmensname,  
+	@Test(dataProvider = "TZPAdminDeaktivierenGG")
+	public void TZPAdminUserDeaktivierenGGTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Menue, String ZeilenProSeite, String Unternehmensname,  
 		String Menue2) throws Exception {
 
 		if (Aktiv.equals("Ja")) {	
 		
 		// creates a toggle for the given test, adds all log events under it
-		ExtentTest test = extent.createTest("TZPAdminLöschen: " + Teststep + " - " + AblaufartGlobal,
+		ExtentTest test = extent.createTest("TZPAdmin"
+				+ "deaktivieren: " + Teststep + " - " + AblaufartGlobal,
 				"Löschen eines Anwenders");
 
 		driver.get(BaseUrl);
@@ -159,17 +155,24 @@ public class TZPAdminUserLoeschen {
  		// Button "Anmelden auswählen"
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 		
-		//Button "INAKTIV" in menu clicken
-		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, '"+ Menue2+ "')]", test);
+        if (Handel) {
 		
-		// Screenshot aufnehmen
-		Thread.sleep(3 * Zeitspanne);
-		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,"\\Admin UserLoeschen\\Nach-INAKTIV-Register", Teststep, test );
-		Thread.sleep(3 * Zeitspanne);
+		//Button "Ohne Handelsberechtigung" in menu clicken
+		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, '"+ Menue+ "')]", test);
+
+		// Die Anzeige auf 100 erhöhen
+		Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//div[contains(@id,'mui')]", "//li[contains(text(),'", ZeilenProSeite, test);
 		
 		
 		//Firmenname in das Suchfeld eingeben
-		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search", Unternehmensname, test);		
+		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search", Unternehmensname, test);
+		
+		// Screenshot aufnehmen
+		Thread.sleep(3 * Zeitspanne);
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,"\\Admin UserDeaktivieren\\Nach-Ohne Handels-Register", Teststep, test );
+		Thread.sleep(3 * Zeitspanne);
+		
+		
 		
 		// Der Icon löschen hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld
 		// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
@@ -179,20 +182,23 @@ public class TZPAdminUserLoeschen {
 		
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);
 		// TSonderzeit zum Hochladen
-		Thread.sleep(3 * Zeitspanne);		
+		Thread.sleep(3 * Zeitspanne);
 		
+
 		// Button auswählen
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Bestätigen']//ancestor::button[@tabindex='0']", test);
 		// TSonderzeit zum löschen
-		Thread.sleep(3 * Zeitspanne);	
+		Thread.sleep(3 * Zeitspanne);
 		
 		// Button "OK" auswählen, wenn vorhanden
 		Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
 		
 		// Screenshot aufnehmen
 		Thread.sleep(3 * Zeitspanne);
-		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,"\\Admin UserLoeschen\\Nach-Bestätigen-Button", Teststep, test );
+		Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,"\\Admin UserDeaktivieren\\Nach-Bestätigen-Button", Teststep, test );
 		Thread.sleep(3 * Zeitspanne);
+		
+        }
 		
 		driver.close();
 		// Für den Teardown

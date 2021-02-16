@@ -126,7 +126,7 @@ public class TZPTenderAngebotSendenGN {
 
 		// @Test
 		@Test(dataProvider = "TZPTenderAngebotSendenGN")
-		public void TZPTenderStartGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String EndeDatum, 
+		public void TZPTenderAngebotSendenGNTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String EndeDatum, 
 		String	EndeUhrzeit, String Zinskonvention, String Zahlungsfrequenz, 		
 		String VolumenGG, String Valuta, String Faelligkeit1, String Faelligkeit2, String Faelligkeit3, String KommentarGG,
 		String FirmaGN1, String EmailadresseGN1,	String PasswortGN1, String	ZinssatzGN1,
@@ -160,6 +160,10 @@ public class TZPTenderAngebotSendenGN {
 				// 1. Login Borrower 1
 				// Mehrmals durchlaufen mit gesetzten Variablen
 				// Das array größer Dimensionieren als notwendig.
+				String[] FrimaGN = new String[5];
+				FrimaGN[1] = FirmaGN1;
+				FrimaGN[2] = FirmaGN2;
+				FrimaGN[3] = FirmaGN3;
 				String[] EmailGN = new String[5];
 				EmailGN[1] = EmailadresseGN1;
 				EmailGN[2] = EmailadresseGN2;
@@ -176,7 +180,10 @@ public class TZPTenderAngebotSendenGN {
 				
 			    for (int Durchlauf = 1; Durchlauf < 4; Durchlauf++) {
 			    	
-			    				
+			    if (FrimaGN[Durchlauf].equals("")) {
+			    	// Leerer Firmeneintrag, bedeutet keine Aktion
+			    }
+			    else { 	
 				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", EmailGN[Durchlauf], test);
 				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", PassGN[Durchlauf], test);
 				
@@ -185,6 +192,10 @@ public class TZPTenderAngebotSendenGN {
 				
 				// 2. Klicken auf Register "Auschreibung"
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@data-test='Ausschreibungen']", test);
+				
+				// Die Anzeige auf 100 erhöhen
+				Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//div[contains(@id,'mui')]",
+						"//li[contains(text(),'", "100", test);
 				
 				// 3. Tender auswählen
 				Utils.SeleniumUtils.AuschreibungGNAuswahl(driver, Zeitspanne,  VolumenGG, test);
@@ -211,7 +222,7 @@ public class TZPTenderAngebotSendenGN {
 				// 7. Borrower 1 ausloggen
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);
 				
-				
+			    } // End if
 				
 			    } // Ende for 
 
