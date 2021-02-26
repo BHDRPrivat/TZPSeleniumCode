@@ -58,7 +58,7 @@ public class TZPTransaktionStartGG {
 
 			if (htmlReporter == null) {
 				// start reporters
-				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Tranaktion Start GG - " + Ablaufart + ".html");
+				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Transaktion Start GG - " + Ablaufart + ".html");
 				// create ExtentReports and attach reporter(s)
 				extent = new ExtentReports();
 				extent.attachReporter(htmlReporter);
@@ -126,10 +126,10 @@ public class TZPTransaktionStartGG {
 		// @Test
 		@Test(dataProvider = "TZPTransaktionStartGG")
 		public void TZPTransaktionStartGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
-		String ZinssatzGG, String Valuta, String Zinskonvention, String Zahlungsfrequenz, String EndeAnfrageGG1, 
-		String BtnAnfrageSendenGG1, String BtnAusloggenGG1, String FirmaGN, String EmailadresseGN, String PasswortGN, String VolumenGN, 
-		String ZinssatzGN, String EndeAnfrageGN1, String BtnAngebotSendenGN1, 
-		String BtnJaGN1, String BtnAusloggenGN1, String BtnAngebotAnnehmenGG2, String BtnJaGG2, String BtnAusloggenGG2  ) throws Exception {
+				String ZinssatzGG, String Valuta, String Zinskonvention, String Zahlungsfrequenz, String SonstigesGG, String KommentarGG, String EndeAnfrageUhrzeitGG, 
+				String BtnAnfrageSendenGG, String BtnAusloggenGG, String FirmaGN, String EmailadresseGN, String PasswortGN, String VolumenGN, 
+				String ZinssatzGN, String EndeAngebotGN, String BtnAngebotSendenGN, String BtnAnfrageAblehnenGN, String BtnAngebotTelefonischWeiterleitenGN, 
+				String BtnAngebotAnnehmenGG, String BtnAngebotAblehnenGG, String BtnAngebotTelefonischAnnehmenGG  ) throws Exception {
 
 			
 			if (Aktiv.equals("Ja")) {
@@ -160,17 +160,31 @@ public class TZPTransaktionStartGG {
 			
 			// Auf das Zellenelemnet mit Bankname und Zinssatz zugreifen
 			Utils.SeleniumUtils.TabelleButtonKlick(driver, Zeitspanne, "xpath", FirmaGN, ZinssatzGG, test); 
-			System.out.println("nach Buttonclick");
+
 			
 			// 5. Alle Pflichtfelder in Pop-up "Anfrage Termingeldanlage starten" ausfuellen
 			// 5.1 Volumen 
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//input[@inputmode='numeric']", VolumenGN, test);
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//input[@inputmode='numeric']", VolumenGG, test);
 						
 			
 			// 5.2 Valuta
 			Utils.SeleniumUtils.InputDatum(driver, Zeitspanne, "xpath", "//Label[text() ='Valuta*']","//following::input[contains(@class, 'MuiInput')]", Valuta, test);
 		
+			//5.3 Zinskonvention
+			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id='mui-component-select-interestRateConversionId']", "//li[contains(text(),'", Zinskonvention, test);
+			
+			//5.4 Zahlungsfrequenz
+			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id='mui-component-select-paymentFrequencyId']", "//li[contains(text(),'", Zahlungsfrequenz, test);
 		
+			// 5.5 Eintrag "Sonstiges" 
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//textarea[@name='other']", (SonstigesGG + " Geldgeber GB"), test);			
+
+			// 5.6 Eintrag "Kommentar" 
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//textarea[@name='comment']", (KommentarGG + " Geldgeber GG"), test);		
+			
+			// 5.7 Feld "Ende der Anfrage (Zeit)" ausfüllen
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//Label[text() ='Ende der Anfrage (Uhrzeit)*']//following::input[contains(@class, 'MuiInput')][1]", EndeAnfrageUhrzeitGG, test);
+			
 			// 6.0 Button "Anfrage senden" klicken 
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 			

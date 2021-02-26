@@ -175,13 +175,13 @@ public class TZPStammGG {
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "companyName", Unternehmensname, test);
 			
 			// Auswahl Kundengruppe
-			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id=\"mui-component-select-customerGroupId\"]", "//li[contains(text(),'", Kundengruppe, test);
+			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id='mui-component-select-customerGroupId']", "//li[contains(text(),'", Kundengruppe, test);
 			
 			// Auswahl LEI
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "lei", LEI, test);
 
 			// Auswahl Land
-			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id=\"mui-component-select-country\"]", "//li[contains(text(),'", Land, test);
+			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id='mui-component-select-country']", "//li[contains(text(),'", Land, test);
 						
 	        // Auswahl Webseite, Geschäfts-Email, Straße, Nr., PLZ, Ort, Adresszusatz
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "website", Webseite, test);

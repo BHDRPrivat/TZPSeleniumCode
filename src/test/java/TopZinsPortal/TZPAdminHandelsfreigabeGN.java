@@ -200,6 +200,9 @@ public class TZPAdminHandelsfreigabeGN {
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Freigeben']//ancestor::button[@tabindex='0']", test);
 		// TSonderzeit zum Hochladen
 		Thread.sleep(3 * Zeitspanne);
+		
+		// Button "OK" auswählen, wenn vorhanden
+		Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
 	
 		// Prüfen ob User in Register "Mit Handelsberechtigung" vorhanden ist?
 		//Button "Daten komplett" in menu clicken

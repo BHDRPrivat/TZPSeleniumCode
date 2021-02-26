@@ -126,10 +126,10 @@ public class TZPTransaktionAbschlussGN {
 		// @Test
 		@Test(dataProvider = "TZPTransaktionAbschlussGN")
 		public void TZPTransaktionAbschlussGNTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
-		String ZinssatzGG, String Valuta, String Zinskonvention, String Zahlungsfrequenz, String EndeAnfrageGG1, 
-		String BtnAnfrageSendenGG1, String BtnAusloggenGG1, String FirmaGN, String EmailadresseGN, String PasswortGN, String VolumenGN, 
-		String ZinssatzGN, String EndeAnfrageGN1, String BtnAngebotSendenGN1, 
-		String BtnJaGN1, String BtnAusloggenGN1, String BtnAngebotAnnehmenGG2, String BtnJaGG2, String BtnAusloggenGG2  ) throws Exception {
+				String ZinssatzGG, String Valuta, String Zinskonvention, String Zahlungsfrequenz, String SonstigesGG, String KommentarGG, String EndeAnfrageUhrzeitGG, 
+				String BtnAnfrageSendenGG, String BtnAusloggenGG, String FirmaGN, String EmailadresseGN, String PasswortGN, String VolumenGN, 
+				String ZinssatzGN, String EndeAngebotGN, String BtnAngebotSendenGN, String BtnAnfrageAblehnenGN, String BtnAngebotTelefonischWeiterleitenGN, 
+				String BtnAngebotAnnehmenGG, String BtnAngebotAblehnenGG, String BtnAngebotTelefonischAnnehmenGG  ) throws Exception {
 
 			
 			if (Aktiv.equals("Ja")) {

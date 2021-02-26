@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [TopZinzPortal-Ausschreibung-Ablauftesttest]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="TZP-Angebot-geben-GN(failed)">
+  <test thread-count="5" name="TZP-Ausschreibung-Angebot-Abgeben-GN(failed)">
     <parameter name="Ablaufart" value="Smoketest"/>
     <classes>
       <class name="TopZinsPortal.TZPTenderAngebotSendenGN">
@@ -12,5 +12,17 @@
         </methods>
       </class> <!-- TopZinsPortal.TZPTenderAngebotSendenGN -->
     </classes>
-  </test> <!-- TZP-Angebot-geben-GN(failed) -->
+  </test> <!-- TZP-Ausschreibung-Angebot-Abgeben-GN(failed) -->
+  <test thread-count="5" name="TZP-Ausschreibung-Angebot-Annehmen-GG(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPTenderAngebotAnnehmenGG">
+        <methods>
+          <include name="BrowserTearDown"/>
+          <include name="TZPTenderAngebotAnnehmenGGTest" invocation-numbers="0"/>
+          <include name="SetupSeleniumTestdaten"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPTenderAngebotAnnehmenGG -->
+    </classes>
+  </test> <!-- TZP-Ausschreibung-Angebot-Annehmen-GG(failed) -->
 </suite> <!-- Failed suite [TopZinzPortal-Ausschreibung-Ablauftesttest] -->

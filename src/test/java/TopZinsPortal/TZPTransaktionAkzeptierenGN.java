@@ -58,7 +58,7 @@ public class TZPTransaktionAkzeptierenGN {
 
 			if (htmlReporter == null) {
 				// start reporters
-				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Tranaktion Start GG - " + Ablaufart + ".html");
+				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Transaktion Akzeptieren GN - " + Ablaufart + ".html");
 				// create ExtentReports and attach reporter(s)
 				extent = new ExtentReports();
 				extent.attachReporter(htmlReporter);
@@ -126,10 +126,10 @@ public class TZPTransaktionAkzeptierenGN {
 		// @Test
 		@Test(dataProvider = "TZPTransaktionAkzeptierenGN")
 		public void TZPTransaktionAkzeptierenGNTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
-		String ZinssatzGG, String Valuta, String Zinskonvention, String Zahlungsfrequenz, String EndeAnfrageGG1, 
-		String BtnAnfrageSendenGG1, String BtnAusloggenGG1, String FirmaGN, String EmailadresseGN, String PasswortGN, String VolumenGN, 
-		String ZinssatzGN, String EndeAnfrageGN1, String BtnAngebotSendenGN1, 
-		String BtnJaGN1, String BtnAusloggenGN1, String BtnAngebotAnnehmenGG2, String BtnJaGG2, String BtnAusloggenGG2  ) throws Exception {
+				String ZinssatzGG, String Valuta, String Zinskonvention, String Zahlungsfrequenz, String SonstigesGG, String KommentarGG, String EndeAnfrageUhrzeitGG, 
+				String BtnAnfrageSendenGG, String BtnAusloggenGG, String FirmaGN, String EmailadresseGN, String PasswortGN, String VolumenGN, 
+				String ZinssatzGN, String EndeAngebotGN, String BtnAngebotSendenGN, String BtnAnfrageAblehnenGN, String BtnAngebotTelefonischWeiterleitenGN, 
+				String BtnAngebotAnnehmenGG, String BtnAngebotAblehnenGG, String BtnAngebotTelefonischAnnehmenGG  ) throws Exception {
 
 			
 			if (Aktiv.equals("Ja")) {
@@ -144,7 +144,9 @@ public class TZPTransaktionAkzeptierenGN {
 			Thread.sleep(3 * Zeitspanne);
 			test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
 
-					
+			// Zeit zum Akzeptieren geben.
+			Thread.sleep(5 * Zeitspanne);
+			
 			// 9. Login entsprechenden Geldgeber mit gueltigen Daten
 			SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", EmailadresseGN, test);
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", PasswortGN, test);
@@ -155,10 +157,24 @@ public class TZPTransaktionAkzeptierenGN {
 			// 10. zeit zum Aufbauen der Meldung 
 			Thread.sleep(5 * Zeitspanne);	
 			
-			// Kommentar eintragen
-			// Auch hierüber wird ein Scrollbalken verschoben.
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "comment", "Kommentar GN 1", test);
-		
+			// Button "OK" auswählen, wenn vorhanden
+			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
+			
+			// 5.1 Volumen 
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//input[@name='volume']", VolumenGN, test);
+			
+     		// Zinssatz ändern 
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "interestRate",ZinssatzGN, test);
+			
+			// 5.5 Eintrag "Sonstiges" 
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//textarea[@name='other']", (SonstigesGG + " Geldnehmer GN"), test);			
+
+			// 5.6 Eintrag "Kommentar" 
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//textarea[@name='comment']", (KommentarGG + " Geldnehmer GN"), test);
+			
+			// 5.7 Feld "Ende der Angebots (Zeit)" ausfüllen
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//Label[text() ='Ende des Angebots (Uhrzeit)*']//following::input[contains(@class, 'MuiInput')][1]",EndeAnfrageUhrzeitGG, test);
+			
 			// 11. Button "Angebot senden" klicken 
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='senden']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
 			

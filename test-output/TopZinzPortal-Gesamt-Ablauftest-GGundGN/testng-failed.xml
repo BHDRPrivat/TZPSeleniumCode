@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [TopZinzPortal-Gesamt-Ablauftest-GGundGN]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="TZP-Admin-HandelsfreigabeGN(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPAdminHandelsfreigabeGN">
+        <methods>
+          <include name="TZPAdminHandelsfreigabeGNTest" invocation-numbers="1"/>
+          <include name="SetupSeleniumTestdaten"/>
+          <include name="BrowserTearDown"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPAdminHandelsfreigabeGN -->
+    </classes>
+  </test> <!-- TZP-Admin-HandelsfreigabeGN(failed) -->
+  <test thread-count="5" name="TZP-Angebot-geben-GN(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPTenderAngebotSendenGN">
+        <methods>
+          <include name="SetupSeleniumTestdaten"/>
+          <include name="TZPTenderAngebotSendenGNTest" invocation-numbers="0"/>
+          <include name="BrowserTearDown"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPTenderAngebotSendenGN -->
+    </classes>
+  </test> <!-- TZP-Angebot-geben-GN(failed) -->
+</suite> <!-- Failed suite [TopZinzPortal-Gesamt-Ablauftest-GGundGN] -->

@@ -7,13 +7,13 @@
 			<class name="TopZinsPortal.TZPTenderStartGG" />
 		</classes>
 	</test>
-	<test name="TZP-Angebot-geben-GN">
+	<test name="TZP-Ausschreibung-Angebot-Abgeben-GN">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPTenderAngebotSendenGN" />
 		</classes>
     </test>
-    <test name="TZP-Angebot-Annehmen-GG">
+    <test name="TZP-Ausschreibung-Angebot-Annehmen-GG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPTenderAngebotAnnehmenGG" />

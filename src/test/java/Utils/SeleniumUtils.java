@@ -150,16 +150,12 @@ public class SeleniumUtils {
 			Inputwert = (Tag$ + "." + Monat$ + "." + Jahr);
 		}
 		
-	
-		
-		
-		
-		
+    	String ObjektPath = ObjektPath1 + ObjektPath2;
+   		
 		System.out.println("Ausgang: " + Inputwert);
 		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
 		
-		String ObjektPath = ObjektPath1 + ObjektPath2;
-		
+			
 		Thread.sleep(3 * Zeitspanne);
 		try {	
 			if 	(HTMLSelector.equals("name")) {
@@ -226,6 +222,8 @@ public class SeleniumUtils {
 //		System.out.println("Objekt: " + ObjektPath);
 //		System.out.println("Wert: " + Inputwert);
 		
+		
+		
 		Thread.sleep(3 * Zeitspanne);
 		try {	
 			if 	(HTMLSelector.equals("name")) {
@@ -241,6 +239,18 @@ public class SeleniumUtils {
 
 			}
 			if 	(HTMLSelector.equals("xpath")) {
+				
+				// Es erfolgt ein Scrollen zum Element 
+				// Nur wenn es im sichtbaren Bereich liegt, kann Click ausgeführt werden
+  				JavascriptExecutor js = (JavascriptExecutor)driver;
+  				WebElement element = driver.findElement(By.xpath(ObjektPath));
+  				// Das Element mittig im Bildschirm positionieren, um den garantierten Zugriff zu erhalten.
+  				js.executeScript("arguments[0].scrollIntoView({block: \"center\", inline: \"center\"});", element);
+				// Führt nicht immer zum erfolg. Wenn das Obljekt im sichtbaren Bereich liegt, aber überlagert wird.
+  				// js.executeScript("arguments[0].scrollIntoViewIfNeeded({block: \"center\", inline: \"center\"});", element);
+				
+				
+				
 				driver.findElement(By.xpath(ObjektPath)).click();
 				//Löscht vorhande Einträge sicherer als clear()  
 				driver.findElement(By.xpath(ObjektPath)).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
@@ -295,10 +305,18 @@ public class SeleniumUtils {
 	    // Nur wenn der "OK"-Button angezeigt wird, erfolgt ein Klick auf dem Button bevor es normal weiter geht. 
 		// Dann müssen die ganzen OK-klicks nicht seperat erfasst werden.
 
-		if ( isElementPresent(driver, By.xpath("//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]"))){
-			driver.findElement(By.xpath("//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]")).click(); 
+		String element = "//div[@role='dialog']//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]";
+		
+		if ( isElementPresent(driver, By.xpath(element))){
+			driver.findElement(By.xpath(element)).click(); 
 			Thread.sleep(2 * Zeitspanne);
 		} // Wenn "OK"-Vorhanden dann geklickt
+		
+	
+//		if ( isElementPresent(driver, By.xpath("//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]"))){
+//			driver.findElement(By.xpath("//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]")).click(); 
+//			Thread.sleep(2 * Zeitspanne);
+//		} // Wenn "OK"-Vorhanden dann geklickt
 
 	
 	}	
