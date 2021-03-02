@@ -137,7 +137,7 @@ public class TZPAdminUserLoeschenGN {
 	
 	// @Test
 	@Test(dataProvider = "TZPAdminLoeschenGN")
-	public void TZPAdminUserLoeschenGNTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Menue, String ZeilenProSeite, String Unternehmensname,  
+	public void TZPAdminUserLoeschenGNTest(String Teststep, String Aktiv, String Menue, String ZeilenProSeite, String Unternehmensname,  
 		String Menue2) throws Exception {
 
 		if (Aktiv.equals("Ja")) {	
@@ -153,6 +153,10 @@ public class TZPAdminUserLoeschenGN {
 
 		
 		// Login mit gültigen Daten
+		
+		String Emailadresse = Utils.TZPBeforeTest.AdminEmail();
+		String Passwort = Utils.TZPBeforeTest.AdminPasswort();
+		
 		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", Emailadresse, test);
 		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", Passwort, test);
 

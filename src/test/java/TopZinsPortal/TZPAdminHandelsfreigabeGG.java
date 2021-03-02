@@ -138,7 +138,7 @@ public class TZPAdminHandelsfreigabeGG {
 
 	// @Test
 	@Test(dataProvider = "TZPAdminHandelsfreigabeGG")
-	public void TZPAdminHandelsfreigabeGGTest(String Teststep, String Aktiv, String Emailadresse, String Passwort,
+	public void TZPAdminHandelsfreigabeGGTest(String Teststep, String Aktiv, 
 			String Menue, String ZeilenProSeite, String Unternehmensname) throws Exception {
 
 		if (Aktiv.equals("Ja")) {
@@ -153,6 +153,10 @@ public class TZPAdminHandelsfreigabeGG {
 			test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
 
 			// Login mit gültigen Daten
+			
+			String Emailadresse = Utils.TZPBeforeTest.AdminEmail();
+			String Passwort = Utils.TZPBeforeTest.AdminPasswort();
+			
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", Emailadresse, test);
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", Passwort, test);
 
@@ -180,7 +184,7 @@ public class TZPAdminHandelsfreigabeGG {
 			// erfolgt über den Eintrag im ersten Eingabefeld
 			// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen
 			String xpathvalue = "//div[text() = '" + Unternehmensname
-					+ "']//ancestor::tr[contains(@class, 'MuiTableRow-root MuiTableRow-hover')]//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary']";
+					+ "']//ancestor::tr[contains(@class, 'MuiTableRow-root')]//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary']";
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);
 			// TSonderzeit zum Hochladen
 			Thread.sleep(3 * Zeitspanne);

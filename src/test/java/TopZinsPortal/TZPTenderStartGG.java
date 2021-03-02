@@ -193,11 +193,23 @@ public class TZPTenderStartGG {
 				VolumenGG = (VolumenGG.replace(".", ""));
 				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//Label[text() ='Volumen*']//following::input[contains(@class, 'MuiInput')]", VolumenGG, test);
 				
+				//5.3 Zinskonvention
+				System.out.println("Zinskonvention: " + Zinskonvention);
+				Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id='mui-component-select-interestRateConversionId']", "//li[contains(text(),'", Zinskonvention, test);
+				
+				//5.4 Zahlungsfrequenz
+				System.out.println("Zinskonvention: " + Zahlungsfrequenz);
+				Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id='mui-component-select-paymentFrequencyId']", "//li[contains(text(),'", Zahlungsfrequenz, test);
+			
+				
 				// 4.5 Field "Valuta" ausfüllen
 				Utils.SeleniumUtils.InputDatum(driver, Zeitspanne, "xpath", "//Label[text() ='Valuta*']", "//following::input[contains(@class, 'MuiInput')]", Valuta, test);
 
 				// 4.6 Field "Fälligkeit" ausfüllen
 				Utils.SeleniumUtils.InputDatum(driver, Zeitspanne, "xpath", "//Label[text() ='Fälligkeit*']", "//following::input[contains(@class, 'MuiInput')]", Faelligkeit1, test);
+				
+				// 5.6 Eintrag "Kommentar" 
+				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//textarea[@name='message']", (KommentarGG + " Geldgeber GG"), test);	
 				
 				// 5. Klicken auf Button "Banken einladen"
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);

@@ -208,6 +208,9 @@ public class TZPTenderAngebotSendenGN {
 				// 4. Feld "Zinssatz" ausfüllen
 				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//input[@inputmode='numeric']",ZinsGN[Durchlauf], test);
 				
+				// 5.6 Eintrag "Kommentar" 
+				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//textarea[@name='comment']", (KommentarGG + " Geldnehmer GN: " + FrimaGN[Durchlauf]), test);	
+				
 				// 5. Klicken auf Button "Angebot senden"
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='senden']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
 				

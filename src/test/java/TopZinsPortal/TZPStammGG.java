@@ -68,8 +68,10 @@ public class TZPStammGG {
 			StandardBrowser = Utils.TZPBeforeTest.BrowserArt();
 			Zeitspanne = Utils.TZPBeforeTest.Pausenzeit();
 
+			// Gesamtadresse: "http://3.127.85.31/portal/login"
 			BaseUrl = Utils.TZPBeforeTest.Umgebung() + "/portal/login";
-
+  
+			
 			SpeicherpfadTestdokumente = "F:\\BHDR\\TopZinsPortalTest\\PDFDokumente\\";
 			// Wichtiger Hinweis: In Java dürfen generische Strings nicht mit "=="
 			// verglichen werden. "==" steht für die Überprüfung des Speicherorts
@@ -187,11 +189,17 @@ public class TZPStammGG {
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "website", Webseite, test);
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "emailForBusinessConfirmations", EmailGeschaefte, test);
 			
-			// in der Stage-Version
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "street", Str, test);
 			
-			// In der 3-Version so benannt
-			// Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "streetName", Str, test);
+
+			if (BaseUrl.equals("http://3.127.85.31/portal/login")) {
+				// In der 3-Version so benannt
+				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "streetName", Str, test);				
+			} else {
+				// In alles anderen Versionen
+				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "street", Str, test);				
+			}
+
+			
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "houseNumber", HausNr, test);
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "postCode", PLZ, test);
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "location", Ort, test);

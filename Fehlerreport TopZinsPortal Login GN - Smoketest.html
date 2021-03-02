@@ -46,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Feb 26, 2021 12:03:26 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Mar 2, 2021 02:54:48 PM</span>
 				</a>
 			</li>
 			<li>
@@ -72,6 +72,7 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -122,10 +123,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='75%'><span class='strong'>3</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='25%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -140,7 +141,7 @@
 					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>20</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='11.111%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='88.889%'>16</span> others
 				</div>
 			</div>
 		</div>
@@ -155,19 +156,19 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
 					<div class='test-heading'>
-						<span class='test-name'>TZP_Zinssätze: TZPZinssatzVorgabeGN-TF-001 - Smoketest</span>
-						<span class='test-time'>Feb 26, 2021 12:03:29 PM</span>
+						<span class='test-name'>TZPLoginGN: TZStammGN-TF-005 - Smoketest</span>
+						<span class='test-time'>Mar 2, 2021 02:54:50 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Feb 26, 2021 12:03:29 PM</span>
-	<span class='label end-time'>Feb 26, 2021 12:03:48 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+275ms</span>
+	<span class='label start-time'>Mar 2, 2021 02:54:50 PM</span>
+	<span class='label end-time'>Mar 2, 2021 02:54:58 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+325ms</span>
 </div>
-	<div class='test-desc'>Eingabe der Zinssätze durch den Geldnehmer </div>
+	<div class='test-desc'>Stammdateneingabe des Geldnehmers </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
 			<thead>
@@ -180,103 +181,191 @@
 			<tbody>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:31 PM</td>
-					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://52.59.225.49/portal/login</td>
+					<td class='timestamp'>2:54:52 PM</td>
+					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://3.127.85.31/portal/login</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:32 PM</td>
-					<td class='step-details'>Eintrag in email mit Wert: BHDR-GN-Handel@forsa-gmbh.de</td>
+					<td class='timestamp'>2:54:53 PM</td>
+					<td class='step-details'>Eintrag in email mit Wert: BHDR-GN-DatenKomplett@forsa-gmbh.de</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:33 PM</td>
+					<td class='timestamp'>2:54:54 PM</td>
 					<td class='step-details'>Eintrag in password mit Wert: Test12345!</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:35 PM</td>
-					<td class='step-details'>Eintrag in m1 mit Wert: 0,01</td>
+					<td class='timestamp'>2:54:55 PM</td>
+					<td class='step-details'>Screenshot aufgenommen: C:\Users\b.dikmen\git\TZPSeleniumCode\TopZinsPortalTestablauf\screenshots\\Reg GN\Login-GN-Eingabe TZStammGN-TF-005.png</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:36 PM</td>
-					<td class='step-details'>Eintrag in m2 mit Wert: 0,02</td>
+					<td class='timestamp'>2:54:58 PM</td>
+					<td class='step-details'>Screenshot aufgenommen: C:\Users\b.dikmen\git\TZPSeleniumCode\TopZinsPortalTestablauf\screenshots\\Reg GN\Login-GN-Register TZStammGN-TF-005.png</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>TZPLoginGN: TZStammGN-TF-006 - Smoketest</span>
+						<span class='test-time'>Mar 2, 2021 02:55:02 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 2, 2021 02:55:02 PM</span>
+	<span class='label end-time'>Mar 2, 2021 02:55:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+266ms</span>
+</div>
+	<div class='test-desc'>Stammdateneingabe des Geldnehmers </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:55:04 PM</td>
+					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://3.127.85.31/portal/login</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:36 PM</td>
-					<td class='step-details'>Eintrag in m3 mit Wert: 0,03</td>
+					<td class='timestamp'>2:55:05 PM</td>
+					<td class='step-details'>Eintrag in email mit Wert: BHDR-GN-Handel@forsa-gmbh.de</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:37 PM</td>
-					<td class='step-details'>Eintrag in m4 mit Wert: 0,04</td>
+					<td class='timestamp'>2:55:06 PM</td>
+					<td class='step-details'>Eintrag in password mit Wert: Test12345!</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:38 PM</td>
-					<td class='step-details'>Eintrag in m5 mit Wert: 0.05</td>
+					<td class='timestamp'>2:55:07 PM</td>
+					<td class='step-details'>Screenshot aufgenommen: C:\Users\b.dikmen\git\TZPSeleniumCode\TopZinsPortalTestablauf\screenshots\\Reg GN\Login-GN-Eingabe TZStammGN-TF-006.png</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:39 PM</td>
-					<td class='step-details'>Eintrag in m6 mit Wert: 0.06</td>
+					<td class='timestamp'>2:55:10 PM</td>
+					<td class='step-details'>Screenshot aufgenommen: C:\Users\b.dikmen\git\TZPSeleniumCode\TopZinsPortalTestablauf\screenshots\\Reg GN\Login-GN-Register TZStammGN-TF-006.png</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>TZPLoginGN: TZStammGN-TF-008 - Smoketest</span>
+						<span class='test-time'>Mar 2, 2021 02:55:14 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 2, 2021 02:55:14 PM</span>
+	<span class='label end-time'>Mar 2, 2021 02:55:22 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+497ms</span>
+</div>
+	<div class='test-desc'>Stammdateneingabe des Geldnehmers </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:55:16 PM</td>
+					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://3.127.85.31/portal/login</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:40 PM</td>
-					<td class='step-details'>Eintrag in m7 mit Wert: 0.07</td>
+					<td class='timestamp'>2:55:17 PM</td>
+					<td class='step-details'>Eintrag in email mit Wert: Burk-GN-Handel@forsa-gmbh.de</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:41 PM</td>
-					<td class='step-details'>Eintrag in m8 mit Wert: 0.08</td>
+					<td class='timestamp'>2:55:18 PM</td>
+					<td class='step-details'>Eintrag in password mit Wert: Test12345!</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:41 PM</td>
-					<td class='step-details'>Eintrag in m9 mit Wert: 0,09</td>
+					<td class='timestamp'>2:55:19 PM</td>
+					<td class='step-details'>Screenshot aufgenommen: C:\Users\b.dikmen\git\TZPSeleniumCode\TopZinsPortalTestablauf\screenshots\\Reg GN\Login-GN-Eingabe TZStammGN-TF-008.png</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:42 PM</td>
-					<td class='step-details'>Eintrag in m10 mit Wert: 0,10</td>
+					<td class='timestamp'>2:55:22 PM</td>
+					<td class='step-details'>Screenshot aufgenommen: C:\Users\b.dikmen\git\TZPSeleniumCode\TopZinsPortalTestablauf\screenshots\\Reg GN\Login-GN-Register TZStammGN-TF-008.png</td>
 				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>TZPLoginGN: TZStammGN-TF-010 - Smoketest</span>
+						<span class='test-time'>Mar 2, 2021 02:55:33 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 2, 2021 02:55:33 PM</span>
+	<span class='label end-time'>Mar 2, 2021 02:55:44 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 11s+200ms</span>
+</div>
+	<div class='test-desc'>Stammdateneingabe des Geldnehmers </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:43 PM</td>
-					<td class='step-details'>Eintrag in m11 mit Wert: 0,11</td>
+					<td class='timestamp'>2:55:34 PM</td>
+					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://3.127.85.31/portal/login</td>
 				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:44 PM</td>
-					<td class='step-details'>Eintrag in m12 mit Wert: 0.12</td>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:55:44 PM</td>
+					<td class='step-details'>Eintrag in email mit Wert: Centner-GN-Handel@forsa-gmbh.de</td>
 				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:45 PM</td>
-					<td class='step-details'>Eintrag in m18 mit Wert: 0.18</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:46 PM</td>
-					<td class='step-details'>Eintrag in y2 mit Wert: 0.24</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:46 PM</td>
-					<td class='step-details'>Eintrag in y3 mit Wert: 0.36</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:47 PM</td>
-					<td class='step-details'>Eintrag in y4 mit Wert: 0.48</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>12:03:48 PM</td>
-					<td class='step-details'>Eintrag in y5 mit Wert: 0.6</td>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>2:55:44 PM</td>
+					<td class='step-details'>Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='email']"}
+  (Session info: chrome=88.0.4324.190)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.190, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:53941}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6846023433c7f56e5a7abe82f4a2d3ea
+*** Element info: {Using=name, value=email}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -318,31 +407,31 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>1</div>
+					<div class='panel-lead'>4</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>20</div>
+					<div class='panel-lead'>18</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Feb 26, 2021 12:03:26 PM</div>
+					<div class='panel-lead'>Mar 2, 2021 02:54:48 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Feb 26, 2021 12:04:14 PM</div>
+			 		<div class='panel-lead'>Mar 2, 2021 02:55:44 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 47s+941ms</div>
+					<div class='panel-lead'>0h 0m 56s+223ms</div>
 				</div>
 			</div>
 		</div>
@@ -355,22 +444,22 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 1,
-				failParent: 0,
+				passParent: 3,
+				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 0,
+				exceptionsParent: 1,
 				
 				passChild: 0,
-				failChild: 0,
+				failChild: 2,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
-				infoChild: 20,
-				exceptionsChild: 0,
+				infoChild: 16,
+				exceptionsChild: 2,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,

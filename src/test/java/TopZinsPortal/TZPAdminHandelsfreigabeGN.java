@@ -138,7 +138,7 @@ public class TZPAdminHandelsfreigabeGN {
 	
 	// @Test
 	@Test(dataProvider = "TZPAdminHandelsfreigabeGN")
-	public void TZPAdminHandelsfreigabeGNTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Menue, String ZeilenProSeite, String Unternehmensname) throws Exception {
+	public void TZPAdminHandelsfreigabeGNTest(String Teststep, String Aktiv, String Menue, String ZeilenProSeite, String Unternehmensname) throws Exception {
 
 		if (Aktiv.equals("Ja")) {	
 		
@@ -154,6 +154,10 @@ public class TZPAdminHandelsfreigabeGN {
 
 		
 		// Login mit gültigen Daten
+		
+		String Emailadresse = Utils.TZPBeforeTest.AdminEmail();
+		String Passwort = Utils.TZPBeforeTest.AdminPasswort();
+		
 		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", Emailadresse, test);
 		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", Passwort, test);
 
@@ -178,7 +182,7 @@ public class TZPAdminHandelsfreigabeGN {
 		
 		// Der Stift für das Laden der Daten hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld
 		// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
-		String xpathvalue="//div[text() = '" + Unternehmensname +"']//ancestor::tr[contains(@class, 'MuiTableRow-root MuiTableRow-hover')]//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary']";
+		String xpathvalue="//div[text() = '" + Unternehmensname +"']//ancestor::tr[contains(@class, 'MuiTableRow-root')]//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary']";
 		Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);
 		// TSonderzeit zum Hochladen
 		Thread.sleep(3 * Zeitspanne);

@@ -45,7 +45,7 @@ public class TZPTenderAngebotAnnehmenGG {
 	// Variable für Applitools
 	public Eyes eyes = null;
 		
-		// Zu Testzwecken, direktsprung auf das Hochladen der PDF-dateien
+		// Zu Testzwecken, Direktsprung auf das Hochladen der PDF-Dateien
 		// Wenn alle Stammdaten eingegeben wurden, kann mit false direkt auf Dokumente zugegriffen werden
 		// Boolean MissingData = true;
 		Boolean MissingData = true;
@@ -171,6 +171,9 @@ public class TZPTenderAngebotAnnehmenGG {
 				// 1 Zinssatz auswählen 
 				// Später den Zinssatz einer Bank auswählen
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//tbody//tr//td[2]", test);
+				
+				// 5.6 Eintrag "Kommentar" 
+				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//textarea[@name='comment']", (KommentarGG + " Abschluss Geldgeber GG"), test);	
 					
 				// 4. Klicken auf Button "Angebot annehmen"
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='annehmen']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);

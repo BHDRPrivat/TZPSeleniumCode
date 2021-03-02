@@ -195,7 +195,7 @@ public class TZPTransaktionAkzeptierenGNTelefon {
         		
         		
         		}
-				else if (BtnAngebotTelefonischAnnehmenGG.equals("Ja")) {
+				else if (BtnAngebotAblehnenGG.equals("Ja")) {
 				// Angebot wird druch den GN abgelehnt	
 				}
 				else if (BtnAngebotTelefonischWeiterleitenGN.equals("Ja")) {
