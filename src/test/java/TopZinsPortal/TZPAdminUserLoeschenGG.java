@@ -96,7 +96,15 @@ public class TZPAdminUserLoeschenGG {
 		projectpath = System.getProperty("user.dir");
 		// Zugriff auf die zugehörigen Exceldaten
 		
-		TestdatenExceldatei = "\\Excel\\TopZinsPortalAdminLoeschenGG.xls";
+		
+		if (AblaufartGlobal.equals("Reset")) {
+			TestdatenExceldatei = "\\Excel\\TopZinsPortalAdminLoeschenGesamt.xls";
+		} else {
+			TestdatenExceldatei = "\\Excel\\TopZinsPortalAdminLoeschenGG.xls";	
+		}
+		
+		
+		
 
 
 		String excelPath = projectpath + TestdatenExceldatei;

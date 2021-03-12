@@ -85,13 +85,19 @@ public class TZPAdminUserDeaktivierenGG {
 	
 	}
 
+	
 	@DataProvider(name = "TZPAdminDeaktivierenGG")
 	public static Object[][] getData() throws BiffException {
 		// Ermittelt den Pfad des aktuellen Projekts
 		projectpath = System.getProperty("user.dir");
 		// Zugriff auf die zugehörigen Exceldaten
 		
-		TestdatenExceldatei = "\\Excel\\TopZinsPortalAdminDeaktivierenGG.xls";
+		if (AblaufartGlobal.equals("Reset")) {
+			TestdatenExceldatei = "\\Excel\\TopZinsPortalAdminDeaktivierenGesamt.xls";
+		} else {
+			TestdatenExceldatei = "\\Excel\\TopZinsPortalAdminDeaktivierenGG.xls";	
+		}
+		System.out.println("AblaufART=" + AblaufartGlobal + " Excel=" + TestdatenExceldatei );
 
 
 		String excelPath = projectpath + TestdatenExceldatei;

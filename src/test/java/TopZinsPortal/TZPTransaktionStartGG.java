@@ -177,7 +177,7 @@ public class TZPTransaktionStartGG {
 			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id='mui-component-select-paymentFrequencyId']", "//li[contains(text(),'", Zahlungsfrequenz, test);
 		
 			// 5.5 Eintrag "Sonstiges" 
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//textarea[@name='other']", (SonstigesGG + " Geldgeber GB"), test);			
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//textarea[@name='other']", (SonstigesGG + " Geldgeber GG"), test);			
 
 			// 5.6 Eintrag "Kommentar" 
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//textarea[@name='comment']", (KommentarGG + " Geldgeber GG"), test);		
