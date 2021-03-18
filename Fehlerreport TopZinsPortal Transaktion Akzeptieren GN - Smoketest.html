@@ -46,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Mar 12, 2021 04:30:01 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Mar 18, 2021 05:02:50 PM</span>
 				</a>
 			</li>
 			<li>
@@ -122,7 +122,7 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>3</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -140,7 +140,7 @@
 					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>8</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>19</span> others
 				</div>
 			</div>
 		</div>
@@ -158,16 +158,16 @@
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
 					<div class='test-heading'>
 						<span class='test-name'>TZP_Transaktion: TZPTransaktionStartGG-TF-001 - Smoketest</span>
-						<span class='test-time'>Mar 12, 2021 04:30:02 PM</span>
+						<span class='test-time'>Mar 18, 2021 05:02:52 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Mar 12, 2021 04:30:02 PM</span>
-	<span class='label end-time'>Mar 12, 2021 04:30:26 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 23s+560ms</span>
+	<span class='label start-time'>Mar 18, 2021 05:02:52 PM</span>
+	<span class='label end-time'>Mar 18, 2021 05:03:08 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+622ms</span>
 </div>
-	<div class='test-desc'>Akzeptieren einer Transaktion durch den Geldnehmer </div>
+	<div class='test-desc'>Bearbeitung einer Transaktion durch den Geldnehmer </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
 			<thead>
@@ -180,43 +180,158 @@
 			<tbody>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>4:30:05 PM</td>
+					<td class='timestamp'>5:02:54 PM</td>
 					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://52.59.225.49/portal/login</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>4:30:06 PM</td>
+					<td class='timestamp'>5:02:56 PM</td>
 					<td class='step-details'>Eintrag in email mit Wert: BHDR-GN-Handel@Forsa-gmbh.de</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>4:30:07 PM</td>
+					<td class='timestamp'>5:02:56 PM</td>
 					<td class='step-details'>Eintrag in password mit Wert: Test12345!</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>4:30:19 PM</td>
-					<td class='step-details'>Eintrag in //input[@name='volume'] mit Wert: 222222</td>
+					<td class='timestamp'>5:03:00 PM</td>
+					<td class='step-details'>Eintrag in (//input[@name='volume'])[2] mit Wert: 333333</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>4:30:20 PM</td>
-					<td class='step-details'>Eintrag in interestRate mit Wert: 1</td>
+					<td class='timestamp'>5:03:01 PM</td>
+					<td class='step-details'>Eintrag in (//input[@name='interestRate'])[2] mit Wert: 3</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>4:30:23 PM</td>
-					<td class='step-details'>Eintrag in //textarea[@name='other'] mit Wert: Das ist ein Eintrag in das Feld Sonstiges durch den Geldnehmer GN</td>
+					<td class='timestamp'>5:03:02 PM</td>
+					<td class='step-details'>Eintrag in (//Label[text() ='Ende des Angebots (Uhrzeit)*']//following::input[contains(@class, 'MuiInput')][1])[2] mit Wert: 20:00</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>4:30:25 PM</td>
-					<td class='step-details'>Eintrag in //textarea[@name='comment'] mit Wert: Das ist ein Eintrag in das Feld Kommentar durch den  Geldnehmer GN</td>
+					<td class='timestamp'>5:03:05 PM</td>
+					<td class='step-details'>Eintrag in (//textarea[@name='other'])[2] mit Wert: Das ist ein Eintrag in das Feld Sonstiges durch den Geldnehmer GN sendet Angebot</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>4:30:26 PM</td>
-					<td class='step-details'>Eintrag in //Label[text() ='Ende des Angebots (Uhrzeit)*']//following::input[contains(@class, 'MuiInput')][1] mit Wert: 20:00</td>
+					<td class='timestamp'>5:03:08 PM</td>
+					<td class='step-details'>Eintrag in (//textarea[@name='comment'])[2] mit Wert: Das ist ein Eintrag in das Feld Kommentar durch den  Geldnehmer GN sendet Angebot</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>TZP_Transaktion: TZPTransaktionStartGG-TF-002 - Smoketest</span>
+						<span class='test-time'>Mar 18, 2021 05:03:12 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 18, 2021 05:03:12 PM</span>
+	<span class='label end-time'>Mar 18, 2021 05:03:27 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+124ms</span>
+</div>
+	<div class='test-desc'>Bearbeitung einer Transaktion durch den Geldnehmer </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:03:15 PM</td>
+					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://52.59.225.49/portal/login</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:03:16 PM</td>
+					<td class='step-details'>Eintrag in email mit Wert: BHDR-GN-Handel@Forsa-gmbh.de</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:03:17 PM</td>
+					<td class='step-details'>Eintrag in password mit Wert: Test12345!</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:03:20 PM</td>
+					<td class='step-details'>Eintrag in (//input[@name='volume'])[1] mit Wert: 444444</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:03:21 PM</td>
+					<td class='step-details'>Eintrag in (//input[@name='interestRate'])[1] mit Wert: 4</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:03:22 PM</td>
+					<td class='step-details'>Eintrag in (//Label[text() ='Ende des Angebots (Uhrzeit)*']//following::input[contains(@class, 'MuiInput')][1])[1] mit Wert: 20:00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:03:25 PM</td>
+					<td class='step-details'>Eintrag in (//textarea[@name='other'])[1] mit Wert: Das ist ein Eintrag in das Feld Sonstiges durch den Geldnehmer GN Telefonisch</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:03:27 PM</td>
+					<td class='step-details'>Eintrag in (//textarea[@name='comment'])[1] mit Wert: Das ist ein Eintrag in das Feld Kommentar durch den  Geldnehmer GN Telefonisch</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>TZP_Transaktion: Smoketest</span>
+						<span class='test-time'>Mar 18, 2021 05:03:30 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 18, 2021 05:03:30 PM</span>
+	<span class='label end-time'>Mar 18, 2021 05:03:36 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+653ms</span>
+</div>
+	<div class='test-desc'>Akzeptieren einer Transaktion durch den Forsa-Admin </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:03:31 PM</td>
+					<td class='step-details'>Eintrag in email mit Wert: admintest@forsa-gmbh.de</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:03:31 PM</td>
+					<td class='step-details'>Eintrag in password mit Wert: Test12345!</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:03:36 PM</td>
+					<td class='step-details'>Eintrag in adminComment mit Wert: Handelvermerk durch den Forsa-Admin</td>
 				</tr>
 			</tbody>
 		</table>
@@ -258,31 +373,31 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>1</div>
+					<div class='panel-lead'>3</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>8</div>
+					<div class='panel-lead'>19</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Mar 12, 2021 04:30:01 PM</div>
+					<div class='panel-lead'>Mar 18, 2021 05:02:50 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Mar 12, 2021 04:30:32 PM</div>
+			 		<div class='panel-lead'>Mar 18, 2021 05:03:40 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 30s+851ms</div>
+					<div class='panel-lead'>0h 0m 49s+869ms</div>
 				</div>
 			</div>
 		</div>
@@ -295,7 +410,7 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 1,
+				passParent: 3,
 				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
@@ -309,7 +424,7 @@
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
-				infoChild: 8,
+				infoChild: 19,
 				exceptionsChild: 0,
 				
 				passGrandChild: 0,

@@ -219,8 +219,8 @@ public class SeleniumUtils {
 	public static void InputText(WebDriver driver, Integer Zeitspanne, String HTMLSelector, String ObjektPath, String Inputwert, ExtentTest test) throws InterruptedException {
 		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
 		
-//		System.out.println("Objekt: " + ObjektPath);
-//		System.out.println("Wert: " + Inputwert);
+		System.out.println("Objekt: " + ObjektPath);
+		System.out.println("Wert: " + Inputwert);
 		
 		
 		

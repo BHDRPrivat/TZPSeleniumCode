@@ -2,7 +2,10 @@ package TopZinsPortal;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -22,7 +25,7 @@ import Utils.SeleniumUtils;
 import jxl.read.biff.BiffException;
 
 public class TZPTransaktionAbschlussGN {
-	
+	// Beachte die Reihenfolge der Masken ist bei GN in umgekehrter Reihenfolge ! 
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
 	
@@ -40,6 +43,10 @@ public class TZPTransaktionAbschlussGN {
 	ExtentReports extent;
 
 	public String AblaufartGlobal;
+	
+	// Anzahl der Testfälle wichtig für die einzelnen Zugriffe 
+	public static Integer AktuellTransaktionMaske = 0; 
+
 
 	//public ChromeDevToolsService devToolsService = null;
 	// Variable für Applitools
@@ -100,6 +107,8 @@ public class TZPTransaktionAbschlussGN {
 			int rowCount = ExcelUtilsJXL.getRowCount();
 			int colCount = ExcelUtilsJXL.getColCount();
 			
+			AktuellTransaktionMaske = rowCount ;
+			
 			System.out.println("Zeile=" + rowCount + "Spalte=" + colCount + "String Wert: ");
 
 			// 2 Dimensionales Object-Array erzeugen
@@ -134,6 +143,10 @@ public class TZPTransaktionAbschlussGN {
 			
 			if (Aktiv.equals("Ja")) {
 				
+				// Für jeden Testfall wird die entsperechende Transaktionsmasken ausgewählt 
+				// Beachet die Reihenfolge ist bei den GN in umgekehrter Reihenfolge	
+					
+					AktuellTransaktionMaske = AktuellTransaktionMaske - 1;	
 
 			// creates a toggle for the given test, adds all log events under it
 			ExtentTest test = extent.createTest("TZP_Transaktion: " + Teststep + " - " + AblaufartGlobal,
@@ -152,8 +165,36 @@ public class TZPTransaktionAbschlussGN {
      		// 19.1 Button "Login" auswaehlen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 		
+			
+			System.out.println("vor Drag & Drop");
+			// Für die Auswahl der OK-Button muss das Fenster erst verschoeben werden.
+			// Create object of actions class
+			Actions act=new Actions(driver);
+
+			// Find element xpath which we need to drag
+			WebElement drag =driver.findElement(By.xpath("(//div[contains(@class, 'MuiDialogTitle-root')])[" + AktuellTransaktionMaske +"]"));
+			
+			// Find element xpath which we need to drop
+			WebElement drop =driver.findElement(By.xpath("//div[@data-test='sentinelStart']"));			
+			
+		
+			// Click &amp; Hold drag Webelement
+			act.clickAndHold(drag).build().perform();
+			 
+			// Move to drop Webelement
+			act.moveToElement(drop).build().perform();
+			 
+			// Release drag webelement into drop webelement
+			act.release(drop).build().perform();
+			
+			System.out.println("Nach Drag & Drop");
+			
+			// 10. zeit zum Aufbauen der Meldung 
+			Thread.sleep(3 * Zeitspanne);	
+			
+		
 			// 20. Button "Angebot annehmen" klicken
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "(//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')])[" + AktuellTransaktionMaske + "]", test);
 			
 			Thread.sleep(3 * Zeitspanne);
 			

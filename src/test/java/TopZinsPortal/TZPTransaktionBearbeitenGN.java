@@ -2,7 +2,10 @@ package TopZinsPortal;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -21,7 +24,7 @@ import Utils.ExcelUtilsJXL;
 import Utils.SeleniumUtils;
 import jxl.read.biff.BiffException;
 
-public class TZPTransaktionAkzeptierenGNTelefon {
+public class TZPTransaktionBearbeitenGN {
 	
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
@@ -38,6 +41,9 @@ public class TZPTransaktionAkzeptierenGNTelefon {
 	// Klassenvariablen
 	ExtentHtmlReporter htmlReporter = null;
 	ExtentReports extent;
+	
+	// Anzahl der Testfälle wichtig für die einzelnen Zugriffe 
+	public static Integer AktuellTransaktionMaske = 0; 
 
 	public String AblaufartGlobal;
 
@@ -55,6 +61,9 @@ public class TZPTransaktionAkzeptierenGNTelefon {
 		@Parameters({ "Ablaufart" })
 		@BeforeTest
 		public void SetupSeleniumTestdaten(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
+			
+			
+			
 
 			if (htmlReporter == null) {
 				// start reporters
@@ -100,6 +109,8 @@ public class TZPTransaktionAkzeptierenGNTelefon {
 			int rowCount = ExcelUtilsJXL.getRowCount();
 			int colCount = ExcelUtilsJXL.getColCount();
 			
+			AktuellTransaktionMaske = rowCount ;
+			
 			System.out.println("Zeile=" + rowCount + "Spalte=" + colCount + "String Wert: ");
 
 			// 2 Dimensionales Object-Array erzeugen
@@ -123,13 +134,6 @@ public class TZPTransaktionAkzeptierenGNTelefon {
 		}
 
 		
-		@Test
-		public void AdminTransactionActions() {
-			// positiver Durchlauf
-			System.out.println("Telefonisch weitergeleitet");
-		}
-		
-
 		// @Test
 		@Test(dataProvider = "TZPTransaktionAkzeptierenGN")
 		public void TZPTransaktionAkzeptierenGNTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
@@ -140,11 +144,15 @@ public class TZPTransaktionAkzeptierenGNTelefon {
 
 			
 			if (Aktiv.equals("Ja")) {
+			
+			// Für jeden Testfall wird die entsperechende Transaktionsmasken ausgewählt 
+			// Beachet die Reihenfolge ist bei den GN in umgekehrter Reihenfolge	
 				
+				AktuellTransaktionMaske = AktuellTransaktionMaske - 1;
 
 			// creates a toggle for the given test, adds all log events under it
 			ExtentTest test = extent.createTest("TZP_Transaktion: " + Teststep + " - " + AblaufartGlobal,
-					"Akzeptieren einer Transaktion durch den Geldnehmer");
+					"Bearbeitung einer Transaktion durch den Geldnehmer");
 
 			driver.get(BaseUrl);
 			// 1. Loginseite oeffnen
@@ -162,53 +170,110 @@ public class TZPTransaktionAkzeptierenGNTelefon {
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 		
 			// 10. zeit zum Aufbauen der Meldung 
-			Thread.sleep(5 * Zeitspanne);	
+			Thread.sleep(10 * Zeitspanne);	
+
 			
-			// Button "OK" auswählen, wenn vorhanden
-			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
+			System.out.println("vor Drag & Drop");
+			// Für die Asuwahl der Eingabelemente sollte das Fenster erst verschoeben werden.
+			// Create object of actions class
+			Actions act=new Actions(driver);
+
+			// Find element xpath which we need to drag
+			WebElement drag =driver.findElement(By.xpath("(//div[contains(@class, 'MuiDialogTitle-root')])[" + AktuellTransaktionMaske +"]"));
+			
+			// Find element xpath which we need to drop
+			WebElement drop =driver.findElement(By.xpath("//div[@data-test='sentinelStart']"));			
+			
+		
+			// Click &amp; Hold drag Webelement
+			act.clickAndHold(drag).build().perform();
+			 
+			// Move to drop Webelement
+			act.moveToElement(drop).build().perform();
+			 
+			// Release drag webelement into drop webelement
+			act.release(drop).build().perform();
+			
+			System.out.println("Nach Drag & Drop");
+			
+			// 10. zeit zum Aufbauen der Meldung 
+			Thread.sleep(3 * Zeitspanne);	
+			
+			
 			
 			// 5.1 Volumen 
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//input[@name='volume']", VolumenGN, test);
+			// für jeden Testfall wird die erste der Vorhanden Transaktionsmasken ausgewählt 
+			System.out.println("Vor Imput Text");
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "(//input[@name='volume'])[" + AktuellTransaktionMaske +"]" , VolumenGN, test);
+			System.out.println("Volumen GN = " + VolumenGN);
 			
      		// Zinssatz ändern 
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "interestRate",ZinssatzGN, test);
-			
-			// 5.5 Eintrag "Sonstiges" 
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//textarea[@name='other']", (SonstigesGG + " Geldnehmer GN"), test);			
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "(//input[@name='interestRate'])[" + AktuellTransaktionMaske+ "]" , ZinssatzGN, test);
+			System.out.println("Zinssatz GN = " + ZinssatzGN);
 
-			// 5.6 Eintrag "Kommentar" 
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//textarea[@name='comment']", (KommentarGG + " Geldnehmer GN"), test);
-			
-			// 5.7 Feld "Ende der Angebots (Zeit)" ausfüllen
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//Label[text() ='Ende des Angebots (Uhrzeit)*']//following::input[contains(@class, 'MuiInput')][1]",EndeAnfrageUhrzeitGG, test);
-			
-			// 11. Button "Angebot senden" klicken 
+		
+    		// 5.7 Feld "Ende der Angebots (Zeit)" ausfüllen
+			// Bei allen Fällen identsich, daher vor den anadren Feldern possitioniert 
+    		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "(//Label[text() ='Ende des Angebots (Uhrzeit)*']//following::input[contains(@class, 'MuiInput')][1])[" + AktuellTransaktionMaske +"]",EndeAnfrageUhrzeitGG, test);
+
+	
+			    // 11. Button "Angebot senden" klicken 
         		if (BtnAngebotSendenGN.equals("Ja")) {
-			     // Angebot wird durch GN angenommen		
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='senden']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
+        			// Angebot wird durch den GN abgesendet	
+        			System.out.println("Angebot senden GN");
+			    
+        			// 5.5 Eintrag "Sonstiges" 
+        			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "(//textarea[@name='other'])[" + AktuellTransaktionMaske +"]", (SonstigesGG + " Geldnehmer GN sendet Angebot"), test);			
 
-				// 12. Button "Ja" in Pop-up klicken (class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//*[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']", test);
+        			// 5.6 Eintrag "Kommentar" 
+        			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "(//textarea[@name='comment'])[" + AktuellTransaktionMaske +"]", (KommentarGG + " Geldnehmer GN sendet Angebot "), test);
+        			
+        			// Angebot wird durch GN angenommen		
+			    	Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "(//span[text()='senden']//ancestor::button[contains(@class, 'MuiButtonBase')])["+ AktuellTransaktionMaske + "]", test);
+
+				    // 12. Button "Ja" in Pop-up klicken (class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+				    Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//*[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']", test);
 				
-				// Button "OK" auswählen, wenn vorhanden
-	         	 Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
+				   // Button "OK" auswählen, wenn vorhanden
+	         	   Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
         		
         		
         		}
 				else if (BtnAngebotAblehnenGG.equals("Ja")) {
-				// Angebot wird druch den GN abgelehnt	
+				// Angebot wird durch den GN abgelehnt	
 				}
 				else if (BtnAngebotTelefonischWeiterleitenGN.equals("Ja")) {
-				// Angebot wird telefonsich weitergeleitet	
+				      // Angebot wird telefonsich weitergeleitet	
+					System.out.println("Angebot Telefonisch GN");
+					
+					
+        			// 5.5 Eintrag "Sonstiges" 
+        			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "(//textarea[@name='other'])[" + AktuellTransaktionMaske + "]", (SonstigesGG + " Geldnehmer GN Telefonisch"), test);			
+
+        			// 5.6 Eintrag "Kommentar" 
+        			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "(//textarea[@name='comment'])[" + AktuellTransaktionMaske + "]", (KommentarGG + " Geldnehmer GN Telefonisch "), test);
+					
+				     // Angebot wird durch GN an Forsa weitergeleitet		
+					Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "(//span[text()='telefonisch weiterleiten']//ancestor::button[contains(@class, 'MuiButtonBase')])[" + AktuellTransaktionMaske + "]", test);
+					
+					// Button "OK" auswählen, wenn vorhanden
+		         	Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
+		         	
+		         	//Auslogen des Users
+		            Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);
+															
+		         	// Admin soll anehmen.
 					AdminTransactionActions();
+					
+					// Geldgeber soll Akzeptieren
 				}
 				
-			
-			
+	
 			Thread.sleep(3 * Zeitspanne);
 						
 			// 13. Geldnehmer ausloggen
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);  // Klicken auf ein Button mit dem Attribut data-test='logout-button'
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);  // Klicken auf ein Button mit dem Attribut data-test='logout-button'
+//			System.out.println("GN logout");
 			
 			Thread.sleep(3 * Zeitspanne);
 						
@@ -217,7 +282,10 @@ public class TZPTransaktionAkzeptierenGNTelefon {
 			// Für den Teardown
 			driver = null;
 			eyes = null;
-
+			// Drag Drop zurücksetzen
+			act = null;
+			
+			
 			// Neu Starten
 			SetupSeleniumTestdaten(AblaufartGlobal);
 
@@ -226,7 +294,44 @@ public class TZPTransaktionAkzeptierenGNTelefon {
 		} 
 		
 		
-		
+	    // Klasse für den Forsa-Admin
+		public void AdminTransactionActions() throws InterruptedException {
+			// positiver Durchlauf
+			System.out.println("Telefonisch weitergeleitet");
+			
+			// creates a toggle for the given test, adds all log events under it
+			ExtentTest test = extent.createTest("TZP_Transaktion: "  + AblaufartGlobal,
+					"Akzeptieren einer Transaktion durch den Forsa-Admin");
+
+					
+			// Zeit zum Akzeptieren geben.
+			Thread.sleep(3 * Zeitspanne);
+						
+			// Login mit gültigen Daten
+			
+			String Emailadresse = Utils.TZPBeforeTest.AdminEmail();
+			String Passwort = Utils.TZPBeforeTest.AdminPasswort();
+			
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", Emailadresse, test);
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", Passwort, test);
+
+			// Button "Anmelden auswählen"
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
+			
+			//Button "Transaktion" in menu clicken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'TRANSAKTION')]", test);
+			
+			// In der Tabelle die erste Kontakt-Forsa Spalte auswählen
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//tr[@class='MuiTableRow-root']//td[7]", test);
+			
+			// Handelsvermerk eintragen
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "adminComment", "Handelvermerk durch den Forsa-Admin", test);
+			
+			//Button "Angebot senden" wählen
+	    	Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Angebot senden']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);			
+	    	
+	    	Thread.sleep(3 * Zeitspanne);
+		}
 
 		
 		public void ApplitoolsAufnahme(String Ablaufart, String teststep) {

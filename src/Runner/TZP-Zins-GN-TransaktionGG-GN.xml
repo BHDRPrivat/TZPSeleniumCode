@@ -16,7 +16,7 @@
 	<test name="TZP-Akzeptieren-GN">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
-			<class name="TopZinsPortal.TZPTransaktionAkzeptierenGN" />
+			<class name="TopZinsPortal.TZPTransaktionBearbeitenGN" />
 		</classes>
     </test>
     <test name="TZP-Akzeptieren-GG">
