@@ -183,7 +183,7 @@ public class TZPZinssatzVorgabeGN {
 			// Button + und - ausprobieren    
 			// Hat den Effekt, dass bestehende Werte geändert werden und 
 			// Meldung erscheint    
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//th[text()='1 M']//following::span//ancestor::button", test);    
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//th[text()='60 M']//following::span//ancestor::button", test);    
 		
 	        // Button Aktualisieren wählen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Aktualisieren']//ancestor::button", test);

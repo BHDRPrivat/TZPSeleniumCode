@@ -170,36 +170,9 @@ public class TZPTransaktionBearbeitenGN {
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 		
 			// 10. zeit zum Aufbauen der Meldung 
-			Thread.sleep(10 * Zeitspanne);	
-
-			
-			System.out.println("vor Drag & Drop");
-			// Für die Asuwahl der Eingabelemente sollte das Fenster erst verschoeben werden.
-			// Create object of actions class
-			Actions act=new Actions(driver);
-
-			// Find element xpath which we need to drag
-			WebElement drag =driver.findElement(By.xpath("(//div[contains(@class, 'MuiDialogTitle-root')])[" + AktuellTransaktionMaske +"]"));
-			
-			// Find element xpath which we need to drop
-			WebElement drop =driver.findElement(By.xpath("//div[@data-test='sentinelStart']"));			
-			
-		
-			// Click &amp; Hold drag Webelement
-			act.clickAndHold(drag).build().perform();
-			 
-			// Move to drop Webelement
-			act.moveToElement(drop).build().perform();
-			 
-			// Release drag webelement into drop webelement
-			act.release(drop).build().perform();
-			
-			System.out.println("Nach Drag & Drop");
-			
-			// 10. zeit zum Aufbauen der Meldung 
 			Thread.sleep(3 * Zeitspanne);	
-			
-			
+
+			Utils.SeleniumUtils.DragDrop(driver, Zeitspanne, "(//div[contains(@class, 'MuiDialogTitle-root')])[" + AktuellTransaktionMaske +"]", "//div[@data-test='sentinelStart']", test);
 			
 			// 5.1 Volumen 
 			// für jeden Testfall wird die erste der Vorhanden Transaktionsmasken ausgewählt 
@@ -239,8 +212,23 @@ public class TZPTransaktionBearbeitenGN {
         		
         		
         		}
-				else if (BtnAngebotAblehnenGG.equals("Ja")) {
+				else if (BtnAnfrageAblehnenGN.equals("Ja")) {
 				// Angebot wird durch den GN abgelehnt	
+					
+        			System.out.println("Angebot Ablehnen GN");
+			    
+        			// 5.5 Eintrag "Sonstiges" 
+        			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "(//textarea[@name='other'])[" + AktuellTransaktionMaske +"]", (SonstigesGG + " Geldnehmer GN lehnt Angebot ab"), test);			
+
+        			// 5.6 Eintrag "Kommentar" 
+        			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "(//textarea[@name='comment'])[" + AktuellTransaktionMaske +"]", (KommentarGG + " Geldnehmer GN lehnt Angebot ab"), test);
+        			
+        			// Angebot wird durch GN abgelehnt		
+			    	Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "(//span[text()='ablehnen']//ancestor::button[contains(@class, 'MuiButtonBase')])["+ AktuellTransaktionMaske + "]", test);
+
+     			   // Button "OK" auswählen, wenn vorhanden
+	         	   Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
+					
 				}
 				else if (BtnAngebotTelefonischWeiterleitenGN.equals("Ja")) {
 				      // Angebot wird telefonsich weitergeleitet	
@@ -259,13 +247,15 @@ public class TZPTransaktionBearbeitenGN {
 					// Button "OK" auswählen, wenn vorhanden
 		         	Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
 		         	
-		         	//Auslogen des Users
-		            Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);
-															
-		         	// Admin soll anehmen.
-					AdminTransactionActions();
+//		         	// Bevor die Admin-Aktionen starten könne, muss sich GN abmelden
+//		         	Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//Button[@data-test ='logout-button']", test);
+//		         	
+//					// Zeit zum Akzeptieren geben.
+//					Thread.sleep(3 * Zeitspanne);
+//		         	
+//     	         	// Admin soll anehmen.
+//					AdminTransactionActions();
 					
-					// Geldgeber soll Akzeptieren
 				}
 				
 	
@@ -282,9 +272,7 @@ public class TZPTransaktionBearbeitenGN {
 			// Für den Teardown
 			driver = null;
 			eyes = null;
-			// Drag Drop zurücksetzen
-			act = null;
-			
+		
 			
 			// Neu Starten
 			SetupSeleniumTestdaten(AblaufartGlobal);

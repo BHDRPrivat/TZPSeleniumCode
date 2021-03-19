@@ -18,6 +18,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import com.applitools.eyes.selenium.Eyes;
 import com.aventstack.extentreports.ExtentReports;
@@ -30,6 +31,48 @@ import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 
 public class SeleniumUtils {
+	
+	
+	public static void DragDrop(WebDriver driver, Integer Zeitspanne, String Drag, String Drop, ExtentTest test) throws InterruptedException {
+		// Routine zum Verschieben von Objekten
+		
+		// Zeitpsanne
+		Thread.sleep(3 * Zeitspanne);	
+
+		
+		System.out.println("Drag = " + Drag );
+		System.out.println("Drop = " + Drop );
+		
+		// Für die Auswahl der Eingabelemente sollte das Fenster erst verschoeben werden.
+		// Create object of actions class
+		Actions act=new Actions(driver);
+
+		// Find element xpath which we need to drag
+		WebElement dragelement =driver.findElement(By.xpath(Drag));
+		
+		// Find element xpath which we need to drop
+		WebElement dropelement =driver.findElement(By.xpath(Drop));			
+		
+	
+		// Click &amp; Hold drag Webelement
+		act.clickAndHold(dragelement).build().perform();
+		 
+		// Move to drop Webelement
+		act.moveToElement(dropelement).build().perform();
+		 
+		// Release drag webelement into drop webelement
+		act.release(dropelement).build().perform();
+		
+		System.out.println("Nach Drag & Drop");
+		
+		// 10. zeit zum Aufbauen der Meldung 
+		Thread.sleep(3 * Zeitspanne);	
+	}
+	
+	
+	
+	
+	
 	
 	public static void AuschreibungGNAuswahl(WebDriver driver, Integer Zeitspanne, String Suchstring, ExtentTest test) throws InterruptedException {
 		// Anhand eines Suchstring, wird die Auswahl des Tabellenelements angewählt

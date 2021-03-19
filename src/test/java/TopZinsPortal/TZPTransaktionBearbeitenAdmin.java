@@ -24,8 +24,8 @@ import Utils.ExcelUtilsJXL;
 import Utils.SeleniumUtils;
 import jxl.read.biff.BiffException;
 
-public class TZPTransaktionAbschlussGN {
-	// Beachte die Reihenfolge der Masken ist bei GN in umgekehrter Reihenfolge ! 
+public class TZPTransaktionBearbeitenAdmin {
+	
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
 	
@@ -41,12 +41,11 @@ public class TZPTransaktionAbschlussGN {
 	// Klassenvariablen
 	ExtentHtmlReporter htmlReporter = null;
 	ExtentReports extent;
-
-	public String AblaufartGlobal;
 	
 	// Anzahl der Testfälle wichtig für die einzelnen Zugriffe 
 	public static Integer AktuellTransaktionMaske = 0; 
 
+	public String AblaufartGlobal;
 
 	//public ChromeDevToolsService devToolsService = null;
 	// Variable für Applitools
@@ -62,10 +61,13 @@ public class TZPTransaktionAbschlussGN {
 		@Parameters({ "Ablaufart" })
 		@BeforeTest
 		public void SetupSeleniumTestdaten(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
+			
+			
+			
 
 			if (htmlReporter == null) {
 				// start reporters
-				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Transaktion Abschluss GN - " + Ablaufart + ".html");
+				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Transaktion Akzeptieren GN - " + Ablaufart + ".html");
 				// create ExtentReports and attach reporter(s)
 				extent = new ExtentReports();
 				extent.attachReporter(htmlReporter);
@@ -87,7 +89,7 @@ public class TZPTransaktionAbschlussGN {
 		}
 		
 
-		@DataProvider(name = "TZPTransaktionAbschlussGN")
+		@DataProvider(name = "TZPTransaktionAkzeptierenGN")
 		public static Object[][] getData() throws BiffException {
 			// Ermittelt den Pfad des aktuellen Projekts
 			projectpath = System.getProperty("user.dir");
@@ -131,72 +133,117 @@ public class TZPTransaktionAbschlussGN {
 			return data;
 		}
 
-
+		
 		// @Test
-		@Test(dataProvider = "TZPTransaktionAbschlussGN")
-		public void TZPTransaktionAbschlussGNTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
-				String ZinssatzGG, String Valuta, String Zinskonvention, String Zahlungsfrequenz, String SonstigesGG, String KommentarGG, String EndeAnfrageUhrzeitGG, 
-				String BtnAnfrageSendenGG, String BtnAusloggenGG, String FirmaGN, String EmailadresseGN, String PasswortGN, String VolumenGN, 
-				String ZinssatzGN, String EndeAngebotGN, String BtnAngebotSendenGN, String BtnAnfrageAblehnenGN, String BtnAngebotTelefonischWeiterleitenGN, 
-				String BtnAngebotAnnehmenGG, String BtnAngebotAblehnenGG, String BtnAngebotTelefonischAnnehmenGG  ) throws Exception {
+		@Test(dataProvider = "TZPTransaktionAkzeptierenGN")
+		public void TZPTransaktionAkzeptierenGNTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
+		String ZinssatzGG, String Valuta, String Zinskonvention, String Zahlungsfrequenz, String SonstigesGG, String KommentarGG, String EndeAnfrageUhrzeitGG, 
+		String BtnAnfrageSendenGG, String BtnAusloggenGG, String FirmaGN, String EmailadresseGN, String PasswortGN, String VolumenGN, 
+		String ZinssatzGN, String EndeAngebotGN, String BtnAngebotSendenGN, String BtnAnfrageAblehnenGN, String BtnAngebotTelefonischWeiterleitenGN, 
+		String BtnAngebotAnnehmenGG, String BtnAngebotAblehnenGG, String BtnAngebotTelefonischAnnehmenGG  ) throws Exception {
 
 			
 			if (Aktiv.equals("Ja")) {
+			
+			// Für jeden Testfall wird die entsperechende Transaktionsmasken ausgewählt 
+			// Beachet die Reihenfolge ist bei den GN in umgekehrter Reihenfolge	
 				
-				// Für jeden Testfall wird die entsperechende Transaktionsmasken ausgewählt 
-				// Beachte die Reihenfolge ist bei den GN in umgekehrter Reihenfolge	
-				// Die Anzahl der verschiebraen Elemente finden 	
-				
+				AktuellTransaktionMaske = AktuellTransaktionMaske - 1;
+
 			// creates a toggle for the given test, adds all log events under it
 			ExtentTest test = extent.createTest("TZP_Transaktion: " + Teststep + " - " + AblaufartGlobal,
-					"Akzeptieren einer Transaktion durch den Geldnehmer");
+					"Bearbeitung einer Transaktion durch den Geldnehmer");
 
 			driver.get(BaseUrl);
-			// 18. Loginseite oeffnen
+			// 1. Loginseite oeffnen
 			Thread.sleep(3 * Zeitspanne);
 			test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
 
+			// Zeit zum Akzeptieren geben.
+			Thread.sleep(5 * Zeitspanne);
+			
+	
+	
+			    // 11. Button "Angebot senden" klicken 
+        		if (BtnAngebotSendenGN.equals("Ja")) {
+        		
+        		
+        		}
+				else if (BtnAnfrageAblehnenGN.equals("Ja")) {
+				// Angebot wird durch den GN abgelehnt	
 					
-			// 19. Login entsprechenden Geldnehmer mit gueltigen Daten
-			SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", EmailadresseGN, test);
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", PasswortGN, test);
-			
-     		// 19.1 Button "Login" auswaehlen
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
-		
-
-			// Nur die real vorhandenen Masken mit OK schließen	
-			AktuellTransaktionMaske = driver.findElements(By.xpath("//div[contains(@class, 'MuiDialogTitle-root')]")).size();		
-			System.out.println("Anzahl Masken = " + AktuellTransaktionMaske);
-			
-			if (BtnAnfrageAblehnenGN.equals("Ja")) {
-				// Nichts passiert, da entprechendes Fenster nihct existiert
+					
+				}
+				else if (BtnAngebotTelefonischWeiterleitenGN.equals("Ja")) {
+			      // Angebot wird telefonsich weitergeleitet	
+		         	
+     	         	// Admin soll anehmen.
+					AdminTransactionActions();
+					
+				}
 				
-			} else {
-		
-            // Drag Drop 			
-			Utils.SeleniumUtils.DragDrop(driver, Zeitspanne, "(//div[contains(@class, 'MuiDialogTitle-root')])[" + AktuellTransaktionMaske +"]", "//div[@data-test='sentinelStart']", test);
-		
-			// 20. Button "Angebot annehmen" klicken
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "(//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')])[" + AktuellTransaktionMaske + "]", test);
+	
+			Thread.sleep(3 * Zeitspanne);
+						
+			// 13. Geldnehmer ausloggen
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);  // Klicken auf ein Button mit dem Attribut data-test='logout-button'
+//			System.out.println("GN logout");
 			
 			Thread.sleep(3 * Zeitspanne);
-			}	
+						
 			
 			driver.close();
 			// Für den Teardown
 			driver = null;
 			eyes = null;
-
+		
+			
 			// Neu Starten
 			SetupSeleniumTestdaten(AblaufartGlobal);
 
-		} // Nur wenn Aktic "Ja" ist durchlaufen
+		} // Nur wenn Aktiv "Ja" ist, durchlaufen
 
 		} 
 		
 		
-		
+	    // Klasse für den Forsa-Admin
+		public void AdminTransactionActions() throws InterruptedException {
+			// positiver Durchlauf
+			System.out.println("Telefonisch weitergeleitet");
+			
+			// creates a toggle for the given test, adds all log events under it
+			ExtentTest test = extent.createTest("TZP_Transaktion: "  + AblaufartGlobal,
+					"Akzeptieren einer Transaktion durch den Forsa-Admin");
+
+					
+			// Zeit zum Akzeptieren geben.
+			Thread.sleep(3 * Zeitspanne);
+						
+			// Login mit gültigen Daten
+			
+			String Emailadresse = Utils.TZPBeforeTest.AdminEmail();
+			String Passwort = Utils.TZPBeforeTest.AdminPasswort();
+			
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", Emailadresse, test);
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", Passwort, test);
+
+			// Button "Anmelden auswählen"
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
+			
+			//Button "Transaktion" in menu clicken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'TRANSAKTION')]", test);
+			
+			// In der Tabelle die erste Kontakt-Forsa Spalte auswählen
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//tr[@class='MuiTableRow-root']//td[7]", test);
+			
+			// Handelsvermerk eintragen
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "adminComment", "Handelvermerk durch den Forsa-Admin", test);
+			
+			//Button "Angebot senden" wählen
+	    	Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Angebot senden']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);			
+	    	
+	    	Thread.sleep(3 * Zeitspanne);
+		}
 
 		
 		public void ApplitoolsAufnahme(String Ablaufart, String teststep) {

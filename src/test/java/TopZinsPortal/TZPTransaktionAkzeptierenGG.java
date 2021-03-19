@@ -2,6 +2,7 @@ package TopZinsPortal;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -40,6 +41,10 @@ public class TZPTransaktionAkzeptierenGG {
 	ExtentReports extent;
 
 	public String AblaufartGlobal;
+	
+	// Anzahl der Testfälle wichtig für die einzelnen Zugriffe 
+	public static Integer AktuellTransaktionMaske = 0; 
+
 
 	//public ChromeDevToolsService devToolsService = null;
 	// Variable für Applitools
@@ -100,6 +105,8 @@ public class TZPTransaktionAkzeptierenGG {
 			int rowCount = ExcelUtilsJXL.getRowCount();
 			int colCount = ExcelUtilsJXL.getColCount();
 			
+			AktuellTransaktionMaske = rowCount;
+		
 			System.out.println("Zeile=" + rowCount + "Spalte=" + colCount + "String Wert: ");
 
 			// 2 Dimensionales Object-Array erzeugen
@@ -113,7 +120,7 @@ public class TZPTransaktionAkzeptierenGG {
 					String cellData = ExcelUtilsJXL.getExcelDataString(i, j);
 					data[i - 1][j] = cellData;
 					
-					System.out.println("Pro Zeile=" + i + "Pro Spalte=" + j + "Pro String Wert: " + cellData);
+					System.out.println("Pro Zeile=" + i + "Pro Spalte= " + data[0][j] + " " + j + " Pro String Wert: " + cellData);
 					
 					// Werte in einer Zeile anzeigen
 					// System.out.print(cellData + " | ");
@@ -132,12 +139,14 @@ public class TZPTransaktionAkzeptierenGG {
 				String BtnAngebotAnnehmenGG, String BtnAngebotAblehnenGG, String BtnAngebotTelefonischAnnehmenGG  ) throws Exception {
 			
 			if (Aktiv.equals("Ja")) {
-				
+             
+			// Von hinten nach vorne abarbeiten	
+			AktuellTransaktionMaske = AktuellTransaktionMaske - 1; 
 
 			// creates a toggle for the given test, adds all log events under it
 			ExtentTest test = extent.createTest("TZP_Transaktion: " + Teststep + " - " + AblaufartGlobal,
 					"Akzeptieren einer Transaktion durch den Geldgeber");
-
+				
 			driver.get(BaseUrl);
 			// 1. Loginseite oeffnen
 			Thread.sleep(3 * Zeitspanne);
@@ -150,19 +159,48 @@ public class TZPTransaktionAkzeptierenGG {
     		// 15.1 Button "Login" auswaehlen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 			
+             String drag = "(//div[contains(@class, 'MuiDialogTitle-root')])[" + AktuellTransaktionMaske +"]";
 			
-			// 5.5 Eintrag "Sonstiges" 
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//textarea[@name='other']", (SonstigesGG + " Geldgeber GG 2"), test);			
+			// Verschiebung der Maske
+			Utils.SeleniumUtils.DragDrop(driver, Zeitspanne, drag, "//div[@data-test='sentinelStart']", test);
 
-			// 5.6 Eintrag "Kommentar" 
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//textarea[@name='comment']", (KommentarGG + " Geldgeber GG 2"), test);	
 			
+			// Fallunterscheidung zwischen Annehmen und mit OK-Bestätigen
 			
-			// 16. Button "Angebot annehmen" klicken
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='annehmen']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
-			
-			// 17. Button "Ja" in Pop-up klicken
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//*[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']", test);
+		    // 11. Button "Angebot senden" klicken 
+    		if ((BtnAngebotSendenGN.equals("Ja")) || (BtnAngebotTelefonischWeiterleitenGN.equals("Ja"))) {
+    			// Angebot wurde durch den GN abgesendet	
+    			System.out.println("Angebot gesendet GN");
+		    
+    			// Beachte, durch die ablehnten Transaktionen werden einige Einegbaefelde und Button nihct erzeugt. Daher ist  
+    			// die Zählung dieser Objekte unterschiedlich von den Masken. 
+    			
+    			// 5.5 Eintrag "Sonstiges" 
+    			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", drag + "//following::textarea[@name='other']", (SonstigesGG + " Geldgeber GG 2"), test);			
+
+    			// 5.6 Eintrag "Kommentar" 
+    			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", drag + "//following::textarea[@name='comment']", (KommentarGG + " Geldgeber GG 2"), test);	
+    			
+    			// 16. Button "Angebot annehmen" klicken
+    			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", drag + "//following::span[text()='annehmen']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
+    			
+    			// 17. Button "Ja" in Pop-up klicken
+    			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//*[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']" , test);
+    		
+    		
+    		}
+			else if (BtnAnfrageAblehnenGN.equals("Ja")) {
+			// Anfrage wurde durch den GN abgelehnt	
+			// OK Button der Ablehnung bestätigen	
+				
+    			System.out.println("Anfrage Abgelehnt GN");
+		    
+   			   // Button "OK" auswählen von der Drag-Maske
+    			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", drag + "//following::span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
+				
+			}
+
+				
 			
 			Thread.sleep(3 * Zeitspanne);
 			

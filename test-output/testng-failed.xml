@@ -6,7 +6,7 @@
       <class name="TopZinsPortal.TZPTransaktionAbschlussGN">
         <methods>
           <include name="SetupSeleniumTestdaten"/>
-          <include name="TZPTransaktionAbschlussGNTest" invocation-numbers="0 1"/>
+          <include name="TZPTransaktionAbschlussGNTest" invocation-numbers="2"/>
           <include name="BrowserTearDown"/>
         </methods>
       </class> <!-- TopZinsPortal.TZPTransaktionAbschlussGN -->

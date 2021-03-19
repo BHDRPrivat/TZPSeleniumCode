@@ -13,6 +13,12 @@
 			<class name="TopZinsPortal.TZPTransaktionBearbeitenGN" />
 		</classes>
     </test>
+   	<test name="TZP-Transaktion-Bearbeiten-Admin">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPTransaktionBearbeitenAdmin" />
+		</classes>
+    </test>
     <test name="TZP-Transaktion-Akzeptieren-GG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
