@@ -7,7 +7,7 @@
       <class name="TopZinsPortal.TZPAdminUserLoeschenGG">
         <methods>
           <include name="SetupSeleniumTestdaten"/>
-          <include name="TZPAdminUserLoeschenGGTest" invocation-numbers="1"/>
+          <include name="TZPAdminUserLoeschenGGTest" invocation-numbers="8 9"/>
           <include name="BrowserTearDown"/>
         </methods>
       </class> <!-- TopZinsPortal.TZPAdminUserLoeschenGG -->

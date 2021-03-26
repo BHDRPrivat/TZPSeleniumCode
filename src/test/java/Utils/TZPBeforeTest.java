@@ -22,11 +22,11 @@ public class TZPBeforeTest {
 	public static String AdminEmail() {
 		 // Festlegung des Adminzugangs  
 		
-//		    // Stage Version  
-//		    return "admintest@forsa-gmbh.de";
+		    // Stage Version  
+		    return "admintest@forsa-gmbh.de";
 			
-			// Sales	
-			return "admintest@forsa-gmbh.de";
+//			// Sales	
+//			return "admintest@forsa-gmbh.de";
 			  
 //			// Produktion	
 //			return "topzins@forsa-gmbh.de";	  
@@ -38,11 +38,11 @@ public class TZPBeforeTest {
 	public static String AdminPasswort() {
 		 // Festlegung des Adminpassworts  
 
-//	    // Stage Version  
-//	    return "Test12345!";
+	    // Stage Version  
+	    return "Test12345!";
 		
-		// Sales	
-		return "Test12345!";
+//		// Sales	
+//		return "Test12345!";
 		  
 //		// Produktion	
 //		return "phaiweighui%Joteghe6";	  

@@ -21,7 +21,7 @@ import Utils.ExcelUtilsJXL;
 import Utils.SeleniumUtils;
 import jxl.read.biff.BiffException;
 
-public class TZPTransaktionAkzeptierenGN {
+public class WegTZPTransaktionAkzeptierenGN {
 	
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
