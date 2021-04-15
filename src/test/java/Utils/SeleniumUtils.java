@@ -21,6 +21,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.applitools.eyes.selenium.Eyes;
+import com.applitools.eyes.selenium.fluent.Target;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -33,11 +34,45 @@ import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 public class SeleniumUtils {
 	
 	
+	public static void ApplitoolsAufnahme(WebDriver driver, String appName, String testName, String optionalTag, ExtentTest test) {
+		
+		// public ChromeDevToolsService devToolsService = null;
+		// Variable für Applitools
+		Eyes eyes = null;
+		
+		    // Applitools vorbereiten
+			eyes = new Eyes();
+			eyes.setApiKey("1epbTsh91uyej6yur9x0FzJb3WUit5naoVB8SYMRZUE110");
+			try {
+
+				// eyes.check("AL_Risiko", Target.window().fully());
+
+				// eyes.open(driver, "AL-Risiko", "Testfall: " + teststep, new
+				// RectangleSize(800, 600));
+
+				// eyes.open(driver, "IR-PHV", "Testfall: " + teststep,
+				// Target.window().fully());
+
+				// Kein Rectangle vorgeben um die Voreinstellung zu verwenden.
+				eyes.open(driver, appName, testName);
+				
+				eyes.checkWindow(optionalTag);
+				
+				eyes.close();
+
+			} finally {
+
+			}
+	}
+	
+	
+	
+	
 	public static void DragDrop(WebDriver driver, Integer Zeitspanne, String Drag, String Drop, ExtentTest test) throws InterruptedException {
 		// Routine zum Verschieben von Objekten
 		
 		// Zeitpsanne
-		Thread.sleep(3 * Zeitspanne);	
+		Thread.sleep(5 * Zeitspanne);	
 
 		
 		System.out.println("Drag = " + Drag );
@@ -66,7 +101,7 @@ public class SeleniumUtils {
 		System.out.println("Nach Drag & Drop");
 		
 		// 10. zeit zum Aufbauen der Meldung 
-		Thread.sleep(3 * Zeitspanne);	
+		Thread.sleep(5 * Zeitspanne);	
 	}
 	
 	
@@ -352,7 +387,7 @@ public class SeleniumUtils {
 		
 		if ( isElementPresent(driver, By.xpath(element))){
 			driver.findElement(By.xpath(element)).click(); 
-			Thread.sleep(2 * Zeitspanne);
+			Thread.sleep(4 * Zeitspanne);
 		} // Wenn "OK"-Vorhanden dann geklickt
 		
 	
@@ -391,7 +426,7 @@ public class SeleniumUtils {
 				System.out.println("geklickt: "+ ObjektPath);
 				
 				// Zeitspanne setzen
-				Thread.sleep(2 * Zeitspanne);
+				Thread.sleep(4 * Zeitspanne);
 			}
 		} catch (NoSuchElementException e) {
 			// Fehlerbehandlung einfügen

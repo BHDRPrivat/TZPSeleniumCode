@@ -282,44 +282,44 @@ public class TZPTransaktionBearbeitenGN {
 		} 
 		
 		
-	    // Klasse für den Forsa-Admin
-		public void AdminTransactionActions() throws InterruptedException {
-			// positiver Durchlauf
-			System.out.println("Telefonisch weitergeleitet");
-			
-			// creates a toggle for the given test, adds all log events under it
-			ExtentTest test = extent.createTest("TZP_Transaktion: "  + AblaufartGlobal,
-					"Akzeptieren einer Transaktion durch den Forsa-Admin");
-
-					
-			// Zeit zum Akzeptieren geben.
-			Thread.sleep(3 * Zeitspanne);
-						
-			// Login mit gültigen Daten
-			
-			String Emailadresse = Utils.TZPBeforeTest.AdminEmail();
-			String Passwort = Utils.TZPBeforeTest.AdminPasswort();
-			
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", Emailadresse, test);
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", Passwort, test);
-
-			// Button "Anmelden auswählen"
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
-			
-			//Button "Transaktion" in menu clicken
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'TRANSAKTION')]", test);
-			
-			// In der Tabelle die erste Kontakt-Forsa Spalte auswählen
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//tr[@class='MuiTableRow-root']//td[7]", test);
-			
-			// Handelsvermerk eintragen
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "adminComment", "Handelvermerk durch den Forsa-Admin", test);
-			
-			//Button "Angebot senden" wählen
-	    	Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Angebot senden']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);			
-	    	
-	    	Thread.sleep(3 * Zeitspanne);
-		}
+//	    // Klasse für den Forsa-Admin
+//		public void AdminTransactionActions() throws InterruptedException {
+//			// positiver Durchlauf
+//			System.out.println("Telefonisch weitergeleitet");
+//			
+//			// creates a toggle for the given test, adds all log events under it
+//			ExtentTest test = extent.createTest("TZP_Transaktion: "  + AblaufartGlobal,
+//					"Akzeptieren einer Transaktion durch den Forsa-Admin");
+//
+//					
+//			// Zeit zum Akzeptieren geben.
+//			Thread.sleep(3 * Zeitspanne);
+//						
+//			// Login mit gültigen Daten
+//			
+//			String Emailadresse = Utils.TZPBeforeTest.AdminEmail();
+//			String Passwort = Utils.TZPBeforeTest.AdminPasswort();
+//			
+//			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", Emailadresse, test);
+//			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", Passwort, test);
+//
+//			// Button "Anmelden auswählen"
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
+//			
+//			//Button "Transaktion" in menu clicken
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'TRANSAKTION')]", test);
+//			
+//			// In der Tabelle die erste Kontakt-Forsa Spalte auswählen
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//tr[@class='MuiTableRow-root']//td[7]", test);
+//			
+//			// Handelsvermerk eintragen
+//			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "adminComment", "Handelvermerk durch den Forsa-Admin", test);
+//			
+//			//Button "Angebot senden" wählen
+//	    	Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Angebot senden']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);			
+//	    	
+//	    	Thread.sleep(3 * Zeitspanne);
+//		}
 
 		
 		public void ApplitoolsAufnahme(String Ablaufart, String teststep) {

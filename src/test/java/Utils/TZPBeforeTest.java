@@ -10,6 +10,10 @@ public class TZPBeforeTest {
 		
 //	// Sales	
 //	return "http://18.157.183.108";
+
+//	// Pre Prod	
+//	return "http://54.93.43.63";	
+	
 	  
 //	// Produktion	
 //	return "https://portal.forsa-topzins.de";	  
@@ -26,7 +30,10 @@ public class TZPBeforeTest {
 		    return "admintest@forsa-gmbh.de";
 			
 //			// Sales	
-//			return "admintest@forsa-gmbh.de";
+//		    return "topzins@forsa-gmbh.de";
+		    
+//			// Pre Prod	
+//		    return "topzins@forsa-gmbh.de";
 			  
 //			// Produktion	
 //			return "topzins@forsa-gmbh.de";	  
@@ -43,7 +50,10 @@ public class TZPBeforeTest {
 		
 //		// Sales	
 //		return "Test12345!";
-		  
+	    
+//		// Pre Prod	
+//		return "Test12345!";	    
+	    
 //		// Produktion	
 //		return "phaiweighui%Joteghe6";	  
 		
@@ -61,7 +71,7 @@ public class TZPBeforeTest {
 	
 	public static Integer Pausenzeit() {
 		 // Festlegung der Zeitspanne  
-			return 100;
+			return 130;
 		}
 	
 	

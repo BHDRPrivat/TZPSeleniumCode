@@ -33,8 +33,7 @@ public class TZPRegGG {
 	private String BaseUrl;
 	public String StandardBrowser;
 	public String SpeicherpfadTestdokumente;
-	public static String TestdatenExceldatei;
-	public static String projectpath = null;
+	public static String projectpath = System.getProperty("user.dir");
 	public SoftAssert softassert = new SoftAssert();
 
 	// Klassenvariablen
@@ -61,66 +60,14 @@ public class TZPRegGG {
 		AblaufartGlobal = Ablaufart;
 		StandardBrowser = Utils.TZPBeforeTest.BrowserArt();
 		Zeitspanne = Utils.TZPBeforeTest.Pausenzeit();
-
 		BaseUrl = TZPBeforeTest.Umgebung() + "/portal/registrierungGeldgeber";
-
 		SpeicherpfadTestdokumente = "F:\\BHDR\\TopZinsPortalTest\\PDFDokumente\\";
-		// Wichtiger Hinweis: In Java dürfen generische Strings nicht mit "=="
-		// verglichen werden. "==" steht für die Überprüfung des Speicherorts
-
 		// Aufruf des Browser-Setups
 		driver = Utils.TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
-
-
-		
 	}
 
-	@DataProvider(name = "TZPRegGG")
-	public static Object[][] getData() throws BiffException {
-		// Ermittelt den Pfad des aktuellen Projekts
-		projectpath = System.getProperty("user.dir");
-		// Zugriff auf die korrekten Exceldaten
-		TestdatenExceldatei = "\\Excel\\TopZinsPortalRegGG.xls";
-
-		// Ablaufpräsentation
-		// TestdatenExceldatei = "\\Excel\\AL-Risiko-Testdaten-V1-Fehler.xlsx";
-
-		String excelPath = projectpath + TestdatenExceldatei;
-		Object testData[][] = testData(excelPath, "Testdaten");
-		return testData;
-	}
-
-	public static Object[][] testData(String excelPath, String sheetName) throws BiffException {
-		// Aufruf des Constructors von ExcelUtils
-		ExcelUtilsJXL excel = new ExcelUtilsJXL(excelPath, sheetName);
-
-		int rowCount = excel.getRowCount();
-		int colCount = excel.getColCount();
-
-		System.out.println("Zeile=" + rowCount + "Spalte=" + colCount + "String Wert: ");
-
-		// 2 Dimensionales Object-Array erzeugen
-		Object data[][] = new Object[rowCount - 1][colCount];
-
-		// �ber alle Zeilen laufen (i=1, da i=0 die Headerzeile)
-		for (int i = 1; i < rowCount; i++) {
-			// �ber alle Spalten laufen
-			for (int j = 0; j < colCount; j++) {
-
-				String cellData = excel.getExcelDataString(i, j);
-				data[i - 1][j] = cellData;
-
-				System.out.println("Pro Zeile=" + i + "Pro Spalte=" + j + "Pro String Wert: " + cellData);
-
-				// Werte in einer Zeile anzeigen
-				// System.out.print(cellData + " | ");
-			}
-		}
-		return data;
-	}
-
-	// @Test
-	@Test(dataProvider = "TZPRegGG")
+	// Aufruf des Dataproviders über eine andere Klasse
+	@Test(dataProvider = "TZPRegGG", dataProviderClass = Utils.DataSupplier.class)
 	public void TZPRegGGTest(String Teststep, String Aktiv, String Unternehmensname, String Anrede, String Titel, String Vorname,
 			String Nachname, String TelefonNummer, String Emailadresse, String EmailConfirm, String Passwort,
 			String Datenschutz, String BtnRegistrien, String BtnAbbrechen) throws Exception {

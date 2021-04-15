@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?> <!-- bisherige Daten aus D:\IR-WebRisk-Testdaten löschen -->
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
- <suite name="TopZinzPortal-Vorbereitung Ablauftest">
+ <!--  Über den Parameter Reset werden die Gesamt-Exceltabellen verwendet -->
+<suite name="TopZinzPortal-Vorbereitung Ablauftest">
      <test name="TZP-Admin-Deaktivieren">
-        <!--  Über den Parameter Reset werden die Gesamt-Exceltabellen verwendet -->
-		<parameter name="Ablaufart" value="Reset"></parameter>
+       	<parameter name="Ablaufart" value="Reset"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPAdminUserDeaktivierenGG" />
 		</classes>

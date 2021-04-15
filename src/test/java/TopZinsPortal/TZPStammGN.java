@@ -33,7 +33,7 @@ public class TZPStammGN {
 	public String StandardBrowser;
 	public static String SpeicherpfadTestdokumente;
 	public static String TestdatenExceldatei;
-	public static String projectpath = null;
+	public static String projectpath = System.getProperty("user.dir");
 
 	// Klassenvariablen
 	ExtentHtmlReporter htmlReporter = null;
@@ -80,56 +80,8 @@ public class TZPStammGN {
 			
 		}
 
-		@DataProvider(name = "TZPStammGN")
-		public static Object[][] getData() throws BiffException {
-			// Ermittelt den Pfad des aktuellen Projekts
-			projectpath = System.getProperty("user.dir");
-			// Zugriff auf die zugehörigen Exceldaten
-			TestdatenExceldatei = "\\Excel\\TopZinsPortalStammGN.xls";
-
-			// Speicherung von möglichen PDF-Dokumenten
-			SpeicherpfadTestdokumente = projectpath + "\\TZP PDF-Dokumente\\";
-			
-			// Ablaufpräsentation
-			// TestdatenExceldatei = "\\Excel\\AL-Risiko-Testdaten-V1-Fehler.xlsx";
-
-			String excelPath = projectpath + TestdatenExceldatei;
-			Object testData[][] = testData(excelPath, "Testdaten");
-			return testData;
-		}
-
-		public static Object[][] testData(String excelPath, String sheetName) throws BiffException {
-			// Aufruf des Constructors von ExcelUtils
-			ExcelUtilsJXL excel = new ExcelUtilsJXL(excelPath, sheetName);
-
-			int rowCount = ExcelUtilsJXL.getRowCount();
-			int colCount = ExcelUtilsJXL.getColCount();
-			
-			System.out.println("Zeile=" + rowCount + "Spalte=" + colCount + "String Wert: ");
-
-			// 2 Dimensionales Object-Array erzeugen
-			Object data[][] = new Object[rowCount-1][colCount];
-
-			// �ber alle Zeilen laufen (i=1, da i=0 die Headerzeile)
-			for (int i = 1; i < rowCount; i++) {
-				// �ber alle Spalten laufen
-				for (int j = 0; j < colCount; j++) {
-
-					String cellData = ExcelUtilsJXL.getExcelDataString(i, j);
-					data[i - 1][j] = cellData;
-					
-					System.out.println("Pro Zeile=" + i + "Pro Spalte=" + j + "Pro String Wert: " + cellData);
-					
-					// Werte in einer Zeile anzeigen
-					// System.out.print(cellData + " | ");
-				}
-			}
-			return data;
-		}
-
-
 		// @Test
-		@Test(dataProvider = "TZPStammGN")
+		@Test(dataProvider = "TZPStammGN", dataProviderClass = Utils.DataSupplier.class)
 		public void TZPStammGNTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Unternehmensname, String LEI,
 					String Land, String Webseite, String EmailGeschaefte, String Str, String HausNr, String PLZ, String Ort, String Adresszusatz,
 					String Bank, String BIC, String IBAN, String Kontoinhaber,
