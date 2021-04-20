@@ -25,7 +25,7 @@ import javax.mail.search.SubjectTerm;
 /**
  * Utility for interacting with an Email application
  */
-public class EmailUtils {
+public class PruefenEmailUtils {
 
   private Folder folder;
 
@@ -48,7 +48,7 @@ public class EmailUtils {
    * Uses email.username and email.password properties from the properties file. Reads from Inbox folder of the email application
    * @throws MessagingException
    */
-  public EmailUtils() throws MessagingException {
+  public PruefenEmailUtils() throws MessagingException {
     this(EmailFolder.INBOX);
   }
 
@@ -57,7 +57,7 @@ public class EmailUtils {
    * @param emailFolder Folder in email application to interact with
    * @throws MessagingException
    */
-  public EmailUtils(EmailFolder emailFolder) throws MessagingException {
+  public PruefenEmailUtils(EmailFolder emailFolder) throws MessagingException {
     this(getEmailUsernameFromProperties(),
         getEmailPasswordFromProperties(),
         getEmailServerFromProperties(),
@@ -71,7 +71,7 @@ public class EmailUtils {
    * @param server Email server (e.g. smtp.email.com)
    * @param emailFolder Folder in email application to interact with
    */
-  public EmailUtils(String username, String password, String server, EmailFolder emailFolder) throws MessagingException {
+  public PruefenEmailUtils(String username, String password, String server, EmailFolder emailFolder) throws MessagingException {
 	  System.out.println("In Routine:");
 	  Properties props = System.getProperties();
     try {

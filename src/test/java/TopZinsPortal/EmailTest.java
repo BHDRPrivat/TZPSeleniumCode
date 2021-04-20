@@ -6,17 +6,19 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import Utils.EmailUtils;
+import com.testing.framework.DateTimeUtils;
+
+import Utils.PruefenEmailUtils;
 
 public class EmailTest {
 	
-	  private static EmailUtils emailUtils;
+	  private static PruefenEmailUtils emailUtils;
 
 	  @BeforeClass
 	  public static void connectToEmail() {
 	    try {
 	    // "smtp.gmail.com"	
-	      emailUtils = new EmailUtils("b.dikmen.wi@gmail.com", "Patara318", "imap.gmail.com", Utils.EmailUtils.EmailFolder.INBOX);
+	      emailUtils = new PruefenEmailUtils("b.dikmen.wi@gmail.com", "Patara318", "imap.gmail.com", Utils.PruefenEmailUtils.EmailFolder.INBOX);
 	    } catch (Exception e) {
 	      e.printStackTrace();
 	      Assert.fail(e.getMessage());
@@ -26,7 +28,12 @@ public class EmailTest {
 	  @Test
 	  public void testVerificationCode() {
 	    try {
-	      //TODO: Execute actions to send verification code to email
+	      
+	    	DateTimeUtils dt = new DateTimeUtils();
+	    	// dt.getDateTime(dateFormat, addYear, addMonth, addDay)
+	    	
+	    	
+	    	//TODO: Execute actions to send verification code to email
 
 	      String verificationCode = emailUtils.getAuthorizationCode();
 

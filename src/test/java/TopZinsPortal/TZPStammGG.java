@@ -147,7 +147,7 @@ public class TZPStammGG {
 				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "streetName", Str, test);				
 			} else {
 				// In alles anderen Versionen
-				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "street", Str, test);				
+				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "streetName", Str, test);				
 			}
 
 			

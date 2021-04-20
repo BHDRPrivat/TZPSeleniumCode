@@ -39,5 +39,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="AutoIT/AutoItX4Java.jar"/>
 	<classpathentry kind="lib" path="Ashot/ashot-1.5.4.jar"/>
+	<classpathentry kind="lib" path="F:/BHDR/java/Java-Erweiterungen/AutomationUtilities/automationUtilities-pro-1.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
