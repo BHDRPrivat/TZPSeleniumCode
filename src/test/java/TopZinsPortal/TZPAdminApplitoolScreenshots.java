@@ -91,57 +91,14 @@ public class TZPAdminApplitoolScreenshots {
 
 	}
 
-	@DataProvider(name = "TZPAdminHandelsfreigabeGG")
-	public static Object[][] getData() throws BiffException {
-		// Ermittelt den Pfad des aktuellen Projekts
-		projectpath = System.getProperty("user.dir");
+	
+	@Test
+	public void TZPApplitoolScreenshot() throws Exception {
 
-		// Ermittelt den Pfad des aktuellen Projekts
-		String projectpath = System.getProperty("user.dir");
-		// Zugriff auf die zugehörigen Exceldaten
-
-		TestdatenExceldatei = "\\Excel\\TopZinsPortalAdminHandelsfreigabeGG.xls";
-
-		String excelPath = projectpath + TestdatenExceldatei;
-		Object testData[][] = testData(excelPath, "Testdaten");
-		return testData;
-	}
-
-	public static Object[][] testData(String excelPath, String sheetName) throws BiffException {
-		// Aufruf des Constructors von ExcelUtils
-		ExcelUtilsJXL excel = new ExcelUtilsJXL(excelPath, sheetName);
-
-		int rowCount = ExcelUtilsJXL.getRowCount();
-		int colCount = ExcelUtilsJXL.getColCount();
-
-		System.out.println("Zeile=" + rowCount + "Spalte=" + colCount + "String Wert: ");
-
-		// 2 Dimensionales Object-Array erzeugen
-		Object data[][] = new Object[rowCount - 1][colCount];
-
-		// �ber alle Zeilen laufen (i=1, da i=0 die Headerzeile)
-		for (int i = 1; i < rowCount; i++) {
-			// �ber alle Spalten laufen
-			for (int j = 0; j < colCount; j++) {
-
-				String cellData = ExcelUtilsJXL.getExcelDataString(i, j);
-				data[i - 1][j] = cellData;
-
-				System.out.println("Pro Zeile=" + i + "Pro Spalte=" + j + "Pro String Wert: " + cellData);
-
-				// Werte in einer Zeile anzeigen
-				// System.out.print(cellData + " | ");
-			}
-		}
-		return data;
-	}
-
-	// @Test
-	@Test(dataProvider = "TZPAdminHandelsfreigabeGG")
-	public void TZPAdminHandelsfreigabeGGTest(String Teststep, String Aktiv, 
-			String Menue, String ZeilenProSeite, String Unternehmensname) throws Exception {
-
-		String Testversion = "Stage Sprint 37";
+		String Testversion = "Prod Sprint 36";
+		String Aktiv = "Ja";
+		String Teststep ="TZP-Aplitool-001";
+		
 		
 		if (Aktiv.equals("Ja")) {
 
@@ -166,76 +123,87 @@ public class TZPAdminApplitoolScreenshots {
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 			
 			// Button "Daten komplett" in menu clicken
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'DASHBOARD')]",
-					test);			
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'DASHBOARD')]", test);			
 			
 			// Screenshot für Applitool aufnehmen
-			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "DASHBOARD"+Testversion, Teststep, test);
+     		Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "DASHBOARD"+ "-" +Testversion, "", Teststep, test);
+			
+			// Button "Daten komplett" in menu clicken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'AKTUELLE BENUTZER')]", test);			
+			
+			// Screenshot für Applitool aufnehmen
+			// Scrollelement
+			String Scrollelement = "//table[@id='CurrentUsers-table']//ancestor::div[contains(@class, 'jss')]";
+			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "AKTUELLE BENUTZER"+ "-"+ Testversion, Scrollelement, Teststep, test);			
+
+			
+			// Button "Daten komplett" in menu clicken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'OHNE HANDELSBERECHTIGUNG')]", test);	
+
+			// Neue Aufnahme
+			Scrollelement = "";
+			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "OHNE HANDELSBERECHTIGUNG"+ "-" + Testversion, Scrollelement, Teststep, test);		
+
+			// Button "Daten komplett" in menu clicken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'BEREIT FÜR HANDELSBERECHTIGUNG')]", test);	
+
+			// Neue Aufnahme
+			Scrollelement = "";
+			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "BEREIT FÜR HANDELSBERECHTIGUNG"+ "-" + Testversion, Scrollelement, Teststep, test);	
+			
+			// Button "Daten komplett" in menu clicken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'MIT HANDELSBERECHTIGUNG')]", test);	
+
+			// Neue Aufnahme
+			Scrollelement = "";
+			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "MIT HANDELSBERECHTIGUNG"+ "-" + Testversion, Scrollelement, Teststep, test);	
+
+			// Button "Daten komplett" in menu clicken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'TRANSAKTION')]", test);	
+
+			// Neue Aufnahme
+			Scrollelement = "";
+			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "TRANSAKTION"+ "-" + Testversion, Scrollelement, Teststep, test);	
+			
+			// Button "Daten komplett" in menu clicken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'AUSSCHREIBUNG')]", test);	
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text() ='Ausschreibung abgeschlossen']", test);
 			
 			
+			// Neue Aufnahme
+			Scrollelement = "";
+			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "AUSSCHREIBUNG"+ "-" + Testversion, Scrollelement, Teststep, test);
 
-//			// Button "Daten komplett" in menu clicken
-//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, '" + Menue + "')]",
-//					test);
-//
-//			// Die Anzeige auf 100 erhöhen
-//			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//div[contains(@id,'mui')]",
-//					"//li[contains(text(),'", ZeilenProSeite, test);
-//
-//			// Firmenname in das Suchfeld eingeben
-//			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search", Unternehmensname, test);
-//
-//			// Screenshot aufnehmen
-//			Thread.sleep(3 * Zeitspanne);
-//			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,
-//					"\\Admin Handelsfreigabe\\AmdinHandlefreigabe-GG-Auswahl", Teststep, test);
-//			Thread.sleep(3 * Zeitspanne);
-//
-//			// Der Stift für das Laden der Daten hat keine eindeutige ID. Der Zugriff
-//			// erfolgt über den Eintrag im ersten Eingabefeld
-//			// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen
-//			String xpathvalue = "//div[text() = '" + Unternehmensname
-//					+ "']//ancestor::tr[contains(@class, 'MuiTableRow-root')]//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary']";
-//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);
-//			// TSonderzeit zum Hochladen
-//			Thread.sleep(3 * Zeitspanne);
-//
-//			// Direktsprung auf Dokumente	
-//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@href='#/masterdata/documents']", test);
-//
-//			// Haken setzen für Dokumentenkontrolle des Admins's
-//			Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'registerExtractStatute']",
-//					test);
-//			Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'identityCard']", test);
-//			Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'tradingLicense']", test);
-//
-//			// Screenshot aufnehmen
-//			Thread.sleep(3 * Zeitspanne);
-//			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,
-//					"\\Admin Handelsfreigabe\\AmdinHandlefreigabe-GG-Haken", Teststep, test);
-//
-//			// Button Freigeben auswählen
-//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
-//					"//span[text()='Freigeben']//ancestor::button[@tabindex='0']", test);
-//			// TSonderzeit zum Hochladen
-//			Thread.sleep(3 * Zeitspanne);
-//			
-//			// Button "OK" auswählen, wenn vorhanden
-//			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
-//
-//			// Prüfen ob User in Register "Mit Handelsberechtigung" vorhanden ist?
-//			// Button "Daten komplett" in menu clicken
-//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
-//					"//li[contains(@data-test, 'MIT HANDELSBERECHTIGUNG')]", test);
-//
-//			// Die Anzeige auf 100 erhöhen
-//			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//div[contains(@id,'mui')]",
-//					"//li[contains(text(),'", ZeilenProSeite, test);
-//
-//			// Firmenname in das Suchfeld eingeben
-//			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search", Unternehmensname, test);
-//			Thread.sleep(5 * Zeitspanne);
+			
+			// Button "Daten komplett" in menu clicken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'FÄLLIGKEITENLISTE')]", test);	
 
+			// Neue Aufnahme
+			Scrollelement = "";
+			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "FÄLLIGKEITENLISTE"+ "-" + Testversion, Scrollelement, Teststep, test);
+
+			// Button "Daten komplett" in menu clicken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'ÜBERSICHT')]", test);	
+
+			// Neue Aufnahme
+			Scrollelement = "";
+			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "ÜBERSICHT"+ "-" + Testversion, Scrollelement, Teststep, test);
+			
+			// Button "Daten komplett" in menu clicken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'FAVORITEN')]", test);	
+
+			// Neue Aufnahme
+			Scrollelement = "";
+			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "FAVORITEN"+ "-" + Testversion, Scrollelement, Teststep, test);
+			
+			// Button "Daten komplett" in menu clicken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'LOG-IN-HISTORIE')]", test);	
+
+			// Neue Aufnahme
+			Scrollelement = "";
+			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "LOG-IN-HISTORIE"+ "-" + Testversion, Scrollelement, Teststep, test);
+						
+			
 			// kurze Pause vor dem schließen
 			Thread.sleep(5 * Zeitspanne);
 			

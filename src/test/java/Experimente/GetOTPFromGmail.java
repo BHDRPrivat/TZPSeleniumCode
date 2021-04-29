@@ -1,4 +1,4 @@
-package TopZinsPortal;
+package Experimente;
 
 import java.io.IOException;
 
@@ -36,7 +36,7 @@ public class GetOTPFromGmail {
 			//Enter Email
 			driver.findElement(By.xpath("//input[@type='email']"));
 		    driver.findElement(By.xpath("//input[@type='email']")).clear();
-		    driver.findElement(By.xpath("//input[@type='email']")).sendKeys("TZP.lendermail@gmail.com");
+		    driver.findElement(By.xpath("//input[@type='email']")).sendKeys("tzpborrowermail@gmail.com");
 		    driver.findElement(By.xpath("//input[@value='Next']")).click();
 			System.out.println("E Mail eingetragen");
 			

@@ -190,8 +190,8 @@ public class TZPLoginGG {
 //			softassert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed()));
 //			softassert.assertAll();
 			
-
-			
+            // E-Mail-Überprüfung
+			Utils.SeleniumUtils.IstEmailVorhanden(Emailadresse, Passwort, ""); 			
 			
 			
 			driver.close();

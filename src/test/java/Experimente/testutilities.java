@@ -1,4 +1,4 @@
-package TopZinsPortal;
+package Experimente;
 
 import java.io.FileInputStream;
 import java.util.List;
@@ -17,14 +17,14 @@ public class testutilities {
 		// Die EmailUtils sind in einer eigenen Jar-Datei und nicht Teil des Util-Verzeichnisses  
 		EmailUtils emailUtils = new EmailUtils();
 		Properties prop= new Properties();
-	    prop.load(new FileInputStream("C:\\Users\\b.dikmen\\git\\TZPSeleniumCode\\TopZinsPortalTestablauf\\resources\\TZP-Lender.properties"));
+	    prop.load(new FileInputStream("C:\\Users\\b.dikmen\\git\\TZPSeleniumCode\\TopZinsPortalTestablauf\\resources\\TZP-Borrower.properties"));
 	    Store connection=emailUtils.connectToGmail(prop); 
 	    emailUtils.getUnreadMessages(connection, "Inbox");
 	    
 	    @SuppressWarnings("unchecked")
 		List<String> emailtext=emailUtils.getMessageByFromEmail(connection, "Inbox", "account-security-noreply@accountprotection.microsoft.com", "Zurücksetzung des Kennworts für das Microsoft-Konto");
 		  if (emailtext.size()<1)
-			throw new Exception("No Email recieved");
+			throw new Exception("No Email recieved");		    
 			else
 			{
 			String regex= "[^\\d]+";
@@ -35,3 +35,5 @@ public class testutilities {
 	}
 
 }
+
+

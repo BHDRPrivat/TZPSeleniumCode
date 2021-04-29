@@ -1,4 +1,4 @@
-package TopZinsPortal;
+package Experimente;
 
 import javax.mail.Message;
 
