@@ -74,5 +74,9 @@ public class TZPBeforeTest {
 			return 150;
 		}
 	
+	public static String PDFPfad() {
+		 // Festlegung des Pfades für die Speicherung der PDF-Dokumente  
+			return "F:\\BHDR\\TopZinsPortalTest\\PDFDokumente\\";
+		}
 	
 }

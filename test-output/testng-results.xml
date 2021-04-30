@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="7" failed="1" skipped="0">
+<testng-results ignored="0" total="7" passed="6" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-04-28T17:55:41 CEST" name="Default suite" finished-at="2021-04-28T17:58:35 CEST" duration-ms="173517">
+  <suite started-at="2021-04-30T17:00:09 CEST" name="Default suite" finished-at="2021-04-30T17:00:16 CEST" duration-ms="6164">
     <groups>
     </groups>
-    <test started-at="2021-04-28T17:55:41 CEST" name="Default test" finished-at="2021-04-28T17:58:35 CEST" duration-ms="173517">
-      <class name="TopZinsPortal.TZPRegGG">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPRegGG@294425a7]" started-at="2021-04-28T17:55:41 CEST" name="SetupSeleniumTestdaten" finished-at="2021-04-28T17:55:44 CEST" duration-ms="2697" status="PASS">
+    <test started-at="2021-04-30T17:00:09 CEST" name="Default test" finished-at="2021-04-30T17:00:16 CEST" duration-ms="6164">
+      <class name="TopZinsPortal.TZPCheckEMailsGG">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-04-30T17:00:09 CEST" name="SetupSeleniumTestdaten" finished-at="2021-04-30T17:00:10 CEST" duration-ms="221" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,178 +18,26 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPRegGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPRegGG@294425a7]" started-at="2021-04-28T17:55:44 CEST" name="TZPRegGGTest" data-provider="TZPRegGG" finished-at="2021-04-28T17:56:19 CEST" duration-ms="34787" status="PASS">
+        <test-method signature="TZPCheckEmailGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-04-30T17:00:10 CEST" name="TZPCheckEmailGGTest" data-provider="TZPCheckEMailsGG" finished-at="2021-04-30T17:00:10 CEST" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPRegGG-TF-001]]>
+                <![CDATA[TZPCheckEMailGG-TF-001]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[Nein]]>
               </value>
             </param>
             <param index="2">
-              <value>
-                <![CDATA[BHDR-gg-DGSVO a.Main]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Herr]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Dr.]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[BHDR-gg-DGSVO Vorname]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[BHDR-gg-DGSVO Nachname]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[0611 97381 63]]>
-              </value>
-            </param>
-            <param index="8">
               <value>
                 <![CDATA[BHDR.gg.DGSVO@gmail.com]]>
               </value>
             </param>
-            <param index="9">
-              <value>
-                <![CDATA[BHDR.gg.DGSVO@gmail.com]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[nein]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPRegGGTest -->
-        <test-method signature="TZPRegGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPRegGG@294425a7]" started-at="2021-04-28T17:56:19 CEST" name="TZPRegGGTest" data-provider="TZPRegGG" finished-at="2021-04-28T17:56:52 CEST" duration-ms="33761" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPRegGG-TF-002]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[BHDR-gg-DatenKomplett]]>
-              </value>
-            </param>
             <param index="3">
               <value>
-                <![CDATA[Herr]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Prof.]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[BHDR-gg-DatenKomplett Vorname]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[BHDR-gg-DatenKomplett Nachanme]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[0611-97381-63]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[BHDR.gg.DatenKomplett@gmail.com]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[BHDR.gg.DatenKomplett@gmail.com]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
                 <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[nein]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPRegGGTest -->
-        <test-method signature="TZPRegGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPRegGG@294425a7]" started-at="2021-04-28T17:56:52 CEST" name="TZPRegGGTest" data-provider="TZPRegGG" finished-at="2021-04-28T17:57:30 CEST" duration-ms="37503" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPRegGG-TF-003]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[BHDR-gg-Handel]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Frau]]>
               </value>
             </param>
             <param index="4">
@@ -199,88 +47,153 @@
             </param>
             <param index="5">
               <value>
-                <![CDATA[BHDR-gg-Handel Vorname]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[BHDR-gg-Handel Nachname]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[06119738163]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[BHDR.gg.Handel@gmail.com]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[BHDR.gg.Handel@gmail.com]]>
+                <![CDATA[]]>
               </value>
             </param>
-            <param index="10">
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEmailGGTest -->
+        <test-method signature="TZPCheckEmailGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-04-30T17:00:10 CEST" name="TZPCheckEmailGGTest" data-provider="TZPCheckEMailsGG" finished-at="2021-04-30T17:00:10 CEST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGG-TF-002]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.gg.DatenKomplett@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
               <value>
                 <![CDATA[Test12345!]]>
               </value>
             </param>
-            <param index="11">
+            <param index="4">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[]]>
               </value>
             </param>
-            <param index="12">
+            <param index="5">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[]]>
               </value>
             </param>
-            <param index="13">
+            <param index="6">
               <value>
-                <![CDATA[nein]]>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEmailGGTest -->
+        <test-method signature="TZPCheckEmailGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-04-30T17:00:10 CEST" name="TZPCheckEmailGGTest" data-provider="TZPCheckEMailsGG" finished-at="2021-04-30T17:00:12 CEST" duration-ms="1860" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGG-TF-003]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.gg.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vollständige-Registrierung-TopZinsPortal.pdf]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Vollständige Registrierung']"}
-  (Session info: chrome=90.0.4430.93)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:61596}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 014c635eda9751e7e150f5c73d997677
-*** Element info: {Using=xpath, value=//span[text()='Vollständige Registrierung']}]]>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Vollständige Registrierung']"}
-  (Session info: chrome=90.0.4430.93)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:61596}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 014c635eda9751e7e150f5c73d997677
-*** Element info: {Using=xpath, value=//span[text()='Vollständige Registrierung']}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at TopZinsPortal.TZPRegGG.TZPRegGGTest(TZPRegGG.java:168)
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsGG.TZPCheckEmailGGTest(TZPCheckEMailsGG.java:107)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -311,163 +224,123 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPRegGGTest -->
-        <test-method signature="TZPRegGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPRegGG@294425a7]" started-at="2021-04-28T17:57:30 CEST" name="TZPRegGGTest" data-provider="TZPRegGG" finished-at="2021-04-28T17:57:59 CEST" duration-ms="29557" status="PASS">
+        </test-method> <!-- TZPCheckEmailGGTest -->
+        <test-method signature="TZPCheckEmailGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-04-30T17:00:12 CEST" name="TZPCheckEmailGGTest" data-provider="TZPCheckEMailsGG" finished-at="2021-04-30T17:00:12 CEST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPRegGG-TF-004]]>
+                <![CDATA[TZPCheckEMailGG-TF-004]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[Nein]]>
               </value>
             </param>
             <param index="2">
-              <value>
-                <![CDATA[BHDR-gg-Deaktiv & Co.KG]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Frau]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Prof. Dr.]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[BHDR-gg-Deaktiv Vorname]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[BHDR-gg-Deaktiv Nachname]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[06119738163]]>
-              </value>
-            </param>
-            <param index="8">
               <value>
                 <![CDATA[BHDR.gg.Deaktiv@gmail.com]]>
               </value>
             </param>
-            <param index="9">
-              <value>
-                <![CDATA[BHDR.gg.Deaktiv@gmail.com]]>
-              </value>
-            </param>
-            <param index="10">
+            <param index="3">
               <value>
                 <![CDATA[Test12345!]]>
               </value>
             </param>
-            <param index="11">
+            <param index="4">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[]]>
               </value>
             </param>
-            <param index="12">
+            <param index="5">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[]]>
               </value>
             </param>
-            <param index="13">
+            <param index="6">
               <value>
-                <![CDATA[nein]]>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPRegGGTest -->
-        <test-method signature="TZPRegGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPRegGG@294425a7]" started-at="2021-04-28T17:57:59 CEST" name="TZPRegGGTest" data-provider="TZPRegGG" finished-at="2021-04-28T17:58:29 CEST" duration-ms="29624" status="PASS">
+        </test-method> <!-- TZPCheckEmailGGTest -->
+        <test-method signature="TZPCheckEmailGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-04-30T17:00:12 CEST" name="TZPCheckEmailGGTest" data-provider="TZPCheckEMailsGG" finished-at="2021-04-30T17:00:12 CEST" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPRegGG-TF-005]]>
+                <![CDATA[TZPCheckEMailGG-TF-005]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[Nein]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[BHDR-gg-Loeschen / Partner AG]]>
+                <![CDATA[BHDR.gg.Loeschen@gmail.com]]>
               </value>
             </param>
             <param index="3">
-              <value>
-                <![CDATA[Frau]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Mag.]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[BHDR-gg-Loeschen Vorname]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[BHDR-gg-Loeschen Nachname]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[0611-97 38-163]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[BHDR.gg.Loeschen@gmail.com]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[BHDR.gg.Loeschen@gmail.com]]>
-              </value>
-            </param>
-            <param index="10">
               <value>
                 <![CDATA[Test12345!]]>
               </value>
             </param>
-            <param index="11">
+            <param index="4">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[]]>
               </value>
             </param>
-            <param index="12">
+            <param index="5">
               <value>
-                <![CDATA[Ja]]>
+                <![CDATA[]]>
               </value>
             </param>
-            <param index="13">
+            <param index="6">
               <value>
-                <![CDATA[nein]]>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPRegGGTest -->
-        <test-method signature="TZPRegGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPRegGG@294425a7]" started-at="2021-04-28T17:58:29 CEST" name="TZPRegGGTest" data-provider="TZPRegGG" finished-at="2021-04-28T17:58:29 CEST" duration-ms="1" status="PASS">
+        </test-method> <!-- TZPCheckEmailGGTest -->
+        <test-method signature="TZPCheckEmailGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-04-30T17:00:12 CEST" name="TZPCheckEmailGGTest" data-provider="TZPCheckEMailsGG" finished-at="2021-04-30T17:00:12 CEST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -519,31 +392,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
                 <![CDATA[]]>
               </value>
             </param>
-            <param index="10">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPRegGGTest -->
-        <test-method signature="TZPRegGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPRegGG@294425a7]" started-at="2021-04-28T17:58:29 CEST" name="TZPRegGGTest" data-provider="TZPRegGG" finished-at="2021-04-28T17:58:29 CEST" duration-ms="1" status="PASS">
+        </test-method> <!-- TZPCheckEmailGGTest -->
+        <test-method signature="TZPCheckEmailGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-04-30T17:00:12 CEST" name="TZPCheckEmailGGTest" data-provider="TZPCheckEMailsGG" finished-at="2021-04-30T17:00:12 CEST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -595,111 +448,15 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
                 <![CDATA[]]>
               </value>
             </param>
-            <param index="10">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPRegGGTest -->
-        <test-method signature="TZPRegGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPRegGG@294425a7]" started-at="2021-04-28T17:58:29 CEST" name="TZPRegGGTest" data-provider="TZPRegGG" finished-at="2021-04-28T17:58:29 CEST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPRegGGTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPRegGG@294425a7]" started-at="2021-04-28T17:58:29 CEST" name="BrowserTearDown" finished-at="2021-04-28T17:58:35 CEST" duration-ms="5408" status="PASS">
+        </test-method> <!-- TZPCheckEmailGGTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-04-30T17:00:12 CEST" name="BrowserTearDown" finished-at="2021-04-30T17:00:16 CEST" duration-ms="3885" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
-      </class> <!-- TopZinsPortal.TZPRegGG -->
+      </class> <!-- TopZinsPortal.TZPCheckEMailsGG -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

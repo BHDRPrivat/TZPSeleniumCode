@@ -1,4 +1,4 @@
-package TopZinsPortal;
+package Experimente;
 
 
 	import java.io.BufferedReader;
@@ -37,7 +37,7 @@ import javax.mail.Store;
 			      String Betreff = "Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal";
 	              String Anhang = "Vollständige-Registrierung-TopZinsPortal.pdf"; 
 			      //Utils.SeleniumUtils.IstEmailVorhanden(EMailAdresse, Passwort, Betreff);
-			      Utils.SeleniumUtils.EmailAttachments(EMailAdresse, Passwort, Betreff, Anhang);
+			      // Utils.EMailUtils.EmailAttachments(EMailAdresse, Passwort, Betreff, Anhang, null);
 		   }	
 		
 		

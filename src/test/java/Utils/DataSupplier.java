@@ -41,6 +41,13 @@ public class DataSupplier {
 		return testData(excelPath, "Testdaten");
 	}
 	
+	@DataProvider(name = "TZPCheckEMailsGG")
+	public static Object[][] getDataCheckEMailsGG() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalCheckEMailGG.xls";
+		return testData(excelPath, "Testdaten");
+	}
+	
 	
 	// Auslesen der Exceldaten.
 	public static Object[][] testData(String excelPath, String sheetName) throws BiffException {

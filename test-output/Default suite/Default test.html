@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>7/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Apr 28 17:55:41 CEST 2021</td>
+<td>Started on:</td><td>Fri Apr 30 17:00:09 CEST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>173 seconds (173517 ms)</td>
+<tr><td>Total time:</td><td>6 seconds (6164 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,32 +75,12 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: TZPRegGG-TF-003, Ja, BHDR-gg-Handel, Frau, , BHDR-gg-Handel Vorname, BHDR-gg-Handel Nachname, 06119738163, BHDR.gg.Handel@gmail.com, BHDR.gg.Handel@gmail.com, Test12345!, Ja, Ja, nein</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;Vollständige Registrierung&apos;]&quot;}
-  (Session info: chrome=90.0.4430.93)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;FORSA-VM31&apos;, ip: &apos;10.52.76.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:61596}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 014c635eda9751e7e150f5c73d997677
-*** Element info: {Using=xpath, value=//span[text()=&apos;Vollständige Registrierung&apos;]}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at TopZinsPortal.TZPRegGG.TZPRegGGTest(TZPRegGG.java:168)
+<td title='TopZinsPortal.TZPCheckEMailsGG.TZPCheckEmailGGTest()'><b>TZPCheckEmailGGTest</b><br>Test class: TopZinsPortal.TZPCheckEMailsGG<br>Parameters: TZPCheckEMailGG-TF-003, Ja, BHDR.gg.Handel@gmail.com, Test12345!, Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal, Vollständige-Registrierung-TopZinsPortal.pdf, , , , </td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at TopZinsPortal.TZPCheckEMailsGG.TZPCheckEmailGGTest(TZPCheckEMailsGG.java:107)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -129,32 +109,12 @@ Session ID: 014c635eda9751e7e150f5c73d997677
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace221402392", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace221402392'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;Vollständige Registrierung&apos;]&quot;}
-  (Session info: chrome=90.0.4430.93)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;FORSA-VM31&apos;, ip: &apos;10.52.76.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.93, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:61596}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 014c635eda9751e7e150f5c73d997677
-*** Element info: {Using=xpath, value=//span[text()=&apos;Vollständige Registrierung&apos;]}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at TopZinsPortal.TZPRegGG.TZPRegGGTest(TZPRegGG.java:168)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1620529408", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1620529408'><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at TopZinsPortal.TZPCheckEMailsGG.TZPCheckEmailGGTest(TZPCheckEMailsGG.java:107)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -184,8 +144,8 @@ Session ID: 014c635eda9751e7e150f5c73d997677
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>37</td>
-<td>TopZinsPortal.TZPRegGG@294425a7</td></tr>
+<td>1</td>
+<td>TopZinsPortal.TZPCheckEMailsGG@294425a7</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -195,40 +155,35 @@ Session ID: 014c635eda9751e7e150f5c73d997677
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: TZPRegGG-TF-001, Ja, BHDR-gg-DGSVO a.Main, Herr, Dr., BHDR-gg-DGSVO Vorname, BHDR-gg-DGSVO Nachname, 0611 97381 63, BHDR.gg.DGSVO@gmail.com, BHDR.gg.DGSVO@gmail.com, Test12345!, Ja, Ja, nein</td>
-<td></td>
-<td>34</td>
-<td>TopZinsPortal.TZPRegGG@294425a7</td></tr>
-<tr>
-<td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: TZPRegGG-TF-002, Ja, BHDR-gg-DatenKomplett, Herr, Prof., BHDR-gg-DatenKomplett Vorname, BHDR-gg-DatenKomplett Nachanme, 0611-97381-63, BHDR.gg.DatenKomplett@gmail.com, BHDR.gg.DatenKomplett@gmail.com, Test12345!, Ja, Ja, nein</td>
-<td></td>
-<td>33</td>
-<td>TopZinsPortal.TZPRegGG@294425a7</td></tr>
-<tr>
-<td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: TZPRegGG-TF-004, Ja, BHDR-gg-Deaktiv & Co.KG, Frau, Prof. Dr., BHDR-gg-Deaktiv Vorname, BHDR-gg-Deaktiv Nachname, 06119738163, BHDR.gg.Deaktiv@gmail.com, BHDR.gg.Deaktiv@gmail.com, Test12345!, Ja, Ja, nein</td>
-<td></td>
-<td>29</td>
-<td>TopZinsPortal.TZPRegGG@294425a7</td></tr>
-<tr>
-<td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: TZPRegGG-TF-005, Ja, BHDR-gg-Loeschen / Partner AG, Frau, Mag., BHDR-gg-Loeschen Vorname, BHDR-gg-Loeschen Nachname, 0611-97 38-163, BHDR.gg.Loeschen@gmail.com, BHDR.gg.Loeschen@gmail.com, Test12345!, Ja, Ja, nein</td>
-<td></td>
-<td>29</td>
-<td>TopZinsPortal.TZPRegGG@294425a7</td></tr>
-<tr>
-<td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: , , , , , , , , , , , , , </td>
+<td title='TopZinsPortal.TZPCheckEMailsGG.TZPCheckEmailGGTest()'><b>TZPCheckEmailGGTest</b><br>Test class: TopZinsPortal.TZPCheckEMailsGG<br>Parameters: TZPCheckEMailGG-TF-001, Nein, BHDR.gg.DGSVO@gmail.com, Test12345!, , , , , , </td>
 <td></td>
 <td>0</td>
-<td>TopZinsPortal.TZPRegGG@294425a7</td></tr>
+<td>TopZinsPortal.TZPCheckEMailsGG@294425a7</td></tr>
 <tr>
-<td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: , , , , , , , , , , , , , </td>
+<td title='TopZinsPortal.TZPCheckEMailsGG.TZPCheckEmailGGTest()'><b>TZPCheckEmailGGTest</b><br>Test class: TopZinsPortal.TZPCheckEMailsGG<br>Parameters: TZPCheckEMailGG-TF-002, Nein, BHDR.gg.DatenKomplett@gmail.com, Test12345!, , , , , , </td>
 <td></td>
 <td>0</td>
-<td>TopZinsPortal.TZPRegGG@294425a7</td></tr>
+<td>TopZinsPortal.TZPCheckEMailsGG@294425a7</td></tr>
 <tr>
-<td title='TopZinsPortal.TZPRegGG.TZPRegGGTest()'><b>TZPRegGGTest</b><br>Test class: TopZinsPortal.TZPRegGG<br>Parameters: , , , , , , , , , , , , , </td>
+<td title='TopZinsPortal.TZPCheckEMailsGG.TZPCheckEmailGGTest()'><b>TZPCheckEmailGGTest</b><br>Test class: TopZinsPortal.TZPCheckEMailsGG<br>Parameters: TZPCheckEMailGG-TF-004, Nein, BHDR.gg.Deaktiv@gmail.com, Test12345!, , , , , , </td>
 <td></td>
 <td>0</td>
-<td>TopZinsPortal.TZPRegGG@294425a7</td></tr>
+<td>TopZinsPortal.TZPCheckEMailsGG@294425a7</td></tr>
+<tr>
+<td title='TopZinsPortal.TZPCheckEMailsGG.TZPCheckEmailGGTest()'><b>TZPCheckEmailGGTest</b><br>Test class: TopZinsPortal.TZPCheckEMailsGG<br>Parameters: TZPCheckEMailGG-TF-005, Nein, BHDR.gg.Loeschen@gmail.com, Test12345!, , , , , , </td>
+<td></td>
+<td>0</td>
+<td>TopZinsPortal.TZPCheckEMailsGG@294425a7</td></tr>
+<tr>
+<td title='TopZinsPortal.TZPCheckEMailsGG.TZPCheckEmailGGTest()'><b>TZPCheckEmailGGTest</b><br>Test class: TopZinsPortal.TZPCheckEMailsGG<br>Parameters: , , , , , , , , , </td>
+<td></td>
+<td>0</td>
+<td>TopZinsPortal.TZPCheckEMailsGG@294425a7</td></tr>
+<tr>
+<td title='TopZinsPortal.TZPCheckEMailsGG.TZPCheckEmailGGTest()'><b>TZPCheckEmailGGTest</b><br>Test class: TopZinsPortal.TZPCheckEMailsGG<br>Parameters: , , , , , , , , , </td>
+<td></td>
+<td>0</td>
+<td>TopZinsPortal.TZPCheckEMailsGG@294425a7</td></tr>
 </table><p>
 </body>
 </html>

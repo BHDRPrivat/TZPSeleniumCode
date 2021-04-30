@@ -55,9 +55,10 @@ public class TZPLoginGG {
 		
 
 
-		@Parameters({ "Ablaufart" })
+		@Parameters({ "Ablaufart"})
 		@BeforeTest
 		public void SetupSeleniumTestdaten(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
+
 
 			if (htmlReporter == null) {
 				// start reporters
@@ -66,12 +67,12 @@ public class TZPLoginGG {
 				extent = new ExtentReports();
 				extent.attachReporter(htmlReporter);
 			}
+
+			
 			AblaufartGlobal = Ablaufart;
 			StandardBrowser = Utils.TZPBeforeTest.BrowserArt();
 			Zeitspanne = Utils.TZPBeforeTest.Pausenzeit();
-
-			BaseUrl = TZPBeforeTest.Umgebung() + "/portal/login";
-
+			BaseUrl = Utils.TZPBeforeTest.Umgebung() + "/portal/login";
 			SpeicherpfadTestdokumente = "F:\\BHDR\\TopZinsPortalTest\\PDFDokumente\\";
 			// Wichtiger Hinweis: In Java dürfen generische Strings nicht mit "=="
 			// verglichen werden. "==" steht für die Überprüfung des Speicherorts
@@ -81,11 +82,8 @@ public class TZPLoginGG {
 
 		
 		}
-		
-		private void TZPBeforeTest(String baseUrl2) {
-			// TODO Auto-generated method stub
-			
-		}
+
+
 
 		@DataProvider(name = "TZPStammGG")
 		public static Object[][] getData() throws BiffException {
@@ -190,8 +188,8 @@ public class TZPLoginGG {
 //			softassert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed()));
 //			softassert.assertAll();
 			
-            // E-Mail-Überprüfung
-			Utils.SeleniumUtils.IstEmailVorhanden(Emailadresse, Passwort, ""); 			
+//            // E-Mail-Überprüfung
+//			Utils.SeleniumUtils.IstEmailVorhanden(Emailadresse, Passwort, ""); 			
 			
 			
 			driver.close();

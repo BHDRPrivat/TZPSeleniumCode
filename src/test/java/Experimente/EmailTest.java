@@ -8,8 +8,6 @@ import org.testng.annotations.Test;
 
 import com.testing.framework.DateTimeUtils;
 
-import Utils.PruefenEmailUtils;
-
 public class EmailTest {
 	
 	  private static PruefenEmailUtils emailUtils;
@@ -18,7 +16,7 @@ public class EmailTest {
 	  public static void connectToEmail() {
 	    try {
 	    // "smtp.gmail.com"	
-	      emailUtils = new PruefenEmailUtils("b.dikmen.wi@gmail.com", "Patara318", "imap.gmail.com", Utils.PruefenEmailUtils.EmailFolder.INBOX);
+	      emailUtils = new PruefenEmailUtils("b.dikmen.wi@gmail.com", "Patara318", "imap.gmail.com", Experimente.PruefenEmailUtils.EmailFolder.INBOX);
 	    } catch (Exception e) {
 	      e.printStackTrace();
 	      Assert.fail(e.getMessage());

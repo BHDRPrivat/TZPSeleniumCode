@@ -46,7 +46,7 @@ public class TZPRegGG {
 	// Variable für Applitools
 	public Eyes eyes = null;
 
-	@Parameters({ "Ablaufart" })
+	@Parameters({ "Ablaufart"})
 	@BeforeTest
 	public void SetupSeleniumTestdaten(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
 
@@ -61,13 +61,14 @@ public class TZPRegGG {
 		StandardBrowser = Utils.TZPBeforeTest.BrowserArt();
 		Zeitspanne = Utils.TZPBeforeTest.Pausenzeit();
 		BaseUrl = TZPBeforeTest.Umgebung() + "/portal/registrierungGeldgeber";
-		SpeicherpfadTestdokumente = "F:\\BHDR\\TopZinsPortalTest\\PDFDokumente\\";
+		SpeicherpfadTestdokumente = Utils.TZPBeforeTest.PDFPfad();
+		
 		// Aufruf des Browser-Setups
 		driver = Utils.TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
 	}
 
 	// Aufruf des Dataproviders über eine andere Klasse
-	@Test(dataProvider = "TZPRegGG", dataProviderClass = Utils.DataSupplier.class)
+	@Test(priority = 10, dataProvider = "TZPRegGG", dataProviderClass = Utils.DataSupplier.class)
 	public void TZPRegGGTest(String Teststep, String Aktiv, String Unternehmensname, String Anrede, String Titel, String Vorname,
 			String Nachname, String TelefonNummer, String Emailadresse, String EmailConfirm, String Passwort,
 			String Datenschutz, String BtnRegistrien, String BtnAbbrechen) throws Exception {
@@ -80,6 +81,7 @@ public class TZPRegGG {
 		ExtentTest test = extent.createTest("TZPRegGG: " + Teststep + " - " + AblaufartGlobal,
 				"Registrierung von Geldgebern (GG)");
 
+				
 		
 
 		driver.get(BaseUrl);
@@ -181,6 +183,46 @@ public class TZPRegGG {
 
 	}
 
+    // Versuch direkt nach dem Lauf die E-Mail zu kontrollieren scheiterte, da die Mails zu spät generiert werden
+	
+//	// Aufruf des Dataproviders über eine andere Klasse
+//	@Test(priority = 15, dataProvider = "TZPRegGG", dataProviderClass = Utils.DataSupplier.class)
+//	public void TZPAfterRegGGEMailTest(String Teststep, String Aktiv, String Unternehmensname, String Anrede, String Titel, String Vorname,
+//			String Nachname, String TelefonNummer, String Emailadresse, String EmailConfirm, String Passwort,
+//			String Datenschutz, String BtnRegistrien, String BtnAbbrechen) throws Exception {
+//
+//		if (Aktiv.equals("Ja")) {
+//		// Mock
+//		// String teststep = "AL-R1";
+//
+//		// creates a toggle for the given test, adds all log events under it
+//		ExtentTest test = extent.createTest("TZPRegGG: " + Teststep + " - " + AblaufartGlobal,
+//				"Überprüfung der EMails an Geldgebern (GG)");
+//
+//				
+//		System.out.println("EMail-Überprüfung gestartet");
+//
+//		Thread.sleep(30 * Zeitspanne);	
+//		
+//		// E-Mail-Überprüfung einbauen
+//	    String Betreff = "Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal";
+//        String Anhang = "Vollständige-Registrierung-TopZinsPortal.pdf"; 
+//		Utils.SeleniumUtils.EmailAttachments(Emailadresse, Passwort, Betreff, Anhang, test );
+//		
+//		driver.close();
+//		// Für den Teardown
+//		driver = null;
+//		eyes = null;
+//
+//		// Neu Starten
+//		SetupSeleniumTestdaten(AblaufartGlobal);
+//		
+//		} // Nur wenn Aktiv "Ja" ist durchlaufen
+//
+//	}
+	
+	
+	
 	public void ApplitoolsAufnahme(String Ablaufart, String teststep) {
 		if (Ablaufart.equals("Applitool")) {
 			// Applitools vorbereiten
