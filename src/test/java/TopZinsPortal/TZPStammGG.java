@@ -142,9 +142,9 @@ public class TZPStammGG {
 			
 			
 
-			if (BaseUrl.equals("http://3.127.85.31/portal/login")) {
-				// In der 3-Version so benannt
-				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "streetName", Str, test);				
+			if (BaseUrl.contains("18.157.183.108")) {
+				// In der 3 und 18-Version so benannt
+				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "street", Str, test);				
 			} else {
 				// In alles anderen Versionen
 				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "streetName", Str, test);				

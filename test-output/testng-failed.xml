@@ -6,7 +6,7 @@
       <class name="TopZinsPortal.TZPCheckEMailsGG">
         <methods>
           <include name="SetupSeleniumTestdaten"/>
-          <include name="TZPCheckEmailGGTest" invocation-numbers="2"/>
+          <include name="TZPCheckEmailGGTest" invocation-numbers="3 4 5"/>
           <include name="BrowserTearDown"/>
         </methods>
       </class> <!-- TopZinsPortal.TZPCheckEMailsGG -->

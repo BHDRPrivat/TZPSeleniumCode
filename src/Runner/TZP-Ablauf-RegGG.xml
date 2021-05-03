@@ -8,6 +8,7 @@
 			<class name="TopZinsPortal.TZPRegGG" />
 		</classes>
 	</test>
+ <!--  
     <test name="TZP-Login-GG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Registrierung GG"></parameter>
@@ -15,6 +16,8 @@
 			<class name="TopZinsPortal.TZPLoginGG" />
 		</classes>
     </test>	
+  --> 
+   
     <test name="TZP-Stammdaten-GG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
