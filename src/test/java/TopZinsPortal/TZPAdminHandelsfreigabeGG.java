@@ -4,6 +4,8 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -34,6 +36,7 @@ public class TZPAdminHandelsfreigabeGG {
 	public String SpeicherpfadTestdokumente;
 	public static String TestdatenExceldatei;
 	public static String projectpath = null;
+	public static String AnmeldungForsaAdmin = null;
 	// Für AutoIT
 	String workingDir;
 	String autoitscriptpath;
@@ -55,8 +58,12 @@ public class TZPAdminHandelsfreigabeGG {
 
 	@Parameters({ "Ablaufart" })
 	@BeforeTest
-	public void SetupSeleniumTestdaten(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
+	public void SetupSeleniumTestdaten(@Optional("Ad Hoc Test") String Ablaufart)
+			throws InterruptedException, IOException {
 
+		// Ermittelt den Pfad des aktuellen Projekts
+		projectpath = System.getProperty("user.dir");
+		
 		if (htmlReporter == null) {
 			// start reporters
 			htmlReporter = new ExtentHtmlReporter(
@@ -65,7 +72,6 @@ public class TZPAdminHandelsfreigabeGG {
 			extent = new ExtentReports();
 			extent.attachReporter(htmlReporter);
 		}
-
 
 		System.out.println("Handelsfreigabe: " + Ablaufart);
 		AblaufartGlobal = Ablaufart;
@@ -86,60 +92,16 @@ public class TZPAdminHandelsfreigabeGG {
 		// Wichtiger Hinweis: In Java dürfen generische Strings nicht mit "=="
 		// verglichen werden. "==" steht für die Überprüfung des Speicherorts
 
-		// Aufruf des Browser-Setups
-		driver = TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
-
-	}
-
-	@DataProvider(name = "TZPAdminHandelsfreigabeGG")
-	public static Object[][] getData() throws BiffException {
-		// Ermittelt den Pfad des aktuellen Projekts
-		projectpath = System.getProperty("user.dir");
-
-		// Ermittelt den Pfad des aktuellen Projekts
-		String projectpath = System.getProperty("user.dir");
-		// Zugriff auf die zugehörigen Exceldaten
-
-		TestdatenExceldatei = "\\Excel\\TopZinsPortalAdminHandelsfreigabeGG.xls";
-
-		String excelPath = projectpath + TestdatenExceldatei;
-		Object testData[][] = testData(excelPath, "Testdaten");
-		return testData;
-	}
-
-	public static Object[][] testData(String excelPath, String sheetName) throws BiffException {
-		// Aufruf des Constructors von ExcelUtils
-		ExcelUtilsJXL excel = new ExcelUtilsJXL(excelPath, sheetName);
-
-		int rowCount = ExcelUtilsJXL.getRowCount();
-		int colCount = ExcelUtilsJXL.getColCount();
-
-		System.out.println("Zeile=" + rowCount + "Spalte=" + colCount + "String Wert: ");
-
-		// 2 Dimensionales Object-Array erzeugen
-		Object data[][] = new Object[rowCount - 1][colCount];
-
-		// �ber alle Zeilen laufen (i=1, da i=0 die Headerzeile)
-		for (int i = 1; i < rowCount; i++) {
-			// �ber alle Spalten laufen
-			for (int j = 0; j < colCount; j++) {
-
-				String cellData = ExcelUtilsJXL.getExcelDataString(i, j);
-				data[i - 1][j] = cellData;
-
-				System.out.println("Pro Zeile=" + i + "Pro Spalte=" + j + "Pro String Wert: " + cellData);
-
-				// Werte in einer Zeile anzeigen
-				// System.out.print(cellData + " | ");
-			}
+		if (AnmeldungForsaAdmin == null) {
+			// Aufruf des Browser-Setups
+			driver = TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
 		}
-		return data;
 	}
 
 	// @Test
-	@Test(dataProvider = "TZPAdminHandelsfreigabeGG")
-	public void TZPAdminHandelsfreigabeGGTest(String Teststep, String Aktiv, 
-			String Menue, String ZeilenProSeite, String Unternehmensname) throws Exception {
+	@Test(dataProvider = "TZPAdminHandelsfreigabeGG", dataProviderClass = Utils.DataSupplier.class)
+	public void TZPAdminHandelsfreigabeGGTest(String Teststep, String Aktiv, String Menue, String ZeilenProSeite,
+			String Unternehmensname) throws Exception {
 
 		if (Aktiv.equals("Ja")) {
 
@@ -147,29 +109,37 @@ public class TZPAdminHandelsfreigabeGG {
 			ExtentTest test = extent.createTest("TZPAdminHndelsfreigabeGG: " + Teststep + " - " + AblaufartGlobal,
 					"Handelsfreigabe durch Admin");
 
-			driver.get(BaseUrl);
-			// TZRegGG-Eingabemaske
-			Thread.sleep(3 * Zeitspanne);
-			test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
+			if (AnmeldungForsaAdmin == null) {
 
-			// Login mit gültigen Daten
-			
-			String Emailadresse = Utils.TZPBeforeTest.AdminEmail();
-			String Passwort = Utils.TZPBeforeTest.AdminPasswort();
-			
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", Emailadresse, test);
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", Passwort, test);
+				driver.get(BaseUrl);
+				// TZRegGG-Eingabemaske
+				Thread.sleep(3 * Zeitspanne);
+				test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
 
-			// Button "Anmelden auswählen"
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
+				// Login mit gültigen Daten
+
+				String Emailadresse = Utils.TZPBeforeTest.AdminEmail();
+				String Passwort = Utils.TZPBeforeTest.AdminPasswort();
+
+				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", Emailadresse, test);
+				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", Passwort, test);
+
+				// Button "Anmelden auswählen"
+				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]",
+						test);
+
+				// Anmeldung ist erfolgt
+				AnmeldungForsaAdmin = "Ja";
+			}
 
 			// Button "Daten komplett" in menu clicken
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, '" + Menue + "')]",
 					test);
-
-			// Die Anzeige auf 100 erhöhen
-			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//div[contains(@id,'mui')]",
-					"//li[contains(text(),'", ZeilenProSeite, test);
+			
+			// Weiterlauf nur nach implizierter Anzeige des Suchfeldes
+			// Sobald die Kondition erfüllt wird, erfolgt der weitere Programmablauf.
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='search']")));
 
 			// Firmenname in das Suchfeld eingeben
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search", Unternehmensname, test);
@@ -189,7 +159,7 @@ public class TZPAdminHandelsfreigabeGG {
 			// TSonderzeit zum Hochladen
 			Thread.sleep(3 * Zeitspanne);
 
-			// Direktsprung auf Dokumente	
+			// Direktsprung auf Dokumente
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@href='#/masterdata/documents']", test);
 
 			// Haken setzen für Dokumentenkontrolle des Admins's
@@ -208,7 +178,7 @@ public class TZPAdminHandelsfreigabeGG {
 					"//span[text()='Freigeben']//ancestor::button[@tabindex='0']", test);
 			// TSonderzeit zum Hochladen
 			Thread.sleep(3 * Zeitspanne);
-			
+
 			// Button "OK" auswählen, wenn vorhanden
 			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
 
@@ -224,13 +194,11 @@ public class TZPAdminHandelsfreigabeGG {
 			// Firmenname in das Suchfeld eingeben
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search", Unternehmensname, test);
 			Thread.sleep(5 * Zeitspanne);
-			
 
-		
-     		driver.close();
-			// Für den Teardown
-			driver = null;
-			eyes = null;
+//			driver.close();
+//			// Für den Teardown
+//			driver = null;
+//			eyes = null;
 
 			// Neu Starten
 			SetupSeleniumTestdaten(AblaufartGlobal);
@@ -269,24 +237,6 @@ public class TZPAdminHandelsfreigabeGG {
 			}
 		}
 	}
-
-//	public void ScreenshotAufnahme(String Ablaufart, ChromeDevToolsService devToolsService, String bildPath)
-//			throws InterruptedException {
-//		if (Ablaufart.equals("PDF-Druck")) {
-//			// Screenshot erzeugen;
-//			Thread.sleep(Zeitspanne);
-//
-//			try {
-//				// Take full screen
-//
-//				FullScreenshot.captureFullPageScreenshot(devToolsService, bildPath);
-//			} catch (AssertionError e) {
-//				System.out.println(e);
-//			}
-//
-//			Thread.sleep(Zeitspanne);
-//		}
-//	}
 
 	@AfterTest
 	public void BrowserTearDown() throws InterruptedException {

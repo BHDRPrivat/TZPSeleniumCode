@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="16" passed="2" failed="14" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-03T18:50:19 CEST" name="Default suite" finished-at="2021-05-03T18:50:43 CEST" duration-ms="23672">
+  <suite started-at="2021-05-07T16:54:08 CEST" name="Default suite" finished-at="2021-05-07T16:55:34 CEST" duration-ms="86569">
     <groups>
     </groups>
-    <test started-at="2021-05-03T18:50:19 CEST" name="Default test" finished-at="2021-05-03T18:50:43 CEST" duration-ms="23672">
-      <class name="TopZinsPortal.TZPCheckEMailsGG">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-05-03T18:50:19 CEST" name="SetupSeleniumTestdaten" finished-at="2021-05-03T18:50:19 CEST" duration-ms="204" status="PASS">
+    <test started-at="2021-05-07T16:54:08 CEST" name="Default test" finished-at="2021-05-07T16:55:34 CEST" duration-ms="86569">
+      <class name="TopZinsPortal.TZPCheckEMailsGN">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:08 CEST" name="SetupSeleniumTestdaten" finished-at="2021-05-07T16:54:08 CEST" duration-ms="215" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPCheckEmailGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-05-03T18:50:20 CEST" name="TZPCheckEmailGGTest" data-provider="TZPCheckEMailsGG" finished-at="2021-05-03T18:50:23 CEST" duration-ms="3100" status="PASS">
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:08 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:14 CEST" duration-ms="5979" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPCheckEMailGG-TF-001]]>
+                <![CDATA[TZPCheckEMailGN-TF-001]]>
               </value>
             </param>
             <param index="1">
@@ -32,7 +32,7 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[BHDR.gg.DGSVO@gmail.com]]>
+                <![CDATA[BHDR.GN.DGSVO@gmail.com]]>
               </value>
             </param>
             <param index="3">
@@ -66,14 +66,56 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:119)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPCheckEmailGGTest -->
-        <test-method signature="TZPCheckEmailGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-05-03T18:50:23 CEST" name="TZPCheckEmailGGTest" data-provider="TZPCheckEMailsGG" finished-at="2021-05-03T18:50:27 CEST" duration-ms="4531" status="PASS">
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:14 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:20 CEST" duration-ms="6204" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPCheckEMailGG-TF-002]]>
+                <![CDATA[TZPCheckEMailGN-TF-002]]>
               </value>
             </param>
             <param index="1">
@@ -83,7 +125,7 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[BHDR.gg.DatenKomplett@gmail.com]]>
+                <![CDATA[BHDR.GN.DatenKomplett@gmail.com]]>
               </value>
             </param>
             <param index="3">
@@ -117,14 +159,56 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:119)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPCheckEmailGGTest -->
-        <test-method signature="TZPCheckEmailGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-05-03T18:50:27 CEST" name="TZPCheckEmailGGTest" data-provider="TZPCheckEMailsGG" finished-at="2021-05-03T18:50:27 CEST" duration-ms="4" status="PASS">
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:20 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:25 CEST" duration-ms="4505" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPCheckEMailGG-TF-003]]>
+                <![CDATA[TZPCheckEMailGN-TF-003]]>
               </value>
             </param>
             <param index="1">
@@ -134,7 +218,7 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[BHDR.gg.DatenKomplett@gmail.com]]>
+                <![CDATA[BHDR.GN.DatenKomplett@gmail.com]]>
               </value>
             </param>
             <param index="3">
@@ -168,14 +252,56 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPCheckEmailGGTest -->
-        <test-method signature="TZPCheckEmailGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-05-03T18:50:27 CEST" name="TZPCheckEmailGGTest" data-provider="TZPCheckEMailsGG" finished-at="2021-05-03T18:50:32 CEST" duration-ms="4434" status="PASS">
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:25 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:36 CEST" duration-ms="10916" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPCheckEMailGG-TF-004]]>
+                <![CDATA[TZPCheckEMailGN-TF-004]]>
               </value>
             </param>
             <param index="1">
@@ -185,7 +311,7 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[BHDR.gg.Handel@gmail.com]]>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
               </value>
             </param>
             <param index="3">
@@ -219,14 +345,56 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPCheckEmailGGTest -->
-        <test-method signature="TZPCheckEmailGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-05-03T18:50:32 CEST" name="TZPCheckEmailGGTest" data-provider="TZPCheckEMailsGG" finished-at="2021-05-03T18:50:32 CEST" duration-ms="4" status="PASS">
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:36 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:40 CEST" duration-ms="4509" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPCheckEMailGG-TF-005]]>
+                <![CDATA[TZPCheckEMailGN-TF-005]]>
               </value>
             </param>
             <param index="1">
@@ -236,7 +404,7 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[BHDR.gg.Handel@gmail.com]]>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
               </value>
             </param>
             <param index="3">
@@ -270,14 +438,56 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPCheckEmailGGTest -->
-        <test-method signature="TZPCheckEmailGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-05-03T18:50:32 CEST" name="TZPCheckEmailGGTest" data-provider="TZPCheckEMailsGG" finished-at="2021-05-03T18:50:32 CEST" duration-ms="1" status="PASS">
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:40 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:45 CEST" duration-ms="4515" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPCheckEMailGG-TF-006]]>
+                <![CDATA[TZPCheckEMailGN-TF-006]]>
               </value>
             </param>
             <param index="1">
@@ -287,7 +497,7 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[BHDR.gg.Handel@gmail.com]]>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
               </value>
             </param>
             <param index="3">
@@ -321,14 +531,56 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPCheckEmailGGTest -->
-        <test-method signature="TZPCheckEmailGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-05-03T18:50:32 CEST" name="TZPCheckEmailGGTest" data-provider="TZPCheckEMailsGG" finished-at="2021-05-03T18:50:37 CEST" duration-ms="5223" status="PASS">
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:45 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:49 CEST" duration-ms="4512" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPCheckEMailGG-TF-007]]>
+                <![CDATA[TZPCheckEMailGN-TF-007]]>
               </value>
             </param>
             <param index="1">
@@ -338,7 +590,151 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[BHDR.gg.Deaktiv@gmail.com]]>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Benachrichtigung über eine Termingeldanfrage]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:49 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:54 CEST" duration-ms="4517" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-008]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:54 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:00 CEST" duration-ms="6152" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-009]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GN.deaktiv@gmail.com]]>
               </value>
             </param>
             <param index="3">
@@ -372,14 +768,56 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:119)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPCheckEmailGGTest -->
-        <test-method signature="TZPCheckEmailGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-05-03T18:50:37 CEST" name="TZPCheckEmailGGTest" data-provider="TZPCheckEMailsGG" finished-at="2021-05-03T18:50:39 CEST" duration-ms="2083" status="PASS">
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:00 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:05 CEST" duration-ms="4506" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPCheckEMailGG-TF-008]]>
+                <![CDATA[TZPCheckEMailGN-TF-010]]>
               </value>
             </param>
             <param index="1">
@@ -389,7 +827,100 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[BHDR.gg.Loeschen@gmail.com]]>
+                <![CDATA[BHDR.GN.deaktiv@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Sie wurden temporär deaktiviert]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[topzins@forsa-gmbh.de]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:05 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:09 CEST" duration-ms="4904" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-011]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GN.Loeschen@gmail.com]]>
               </value>
             </param>
             <param index="3">
@@ -423,14 +954,479 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:119)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPCheckEmailGGTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPCheckEMailsGG@294425a7]" started-at="2021-05-03T18:50:39 CEST" name="BrowserTearDown" finished-at="2021-05-03T18:50:43 CEST" duration-ms="3905" status="PASS">
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:09 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:14 CEST" duration-ms="4510" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-012]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GN.Loeschen@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Sie wurden temporär deaktiviert]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[topzins@forsa-gmbh.de]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:14 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:20 CEST" duration-ms="5971" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-013]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[centner.gn.handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vollständige-Registrierung-TopZinsPortal.pdf]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[http://www.forsa-gmbh.de/downloads/Topzins/TZP-Registration.mp4]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[mailto:sales-forsa@forsa-gmbh.de]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:119)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:20 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:24 CEST" duration-ms="4505" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-014]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[centner.gn.handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Anforderung der Handelsberechtigung]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:24 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:29 CEST" duration-ms="4511" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-015]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[centner.gn.handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Die Vergabe der Handelsberechtigung war erfolgreich]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:29 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:33 CEST" duration-ms="4514" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-016]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[centner.gn.handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal: Vielen Dank für den Geschäftsabschluss - Geschäftsbestätigung]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Geschäftsbestätigung.pdf]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEmailGNTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:33 CEST" name="BrowserTearDown" finished-at="2021-05-07T16:55:34 CEST" duration-ms="870" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
-      </class> <!-- TopZinsPortal.TZPCheckEMailsGG -->
+      </class> <!-- TopZinsPortal.TZPCheckEMailsGN -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

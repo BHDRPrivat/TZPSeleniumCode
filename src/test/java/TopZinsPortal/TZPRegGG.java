@@ -167,7 +167,12 @@ public class TZPRegGG {
 		// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
 		// Programm läuft nicht weiter
 		Thread.sleep(3 * Zeitspanne);
-		Assert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed()));
+		//Assert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed()));
+		// Weiterlauf ermöglichen 
+		SoftAssert softassert = new SoftAssert();
+		softassert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed())); 
+		softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
+		
 		Thread.sleep(3 * Zeitspanne);	
 		
 		
@@ -185,41 +190,7 @@ public class TZPRegGG {
 
     // Versuch direkt nach dem Lauf die E-Mail zu kontrollieren scheiterte, da die Mails zu spät generiert werden
 	
-//	// Aufruf des Dataproviders über eine andere Klasse
-//	@Test(priority = 15, dataProvider = "TZPRegGG", dataProviderClass = Utils.DataSupplier.class)
-//	public void TZPAfterRegGGEMailTest(String Teststep, String Aktiv, String Unternehmensname, String Anrede, String Titel, String Vorname,
-//			String Nachname, String TelefonNummer, String Emailadresse, String EmailConfirm, String Passwort,
-//			String Datenschutz, String BtnRegistrien, String BtnAbbrechen) throws Exception {
-//
-//		if (Aktiv.equals("Ja")) {
-//		// Mock
-//		// String teststep = "AL-R1";
-//
-//		// creates a toggle for the given test, adds all log events under it
-//		ExtentTest test = extent.createTest("TZPRegGG: " + Teststep + " - " + AblaufartGlobal,
-//				"Überprüfung der EMails an Geldgebern (GG)");
-//
-//				
-//		System.out.println("EMail-Überprüfung gestartet");
-//
-//		Thread.sleep(30 * Zeitspanne);	
-//		
-//		// E-Mail-Überprüfung einbauen
-//	    String Betreff = "Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal";
-//        String Anhang = "Vollständige-Registrierung-TopZinsPortal.pdf"; 
-//		Utils.SeleniumUtils.EmailAttachments(Emailadresse, Passwort, Betreff, Anhang, test );
-//		
-//		driver.close();
-//		// Für den Teardown
-//		driver = null;
-//		eyes = null;
-//
-//		// Neu Starten
-//		SetupSeleniumTestdaten(AblaufartGlobal);
-//		
-//		} // Nur wenn Aktiv "Ja" ist durchlaufen
-//
-//	}
+
 	
 	
 	

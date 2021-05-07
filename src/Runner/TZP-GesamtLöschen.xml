@@ -7,7 +7,7 @@
 		<classes>
 			<class name="TopZinsPortal.TZPAdminUserDeaktivierenGG" />
 		</classes>
-    </test> 
+    </test>
     <test name="TZP-Admin-Loeschen">
 		<parameter name="Ablaufart" value="Reset"></parameter>
 		<classes>

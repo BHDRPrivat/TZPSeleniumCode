@@ -30,7 +30,6 @@ public class TZPCheckEMailsGG {
 
 	public static WebDriver driver;
 	private Integer Zeitspanne;
-	private String BaseUrl;
 	public String StandardBrowser;
 	public String SpeicherpfadTestdokumente;
 	public static String projectpath = System.getProperty("user.dir");
@@ -65,7 +64,6 @@ public class TZPCheckEMailsGG {
 		AblaufartGlobal = Ablaufart;
 		StandardBrowser = Utils.TZPBeforeTest.BrowserArt();
 		Zeitspanne = Utils.TZPBeforeTest.Pausenzeit();
-		BaseUrl = TZPBeforeTest.Umgebung() + "/portal/registrierungGeldgeber";
 		SpeicherpfadTestdokumente = Utils.TZPBeforeTest.PDFPfad();
 
 		// Aufruf des Browser-Setups
@@ -78,7 +76,15 @@ public class TZPCheckEMailsGG {
 	public void TZPCheckEmailGGTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Betreff,
 			String Anhang, String Link1, String Link2, String Registrierung) throws Exception {
 
-		System.out.println("Teststep: " + Teststep);
+		// Beachte, Nach dem Einlesen der Mails werden diese als "Gelesen" markiert und beim nächsten Durchlauf nicht mehr eingelesen
+		
+		// Zeitspanne bis zur Zusendung der Mails lassen
+		Thread.sleep(30 * Zeitspanne);
+		
+		
+		System.out.println("\n" + "Teststep: " + Teststep);
+		
+		
 		
 		
 		if (Aktiv.equals("Ja")) {
@@ -89,8 +95,7 @@ public class TZPCheckEMailsGG {
 			ExtentTest test = extent.createTest("TZPCheckEMailGG: " + Teststep + " - " + AblaufartGlobal,
 					"Kontrolle von E-Mails an Geldgebern (GG)");
 
-			// Die Anzahl der E-Mails ermitteln, um die Dimension des Arrays festelegen zu
-			// können
+			// Die Anzahl der E-Mails ermitteln, um die Dimension des Arrays festelegen zu können
 			// Objekt zum Speichern der Mails
 			if (EMailEingelesen == null || EMailEingelesen != Emailadresse) {
 				// Nach dem ersten Lesen, oder E-Mailänderung die Werte anpassen

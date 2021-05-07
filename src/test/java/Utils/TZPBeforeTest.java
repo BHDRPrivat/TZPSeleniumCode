@@ -5,11 +5,11 @@ public class TZPBeforeTest {
 	public static String Umgebung() {
 	  // Festlegung, in welcher Umgebung getestet wird 	
 
-//	// Stage 
-//	return "http://52.59.225.49";
+	// Stage 
+	return "http://52.59.225.49";
 		
-	// Sales	
-	return "http://18.157.183.108";
+//	// Sales	
+//	return "http://18.157.183.108";
 
 //	// Pre Prod	
 //	return "http://54.93.43.63";	
@@ -26,11 +26,11 @@ public class TZPBeforeTest {
 	public static String AdminEmail() {
 		 // Festlegung des Adminzugangs  
 		
-//		    // Stage Version  
-//		    return "admintest@forsa-gmbh.de";
+		    // Stage Version  
+		    return "admintest@forsa-gmbh.de";
 			
-			// Sales	
-		    return "topzins@forsa-gmbh.de";
+//			// Sales	
+//		    return "topzins@forsa-gmbh.de";
 		    
 //			// Pre Prod	
 //		    return "topzins@forsa-gmbh.de";
@@ -45,11 +45,11 @@ public class TZPBeforeTest {
 	public static String AdminPasswort() {
 		 // Festlegung des Adminpassworts  
 
-//	    // Stage Version  
-//	    return "Test12345!";
+	    // Stage Version  
+	    return "Test12345!";
 		
-		// Sales	
-		return "Test12345!";
+//		// Sales	
+//		return "Test12345!";
 	    
 //		// Pre Prod	
 //		return "Test12345!";	    

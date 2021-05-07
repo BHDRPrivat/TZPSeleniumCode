@@ -2,7 +2,10 @@ package TopZinsPortal;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
@@ -56,6 +59,9 @@ public class TZPTransaktionStartGG {
 		@BeforeTest
 		public void SetupSeleniumTestdaten(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
 
+			// Ermittelt den Pfad des aktuellen Projekts
+			projectpath = System.getProperty("user.dir");
+			
 			if (htmlReporter == null) {
 				// start reporters
 				htmlReporter = new ExtentHtmlReporter("Fehlerreport TopZinsPortal Transaktion Start GG - " + Ablaufart + ".html");
@@ -80,51 +86,8 @@ public class TZPTransaktionStartGG {
 		}
 		
 
-		@DataProvider(name = "TZPTransaktionStartGG")
-		public static Object[][] getData() throws BiffException {
-			// Ermittelt den Pfad des aktuellen Projekts
-			projectpath = System.getProperty("user.dir");
-			// Zugriff auf die zugehörigen Exceldaten
-			
-			TestdatenExceldatei = "\\Excel\\TopZinsPortalTransaktionGG-GN.xls";
-
-			String excelPath = projectpath + TestdatenExceldatei;
-			Object testData[][] = testData(excelPath, "Testdaten");
-			return testData;
-		}
-
-		public static Object[][] testData(String excelPath, String sheetName) throws BiffException {
-			// Aufruf des Constructors von ExcelUtils
-			ExcelUtilsJXL excel = new ExcelUtilsJXL(excelPath, sheetName);
-
-			int rowCount = ExcelUtilsJXL.getRowCount();
-			int colCount = ExcelUtilsJXL.getColCount();
-			
-			System.out.println("Zeile=" + rowCount + "Spalte=" + colCount + "String Wert: ");
-
-			// 2 Dimensionales Object-Array erzeugen
-			Object data[][] = new Object[rowCount-1][colCount];
-
-			// �ber alle Zeilen laufen (i=1, da i=0 die Headerzeile)
-			for (int i = 1; i < rowCount; i++) {
-				// �ber alle Spalten laufen
-				for (int j = 0; j < colCount; j++) {
-
-					String cellData = ExcelUtilsJXL.getExcelDataString(i, j);
-					data[i - 1][j] = cellData;
-					
-					System.out.println("Pro Zeile=" + i + "Pro Spalte=" + j + "Pro String Wert: " + cellData);
-					
-					// Werte in einer Zeile anzeigen
-					// System.out.print(cellData + " | ");
-				}
-			}
-			return data;
-		}
-
-
 		// @Test
-		@Test(dataProvider = "TZPTransaktionStartGG")
+		@Test(dataProvider = "TZPTransaktionStartGG", dataProviderClass = Utils.DataSupplier.class)
 		public void TZPTransaktionStartGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
 				String ZinssatzGG, String Valuta, String Zinskonvention, String Zahlungsfrequenz, String SonstigesGG, String KommentarGG, String EndeAnfrageUhrzeitGG, 
 				String BtnAnfrageSendenGG, String BtnAusloggenGG, String FirmaGN, String EmailadresseGN, String PasswortGN, String VolumenGN, 
@@ -188,6 +151,16 @@ public class TZPTransaktionStartGG {
 			// 6.0 Button "Anfrage senden" klicken 
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 			
+			// Warten und Kontrolle
+			// Weiterlauf nur nach implizierter Anzeige des Suchfeldes
+			// Sobald die Kondition erfüllt wird, erfolgt der weitere Programmablauf.
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Die Anfrage wurde erfolgreich gesendet']")));
+			
+			// Weiterlauf ermöglichen 
+			SoftAssert softassert = new SoftAssert();
+			softassert.assertTrue((driver.findElement(By.xpath("//span[text()='Die Anfrage wurde erfolgreich gesendet']")).isDisplayed())); 
+			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
 			
 			// Button "OK" auswählen, wenn vorhanden
 			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);

@@ -42,8 +42,13 @@ public class TZPTransaktionBearbeitenGN {
 	ExtentHtmlReporter htmlReporter = null;
 	ExtentReports extent;
 	
-	// Anzahl der Testfälle wichtig für die einzelnen Zugriffe 
-	public static Integer AktuellTransaktionMaske = 0; 
+	// Anzahl der Testfälle, wichtig für die einzelnen Zugriffe + 1 
+	// zählt danach herunter
+	// Sollte eigentlich von der Anzahl der Zeilen in der Exceltabelle ermittelt werden
+	// Zugriff wurde nur ausgelagert.
+//	AktuellTransaktionMaske = rowCount;
+//		System.out.println("Zeile=" + rowCount + "Spalte=" + colCount + "String Wert: ");
+	public static Integer AktuellTransaktionMaske = 3; 
 
 	public String AblaufartGlobal;
 
@@ -63,7 +68,8 @@ public class TZPTransaktionBearbeitenGN {
 		public void SetupSeleniumTestdaten(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
 			
 			
-			
+			// Ermittelt den Pfad des aktuellen Projekts
+			projectpath = System.getProperty("user.dir");
 
 			if (htmlReporter == null) {
 				// start reporters
@@ -89,54 +95,10 @@ public class TZPTransaktionBearbeitenGN {
 		}
 		
 
-		@DataProvider(name = "TZPTransaktionAkzeptierenGN")
-		public static Object[][] getData() throws BiffException {
-			// Ermittelt den Pfad des aktuellen Projekts
-			projectpath = System.getProperty("user.dir");
-			// Zugriff auf die zugehörigen Exceldaten
-			
-			TestdatenExceldatei = "\\Excel\\TopZinsPortalTransaktionGG-GN.xls";
-
-			String excelPath = projectpath + TestdatenExceldatei;
-			Object testData[][] = testData(excelPath, "Testdaten");
-			return testData;
-		}
-
-		public static Object[][] testData(String excelPath, String sheetName) throws BiffException {
-			// Aufruf des Constructors von ExcelUtils
-			ExcelUtilsJXL excel = new ExcelUtilsJXL(excelPath, sheetName);
-
-			int rowCount = ExcelUtilsJXL.getRowCount();
-			int colCount = ExcelUtilsJXL.getColCount();
-			
-			AktuellTransaktionMaske = rowCount ;
-			
-			System.out.println("Zeile=" + rowCount + "Spalte=" + colCount + "String Wert: ");
-
-			// 2 Dimensionales Object-Array erzeugen
-			Object data[][] = new Object[rowCount-1][colCount];
-
-			// �ber alle Zeilen laufen (i=1, da i=0 die Headerzeile)
-			for (int i = 1; i < rowCount; i++) {
-				// �ber alle Spalten laufen
-				for (int j = 0; j < colCount; j++) {
-
-					String cellData = ExcelUtilsJXL.getExcelDataString(i, j);
-					data[i - 1][j] = cellData;
-					
-					System.out.println("Pro Zeile=" + i + "Pro Spalte=" + j + "Pro String Wert: " + cellData);
-					
-					// Werte in einer Zeile anzeigen
-					// System.out.print(cellData + " | ");
-				}
-			}
-			return data;
-		}
-
-		
+	
 		// @Test
-		@Test(dataProvider = "TZPTransaktionAkzeptierenGN")
-		public void TZPTransaktionAkzeptierenGNTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
+		@Test(dataProvider = "TZPTransaktionBearbeitenGN", dataProviderClass = Utils.DataSupplier.class)
+		public void TZPTransaktionBearbeitenGNTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
 		String ZinssatzGG, String Valuta, String Zinskonvention, String Zahlungsfrequenz, String SonstigesGG, String KommentarGG, String EndeAnfrageUhrzeitGG, 
 		String BtnAnfrageSendenGG, String BtnAusloggenGG, String FirmaGN, String EmailadresseGN, String PasswortGN, String VolumenGN, 
 		String ZinssatzGN, String EndeAngebotGN, String BtnAngebotSendenGN, String BtnAnfrageAblehnenGN, String BtnAngebotTelefonischWeiterleitenGN, 
@@ -145,10 +107,7 @@ public class TZPTransaktionBearbeitenGN {
 			
 			if (Aktiv.equals("Ja")) {
 			
-			// Für jeden Testfall wird die entsperechende Transaktionsmasken ausgewählt 
-			// Beachet die Reihenfolge ist bei den GN in umgekehrter Reihenfolge	
-				
-				AktuellTransaktionMaske = AktuellTransaktionMaske - 1;
+
 
 			// creates a toggle for the given test, adds all log events under it
 			ExtentTest test = extent.createTest("TZP_Transaktion: " + Teststep + " - " + AblaufartGlobal,
@@ -170,7 +129,7 @@ public class TZPTransaktionBearbeitenGN {
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 		
 			// 10. zeit zum Aufbauen der Meldung 
-			Thread.sleep(3 * Zeitspanne);	
+			Thread.sleep(8 * Zeitspanne);	
 
 			Utils.SeleniumUtils.DragDrop(driver, Zeitspanne, "(//div[contains(@class, 'MuiDialogTitle-root')])[" + AktuellTransaktionMaske +"]", "//div[@data-test='sentinelStart']", test);
 			
@@ -207,6 +166,9 @@ public class TZPTransaktionBearbeitenGN {
 				    // 12. Button "Ja" in Pop-up klicken (class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
 				    Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//*[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']", test);
 				
+				    // warten bis OK-Maske erscheint.
+				    
+				    
 				   // Button "OK" auswählen, wenn vorhanden
 	         	   Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
         		
@@ -258,7 +220,11 @@ public class TZPTransaktionBearbeitenGN {
 					
 				}
 				
-	
+    			// Für jeden Testfall wird die entsperechende Transaktionsmasken ausgewählt 
+    			// Beachet die Reihenfolge ist bei den GN in umgekehrter Reihenfolge	
+    				
+    				AktuellTransaktionMaske = AktuellTransaktionMaske - 1;
+        		
 			Thread.sleep(3 * Zeitspanne);
 						
 			// 13. Geldnehmer ausloggen

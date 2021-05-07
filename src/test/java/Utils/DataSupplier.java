@@ -47,6 +47,48 @@ public class DataSupplier {
 		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalCheckEMailGG.xls";
 		return testData(excelPath, "Testdaten");
 	}
+
+	@DataProvider(name = "TZPCheckEMailsGN")
+	public static Object[][] getDataCheckEMailsGN() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalCheckEMailGN.xls";
+		return testData(excelPath, "Testdaten");
+	}
+	
+	@DataProvider(name = "TZPAdminHandelsfreigabeGG")
+	public static Object[][] TZPAdminHandelsfreigabeGG() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalAdminHandelsfreigabeGG.xls";
+		return testData(excelPath, "Testdaten");
+	}
+	
+	@DataProvider(name = "TZPAdminDeaktivierenGN")
+	public static Object[][] TZPAdminDeaktivierenGN() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalAdminDeaktivierenGN.xls";
+		return testData(excelPath, "Testdaten");
+	}
+	
+	@DataProvider(name = "TZPZinssatzVorgabeGN")
+	public static Object[][] TZPZinssatzVorgabeGN() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalZinssatzVorgabeGN.xls";
+		return testData(excelPath, "Testdaten");
+	}	
+	
+	@DataProvider(name = "TZPTransaktionStartGG")
+	public static Object[][] TZPTransaktionStartGG() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalTransaktionGG-GN.xls";
+		return testData(excelPath, "Testdaten");
+	}
+	
+	@DataProvider(name = "TZPTransaktionBearbeitenGN")
+	public static Object[][] TZPTransaktionBearbeitenGN() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalTransaktionGG-GN.xls";
+		return testData(excelPath, "Testdaten");
+	}	
 	
 	
 	// Auslesen der Exceldaten.

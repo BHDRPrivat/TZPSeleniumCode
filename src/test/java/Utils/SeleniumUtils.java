@@ -33,6 +33,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.asserts.SoftAssert;
 
 import com.applitools.eyes.RectangleSize;
 import com.applitools.eyes.selenium.Eyes;
@@ -318,7 +319,13 @@ public class SeleniumUtils {
 			test.log(Status.FAIL, "Eintrag in " +ObjektPath  + " mit Wert: " + Inputwert);
 			test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 			System.out.println("Gemeldeter Fehler: " + e);
-			Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			// Verhindert den Weiterlauf
+			// Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			
+			// Weiterlauf ermöglichen 
+			SoftAssert softassert = new SoftAssert();
+			softassert.assertTrue(false,"Gemeldeter Fehler: " + e);   
+			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
 		}
 	}
 	
@@ -356,8 +363,6 @@ public class SeleniumUtils {
 				// Führt nicht immer zum erfolg. Wenn das Obljekt im sichtbaren Bereich liegt, aber überlagert wird.
   				// js.executeScript("arguments[0].scrollIntoViewIfNeeded({block: \"center\", inline: \"center\"});", element);
 				
-				
-				
 				driver.findElement(By.xpath(ObjektPath)).click();
 				//Löscht vorhande Einträge sicherer als clear()  
 				driver.findElement(By.xpath(ObjektPath)).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
@@ -382,14 +387,17 @@ public class SeleniumUtils {
 
 			}
 
-
-
 		} catch (NoSuchElementException e) {
 			// Fehlerbehandlung einfügen
 			test.log(Status.FAIL, "Eintrag in " +ObjektPath  + " mit Wert: " + Inputwert);
 			test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 			System.out.println("Gemeldeter Fehler: " + e);
-			Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			// Verhindert den Weiterlauf
+			//Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			// Weiterlauf ermöglichen 
+			SoftAssert softassert = new SoftAssert();
+			softassert.assertTrue(false,"Gemeldeter Fehler: " + e);   
+			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
 		}
 	}
 
@@ -462,7 +470,14 @@ public class SeleniumUtils {
 			test.log(Status.FAIL, "Auswahl des Objektes: " + ObjektPath);
 			test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 			System.out.println("Gemeldeter Fehler: " + e);
-			Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			// Stopt die weitere Ausführung
+			//Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			
+			// Weiterlauf ermöglichen 
+			SoftAssert softassert = new SoftAssert();
+			softassert.assertTrue(false,"Gemeldeter Fehler: " + e);   
+			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
+			
 		}
 		
 	}	
@@ -503,7 +518,13 @@ public class SeleniumUtils {
 			test.log(Status.FAIL, "Auswahl des Objektes: " + ObjektPath);
 			test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 			System.out.println("Gemeldeter Fehler: " + e);
-			Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			// Verhindert den Weiteraluf
+			//Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			
+			// Weiterlauf ermöglichen 
+			SoftAssert softassert = new SoftAssert();
+			softassert.assertTrue(false,"Gemeldeter Fehler: " + e);   
+			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
 		}
 	}
 
@@ -520,7 +541,14 @@ public class SeleniumUtils {
 			test.log(Status.FAIL, "Auswahl des Objektes: " + ObjektPath);
 			test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 			System.out.println("Gemeldeter Fehler: " + e);
-			Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			// Verhidnert den Weiterlauf
+			//Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			
+			// Weiterlauf ermöglichen 
+			SoftAssert softassert = new SoftAssert();
+			softassert.assertTrue(false,"Gemeldeter Fehler: " + e);   
+			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
+			
 		}
 	}
 
@@ -571,7 +599,13 @@ public class SeleniumUtils {
 			test.log(Status.FAIL, "Auswahl des Objektes: " + ObjektPath);
 			test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 			System.out.println("Gemeldeter Fehler: " + e);
-			Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			// Verhidnert den Weiterlauf
+			//Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			
+			// Weiterlauf ermöglichen 
+			SoftAssert softassert = new SoftAssert();
+			softassert.assertTrue(false,"Gemeldeter Fehler: " + e);   
+			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
 		}
 
 	}
@@ -579,7 +613,7 @@ public class SeleniumUtils {
 
 	public static void PDFUploadListe(WebDriver driver, Integer Zeitspanne, String HTMLSelector, String ObjektPath, String Suchbegriff, String Bereich, String DatumEintrag, ExtentTest test) throws InterruptedException, IOException {
 		// Mit Try, Catch den Weiterlauf nach einem Fehler ermöglichen  
-		Thread.sleep(5 * Zeitspanne);
+		Thread.sleep(3 * Zeitspanne);
 		try {
 			// Für AutoIT
 			String workingDir;
@@ -616,14 +650,22 @@ public class SeleniumUtils {
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", xpathvalue, DatumEintrag, test);	
 			test.log(Status.INFO, "Datum eintragen: " +DatumEintrag + " in Objekt: " + xpathvalue);
 			// TSonderzeit zum Hochladen
-			Thread.sleep(5* Zeitspanne);
+			Thread.sleep(3* Zeitspanne);
 			
 		} catch (NoSuchElementException e) {
 			// Fehlerbehandlung einfügen
 			test.log(Status.FAIL, "Auswahl des Objektes: " + ObjektPath);
 			test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 			System.out.println("Gemeldeter Fehler: " + e);
-			Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			
+			// Verhindert den Weiterlauf
+			//Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			
+			// Weiterlauf ermöglichen 
+			SoftAssert softassert = new SoftAssert();
+			softassert.assertTrue(false,"Gemeldeter Fehler: " + e);   
+			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
+			
 		}
 
 	}
@@ -658,7 +700,14 @@ public class SeleniumUtils {
 			test.log(Status.FAIL, "Auswahl des Objektes: " + ObjektPath);
 			test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 			System.out.println("Gemeldeter Fehler: " + e);
-			Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			// Verhindert den Weiterlauf
+			//Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			
+			// Weiterlauf ermöglichen 
+			SoftAssert softassert = new SoftAssert();
+			softassert.assertTrue(false,"Gemeldeter Fehler: " + e);   
+			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
+			
 		}
 	}	
 
@@ -688,7 +737,13 @@ public class SeleniumUtils {
 			test.log(Status.FAIL, "Versuch Screenshot: " +  projectpath + "\\screenshots\\" + Kennzeichnung + " " + teststep + ".png");
 			test.log(Status.FAIL, "Gemeldeter Fehler: " + e);
 			System.out.println("Gemeldeter Fehler: " + e);
-			Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			// Verhindert den Weiterlauf
+			//Assert.assertTrue("Gemeldeter Fehler: " + e, false);
+			
+			// Weiterlauf ermöglichen 
+			SoftAssert softassert = new SoftAssert();
+			softassert.assertTrue(false,"Gemeldeter Fehler: " + e);   
+			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
 		}
 	}	
 
@@ -698,7 +753,6 @@ public class SeleniumUtils {
 		Thread.sleep(3 * Zeitspanne);
 		extent.flush();
 
-		Thread.sleep(3000);
 		System.out.println("Test erfolgreich druchlaufen");
 		if (driver != null) {
 			driver.quit();

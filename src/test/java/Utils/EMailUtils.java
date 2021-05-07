@@ -193,6 +193,7 @@ public class EMailUtils {
 				// Pattern linkPattern = Pattern.compile(" <a\\b[^>]*href=\"[^>]*>(.*?)</a>",
 				// Pattern.CASE_INSENSITIVE|Pattern.DOTALL);
 				Pattern linkPattern = Pattern.compile("href=\"([^\"]*)", Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+				//Pattern linkPattern = Pattern.compile("http=\"([^\"]*)", Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
 				Matcher pageMatcher = linkPattern.matcher(messageContent);
 
 				while (pageMatcher.find()) {
@@ -237,11 +238,21 @@ public class EMailUtils {
 		String attachFiles = "";
 		String links = "";
 		String registeres = "";
+		String subject ="";
 		Integer PositionEMailmitBetreff = null;
 
+		// Keine Mails vorhanden, die Kontrolle abbrechen
+        if (emails==null) {
+			Rueckgabe = false;
+			System.out.println("------- Keine Mails zur Prüfung übergeben -----------");
+			System.out.println("------------------- Ende Mails prüfen ---------------");
+			return Rueckgabe;
+        }
+		
+		
 		// Alle Mails durchsuchen, ob der Betreff vorhanden ist
 		for (int i = 0; i < emails.length; i++) {
-			String subject = emails[i][2].toString();
+			subject = emails[i][2].toString();
 			if (subject.equals(betreff)) {
 				// Betreff ist vorhanden
 				PositionEMailmitBetreff = i;
@@ -249,11 +260,11 @@ public class EMailUtils {
 				System.out.println("Betreff: " + subject + " ist vorhanden.");
 			}
 		}
-
+		// Die Mail mit dem Betreff gefunden, weitere Prüfungen durchführen
 		if (PositionEMailmitBetreff != null) {
 
 			String from = emails[PositionEMailmitBetreff][1].toString();
-			String subject = emails[PositionEMailmitBetreff][2].toString();
+			subject = emails[PositionEMailmitBetreff][2].toString();
 			String sentDate = emails[PositionEMailmitBetreff][3].toString();
 			String contentType = emails[PositionEMailmitBetreff][4].toString();
 			if (emails[PositionEMailmitBetreff][5] != null) {
@@ -275,6 +286,7 @@ public class EMailUtils {
 					test.log(Status.ERROR, "Anhang: " + attachFiles + " stimmt nicht überein: " + anhang);
 					System.out.println("Anhang: " + attachFiles + " stimmt nicht überein: " + anhang);
 					Rueckgabe = false;
+					System.out.println("------------------- Ende Mails prüfen ---------------");
 					return Rueckgabe;
 				}
 			} // Anhang-Vorgabe ist Leer, keine Kontrolle
@@ -288,6 +300,7 @@ public class EMailUtils {
 					test.log(Status.ERROR, "Link1: " + link1 + " ist nicht vorhanden");
 					System.out.println("Link1: " + link1 + " ist nicht vorhanden");
 					Rueckgabe = false;
+					System.out.println("------------------- Ende Mails prüfen ---------------");
 					return Rueckgabe;
 				}
 			} // Link1-Vorgabe ist Leer, keine Kontrolle
@@ -300,6 +313,7 @@ public class EMailUtils {
 				} else {
 					test.log(Status.ERROR, "Link2: " + link2 + " ist nicht vorhanden");
 					System.out.println("Link2: " + link2 + " ist nicht vorhanden");
+					System.out.println("------------------- Ende Mails prüfen ---------------");
 					Rueckgabe = false;
 					return Rueckgabe;
 				}
@@ -310,191 +324,14 @@ public class EMailUtils {
 
 		} // Betreff ist nicht vorhanden
 		else {
+			test.log(Status.INFO, "Betreff: " + subject + " ist nicht vorhanden.");
 			System.out.println("------------------- Betreff nicht vohanden ---------------");
 			System.out.println("------------------- Ende Mails prüfen ---------------");
 			Rueckgabe = false;
 			return Rueckgabe;
 		}
-	}
-
-	public static void check(String host, String storeType, String user, String password) {
-		try {
-
-			// create properties field
-			Properties properties = new Properties();
-
-			properties.put("mail.imap.host", host);
-			properties.put("mail.imap.port", "993");
-			properties.put("mail.imap.starttls.enable", "true");
-			properties.setProperty("mail.imap.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-			properties.setProperty("mail.imap.socketFactory.fallback", "false");
-			properties.setProperty("mail.imap.socketFactory.port", String.valueOf(993));
-			Session emailSession = Session.getDefaultInstance(properties);
-
-			// create the POP3 store object and connect with the pop server
-			Store store = emailSession.getStore("imap");
-
-			store.connect(host, user, password);
-
-			// create the folder object and open it
-			Folder emailFolder = store.getFolder("INBOX");
-			emailFolder.open(Folder.READ_ONLY);
-
-			// retrieve the messages from the folder in an array and print it
-			Message[] messages = emailFolder.getMessages();
-			System.out.println("messages.length---" + messages.length);
-			int n = messages.length;
-			for (int i = 0; i < n; i++) {
-				Message message = messages[i];
-				ArrayList<String> links = new ArrayList<String>();
-				if (message.getSubject().contains("Thank you for signing up for AppExe")) {
-					String desc = message.getContent().toString();
-
-					// System.out.println(desc);
-					Pattern linkPattern = Pattern.compile(" <a\\b[^>]*href=\"[^>]*>(.*?)</a>",
-							Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
-					Matcher pageMatcher = linkPattern.matcher(desc);
-
-					while (pageMatcher.find()) {
-						links.add(pageMatcher.group());
-					}
-				} else {
-					System.out.println("Email:" + i + " is not a wanted email");
-				}
-				for (String temp : links) {
-					if (temp.contains("user-register")) {
-						System.out.println(temp);
-					}
-				}
-
-				/*
-				 * System.out.println("---------------------------------");
-				 * System.out.println("Email Number " + (i + 1)); System.out.println("Subject: "
-				 * + message.getSubject()); System.out.println("From: " + message.getFrom()[0]);
-				 * System.out.println("Text: " + message.getContent().toString());
-				 */
-
-			}
-			// close the store and folder objects
-			emailFolder.close(false);
-			store.close();
-
-		} catch (NoSuchProviderException e) {
-			e.printStackTrace();
-		} catch (MessagingException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static boolean IstEmailVorhanden(String EMailAdresse, String Passwort, String Betreff) {
-		// Greift auf das G-Mail-Konto zu und überprüft, ob die Betreffzeile indentsich
-		// ist mit dem Betreff String
-
-		String host = "pop.gmail.com";// change accordingly
-		String mailStoreType = "pop3s";
-
-		Boolean Rueckgabe = false;
-
-		try {
-
-			// create properties field
-			Properties properties = new Properties();
-
-			properties.put("mail.pop3s.host", host);
-			properties.put("mail.pop3s.port", "995");
-			properties.put("mail.pop3s.starttls.enable", "true");
-
-			// Setup authentication, get session
-			Session emailSession = Session.getInstance(properties, new javax.mail.Authenticator() {
-				protected PasswordAuthentication getPasswordAuthentication() {
-					return new PasswordAuthentication(EMailAdresse, Passwort);
-				}
-			});
-			// emailSession.setDebug(true);
-
-			// create the POP3 store object and connect with the pop server
-			Store store = emailSession.getStore(mailStoreType);
-
-			store.connect();
-
-			// create the folder object and open it
-			Folder emailFolder = store.getFolder("INBOX");
-			emailFolder.open(Folder.READ_ONLY);
-
-			// retrieve the messages from the folder in an array and print it
-			Message[] messages = emailFolder.getMessages();
-			System.out.println("messages.length---" + messages.length);
-			Integer Anzahl = messages.length;
-			// Anzahl der Mails auf 10 beschränken
-			if (messages.length > 10) {
-				Anzahl = 10;
-			}
-
-			for (int i = 0, n = Anzahl; i < n; i++) {
-				Message message = messages[i];
-				Part messagePart = message;
-				Object content = message.getContent();
-				System.out.println("---------------------------------");
-				System.out.println("Email Number " + (i + 1));
-				System.out.println("Subject: " + message.getSubject());
-				System.out.println("From: " + message.getFrom()[0]);
-				System.out.println("Text: " + message.getContent().toString());
-				// System.out.println("Name Anhang: " + message.ATTACHMENT.chars().toString());
-
-				// Beachte, Nachfolgender Code verändert die Mails in der Inbox derart,
-				// Dass die Mails als "gelesen" markiert und danach nicht mehr angezeigt werden.
-				// Die Einstellungen von Pop3 müssen jedesmal angepasst werden
-				// All Settings / Forwarding and POP/IMAP / POP downlaod -> Option "Enable Pop
-				// for all mail" auswählen / Save changes
-
-				// -- or its first body part if it is a multipart message --
-				// Durch den Zugriff auf den Body, wird die Nachricht als gelesen markiert
-				if (content instanceof Multipart) {
-					messagePart = ((Multipart) content).getBodyPart(0);
-					System.out.println("[ Multipart Message ]");
-				}
-
-//	            // -- Get the content type --
-//	            String contentType = messagePart.getContentType();
-//	            // -- If the content is plain text, we can print it --
-//	            System.out.println("CONTENT:" + contentType);   
-//	            String meld= "\n-------------------------------------------------------";
-//	            if (contentType.startsWith("text/plain") || contentType.startsWith("text/html")) {
-//	                InputStream is = messagePart.getInputStream();
-//	                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-//	                String thisLine;
-//	               
-//	                while (( thisLine= reader.readLine()) != null) {
-//	                    System.out.println("thisLine: "+thisLine);
-//	                    meld =  meld +"\n"+ thisLine;
-//	                }
-//	             }
-//	            System.out.println("-----------------------------");
-//	          
-//	            // System.out.println("E-Mail-Inhalt: "+meld);
-
-				if ((message.getSubject()).equals(Betreff)) {
-					System.out.println("E-Mail ist " + EMailAdresse + "  mit Betreff: " + Betreff + " ist vorhanden");
-					Rueckgabe = true;
-				}
-
-			}
-
-			// close the store and folder objects
-			emailFolder.close(false);
-			store.close();
-
-		} catch (NoSuchProviderException e) {
-			e.printStackTrace();
-		} catch (MessagingException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return Rueckgabe;
+		
+		
 	}
 
 }

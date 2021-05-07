@@ -106,8 +106,7 @@ public class TZPTransaktionAkzeptierenGG {
 			int colCount = ExcelUtilsJXL.getColCount();
 			
 			AktuellTransaktionMaske = rowCount;
-		
-			System.out.println("Zeile=" + rowCount + "Spalte=" + colCount + "String Wert: ");
+      		System.out.println("Zeile=" + rowCount + "Spalte=" + colCount + "String Wert: ");
 
 			// 2 Dimensionales Object-Array erzeugen
 			Object data[][] = new Object[rowCount-1][colCount];
