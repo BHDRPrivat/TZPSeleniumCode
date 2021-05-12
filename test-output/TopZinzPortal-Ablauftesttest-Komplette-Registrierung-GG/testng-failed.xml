@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [TopZinzPortal-Ablauftesttest-Komplette-Registrierung-GG]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="TZP-Admin-HandelsfreigabeGG(failed)">
+  <test thread-count="5" name="TZP-Admin-Deaktivieren(failed)">
     <parameter name="Ablaufart" value="Smoketest"/>
     <classes>
-      <class name="TopZinsPortal.TZPAdminHandelsfreigabeGG">
+      <class name="TopZinsPortal.TZPAdminUserDeaktivierenGG">
         <methods>
-          <include name="TZPAdminHandelsfreigabeGGTest" invocation-numbers="1"/>
-          <include name="SetupSeleniumTestdaten"/>
           <include name="BrowserTearDown"/>
+          <include name="TZPAdminUserDeaktivierenGGTest" invocation-numbers="0 1"/>
+          <include name="SetupSeleniumTestdaten"/>
         </methods>
-      </class> <!-- TopZinsPortal.TZPAdminHandelsfreigabeGG -->
+      </class> <!-- TopZinsPortal.TZPAdminUserDeaktivierenGG -->
     </classes>
-  </test> <!-- TZP-Admin-HandelsfreigabeGG(failed) -->
+  </test> <!-- TZP-Admin-Deaktivieren(failed) -->
 </suite> <!-- Failed suite [TopZinzPortal-Ablauftesttest-Komplette-Registrierung-GG] -->

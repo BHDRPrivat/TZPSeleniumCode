@@ -4,12 +4,15 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.applitools.eyes.selenium.Eyes;
 import com.aventstack.extentreports.ExtentReports;
@@ -88,9 +91,10 @@ public class TZPAdminUserLoeschenGG {
 		// Wichtiger Hinweis: In Java dürfen generische Strings nicht mit "=="
 		// verglichen werden. "==" steht für die Überprüfung des Speicherorts
 
-		// Aufruf des Browser-Setups
-		driver = TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
-
+		if (AnmeldungForsaAdmin == null) {
+			// Aufruf des Browser-Setups
+			driver = TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
+		}
 	}
 
 	// Hier belassen, da duruch Fallunterscheidung die richtigen Daten ausgelesen
@@ -179,6 +183,11 @@ public class TZPAdminUserLoeschenGG {
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, '" + Menue2 + "')]",
 					test);
 
+			// Weiterlauf nur nach implizierter Anzeige des Suchfeldes
+			// Sobald die Kondition erfüllt wird, erfolgt der weitere Programmablauf.
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='search']")));
+
 			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
 			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,
@@ -193,9 +202,14 @@ public class TZPAdminUserLoeschenGG {
 			// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen
 			xpathvalue = "//div[text() = '" + Unternehmensname
 					+ "']//ancestor::div[contains(@class, 'jss')]//button[contains(@class, 'MuiButtonBase-root MuiIconButton-root')][1]";
-			
-			// prüfen, ob Element vorhanden			
+
+			// prüfen, ob Element vorhanden
 			// Assert.assertTrue((driver.findElement(By.xpath(xpathvalue)).isDisplayed()));
+			// Weiterlauf ermöglichen 
+			SoftAssert softassert = new SoftAssert();
+			softassert.assertTrue((driver.findElement(By.xpath(xpathvalue)).isDisplayed()));   
+			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
+			
 
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);
 			// TSonderzeit zum Hochladen
@@ -210,16 +224,16 @@ public class TZPAdminUserLoeschenGG {
 			// Button "OK" auswählen, wenn vorhanden
 			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
 
-			// Screenshot aufnehmen
-			Thread.sleep(3 * Zeitspanne);
-			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,
-					"\\Admin UserLoeschen\\Nach-Bestätigen-Button", Teststep, test);
-			Thread.sleep(3 * Zeitspanne);
+//			// Screenshot aufnehmen
+//			Thread.sleep(3 * Zeitspanne);
+//			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,
+//					"\\Admin UserLoeschen\\Nach-Bestätigen-Button", Teststep, test);
+//			Thread.sleep(3 * Zeitspanne);
 
-			driver.close();
-			// Für den Teardown
-			driver = null;
-			eyes = null;
+//			driver.close();
+//			// Für den Teardown
+//			driver = null;
+//			eyes = null;
 
 			// Neu Starten
 			SetupSeleniumTestdaten(AblaufartGlobal);

@@ -1,40 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [TopZinzPortal-Ablauftesttest]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="TZP-Registrierung-GG(failed)">
+  <test thread-count="5" name="TZP-Admin-Deaktivieren(failed)">
     <parameter name="Ablaufart" value="Smoketest"/>
     <classes>
-      <class name="TopZinsPortal.TZPRegGG">
+      <class name="TopZinsPortal.TZPAdminUserDeaktivierenGN">
         <methods>
-          <include name="BrowserTearDown"/>
-          <include name="SetupSeleniumTestdaten"/>
-          <include name="TZPRegGGTest" invocation-numbers="0 1 2 3 4 5"/>
-        </methods>
-      </class> <!-- TopZinsPortal.TZPRegGG -->
-    </classes>
-  </test> <!-- TZP-Registrierung-GG(failed) -->
-  <test thread-count="5" name="TZP-Stammdaten-GG(failed)">
-    <parameter name="Ablaufart" value="Smoketest"/>
-    <classes>
-      <class name="TopZinsPortal.TZPStammGG">
-        <methods>
-          <include name="TZPStammGGTest" invocation-numbers="1 2"/>
-          <include name="BrowserTearDown"/>
-          <include name="SetupSeleniumTestdaten"/>
-        </methods>
-      </class> <!-- TopZinsPortal.TZPStammGG -->
-    </classes>
-  </test> <!-- TZP-Stammdaten-GG(failed) -->
-  <test thread-count="5" name="TZP-Admin-HandelsfreigabeGG(failed)">
-    <parameter name="Ablaufart" value="Smoketest"/>
-    <classes>
-      <class name="TopZinsPortal.TZPAdminHandelsfreigabeGG">
-        <methods>
-          <include name="TZPAdminHandelsfreigabeGGTest" invocation-numbers="1"/>
           <include name="SetupSeleniumTestdaten"/>
           <include name="BrowserTearDown"/>
+          <include name="TZPAdminUserDeaktivierenGNTest" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- TopZinsPortal.TZPAdminHandelsfreigabeGG -->
+      </class> <!-- TopZinsPortal.TZPAdminUserDeaktivierenGN -->
     </classes>
-  </test> <!-- TZP-Admin-HandelsfreigabeGG(failed) -->
+  </test> <!-- TZP-Admin-Deaktivieren(failed) -->
 </suite> <!-- Failed suite [TopZinzPortal-Ablauftesttest] -->

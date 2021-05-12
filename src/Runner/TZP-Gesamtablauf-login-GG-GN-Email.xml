@@ -121,4 +121,16 @@
 			<class name="TopZinsPortal.TZPTenderAngebotAnnehmenGG" />
 		</classes>
     </test>
+        <test name="TZP-Kontrolle E-Mails-GG">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPCheckEMailsGG" />
+		</classes>
+    </test>
+    <test name="TZP-Kontrolle E-Mails-GN">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPCheckEMailsGN" />
+		</classes>
+    </test>  
 </suite> <!-- Smoketest Prozesse Registrierungsdurchlauf-->

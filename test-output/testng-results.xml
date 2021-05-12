@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="16" passed="2" failed="14" skipped="0">
+<testng-results ignored="0" total="18" passed="18" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-07T16:54:08 CEST" name="Default suite" finished-at="2021-05-07T16:55:34 CEST" duration-ms="86569">
+  <suite started-at="2021-05-12T16:50:36 CEST" name="TopZinzPortal-Transaktion-Ablauftesttest" finished-at="2021-05-12T16:58:03 CEST" duration-ms="447232">
     <groups>
     </groups>
-    <test started-at="2021-05-07T16:54:08 CEST" name="Default test" finished-at="2021-05-07T16:55:34 CEST" duration-ms="86569">
-      <class name="TopZinsPortal.TZPCheckEMailsGN">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:08 CEST" name="SetupSeleniumTestdaten" finished-at="2021-05-07T16:54:08 CEST" duration-ms="215" status="PASS">
+    <test started-at="2021-05-12T16:50:36 CEST" name="TZP-Zinssatz Vorgabe GN" finished-at="2021-05-12T16:53:18 CEST" duration-ms="162037">
+      <class name="TopZinsPortal.TZPZinssatzVorgabeGN">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPZinssatzVorgabeGN@12468a38]" started-at="2021-05-12T16:50:36 CEST" name="SetupSeleniumTestdaten" finished-at="2021-05-12T16:50:39 CEST" duration-ms="2796" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Ad Hoc Test]]>
+                <![CDATA[Smoketest]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:08 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:14 CEST" duration-ms="5979" status="FAIL">
+        <test-method signature="TZPZinssatzVorgabeGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPZinssatzVorgabeGN@12468a38]" started-at="2021-05-12T16:50:39 CEST" name="TZPZinssatzVorgabeGNTest" data-provider="TZPZinssatzVorgabeGN" finished-at="2021-05-12T16:51:31 CEST" duration-ms="51574" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPCheckEMailGN-TF-001]]>
+                <![CDATA[TZPZinssatzVorgabeGN-TF-001]]>
               </value>
             </param>
             <param index="1">
@@ -32,369 +32,113 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[BHDR.GN.DGSVO@gmail.com]]>
+                <![CDATA[BHDR-GN-Handel]]>
               </value>
             </param>
             <param index="3">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Vollständige-Registrierung-TopZinsPortal.pdf]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[http://www.forsa-gmbh.de/downloads/Topzins/TZP-Registration.mp4]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[mailto:sales-forsa@forsa-gmbh.de]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:119)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:14 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:20 CEST" duration-ms="6204" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPCheckEMailGN-TF-002]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[BHDR.GN.DatenKomplett@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Vollständige-Registrierung-TopZinsPortal.pdf]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[http://www.forsa-gmbh.de/downloads/Topzins/TZP-Registration.mp4]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[mailto:sales-forsa@forsa-gmbh.de]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:119)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:20 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:25 CEST" duration-ms="4505" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPCheckEMailGN-TF-003]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[BHDR.GN.DatenKomplett@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[FORSA TopZinsPortal - Anforderung der Handelsberechtigung]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:25 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:36 CEST" duration-ms="10916" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPCheckEMailGN-TF-004]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
               <value>
                 <![CDATA[BHDR.GN.Handel@gmail.com]]>
               </value>
             </param>
-            <param index="3">
+            <param index="4">
               <value>
                 <![CDATA[Test12345!]]>
               </value>
             </param>
-            <param index="4">
-              <value>
-                <![CDATA[Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal]]>
-              </value>
-            </param>
             <param index="5">
               <value>
-                <![CDATA[Vollständige-Registrierung-TopZinsPortal.pdf]]>
+                <![CDATA[0,01]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[http://www.forsa-gmbh.de/downloads/Topzins/TZP-Registration.mp4]]>
+                <![CDATA[0,02]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[mailto:sales-forsa@forsa-gmbh.de]]>
+                <![CDATA[0,03]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[]]>
+                <![CDATA[0,04]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[0.05]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[0.06]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[0.07]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[0.08]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[0,09]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[0,10]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[0,11]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[0.12]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[0.18]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[0.24]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[0.36]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[0.48]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[0.6]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:36 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:40 CEST" duration-ms="4509" status="FAIL">
+        </test-method> <!-- TZPZinssatzVorgabeGNTest -->
+        <test-method signature="TZPZinssatzVorgabeGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPZinssatzVorgabeGN@12468a38]" started-at="2021-05-12T16:51:31 CEST" name="TZPZinssatzVorgabeGNTest" data-provider="TZPZinssatzVorgabeGN" finished-at="2021-05-12T16:52:22 CEST" duration-ms="50867" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPCheckEMailGN-TF-005]]>
+                <![CDATA[TZPZinssatzVorgabeGN-TF-001]]>
               </value>
             </param>
             <param index="1">
@@ -404,90 +148,113 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             </param>
             <param index="2">
               <value>
-                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+                <![CDATA[Burk-GN-Handel -BHDR-]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Test12345!]]>
+                <![CDATA[Burk.GN.Handel@gmail.com]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[FORSA TopZinsPortal - Anforderung der Handelsberechtigung]]>
+                <![CDATA[Test12345!]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[]]>
+                <![CDATA[0,1]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[]]>
+                <![CDATA[0,2]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[]]>
+                <![CDATA[0,3]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[]]>
+                <![CDATA[0,4]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[0,5]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[0,6]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[0,7]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[0,8]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[0,9]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[1,0]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[1,1]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[1,2]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[1,8]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[2,4]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[3,6]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[4,8]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[6,0]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:40 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:45 CEST" duration-ms="4515" status="FAIL">
+        </test-method> <!-- TZPZinssatzVorgabeGNTest -->
+        <test-method signature="TZPZinssatzVorgabeGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPZinssatzVorgabeGN@12468a38]" started-at="2021-05-12T16:52:22 CEST" name="TZPZinssatzVorgabeGNTest" data-provider="TZPZinssatzVorgabeGN" finished-at="2021-05-12T16:53:17 CEST" duration-ms="55113" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZPCheckEMailGN-TF-006]]>
+                <![CDATA[TZPZinssatzVorgabeGN-TF-003]]>
               </value>
             </param>
             <param index="1">
@@ -497,936 +264,2248 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             </param>
             <param index="2">
               <value>
-                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+                <![CDATA[Centner-GN-Handel -BHDR-]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Test12345!]]>
+                <![CDATA[Centner.GN.Handel@gmail.com]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[FORSA TopZinsPortal - Die Vergabe der Handelsberechtigung war erfolgreich]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:45 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:49 CEST" duration-ms="4512" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPCheckEMailGN-TF-007]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[BHDR.GN.Handel@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
                 <![CDATA[Test12345!]]>
               </value>
             </param>
-            <param index="4">
-              <value>
-                <![CDATA[FORSA TopZinsPortal - Benachrichtigung über eine Termingeldanfrage]]>
-              </value>
-            </param>
             <param index="5">
               <value>
-                <![CDATA[]]>
+                <![CDATA[1]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[]]>
+                <![CDATA[3]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[]]>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[9]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[11]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[12]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[18]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[24]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[36]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[48]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[60]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:49 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:54:54 CEST" duration-ms="4517" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPCheckEMailGN-TF-008]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[BHDR.GN.Handel@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:54:54 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:00 CEST" duration-ms="6152" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPCheckEMailGN-TF-009]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[BHDR.GN.deaktiv@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Vollständige-Registrierung-TopZinsPortal.pdf]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[http://www.forsa-gmbh.de/downloads/Topzins/TZP-Registration.mp4]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[mailto:sales-forsa@forsa-gmbh.de]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:119)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:00 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:05 CEST" duration-ms="4506" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPCheckEMailGN-TF-010]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[BHDR.GN.deaktiv@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[FORSA TopZinsPortal - Sie wurden temporär deaktiviert]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[topzins@forsa-gmbh.de]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:05 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:09 CEST" duration-ms="4904" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPCheckEMailGN-TF-011]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[BHDR.GN.Loeschen@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Vollständige-Registrierung-TopZinsPortal.pdf]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[http://www.forsa-gmbh.de/downloads/Topzins/TZP-Registration.mp4]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[mailto:sales-forsa@forsa-gmbh.de]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:119)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:09 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:14 CEST" duration-ms="4510" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPCheckEMailGN-TF-012]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[BHDR.GN.Loeschen@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[FORSA TopZinsPortal - Sie wurden temporär deaktiviert]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[topzins@forsa-gmbh.de]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:14 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:20 CEST" duration-ms="5971" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPCheckEMailGN-TF-013]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[centner.gn.handel@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Vollständige-Registrierung-TopZinsPortal.pdf]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[http://www.forsa-gmbh.de/downloads/Topzins/TZP-Registration.mp4]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[mailto:sales-forsa@forsa-gmbh.de]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:119)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:20 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:24 CEST" duration-ms="4505" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPCheckEMailGN-TF-014]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[centner.gn.handel@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[FORSA TopZinsPortal - Anforderung der Handelsberechtigung]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:24 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:29 CEST" duration-ms="4511" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPCheckEMailGN-TF-015]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[centner.gn.handel@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[FORSA TopZinsPortal - Die Vergabe der Handelsberechtigung war erfolgreich]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at TopZinsPortal.TZPCheckEMailsGN.TZPCheckEmailGNTest(TZPCheckEMailsGN.java:125)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method signature="TZPCheckEmailGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:29 CEST" name="TZPCheckEmailGNTest" data-provider="TZPCheckEMailsGN" finished-at="2021-05-07T16:55:33 CEST" duration-ms="4514" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZPCheckEMailGN-TF-016]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[centner.gn.handel@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[FORSA TopZinsPortal: Vielen Dank für den Geschäftsabschluss - Geschäftsbestätigung]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Geschäftsbestätigung.pdf]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPCheckEmailGNTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPCheckEMailsGN@294425a7]" started-at="2021-05-07T16:55:33 CEST" name="BrowserTearDown" finished-at="2021-05-07T16:55:34 CEST" duration-ms="870" status="PASS">
+        </test-method> <!-- TZPZinssatzVorgabeGNTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPZinssatzVorgabeGN@12468a38]" started-at="2021-05-12T16:53:17 CEST" name="BrowserTearDown" finished-at="2021-05-12T16:53:18 CEST" duration-ms="1519" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
-      </class> <!-- TopZinsPortal.TZPCheckEMailsGN -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- TopZinsPortal.TZPZinssatzVorgabeGN -->
+    </test> <!-- TZP-Zinssatz Vorgabe GN -->
+    <test started-at="2021-05-12T16:53:18 CEST" name="TZP-Transaktion Start-GG" finished-at="2021-05-12T16:55:02 CEST" duration-ms="103421">
+      <class name="TopZinsPortal.TZPTransaktionStartGG">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionStartGG@4550bb58]" started-at="2021-05-12T16:53:18 CEST" name="SetupSeleniumTestdaten" finished-at="2021-05-12T16:53:20 CEST" duration-ms="1526" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Smoketest]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetupSeleniumTestdaten -->
+        <test-method signature="TZPTransaktionStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionStartGG@4550bb58]" started-at="2021-05-12T16:53:20 CEST" name="TZPTransaktionStartGGTest" data-provider="TZPTransaktionStartGG" finished-at="2021-05-12T16:53:54 CEST" duration-ms="33657" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-001]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000001]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,01 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 1 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF1]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[100000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionStartGGTest -->
+        <test-method signature="TZPTransaktionStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionStartGG@4550bb58]" started-at="2021-05-12T16:53:54 CEST" name="TZPTransaktionStartGGTest" data-provider="TZPTransaktionStartGG" finished-at="2021-05-12T16:54:27 CEST" duration-ms="33583" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-002]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000002]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,02 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 3 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF3]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[200000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionStartGGTest -->
+        <test-method signature="TZPTransaktionStartGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionStartGG@4550bb58]" started-at="2021-05-12T16:54:27 CEST" name="TZPTransaktionStartGGTest" data-provider="TZPTransaktionStartGG" finished-at="2021-05-12T16:55:01 CEST" duration-ms="33360" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-003]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000003]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,03 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 2 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF2]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[300000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionStartGGTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionStartGG@4550bb58]" started-at="2021-05-12T16:55:01 CEST" name="BrowserTearDown" finished-at="2021-05-12T16:55:02 CEST" duration-ms="1208" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserTearDown -->
+      </class> <!-- TopZinsPortal.TZPTransaktionStartGG -->
+    </test> <!-- TZP-Transaktion Start-GG -->
+    <test started-at="2021-05-12T16:55:02 CEST" name="TZP-Akzeptieren-GN" finished-at="2021-05-12T16:56:11 CEST" duration-ms="69412">
+      <class name="TopZinsPortal.TZPTransaktionBearbeitenGN">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenGN@77fbd92c]" started-at="2021-05-12T16:55:02 CEST" name="SetupSeleniumTestdaten" finished-at="2021-05-12T16:55:03 CEST" duration-ms="1603" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Smoketest]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetupSeleniumTestdaten -->
+        <test-method signature="TZPTransaktionBearbeitenGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenGN@77fbd92c]" started-at="2021-05-12T16:55:03 CEST" name="TZPTransaktionBearbeitenGNTest" data-provider="TZPTransaktionBearbeitenGN" finished-at="2021-05-12T16:55:27 CEST" duration-ms="23747" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-001]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000001]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,01 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 1 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF1]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[100000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionBearbeitenGNTest -->
+        <test-method signature="TZPTransaktionBearbeitenGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenGN@77fbd92c]" started-at="2021-05-12T16:55:27 CEST" name="TZPTransaktionBearbeitenGNTest" data-provider="TZPTransaktionBearbeitenGN" finished-at="2021-05-12T16:55:49 CEST" duration-ms="21566" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-002]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000002]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,02 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 3 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF3]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[200000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionBearbeitenGNTest -->
+        <test-method signature="TZPTransaktionBearbeitenGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenGN@77fbd92c]" started-at="2021-05-12T16:55:49 CEST" name="TZPTransaktionBearbeitenGNTest" data-provider="TZPTransaktionBearbeitenGN" finished-at="2021-05-12T16:56:10 CEST" duration-ms="21198" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-003]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000003]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,03 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 2 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF2]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[300000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionBearbeitenGNTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenGN@77fbd92c]" started-at="2021-05-12T16:56:10 CEST" name="BrowserTearDown" finished-at="2021-05-12T16:56:11 CEST" duration-ms="1211" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserTearDown -->
+      </class> <!-- TopZinsPortal.TZPTransaktionBearbeitenGN -->
+    </test> <!-- TZP-Akzeptieren-GN -->
+    <test started-at="2021-05-12T16:56:11 CEST" name="TZP-Transaktion-Bearbeiten-Admin" finished-at="2021-05-12T16:56:40 CEST" duration-ms="29242">
+      <class name="TopZinsPortal.TZPTransaktionBearbeitenAdmin">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenAdmin@313ac989]" started-at="2021-05-12T16:56:11 CEST" name="SetupSeleniumTestdaten" finished-at="2021-05-12T16:56:13 CEST" duration-ms="1640" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Smoketest]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetupSeleniumTestdaten -->
+        <test-method signature="TZPTransaktionBearbeitenAdminTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenAdmin@313ac989]" started-at="2021-05-12T16:56:13 CEST" name="TZPTransaktionBearbeitenAdminTest" data-provider="TZPTransaktionBearbeitenAdmin" finished-at="2021-05-12T16:56:18 CEST" duration-ms="5105" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-001]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000001]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,01 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 1 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF1]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[100000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionBearbeitenAdminTest -->
+        <test-method signature="TZPTransaktionBearbeitenAdminTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenAdmin@313ac989]" started-at="2021-05-12T16:56:18 CEST" name="TZPTransaktionBearbeitenAdminTest" data-provider="TZPTransaktionBearbeitenAdmin" finished-at="2021-05-12T16:56:23 CEST" duration-ms="5035" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-002]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000002]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,02 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 3 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF3]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[200000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionBearbeitenAdminTest -->
+        <test-method signature="TZPTransaktionBearbeitenAdminTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenAdmin@313ac989]" started-at="2021-05-12T16:56:23 CEST" name="TZPTransaktionBearbeitenAdminTest" data-provider="TZPTransaktionBearbeitenAdmin" finished-at="2021-05-12T16:56:39 CEST" duration-ms="16177" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-003]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000003]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,03 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 2 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF2]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[300000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionBearbeitenAdminTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenAdmin@313ac989]" started-at="2021-05-12T16:56:39 CEST" name="BrowserTearDown" finished-at="2021-05-12T16:56:40 CEST" duration-ms="1206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserTearDown -->
+      </class> <!-- TopZinsPortal.TZPTransaktionBearbeitenAdmin -->
+    </test> <!-- TZP-Transaktion-Bearbeiten-Admin -->
+    <test started-at="2021-05-12T16:56:40 CEST" name="TZP-Akzeptieren-GG" finished-at="2021-05-12T16:57:29 CEST" duration-ms="48953">
+      <class name="TopZinsPortal.TZPTransaktionAkzeptierenGG">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGG@6f1de4c7]" started-at="2021-05-12T16:56:40 CEST" name="SetupSeleniumTestdaten" finished-at="2021-05-12T16:56:42 CEST" duration-ms="1624" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Smoketest]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetupSeleniumTestdaten -->
+        <test-method signature="TZPTransaktionAkzeptierenGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGG@6f1de4c7]" started-at="2021-05-12T16:56:42 CEST" name="TZPTransaktionAkzeptierenGGTest" data-provider="TZPTransaktionAkzeptierenGG" finished-at="2021-05-12T16:57:00 CEST" duration-ms="17500" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-001]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000001]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,01 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 1 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF1]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[100000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionAkzeptierenGGTest -->
+        <test-method signature="TZPTransaktionAkzeptierenGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGG@6f1de4c7]" started-at="2021-05-12T16:57:00 CEST" name="TZPTransaktionAkzeptierenGGTest" data-provider="TZPTransaktionAkzeptierenGG" finished-at="2021-05-12T16:57:11 CEST" duration-ms="11815" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-002]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000002]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,02 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 3 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF3]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[200000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionAkzeptierenGGTest -->
+        <test-method signature="TZPTransaktionAkzeptierenGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGG@6f1de4c7]" started-at="2021-05-12T16:57:11 CEST" name="TZPTransaktionAkzeptierenGGTest" data-provider="TZPTransaktionAkzeptierenGG" finished-at="2021-05-12T16:57:28 CEST" duration-ms="16712" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-003]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000003]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,03 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 2 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF2]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[300000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionAkzeptierenGGTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionAkzeptierenGG@6f1de4c7]" started-at="2021-05-12T16:57:28 CEST" name="BrowserTearDown" finished-at="2021-05-12T16:57:29 CEST" duration-ms="1229" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserTearDown -->
+      </class> <!-- TopZinsPortal.TZPTransaktionAkzeptierenGG -->
+    </test> <!-- TZP-Akzeptieren-GG -->
+    <test started-at="2021-05-12T16:57:29 CEST" name="TZP-Abschluss-GN" finished-at="2021-05-12T16:58:03 CEST" duration-ms="34059">
+      <class name="TopZinsPortal.TZPTransaktionAbschlussGN">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAbschlussGN@48f2bd5b]" started-at="2021-05-12T16:57:29 CEST" name="SetupSeleniumTestdaten" finished-at="2021-05-12T16:57:31 CEST" duration-ms="1574" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Smoketest]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetupSeleniumTestdaten -->
+        <test-method signature="TZPTransaktionAbschlussGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAbschlussGN@48f2bd5b]" started-at="2021-05-12T16:57:31 CEST" name="TZPTransaktionAbschlussGNTest" data-provider="TZPTransaktionAbschlussGN" finished-at="2021-05-12T16:57:43 CEST" duration-ms="11978" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-001]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000001]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,01 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 1 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF1]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[100000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionAbschlussGNTest -->
+        <test-method signature="TZPTransaktionAbschlussGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAbschlussGN@48f2bd5b]" started-at="2021-05-12T16:57:43 CEST" name="TZPTransaktionAbschlussGNTest" data-provider="TZPTransaktionAbschlussGN" finished-at="2021-05-12T16:57:51 CEST" duration-ms="7738" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-002]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000002]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,02 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 3 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF3]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[200000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionAbschlussGNTest -->
+        <test-method signature="TZPTransaktionAbschlussGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionAbschlussGN@48f2bd5b]" started-at="2021-05-12T16:57:51 CEST" name="TZPTransaktionAbschlussGNTest" data-provider="TZPTransaktionAbschlussGN" finished-at="2021-05-12T16:58:02 CEST" duration-ms="11486" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-003]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000003]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,03 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 2 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF2]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[300000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionAbschlussGNTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionAbschlussGN@48f2bd5b]" started-at="2021-05-12T16:58:02 CEST" name="BrowserTearDown" finished-at="2021-05-12T16:58:03 CEST" duration-ms="1200" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserTearDown -->
+      </class> <!-- TopZinsPortal.TZPTransaktionAbschlussGN -->
+    </test> <!-- TZP-Abschluss-GN -->
+  </suite> <!-- TopZinzPortal-Transaktion-Ablauftesttest -->
 </testng-results>

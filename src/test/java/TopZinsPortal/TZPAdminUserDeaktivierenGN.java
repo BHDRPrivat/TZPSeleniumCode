@@ -64,8 +64,8 @@ public class TZPAdminUserDeaktivierenGN {
 			throws InterruptedException, IOException {
 
 		// Ermittelt den Pfad des aktuellen Projekts
-			projectpath = System.getProperty("user.dir");
-		
+		projectpath = System.getProperty("user.dir");
+
 		if (htmlReporter == null) {
 			// start reporters
 			htmlReporter = new ExtentHtmlReporter(
@@ -90,14 +90,14 @@ public class TZPAdminUserDeaktivierenGN {
 		// Wichtiger Hinweis: In Java dürfen generische Strings nicht mit "=="
 		// verglichen werden. "==" steht für die Überprüfung des Speicherorts
 
-		// Aufruf des Browser-Setups
-		driver = TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
-
+		if (AnmeldungForsaAdmin == null) {
+			// Aufruf des Browser-Setups
+			driver = TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
+		}
 	}
 
-
 	// @Test
-	@Test(dataProvider = "TZPAdminDeaktivierenGN",dataProviderClass = Utils.DataSupplier.class)
+	@Test(dataProvider = "TZPAdminDeaktivierenGN", dataProviderClass = Utils.DataSupplier.class)
 	public void TZPAdminUserDeaktivierenGNTest(String Teststep, String Aktiv, String Menue, String ZeilenProSeite,
 			String Unternehmensname, String Menue2) throws Exception {
 
@@ -135,11 +135,18 @@ public class TZPAdminUserDeaktivierenGN {
 				// Button "Ohne Handelsberechtigung" in menu clicken
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
 						"//li[contains(@data-test, '" + Menue + "')]", test);
-				
+
 				// Weiterlauf nur nach implizierter Anzeige des Suchfeldes
 				// Sobald die Kondition erfüllt wird, erfolgt der weitere Programmablauf.
 				WebDriverWait wait = new WebDriverWait(driver, 10);
 				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='search']")));
+
+				if (AnmeldungForsaAdmin == null) {
+					// Die Anzeige auf 100 ändern, einmalig zur Kontrolle
+					Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//div[contains(@id,'mui')]",
+							"//li[contains(text(),'", ZeilenProSeite, test);
+					Thread.sleep(3 * Zeitspanne);
+				}
 
 				// Firmenname in das Suchfeld eingeben
 				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search", Unternehmensname, test);
@@ -156,14 +163,12 @@ public class TZPAdminUserDeaktivierenGN {
 				xpathvalue = "//div[text() = '" + Unternehmensname
 						+ "']//ancestor::div[contains(@class, 'jss')]//button[contains(@class, 'MuiButtonBase-root MuiIconButton-root')][1]";
 				// prüfen, ob Element vorhanden
-				//Assert.assertTrue((driver.findElement(By.xpath(xpathvalue)).isDisplayed()));
-				// Weiterlauf ermöglichen 
+				// Assert.assertTrue((driver.findElement(By.xpath(xpathvalue)).isDisplayed()));
+				// Weiterlauf ermöglichen
 				SoftAssert softassert = new SoftAssert();
-				softassert.assertTrue((driver.findElement(By.xpath(xpathvalue)).isDisplayed()));   
+				softassert.assertTrue((driver.findElement(By.xpath(xpathvalue)).isDisplayed()));
 				softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
-				
-				
-				
+
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);
 				// TSonderzeit zum Hochladen
 				Thread.sleep(3 * Zeitspanne);
@@ -177,11 +182,6 @@ public class TZPAdminUserDeaktivierenGN {
 				// Button "OK" auswählen, wenn vorhanden
 				Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
 
-				
-				// Die Anzeige auf 100 ändern
-				Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//div[contains(@id,'mui')]",
-						"//li[contains(text(),'", ZeilenProSeite, test);
-				
 				// Screenshot aufnehmen
 				Thread.sleep(3 * Zeitspanne);
 				Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,

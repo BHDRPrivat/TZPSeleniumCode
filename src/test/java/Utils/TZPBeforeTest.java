@@ -26,9 +26,12 @@ public class TZPBeforeTest {
 	public static String AdminEmail() {
 		 // Festlegung des Adminzugangs  
 		
-		    // Stage Version  
-		    return "admintest@forsa-gmbh.de";
+//		    // Stage Version  
+//		    return "admintest@forsa-gmbh.de";
 			
+		    // Stage Version  
+		    return "dikmen@forsa-gmbh.de";
+		    
 //			// Sales	
 //		    return "topzins@forsa-gmbh.de";
 		    
