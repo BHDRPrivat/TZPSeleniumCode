@@ -38,6 +38,10 @@ public class TZPLoginGG {
 	public static String projectpath = null;
 	public SoftAssert softassert = new SoftAssert();
 	
+	// Weitere Variablen um Test-Klassen zu durchlaufen und zu bewerten
+	public static Boolean Login1 = false;
+	public static Boolean Login2 = false;
+	
 	// Klassenvariablen
 	ExtentHtmlReporter htmlReporter = null;
 	ExtentReports extent;
@@ -133,7 +137,7 @@ public class TZPLoginGG {
 
 
 		// @Test
-		@Test(dataProvider = "TZPStammGG")
+		@Test(priority=0, dataProvider = "TZPStammGG")
 		public void TZPLoginGGTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Unternehmensname, String Kundengruppe, String LEI,
 					String Land, String Webseite, String EmailGeschaefte, String Str, String HausNr, String PLZ, String Ort, String Adresszusatz,
 					String Bank, String BIC, String IBAN, String Kontoinhaber,
@@ -143,6 +147,9 @@ public class TZPLoginGG {
 			
 			if (Aktiv.equals("Ja")) {
 			
+				// Test
+				Login2 = true;	
+				
 			// Mock
 			// String teststep = "AL-R1";
 
@@ -204,10 +211,23 @@ public class TZPLoginGG {
 
 		} 
 		
-		
+		@Test(priority=10)
+		public void Login1Test() {
+			// Softassert-Kontrolle durchfühern
+			SoftAssert softassert = new SoftAssert();
+			softassert.assertTrue(Login1); 
+			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
+		}
+
+		@Test(priority=20)
+		public void Login2Test() {
+			// Softassert-Kontrolle durchfühern
+			SoftAssert softassert = new SoftAssert();
+			softassert.assertTrue(Login2); 
+			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
+		}
 		
 
-		
 		public void ApplitoolsAufnahme(String Ablaufart, String teststep) {
 			if (Ablaufart.equals("Applitool")) {
 				// Applitools vorbereiten
