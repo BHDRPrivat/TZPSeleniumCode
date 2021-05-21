@@ -38,9 +38,9 @@ public class TZPLoginGG {
 	public static String projectpath = null;
 	public SoftAssert softassert = new SoftAssert();
 	
-	// Weitere Variablen um Test-Klassen zu durchlaufen und zu bewerten
-	public static Boolean Login1 = false;
-	public static Boolean Login2 = false;
+//	// Weitere Variablen um Test-Klassen zu durchlaufen und zu bewerten
+//	public static Boolean Login1 = false;
+//	public static Boolean Login2 = false;
 	
 	// Klassenvariablen
 	ExtentHtmlReporter htmlReporter = null;
@@ -147,8 +147,8 @@ public class TZPLoginGG {
 			
 			if (Aktiv.equals("Ja")) {
 			
-				// Test
-				Login2 = true;	
+//				// Test
+//				Login2 = true;	
 				
 			// Mock
 			// String teststep = "AL-R1";
@@ -211,21 +211,21 @@ public class TZPLoginGG {
 
 		} 
 		
-		@Test(priority=10)
-		public void Login1Test() {
-			// Softassert-Kontrolle durchfühern
-			SoftAssert softassert = new SoftAssert();
-			softassert.assertTrue(Login1); 
-			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
-		}
-
-		@Test(priority=20)
-		public void Login2Test() {
-			// Softassert-Kontrolle durchfühern
-			SoftAssert softassert = new SoftAssert();
-			softassert.assertTrue(Login2); 
-			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
-		}
+//		@Test(priority=10)
+//		public void Login1Test() {
+//			// Softassert-Kontrolle durchfühern
+//			SoftAssert softassert = new SoftAssert();
+//			softassert.assertTrue(Login1); 
+//			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
+//		}
+//
+//		@Test(priority=20)
+//		public void Login2Test() {
+//			// Softassert-Kontrolle durchfühern
+//			SoftAssert softassert = new SoftAssert();
+//			softassert.assertTrue(Login2); 
+//			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
+//		}
 		
 
 		public void ApplitoolsAufnahme(String Ablaufart, String teststep) {

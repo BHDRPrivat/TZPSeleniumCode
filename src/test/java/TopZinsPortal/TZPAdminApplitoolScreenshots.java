@@ -95,7 +95,7 @@ public class TZPAdminApplitoolScreenshots {
 	@Test
 	public void TZPApplitoolScreenshot() throws Exception {
 
-		String Testversion = "Prod Sprint 36";
+		String Testversion = "Stage Sprint 39";
 		String Aktiv = "Ja";
 		String Teststep ="TZP-Aplitool-001";
 		

@@ -155,11 +155,11 @@ public class TZPTransaktionStartGG {
 			// Weiterlauf nur nach implizierter Anzeige des Suchfeldes
 			// Sobald die Kondition erfüllt wird, erfolgt der weitere Programmablauf.
 			WebDriverWait wait = new WebDriverWait(driver, 10);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Die Anfrage wurde erfolgreich gesendet']")));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Sie haben die Anfrage erfolgreich gesendet']")));
 			
 			// Weiterlauf ermöglichen 
 			SoftAssert softassert = new SoftAssert();
-			softassert.assertTrue((driver.findElement(By.xpath("//span[text()='Die Anfrage wurde erfolgreich gesendet']")).isDisplayed())); 
+			softassert.assertTrue((driver.findElement(By.xpath("//span[text()='Sie haben die Anfrage erfolgreich gesendet']")).isDisplayed())); 
 			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
 			
 			// Button "OK" auswählen, wenn vorhanden
