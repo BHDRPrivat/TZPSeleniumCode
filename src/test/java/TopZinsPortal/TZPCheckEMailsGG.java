@@ -73,7 +73,7 @@ public class TZPCheckEMailsGG {
 
 	// Aufruf des Dataproviders über eine andere Klasse
 	@Test(priority = 10, dataProvider = "TZPCheckEMailsGG", dataProviderClass = Utils.DataSupplier.class)
-	public void TZPCheckEmailGGTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Betreff,
+	public void TZPCheckEMailGGTest(String Teststep, String Aktiv, String Emailadresse, String Passwort, String Betreff,
 			String Anhang, String Link1, String Link2, String Registrierung) throws Exception {
 
 		// Beachte, Nach dem Einlesen der Mails werden diese als "Gelesen" markiert und beim nächsten Durchlauf nicht mehr eingelesen

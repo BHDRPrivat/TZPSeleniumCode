@@ -90,6 +90,20 @@ public class DataSupplier {
 		return testData(excelPath, "Testdaten");
 	}	
 	
+	@DataProvider(name = "TZPAdminCourtageGN")
+	public static Object[][] TZPAdminCourtageGN() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalAdminCourtage.xls";
+		return testData(excelPath, "Testdaten");
+	}	
+
+	@DataProvider(name = "TZPSeveralUserGG")
+	public static Object[][] TZPSeveralUserGG() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalSeveralUserGG.xls";
+		return testData(excelPath, "Testdaten");
+	}	
+	
 	
 	// Auslesen der Exceldaten.
 	public static Object[][] testData(String excelPath, String sheetName) throws BiffException {

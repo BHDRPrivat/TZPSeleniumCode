@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [TopZinzPortal-Gesamt-Ablauftest-GGundGN]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="TZP-Login-GG(failed)">
-    <parameter name="Ablaufart" value="Smoketest"/>
-    <classes>
-      <class name="TopZinsPortal.TZPLoginGG">
-        <methods>
-          <include name="BrowserTearDown"/>
-          <include name="Login1Test"/>
-          <include name="SetupSeleniumTestdaten"/>
-        </methods>
-      </class> <!-- TopZinsPortal.TZPLoginGG -->
-    </classes>
-  </test> <!-- TZP-Login-GG(failed) -->
   <test thread-count="5" name="TZP-Transaktion-Start-GG(failed)">
     <parameter name="Ablaufart" value="Smoketest"/>
     <classes>
       <class name="TopZinsPortal.TZPTransaktionStartGG">
         <methods>
-          <include name="TZPTransaktionStartGGTest" invocation-numbers="0 1 2"/>
+          <include name="TZPTransaktionStartGGTest" invocation-numbers="0 1 2 3"/>
           <include name="BrowserTearDown"/>
           <include name="SetupSeleniumTestdaten"/>
         </methods>
       </class> <!-- TopZinsPortal.TZPTransaktionStartGG -->
     </classes>
   </test> <!-- TZP-Transaktion-Start-GG(failed) -->
-  <test thread-count="5" name="TZP-Transaktion-Akzeptieren-GN(failed)">
+  <test thread-count="5" name="TZP-Transaktion-Bearbeiten-GN(failed)">
     <parameter name="Ablaufart" value="Smoketest"/>
     <classes>
       <class name="TopZinsPortal.TZPTransaktionBearbeitenGN">
@@ -33,13 +21,25 @@
           <include name="TZPTransaktionAblehnenGNTest"/>
           <include name="TZPTransaktionAkzeptierenGNTest"/>
           <include name="BrowserTearDown"/>
-          <include name="TZPTransaktionBearbeitenGNTest" invocation-numbers="0 1 2"/>
+          <include name="TZPTransaktionBearbeitenGNTest" invocation-numbers="0 1 2 3"/>
           <include name="TZPTransaktionTelefonischWeiterleitenGNTest"/>
           <include name="SetupSeleniumTestdaten"/>
         </methods>
       </class> <!-- TopZinsPortal.TZPTransaktionBearbeitenGN -->
     </classes>
-  </test> <!-- TZP-Transaktion-Akzeptieren-GN(failed) -->
+  </test> <!-- TZP-Transaktion-Bearbeiten-GN(failed) -->
+  <test thread-count="5" name="TZP-Transaktion-Bearbeiten-Admin(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPTransaktionBearbeitenAdmin">
+        <methods>
+          <include name="SetupSeleniumTestdaten"/>
+          <include name="BrowserTearDown"/>
+          <include name="TZPTransaktionBearbeitenAdminTest" invocation-numbers="2"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPTransaktionBearbeitenAdmin -->
+    </classes>
+  </test> <!-- TZP-Transaktion-Bearbeiten-Admin(failed) -->
   <test thread-count="5" name="TZP-Transaktion-Akzeptieren-GG(failed)">
     <parameter name="Ablaufart" value="Smoketest"/>
     <classes>
@@ -47,7 +47,7 @@
         <methods>
           <include name="BrowserTearDown"/>
           <include name="SetupSeleniumTestdaten"/>
-          <include name="TZPTransaktionAkzeptierenGGTest" invocation-numbers="0 1 2"/>
+          <include name="TZPTransaktionAkzeptierenGGTest" invocation-numbers="0 1 2 3"/>
         </methods>
       </class> <!-- TopZinsPortal.TZPTransaktionAkzeptierenGG -->
     </classes>
@@ -58,7 +58,7 @@
       <class name="TopZinsPortal.TZPTransaktionAbschlussGN">
         <methods>
           <include name="SetupSeleniumTestdaten"/>
-          <include name="TZPTransaktionAbschlussGNTest" invocation-numbers="0 1 2"/>
+          <include name="TZPTransaktionAbschlussGNTest" invocation-numbers="0 1 2 3"/>
           <include name="BrowserTearDown"/>
         </methods>
       </class> <!-- TopZinsPortal.TZPTransaktionAbschlussGN -->
@@ -76,13 +76,49 @@
       </class> <!-- TopZinsPortal.TZPTenderAngebotSendenGN -->
     </classes>
   </test> <!-- TZP-Ausschreibung-Angebot-Abgeben-GN(failed) -->
+  <test thread-count="5" name="TZP-Ausschreibung-Angebot-Annehmen-GG(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPTenderAngebotAnnehmenGG">
+        <methods>
+          <include name="BrowserTearDown"/>
+          <include name="TZPTenderAngebotAnnehmenGGTest" invocation-numbers="0"/>
+          <include name="SetupSeleniumTestdaten"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPTenderAngebotAnnehmenGG -->
+    </classes>
+  </test> <!-- TZP-Ausschreibung-Angebot-Annehmen-GG(failed) -->
+  <test thread-count="5" name="TZP-Admin-Deaktivieren(failed)">
+    <parameter name="Ablaufart" value="Reset"/>
+    <classes>
+      <class name="TopZinsPortal.TZPAdminUserDeaktivierenGG">
+        <methods>
+          <include name="BrowserTearDown"/>
+          <include name="TZPAdminUserDeaktivierenGGTest" invocation-numbers="0 1 2 3 4 5 6 7"/>
+          <include name="SetupSeleniumTestdaten"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPAdminUserDeaktivierenGG -->
+    </classes>
+  </test> <!-- TZP-Admin-Deaktivieren(failed) -->
+  <test thread-count="5" name="TZP-Admin-Loeschen(failed)">
+    <parameter name="Ablaufart" value="Reset"/>
+    <classes>
+      <class name="TopZinsPortal.TZPAdminUserLoeschenGG">
+        <methods>
+          <include name="SetupSeleniumTestdaten"/>
+          <include name="TZPAdminUserLoeschenGGTest" invocation-numbers="0 1 2 3 4 5 6 7 8 9"/>
+          <include name="BrowserTearDown"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPAdminUserLoeschenGG -->
+    </classes>
+  </test> <!-- TZP-Admin-Loeschen(failed) -->
   <test thread-count="5" name="TZP-Kontrolle E-Mails-GN(failed)">
     <parameter name="Ablaufart" value="Smoketest"/>
     <classes>
       <class name="TopZinsPortal.TZPCheckEMailsGN">
         <methods>
           <include name="BrowserTearDown"/>
-          <include name="TZPCheckEmailGNTest" invocation-numbers="1 8 10"/>
+          <include name="TZPCheckEMailGNTest" invocation-numbers="8 13 17 22"/>
           <include name="SetupSeleniumTestdaten"/>
         </methods>
       </class> <!-- TopZinsPortal.TZPCheckEMailsGN -->

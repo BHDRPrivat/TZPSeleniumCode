@@ -193,7 +193,8 @@ public class EMailUtils {
 				// Pattern linkPattern = Pattern.compile(" <a\\b[^>]*href=\"[^>]*>(.*?)</a>",
 				// Pattern.CASE_INSENSITIVE|Pattern.DOTALL);
 				Pattern linkPattern = Pattern.compile("href=\"([^\"]*)", Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
-				//Pattern linkPattern = Pattern.compile("http=\"([^\"]*)", Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+				// Pattern linkPattern = Pattern.compile("http=\"([^\"]*)",
+				// Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
 				Matcher pageMatcher = linkPattern.matcher(messageContent);
 
 				while (pageMatcher.find()) {
@@ -229,6 +230,22 @@ public class EMailUtils {
 		return EMails;
 	}
 
+	public static String EMailSeveralUserRegistrationLink(Object emails[][], ExtentTest test) {
+		String Registerlink;
+		for (int i = 0; i < emails.length; i++) {
+			// nur wenn die Zeile gefüllt ist auf die weiteren Funktionen zugreifen.
+			// Die Klammerung von emails[(i)][7] -< (emails[(i)][7]) führt zu einem Fehler
+			// im Ablauf.
+			if (emails[(i)][7] != null) {
+				test.log(Status.INFO, "Der Registrierungslink: " + (emails[(i)][7]).toString() + " wurde eingelesen.");
+				Registerlink = ((emails[(i)][7]).toString()).substring(6);
+				return Registerlink;
+			}	
+		}
+		test.log(Status.INFO, "Kein Registrierungslink für den eingeladenen User in den E-Mails vorhanden");
+		return null;
+	}
+
 	public static boolean EmailPruefen(Object emails[][], String betreff, String anhang, String link1, String link2,
 			String registrierung, ExtentTest test) {
 
@@ -238,18 +255,17 @@ public class EMailUtils {
 		String attachFiles = "";
 		String links = "";
 		String registeres = "";
-		String subject ="";
+		String subject = "";
 		Integer PositionEMailmitBetreff = null;
 
 		// Keine Mails vorhanden, die Kontrolle abbrechen
-        if (emails==null) {
+		if (emails == null) {
 			Rueckgabe = false;
 			System.out.println("------- Keine Mails zur Prüfung übergeben -----------");
 			System.out.println("------------------- Ende Mails prüfen ---------------");
 			return Rueckgabe;
-        }
-		
-		
+		}
+
 		// Alle Mails durchsuchen, ob der Betreff vorhanden ist
 		for (int i = 0; i < emails.length; i++) {
 			subject = emails[i][2].toString();
@@ -330,8 +346,7 @@ public class EMailUtils {
 			Rueckgabe = false;
 			return Rueckgabe;
 		}
-		
-		
+
 	}
 
 }

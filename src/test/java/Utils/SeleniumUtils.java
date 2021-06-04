@@ -565,6 +565,14 @@ public class SeleniumUtils {
 			String filepath;
 			String xpathvalue;
 
+			// zuvor offen gebliebene Fenster werden geschlossen
+			workingDir = System.getProperty("user.dir");
+			autoitscriptpath = workingDir + "\\AutoIT\\" + "File_windows-close.au";
+			Runtime.getRuntime().exec("cmd.exe /c Start AutoIt3.exe " + autoitscriptpath);
+			
+			Thread.sleep(3 * Zeitspanne);
+			
+			// Die Datei zum Auswählen von PDF-Dateien wird ausgeführt
 			workingDir = System.getProperty("user.dir");
 			autoitscriptpath = workingDir + "\\AutoIT\\" + "File_upload_selenium_webdriver.au";
 			filepath = workingDir + "\\DummyPDF\\PDF-Dummy.pdf";

@@ -8,8 +8,8 @@ public class TZPBeforeTest {
 //	// Stage 
 //	return "http://52.59.225.49";
 		
-	// Sales	
-	return "http://18.157.183.108";
+//	// Sales	
+//	return "http://18.157.183.108";
 
 //	// Pre Prod	
 //	return "http://54.93.43.63";	
@@ -20,6 +20,9 @@ public class TZPBeforeTest {
 	
 //	// New Flow - Mehrere User
 //	return "http://3.127.85.31";
+	
+	// Klon der Produktion
+	return "https://portal-clone.forsa-topzins.de";
 			
 	}
 
@@ -32,8 +35,8 @@ public class TZPBeforeTest {
 //		    // Stage Version  
 //		    return "dikmen@forsa-gmbh.de";
 		    
-			// Sales	
-		    return "topzins@forsa-gmbh.de";
+//			// Sales	
+//		    return "topzins@forsa-gmbh.de";
 		    
 //			// Pre Prod	
 //		    return "topzins@forsa-gmbh.de";
@@ -43,6 +46,10 @@ public class TZPBeforeTest {
 			
 //			// New Flow - Mehrere User
 //		    return "topzins@forsa-gmbh.de";
+	
+		// Klon der Produktion	
+		return "topzins@forsa-gmbh.de";			
+		
 		}
 	
 	public static String AdminPasswort() {
@@ -51,8 +58,8 @@ public class TZPBeforeTest {
 //	    // Stage Version  
 //	    return "Test12345!";
 		
-		// Sales	
-		return "Test12345!";
+//		// Sales	
+//		return "Test12345!";
 	    
 //		// Pre Prod	
 //		return "Test12345!";	    
@@ -62,6 +69,11 @@ public class TZPBeforeTest {
 		
 //		// New Flow - Mehrere User
 //		return "Test12345!";
+		
+		// Klon der Produktion	
+		return "phaiweighui%Joteghe6";	 
+		
+		
 		}	
 	
 	public static String BrowserArt() {
