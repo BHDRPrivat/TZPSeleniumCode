@@ -26,7 +26,7 @@ import Utils.TZPBeforeTest;
 import junit.framework.Assert;
 import jxl.read.biff.BiffException;
 
-public class TZPSeveralUserGG {
+public class TZPSeveralUserGNAdminHandelfreigabe {
 	
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
@@ -89,7 +89,7 @@ public class TZPSeveralUserGG {
 		
 		}
 		
-		@Test(dataProvider = "TZPSeveralUserGG", dataProviderClass = Utils.DataSupplier.class)
+		@Test(dataProvider = "TZPSeveralUserGN", dataProviderClass = Utils.DataSupplier.class)
 		public void TZPServeralUserEinladenGGTest(String Teststep, String Aktiv, String EmailadresseCompanyAdmin, String PasswortCompanyAdmin, String Anrede, 
 				String FirstName, String LastName, String EmailadresseCompanyUser, String PasswortCompanyUser, 
 				String Unternehmensname, String Vorname, String TelefonNr, String Titel, String Nachname, String DatumPDF) throws Exception {
@@ -101,9 +101,9 @@ public class TZPSeveralUserGG {
 			// String teststep = "AL-R1";
 
 			// creates a toggle for the given test, adds all log events under it
-			ExtentTest test = extent.createTest("TZPServeralUserGG: " + Teststep + " - " + AblaufartGlobal,
-					"Einladen eines Company Employeers eines Geldgebers");
-
+			ExtentTest test = extent.createTest("TZPServeralUserGN: " + Teststep + " - " + AblaufartGlobal,
+					"Einladen eines Company Employeers eines Geldnehmers");
+//
 //			driver.get(BaseUrl);
 //			// TZRegGG-Eingabemaske
 //			Thread.sleep(3 * Zeitspanne);
@@ -144,7 +144,7 @@ public class TZPSeveralUserGG {
 //			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Einladen']//ancestor::button", test);
 //			
 //			// Zeit für die Versendung der Mail geben.
-// 			Thread.sleep(10 * Zeitspanne);
+// 			Thread.sleep(100 * Zeitspanne);
 //
 //			// Link für die Registration aus der E-Mail ermitteln
 //			String EMailEingelesen = null;
@@ -240,103 +240,217 @@ public class TZPSeveralUserGG {
 //			SoftAssert softassert = new SoftAssert();
 //			softassert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed())); 
 //			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
+//			
+//			// mit den neuen Daten einloggen und die beiden Pflichtdokumente ergänzen
+//			driver.get(BaseUrl);
+//			// TZRegGG-Eingabemaske
+//			Thread.sleep(3 * Zeitspanne);
+//			test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
+//			
+//			
+//			// Login mit gültigen Daten
+//			SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", EmailadresseCompanyUser, test);
+//			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", PasswortCompanyUser, test);
+//
+//     		// Button "Registrieren auswählen"
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
+//			Thread.sleep(3 * Zeitspanne);
+//			
+//     		// Button "Vollständige Registrierung auswählen"
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@data-test, 'logout-dsgvo-button')]", test);
+//			
+//			// Auf Dokumente wechseln
+//			
+//			 // Direktsprung auf Dokumente
+//				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@href='#/masterdata/documents']", test);
+//						
+//			
+//			// Die Heftzwecke für das Hochladen des Dokuments hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld
+//			// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
+//			// Alle anderen Zeilen können mit Standardwerten durchsucht werden. 
+//			
+//			
+//			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Personalausweis", "[2]", DatumPDF, test);
+//			Thread.sleep(3 * Zeitspanne);
+//			
+//			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Handelsberechtigung", "[2]", DatumPDF, test);
+//			Thread.sleep(3 * Zeitspanne);
+//			
+//			Thread.sleep(3 * Zeitspanne);	
+//			// Hochladen auswählen		
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Hochladen']//ancestor::button[@tabindex='0']", test);
+//			// TSonderzeit zum Hochladen
+//			Thread.sleep(3 * Zeitspanne);
+//			
+//			// Button "OK" auswählen, wenn vorhanden
+//			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
+//			
+//			// Kontrolle, ob kein Fehlertext angezeigt wird
+//			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
+//			// Programm läuft nicht weiter
+//			// Suche nach einem Text. Nicht findelement verwenden, da dieser einen Fehler auswirft
+//			// Assert.assertFalse((driver.findElement(By.xpath("//p[text()='Bitte wählen Sie ein Dokument zum Hochladen aus']")).isDisplayed()));
+//			//Assert.assertEquals(driver.getPageSource().contains("Bitte wählen Sie ein Dokument zum Hochladen aus"), false);
+//			// Weiterlauf ermöglichen 
+//			SoftAssert softassert = new SoftAssert();
+//			softassert.assertEquals(driver.getPageSource().contains("Bitte wählen Sie ein Dokument zum Hochladen aus"), false); 
+//			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
+//			
+//			
+//			Thread.sleep(5 * Zeitspanne);
+//			
+//				
+//			// Screenshot aufnehmen
+//			Thread.sleep(3 * Zeitspanne);
+//			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GG\\Stammdaten GG 4-Dokumente hochladen ", Teststep, test);
+//			Thread.sleep(3 * Zeitspanne);
+//			
+//			
+//			// Handelsfreigabe beantragn		
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Handelsberechtigung anfordern']//ancestor::button[@tabindex='0']", test);
+//			// TSonderzeit zum Hochladen
+//			Thread.sleep(3 * Zeitspanne);	
+//			
+//			// Button "OK" auswählen, wenn vorhanden
+//			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
+//			
+//			// Kontrolle, ob kein Fehlertext angezeigt wird
+//			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
+//			// Programm läuft nicht weiter
+//			// Assert.assertFalse((driver.findElement(By.xpath("//p[text()='Alle Pflichtfelder müsssenausgefüllt werden']")).isDisplayed()));
+//			// Assert.assertEquals(driver.getPageSource().contains("Alle Pflichtfelder müsssenausgefüllt werden"), false);
+//			Thread.sleep(3 * Zeitspanne);
+//			
+//			
+//			// Screenshot aufnehmen
+//			Thread.sleep(3 * Zeitspanne);
+//			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GG\\Stammdaten GG 5-Handelfreigabe angefordert ", Teststep, test);
+//			Thread.sleep(3 * Zeitspanne);
+//			
+//			
+			// Admin-Forsa Handelsfreigabe erteilen
 			
-			// mit den neuen Daten einloggen und die beiden Pflichtdokumente ergänzen
-			driver.get(BaseUrl);
-			// TZRegGG-Eingabemaske
-			Thread.sleep(3 * Zeitspanne);
-			test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
-			
-			
-			// Login mit gültigen Daten
-			SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", EmailadresseCompanyUser, test);
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", PasswortCompanyUser, test);
 
-     		// Button "Registrieren auswählen"
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
+				driver.get(BaseUrl);
+				// TZRegGG-Eingabemaske
+				Thread.sleep(3 * Zeitspanne);
+				test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
+
+				// Login mit gültigen Daten
+
+				String Emailadresse = Utils.TZPBeforeTest.AdminEmail();
+				String Passwort = Utils.TZPBeforeTest.AdminPasswort();
+
+				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", Emailadresse, test);
+				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", Passwort, test);
+
+				// Button "Anmelden auswählen"
+				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]",
+						test);
+
+
+			// Button "Daten komplett" in menu clicken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, '" + "BEREIT FÜR HANDELSBERECHTIGUNG" + "')]",	test);
+			
+			// Weiterlauf nur nach implizierter Anzeige des Suchfeldes
+			// Sobald die Kondition erfüllt wird, erfolgt der weitere Programmablauf.
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@name='search']")));
+
+			// Firmenname in das Suchfeld eingeben
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search", Unternehmensname, test);
+
+			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
-			
-     		// Button "Vollständige Registrierung auswählen"
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@data-test, 'logout-dsgvo-button')]", test);
-			
-			// Auf Dokuemnte wechseln
-			
-			 // Direktsprung auf Dokumente
-				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@href='#/masterdata/documents']", test);
-						
-			
-			// Die Heftzwecke für das Hochladen des Dokuments hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld
-			// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
-			// Alle anderen Zeilen können mit Standardwerten durchsucht werden. 
-			
-			
-			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Personalausweis", "[2]", DatumPDF, test);
+			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,
+					"\\Admin Handelsfreigabe\\AmdinHandlefreigabe-GG-Auswahl", Teststep, test);
 			Thread.sleep(3 * Zeitspanne);
+
+			// Der Stift für das Laden der Daten hat keine eindeutige ID. Der Zugriff
+			// erfolgt über den Eintrag im ersten Eingabefeld
+			// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen
+			// Bei den Several Usern muss eine Fallunterscheidung erfolgen
 			
-			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Handelsberechtigung", "[2]", DatumPDF, test);
-			Thread.sleep(3 * Zeitspanne);
+			// Sichtbarkeit des Buttons weiter verfeinern.
 			
-			Thread.sleep(3 * Zeitspanne);	
-			// Hochladen auswählen		
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Hochladen']//ancestor::button[@tabindex='0']", test);
-			// TSonderzeit zum Hochladen
-			Thread.sleep(3 * Zeitspanne);
+			String xpathvalue = "//div[text() = '" + Unternehmensname
+					+ "']//ancestor::tr[contains(@class, 'MuiTableRow-root')]//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary']";
 			
-			// Button "OK" auswählen, wenn vorhanden
-			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
+
 			
-			// Kontrolle, ob kein Fehlertext angezeigt wird
-			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
-			// Programm läuft nicht weiter
-			// Suche nach einem Text. Nicht findelement verwenden, da dieser einen Fehler auswirft
-			// Assert.assertFalse((driver.findElement(By.xpath("//p[text()='Bitte wählen Sie ein Dokument zum Hochladen aus']")).isDisplayed()));
-			Assert.assertEquals(driver.getPageSource().contains("Bitte wählen Sie ein Dokument zum Hochladen aus"), false);
-			Thread.sleep(5 * Zeitspanne);
-			
+			// Wenn Stift existiert, dirket auswählen
+			if (Utils.SeleniumUtils.isElementPresent(driver, By.xpath(xpathvalue))) {
+				// Ansonsten direkt den Stift auswählen.
+				xpathvalue = "//div[text() = '" + Unternehmensname
+						+ "']//ancestor::tr[contains(@class, 'MuiTableRow-root')]//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary']";
+				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);				
+ 			
+			}
+			else {
+
+				// Ansonsten Button zum Auslösen wählen			
+				xpathvalue = "//div[text() = '" + Unternehmensname
+						+ "']//ancestor::tr[contains(@class, 'MuiTableRow-root')]//button[@type='button']";
 				
+				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);
+				
+				// den einzelnen User suchen 
+				xpathvalue = "//div[text() = '" + EmailadresseCompanyUser
+						+ "']//ancestor::tr[contains(@class, 'MuiTableRow-root')]//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary']";
+				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);	
+				
+			}
+			
+			
+			
+			// TSonderzeit zum Hochladen
+			Thread.sleep(3 * Zeitspanne);
+
+			// Direktsprung auf Dokumente
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@href='#/masterdata/documents']", test);
+
+			Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'identityCard']", test);
+			Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'tradingLicense']", test);
+
 			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
-			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GG\\Stammdaten GG 4-Dokumente hochladen ", Teststep, test);
-			Thread.sleep(3 * Zeitspanne);
-			
-			
-			// Handelsfreigabe beantragn		
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Handelsberechtigung anfordern']//ancestor::button[@tabindex='0']", test);
+			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath,
+					"\\Admin Handelsfreigabe\\AmdinHandlefreigabe-GG-Haken", Teststep, test);
+
+			// Button Freigeben auswählen
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
+					"//span[text()='Freigeben']//ancestor::button[@tabindex='0']", test);
 			// TSonderzeit zum Hochladen
-			Thread.sleep(3 * Zeitspanne);	
-			
+			Thread.sleep(3 * Zeitspanne);
+
 			// Button "OK" auswählen, wenn vorhanden
 			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
-			
-			// Kontrolle, ob kein Fehlertext angezeigt wird
-			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
-			// Programm läuft nicht weiter
-			// Assert.assertFalse((driver.findElement(By.xpath("//p[text()='Alle Pflichtfelder müsssenausgefüllt werden']")).isDisplayed()));
-			// Assert.assertEquals(driver.getPageSource().contains("Alle Pflichtfelder müsssenausgefüllt werden"), false);
-			Thread.sleep(3 * Zeitspanne);
-			
-			
-			// Screenshot aufnehmen
-			Thread.sleep(3 * Zeitspanne);
-			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GG\\Stammdaten GG 5-Handelfreigabe angefordert ", Teststep, test);
-			Thread.sleep(3 * Zeitspanne);
-			
+
+			// Prüfen ob User in Register "Mit Handelsberechtigung" vorhanden ist?
+			// Button "Daten komplett" in menu clicken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
+					"//li[contains(@data-test, 'MIT HANDELSBERECHTIGUNG')]", test);
+
+			// Die Anzeige auf 100 erhöhen
+			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//div[contains(@id,'mui')]",
+					"//li[contains(text(),'", "100", test);
+
+			// Firmenname in das Suchfeld eingeben
+			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search", Unternehmensname, test);
+			Thread.sleep(5 * Zeitspanne);
 			
 			
 			
 			Thread.sleep(10 * Zeitspanne);
      		
 	
-			
-			
-	
-//			driver.close();
-//			// Für den Teardown
-//			driver = null;
-//			eyes = null;
-//
-//			// Neu Starten
-//			SetupSeleniumTestdaten(AblaufartGlobal);
+			driver.close();
+			// Für den Teardown
+			driver = null;
+			eyes = null;
+
+			// Neu Starten
+			SetupSeleniumTestdaten(AblaufartGlobal);
 
 		} // Nur wenn Aktic "Ja" ist durchlaufen
 

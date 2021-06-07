@@ -104,6 +104,13 @@ public class DataSupplier {
 		return testData(excelPath, "Testdaten");
 	}	
 	
+	@DataProvider(name = "TZPSeveralUserGN")
+	public static Object[][] TZPSeveralUserGN() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalSeveralUserGN.xls";
+		return testData(excelPath, "Testdaten");
+	}
+	
 	
 	// Auslesen der Exceldaten.
 	public static Object[][] testData(String excelPath, String sheetName) throws BiffException {

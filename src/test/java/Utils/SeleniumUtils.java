@@ -404,7 +404,7 @@ public class SeleniumUtils {
 	}
 
 	
-	protected static boolean isElementPresent(WebDriver driver, By by){
+	public static boolean isElementPresent(WebDriver driver, By by){
         try{
             driver.findElement(by);
             return true;
