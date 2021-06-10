@@ -90,7 +90,7 @@ public class TZPSeveralUserGNStamm {
 		}
 		
 		@Test(dataProvider = "TZPSeveralUserGN", dataProviderClass = Utils.DataSupplier.class)
-		public void TZPServeralUserEinladenGGTest(String Teststep, String Aktiv, String EmailadresseCompanyAdmin, String PasswortCompanyAdmin, String Anrede, 
+		public void TZPServeralUserStammdatenGNTest(String Teststep, String Aktiv, String EmailadresseCompanyAdmin, String PasswortCompanyAdmin, String Anrede, 
 				String FirstName, String LastName, String EmailadresseCompanyUser, String PasswortCompanyUser, 
 				String Unternehmensname, String Vorname, String TelefonNr, String Titel, String Nachname, String DatumPDF) throws Exception {
 
@@ -265,36 +265,36 @@ public class TZPSeveralUserGNStamm {
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@href='#/masterdata/documents']", test);
 						
 			
-			// Die Heftzwecke für das Hochladen des Dokuments hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld
-			// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
-			// Alle anderen Zeilen können mit Standardwerten durchsucht werden. 
-			
-			
-			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Personalausweis", "[2]", DatumPDF, test);
-			Thread.sleep(3 * Zeitspanne);
-			
-			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Handelsberechtigung", "[2]", DatumPDF, test);
-			Thread.sleep(3 * Zeitspanne);
-			
-			Thread.sleep(3 * Zeitspanne);	
-			// Hochladen auswählen		
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Hochladen']//ancestor::button[@tabindex='0']", test);
-			// TSonderzeit zum Hochladen
-			Thread.sleep(3 * Zeitspanne);
-			
-			// Button "OK" auswählen, wenn vorhanden
-			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
-			
-			// Kontrolle, ob kein Fehlertext angezeigt wird
-			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
-			// Programm läuft nicht weiter
-			// Suche nach einem Text. Nicht findelement verwenden, da dieser einen Fehler auswirft
-			// Assert.assertFalse((driver.findElement(By.xpath("//p[text()='Bitte wählen Sie ein Dokument zum Hochladen aus']")).isDisplayed()));
-			//Assert.assertEquals(driver.getPageSource().contains("Bitte wählen Sie ein Dokument zum Hochladen aus"), false);
-			// Weiterlauf ermöglichen 
-			SoftAssert softassert = new SoftAssert();
-			softassert.assertEquals(driver.getPageSource().contains("Bitte wählen Sie ein Dokument zum Hochladen aus"), false); 
-			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
+//			// Die Heftzwecke für das Hochladen des Dokuments hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld
+//			// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
+//			// Alle anderen Zeilen können mit Standardwerten durchsucht werden. 
+//			
+//			
+//			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Personalausweis", "[2]", DatumPDF, test);
+//			Thread.sleep(3 * Zeitspanne);
+//			
+//			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Handelsberechtigung", "[2]", DatumPDF, test);
+//			Thread.sleep(3 * Zeitspanne);
+//			
+//			Thread.sleep(3 * Zeitspanne);	
+//			// Hochladen auswählen		
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Hochladen']//ancestor::button[@tabindex='0']", test);
+//			// TSonderzeit zum Hochladen
+//			Thread.sleep(3 * Zeitspanne);
+//			
+//			// Button "OK" auswählen, wenn vorhanden
+//			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
+//			
+//			// Kontrolle, ob kein Fehlertext angezeigt wird
+//			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
+//			// Programm läuft nicht weiter
+//			// Suche nach einem Text. Nicht findelement verwenden, da dieser einen Fehler auswirft
+//			// Assert.assertFalse((driver.findElement(By.xpath("//p[text()='Bitte wählen Sie ein Dokument zum Hochladen aus']")).isDisplayed()));
+//			//Assert.assertEquals(driver.getPageSource().contains("Bitte wählen Sie ein Dokument zum Hochladen aus"), false);
+//			// Weiterlauf ermöglichen 
+//			SoftAssert softassert = new SoftAssert();
+//			softassert.assertEquals(driver.getPageSource().contains("Bitte wählen Sie ein Dokument zum Hochladen aus"), false); 
+//			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
 			
 			
 			Thread.sleep(5 * Zeitspanne);

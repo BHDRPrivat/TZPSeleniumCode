@@ -3,13 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TopZinsPortal.TZPSeveralUserGNMailRegistration">
+      <class name="TopZinsPortal.TZPTransaktionBearbeitenGN">
         <methods>
-          <include name="SetupSeleniumTestdaten"/>
-          <include name="TZPServeralUserEinladenGGTest" invocation-numbers="0 1"/>
+          <include name="TZPTransaktionAblehnenGNTest"/>
+          <include name="TZPTransaktionAkzeptierenGNTest"/>
           <include name="BrowserTearDown"/>
+          <include name="TZPTransaktionBearbeitenGNTest" invocation-numbers="0 1 2 3"/>
+          <include name="TZPTransaktionTelefonischWeiterleitenGNTest"/>
+          <include name="SetupSeleniumTestdaten"/>
         </methods>
-      </class> <!-- TopZinsPortal.TZPSeveralUserGNMailRegistration -->
+      </class> <!-- TopZinsPortal.TZPTransaktionBearbeitenGN -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

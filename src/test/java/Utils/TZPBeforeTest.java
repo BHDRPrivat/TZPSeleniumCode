@@ -5,8 +5,8 @@ public class TZPBeforeTest {
 	public static String Umgebung() {
 	  // Festlegung, in welcher Umgebung getestet wird 	
 
-//	// Stage 
-//	return "http://52.59.225.49";
+	// Stage 
+	return "http://52.59.225.49";
 		
 //	// Sales	
 //	return "http://18.157.183.108";
@@ -21,8 +21,8 @@ public class TZPBeforeTest {
 //	// New Flow - Mehrere User
 //	return "http://3.127.85.31";
 	
-	// Klon der Produktion
-	return "https://portal-clone.forsa-topzins.de";
+//	// Klon der Produktion
+//	return "https://portal-clone.forsa-topzins.de";
 			
 	}
 
@@ -32,8 +32,8 @@ public class TZPBeforeTest {
 //		    // Stage Version  
 //		    return "admintest@forsa-gmbh.de";
 			
-//		    // Stage Version  
-//		    return "dikmen@forsa-gmbh.de";
+		    // Stage Version  
+		    return "dikmen@forsa-gmbh.de";
 		    
 //			// Sales	
 //		    return "topzins@forsa-gmbh.de";
@@ -47,16 +47,16 @@ public class TZPBeforeTest {
 //			// New Flow - Mehrere User
 //		    return "topzins@forsa-gmbh.de";
 	
-		// Klon der Produktion	
-		return "topzins@forsa-gmbh.de";			
+//		// Klon der Produktion	
+//		return "topzins@forsa-gmbh.de";			
 		
 		}
 	
 	public static String AdminPasswort() {
 		 // Festlegung des Adminpassworts  
 
-//	    // Stage Version  
-//	    return "Test12345!";
+	    // Stage Version  
+	    return "Test12345!";
 		
 //		// Sales	
 //		return "Test12345!";
@@ -70,8 +70,8 @@ public class TZPBeforeTest {
 //		// New Flow - Mehrere User
 //		return "Test12345!";
 		
-		// Klon der Produktion	
-		return "phaiweighui%Joteghe6";	 
+//		// Klon der Produktion	
+//		return "phaiweighui%Joteghe6";	 
 		
 		
 		}	

@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jun 02 10:33:58 CEST 2021</td>
+<td>Started on:</td><td>Wed Jun 09 10:48:58 CEST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>20 seconds (20904 ms)</td>
+<tr><td>Total time:</td><td>11 seconds (11722 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,34 +76,47 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='TopZinsPortal.TZPTenderAngebotAnnehmenGG.TZPTenderAngebotAnnehmenGGTest()'><b>TZPTenderAngebotAnnehmenGGTest</b><br>Test class: TopZinsPortal.TZPTenderAngebotAnnehmenGG<br>Parameters: TZPTenderStartGG-TF-001, Ja, bhdr.gg.Handel@gmail.com, Test12345!, ActDatum, 20:00, act/360, halbjährlich, 2.000.000, ActDatum + 3, ActDatum + 10, ActDatum + 20, ActDatum + 30, Das ist ein Kommentar durch den , Burk-GN-Handel -BHDR-, Burk.GN.Handel@gmail.com, Test12345!, -0.5, BHDR-GN-Handel, bhdr.gn.handel@gmail.com, Test12345!, -0.4, Centner-GN-Handel -BHDR-, Centner.GN.Handel@gmail.com, Test12345!, -0.3, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@id,&apos;mui&apos;)]&quot;}
-  (Session info: chrome=90.0.4430.212)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a class=&quot;MuiButtonBase-root MuiButton-root MuiButton-text jss646&quot; tabindex=&quot;0&quot; role=&quot;button&quot; aria-disabled=&quot;false&quot; data-test=&quot;Ausschreibungen&quot; href=&quot;/portal/Ausschreibung&quot;&gt;...&lt;/a&gt; is not clickable at point (232, 89). Other element would receive the click: &lt;div class=&quot;MuiDialogTitle-root jss1179 jss1183 jss1111&quot; data-drag=&quot;draggable-0&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=91.0.4472.77)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;FORSA-VM31&apos;, ip: &apos;10.52.76.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.212, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:53876}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 07dda6b7a62ae6a2f35b982a13a073d5
-*** Element info: {Using=xpath, value=//div[contains(@id,&apos;mui&apos;)]} expected [true] but found [false]
-	at Utils.SeleniumUtils.ListenAuswahl(SeleniumUtils.java:723)
-	at TopZinsPortal.TZPTenderAngebotAnnehmenGG.TZPTenderAngebotAnnehmenGGTest(TZPTenderAngebotAnnehmenGG.java:122)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:50152}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 8498695506bc8f76401e14eafa3a93cb
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at Utils.SeleniumUtils.ButtonKlick(SeleniumUtils.java:464)
+	at TopZinsPortal.TZPTenderAngebotAnnehmenGG.TZPTenderAngebotAnnehmenGGTest(TZPTenderAngebotAnnehmenGG.java:119)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace811285072", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace811285072'><pre>java.lang.AssertionError: The following asserts failed:
-	Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(@id,&apos;mui&apos;)]&quot;}
-  (Session info: chrome=90.0.4430.212)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2087564297", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2087564297'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a class=&quot;MuiButtonBase-root MuiButton-root MuiButton-text jss646&quot; tabindex=&quot;0&quot; role=&quot;button&quot; aria-disabled=&quot;false&quot; data-test=&quot;Ausschreibungen&quot; href=&quot;/portal/Ausschreibung&quot;&gt;...&lt;/a&gt; is not clickable at point (232, 89). Other element would receive the click: &lt;div class=&quot;MuiDialogTitle-root jss1179 jss1183 jss1111&quot; data-drag=&quot;draggable-0&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=91.0.4472.77)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;FORSA-VM31&apos;, ip: &apos;10.52.76.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 90.0.4430.212, chrome: {chromedriverVersion: 90.0.4430.24 (4c6d850f087da..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:53876}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 07dda6b7a62ae6a2f35b982a13a073d5
-*** Element info: {Using=xpath, value=//div[contains(@id,&apos;mui&apos;)]} expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at Utils.SeleniumUtils.ListenAuswahl(SeleniumUtils.java:723)
-	at TopZinsPortal.TZPTenderAngebotAnnehmenGG.TZPTenderAngebotAnnehmenGGTest(TZPTenderAngebotAnnehmenGG.java:122)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.77, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:50152}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 8498695506bc8f76401e14eafa3a93cb
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at Utils.SeleniumUtils.ButtonKlick(SeleniumUtils.java:464)
+	at TopZinsPortal.TZPTenderAngebotAnnehmenGG.TZPTenderAngebotAnnehmenGGTest(TZPTenderAngebotAnnehmenGG.java:119)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -133,8 +146,8 @@ Session ID: 07dda6b7a62ae6a2f35b982a13a073d5
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>17</td>
-<td>TopZinsPortal.TZPTenderAngebotAnnehmenGG@79079097</td></tr>
+<td>8</td>
+<td>TopZinsPortal.TZPTenderAngebotAnnehmenGG@55fe41ea</td></tr>
 </table><p>
 </body>
 </html>

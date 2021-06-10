@@ -108,6 +108,17 @@ public class TZPTransaktionBearbeitenGN {
 			String BtnAngebotTelefonischWeiterleitenGN, String BtnAngebotAnnehmenGG, String BtnAngebotAblehnenGG,
 			String BtnAngebotTelefonischAnnehmenGG) throws Exception {
 
+		
+		
+		// Fehler: Wenn die Masken der vorherigen Firam nihct vorhanden sidn, kann auch nihct auf den neuen Anwender zugeriffen werrden.
+		
+		// Für die GN-Firma "Burk-GN-Handel -BHDR-" existiert nur 1 Maske
+		if (FirmaGN.equals("Burk-GN-Handel -BHDR-")) {
+			AktuellTransaktionMaske = 1;
+		}
+			
+		
+		
 		if (Aktiv.equals("Ja")) {
 
 			// creates a toggle for the given test, adds all log events under it

@@ -110,7 +110,34 @@ public class DataSupplier {
 		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalSeveralUserGN.xls";
 		return testData(excelPath, "Testdaten");
 	}
+
+	@DataProvider(name = "TZPCheckEMailsSeveralUserGG")
+	public static Object[][] TZPCheckEMailSeveralUserGG() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalCheckEMailSeveralUserGG.xls";
+		return testData(excelPath, "Testdaten");
+	}		
 	
+	@DataProvider(name = "TZPCheckEMailsSeveralUserGN")
+	public static Object[][] TZPCheckEMailSeveralUserGN() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalCheckEMailSeveralUserGN.xls";
+		return testData(excelPath, "Testdaten");
+	}
+	
+	@DataProvider(name = "TZPAdminSeveralUserDeaktivierenLoeschenGG")
+	public static Object[][] TZPAdminSeveralUserDeaktivierenGG() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalAdminSeveralUserDeaktivierenLoeschenGG.xls";
+		return testData(excelPath, "Testdaten");
+	}
+	
+	@DataProvider(name = "TZPAdminSeveralUserDeaktivierenLoeschenGN")
+	public static Object[][] TZPAdminSeveralUserDeaktivierenGN() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalAdminSeveralUserDeaktivierenLoeschenGN.xls";
+		return testData(excelPath, "Testdaten");
+	}	
 	
 	// Auslesen der Exceldaten.
 	public static Object[][] testData(String excelPath, String sheetName) throws BiffException {

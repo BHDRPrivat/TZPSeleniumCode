@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
+<testng-results ignored="0" total="7" passed="0" failed="7" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-06-07T15:28:08 CEST" name="Default suite" finished-at="2021-06-07T15:28:14 CEST" duration-ms="6025">
+  <suite started-at="2021-06-10T15:52:29 CEST" name="Default suite" finished-at="2021-06-10T15:53:30 CEST" duration-ms="60197">
     <groups>
     </groups>
-    <test started-at="2021-06-07T15:28:08 CEST" name="Default test" finished-at="2021-06-07T15:28:14 CEST" duration-ms="6025">
-      <class name="TopZinsPortal.TZPSeveralUserGNMailRegistration">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPSeveralUserGNMailRegistration@4466af20]" started-at="2021-06-07T15:28:08 CEST" name="SetupSeleniumTestdaten" finished-at="2021-06-07T15:28:11 CEST" duration-ms="2773" status="PASS">
+    <test started-at="2021-06-10T15:52:29 CEST" name="Default test" finished-at="2021-06-10T15:53:30 CEST" duration-ms="60197">
+      <class name="TopZinsPortal.TZPTransaktionBearbeitenGN">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenGN@12468a38]" started-at="2021-06-10T15:52:29 CEST" name="SetupSeleniumTestdaten" finished-at="2021-06-10T15:52:33 CEST" duration-ms="3268" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPServeralUserEinladenGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPSeveralUserGNMailRegistration@4466af20]" started-at="2021-06-07T15:28:11 CEST" name="TZPServeralUserEinladenGGTest" data-provider="TZPSeveralUserGN" finished-at="2021-06-07T15:28:12 CEST" duration-ms="1059" status="FAIL">
+        <test-method signature="TZPTransaktionBearbeitenGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenGN@12468a38]" started-at="2021-06-10T15:52:33 CEST" name="TZPTransaktionBearbeitenGNTest" data-provider="TZPTransaktionBearbeitenGN" finished-at="2021-06-10T15:52:51 CEST" duration-ms="18226" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZSUGN-TF-001]]>
+                <![CDATA[TZPTransaktionStartGG-TF-001]]>
               </value>
             </param>
             <param index="1">
@@ -32,7 +32,7 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[bhdr.gn.handel@gmail.com]]>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
               </value>
             </param>
             <param index="3">
@@ -42,72 +42,154 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[Herr]]>
+                <![CDATA[1000001]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[TZP Serveral User]]>
+                <![CDATA[0,01 %]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[GN der Erste]]>
+                <![CDATA[ActDatum]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[TZPSeveralUserGN1@gmail.com]]>
+                <![CDATA[act/360]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[Test12345!]]>
+                <![CDATA[halbjährlich]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[BHDR-GN-Handel]]>
+                <![CDATA[Sonstiges TF 1 durch den]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[BHDR]]>
+                <![CDATA[Kommentar TF1]]>
               </value>
             </param>
             <param index="11">
               <value>
-                <![CDATA[00496119738163]]>
+                <![CDATA[20:00]]>
               </value>
             </param>
             <param index="12">
               <value>
-                <![CDATA[Dr.]]>
+                <![CDATA[Ja]]>
               </value>
             </param>
             <param index="13">
               <value>
-                <![CDATA[TZP.Serveral.User.gn.Handel]]>
+                <![CDATA[Nein]]>
               </value>
             </param>
             <param index="14">
               <value>
-                <![CDATA[01.01.1990]]>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[100000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[null value in entry: url=null]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(@class, 'MuiDialogTitle-root')])[3]"}
+  (Session info: chrome=91.0.4472.101)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.101, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:56167}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
+*** Element info: {Using=xpath, value=(//div[contains(@class, 'MuiDialogTitle-root')])[3]}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: null value in entry: url=null
-at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:32)
-at com.google.common.collect.SingletonImmutableBiMap.<init>(SingletonImmutableBiMap.java:42)
-at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:72)
-at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:124)
-at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
-at TopZinsPortal.TZPSeveralUserGNMailRegistration.TZPServeralUserEinladenGGTest(TZPSeveralUserGNMailRegistration.java:173)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//div[contains(@class, 'MuiDialogTitle-root')])[3]"}
+  (Session info: chrome=91.0.4472.101)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.101, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:56167}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
+*** Element info: {Using=xpath, value=(//div[contains(@class, 'MuiDialogTitle-root')])[3]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at Utils.SeleniumUtils.DragDrop(SeleniumUtils.java:118)
+at TopZinsPortal.TZPTransaktionBearbeitenGN.TZPTransaktionBearbeitenGNTest(TZPTransaktionBearbeitenGN.java:142)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -138,15 +220,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPServeralUserEinladenGGTest -->
-        <test-method signature="TZPServeralUserEinladenGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPSeveralUserGNMailRegistration@4466af20]" started-at="2021-06-07T15:28:12 CEST" name="TZPServeralUserEinladenGGTest" data-provider="TZPSeveralUserGN" finished-at="2021-06-07T15:28:13 CEST" duration-ms="345" status="FAIL">
+        </test-method> <!-- TZPTransaktionBearbeitenGNTest -->
+        <test-method signature="TZPTransaktionBearbeitenGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenGN@12468a38]" started-at="2021-06-10T15:52:51 CEST" name="TZPTransaktionBearbeitenGNTest" data-provider="TZPTransaktionBearbeitenGN" finished-at="2021-06-10T15:53:03 CEST" duration-ms="12356" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZSUGN-TF-002]]>
+                <![CDATA[TZPTransaktionStartGG-TF-002]]>
               </value>
             </param>
             <param index="1">
@@ -156,7 +238,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             </param>
             <param index="2">
               <value>
-                <![CDATA[bhdr.gn.handel@gmail.com]]>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
               </value>
             </param>
             <param index="3">
@@ -166,72 +248,143 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             </param>
             <param index="4">
               <value>
-                <![CDATA[Frau]]>
+                <![CDATA[1000002]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[TZP Serveral User]]>
+                <![CDATA[0,02 %]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[GN der Zweite]]>
+                <![CDATA[ActDatum]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[TZPSeveralUserGN2@gmail.com]]>
+                <![CDATA[act/360]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[Test12345!]]>
+                <![CDATA[halbjährlich]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[BHDR-GN-Handel]]>
+                <![CDATA[Sonstiges TF 2 durch den]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[BHDR]]>
+                <![CDATA[Kommentar TF2]]>
               </value>
             </param>
             <param index="11">
               <value>
-                <![CDATA[0049-611-97381-63]]>
+                <![CDATA[20:00]]>
               </value>
             </param>
             <param index="12">
               <value>
-                <![CDATA[Dr.]]>
+                <![CDATA[Ja]]>
               </value>
             </param>
             <param index="13">
               <value>
-                <![CDATA[TZP.Serveral.User.gn.Handel]]>
+                <![CDATA[Nein]]>
               </value>
             </param>
             <param index="14">
               <value>
-                <![CDATA[01.01.1990]]>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[200000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[null value in entry: url=null]]>
+              <![CDATA[The following asserts failed:
+Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='email']"}
+  (Session info: chrome=91.0.4472.101)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.101, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:56167}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
+*** Element info: {Using=name, value=email} expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: null value in entry: url=null
-at com.google.common.collect.CollectPreconditions.checkEntryNotNull(CollectPreconditions.java:32)
-at com.google.common.collect.SingletonImmutableBiMap.<init>(SingletonImmutableBiMap.java:42)
-at com.google.common.collect.ImmutableBiMap.of(ImmutableBiMap.java:72)
-at com.google.common.collect.ImmutableMap.of(ImmutableMap.java:124)
-at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
-at TopZinsPortal.TZPSeveralUserGNMailRegistration.TZPServeralUserEinladenGGTest(TZPSeveralUserGNMailRegistration.java:173)
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='email']"}
+  (Session info: chrome=91.0.4472.101)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.101, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:56167}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
+*** Element info: {Using=name, value=email} expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at Utils.SeleniumUtils.InputText(SeleniumUtils.java:402)
+at TopZinsPortal.TZPTransaktionBearbeitenGN.TZPTransaktionBearbeitenGNTest(TZPTransaktionBearbeitenGN.java:133)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -262,15 +415,543 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPServeralUserEinladenGGTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPSeveralUserGNMailRegistration@4466af20]" started-at="2021-06-07T15:28:13 CEST" name="BrowserTearDown" finished-at="2021-06-07T15:28:14 CEST" duration-ms="1645" status="PASS">
+        </test-method> <!-- TZPTransaktionBearbeitenGNTest -->
+        <test-method signature="TZPTransaktionBearbeitenGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenGN@12468a38]" started-at="2021-06-10T15:53:03 CEST" name="TZPTransaktionBearbeitenGNTest" data-provider="TZPTransaktionBearbeitenGN" finished-at="2021-06-10T15:53:16 CEST" duration-ms="12200" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-003]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000003]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,03 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 3 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF3]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[BHDR-GN-Handel]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[BHDR.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[300000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 3]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='email']"}
+  (Session info: chrome=91.0.4472.101)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.101, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:56167}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
+*** Element info: {Using=name, value=email} expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='email']"}
+  (Session info: chrome=91.0.4472.101)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.101, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:56167}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
+*** Element info: {Using=name, value=email} expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at Utils.SeleniumUtils.InputText(SeleniumUtils.java:402)
+at TopZinsPortal.TZPTransaktionBearbeitenGN.TZPTransaktionBearbeitenGNTest(TZPTransaktionBearbeitenGN.java:133)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionBearbeitenGNTest -->
+        <test-method signature="TZPTransaktionBearbeitenGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenGN@12468a38]" started-at="2021-06-10T15:53:16 CEST" name="TZPTransaktionBearbeitenGNTest" data-provider="TZPTransaktionBearbeitenGN" finished-at="2021-06-10T15:53:28 CEST" duration-ms="12194" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPTransaktionStartGG-TF-004]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BHDR.GG.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1000004]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0,10 %]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[ActDatum]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[act/360]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[halbjährlich]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[Sonstiges TF 4 durch den]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Kommentar TF4]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[20:00]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[Burk-GN-Handel -BHDR-]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[Burk.GN.Handel@gmail.com]]>
+              </value>
+            </param>
+            <param index="16">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="17">
+              <value>
+                <![CDATA[400000]]>
+              </value>
+            </param>
+            <param index="18">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="19">
+              <value>
+                <![CDATA[ActDatum + 8]]>
+              </value>
+            </param>
+            <param index="20">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="21">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="22">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='email']"}
+  (Session info: chrome=91.0.4472.101)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.101, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:56167}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
+*** Element info: {Using=name, value=email} expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='email']"}
+  (Session info: chrome=91.0.4472.101)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.101, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:56167}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
+*** Element info: {Using=name, value=email} expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at Utils.SeleniumUtils.InputText(SeleniumUtils.java:402)
+at TopZinsPortal.TZPTransaktionBearbeitenGN.TZPTransaktionBearbeitenGNTest(TZPTransaktionBearbeitenGN.java:133)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionBearbeitenGNTest -->
+        <test-method signature="TZPTransaktionAkzeptierenGNTest()[pri:10, instance:TopZinsPortal.TZPTransaktionBearbeitenGN@12468a38]" started-at="2021-06-10T15:53:28 CEST" name="TZPTransaktionAkzeptierenGNTest" finished-at="2021-06-10T15:53:28 CEST" duration-ms="1" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPTransaktionBearbeitenGN.TZPTransaktionAkzeptierenGNTest(TZPTransaktionBearbeitenGN.java:302)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionAkzeptierenGNTest -->
+        <test-method signature="TZPTransaktionAblehnenGNTest()[pri:20, instance:TopZinsPortal.TZPTransaktionBearbeitenGN@12468a38]" started-at="2021-06-10T15:53:28 CEST" name="TZPTransaktionAblehnenGNTest" finished-at="2021-06-10T15:53:28 CEST" duration-ms="2" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPTransaktionBearbeitenGN.TZPTransaktionAblehnenGNTest(TZPTransaktionBearbeitenGN.java:311)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionAblehnenGNTest -->
+        <test-method signature="TZPTransaktionTelefonischWeiterleitenGNTest()[pri:30, instance:TopZinsPortal.TZPTransaktionBearbeitenGN@12468a38]" started-at="2021-06-10T15:53:28 CEST" name="TZPTransaktionTelefonischWeiterleitenGNTest" finished-at="2021-06-10T15:53:28 CEST" duration-ms="1" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPTransaktionBearbeitenGN.TZPTransaktionTelefonischWeiterleitenGNTest(TZPTransaktionBearbeitenGN.java:320)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPTransaktionTelefonischWeiterleitenGNTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPTransaktionBearbeitenGN@12468a38]" started-at="2021-06-10T15:53:28 CEST" name="BrowserTearDown" finished-at="2021-06-10T15:53:30 CEST" duration-ms="1712" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
-      </class> <!-- TopZinsPortal.TZPSeveralUserGNMailRegistration -->
+      </class> <!-- TopZinsPortal.TZPTransaktionBearbeitenGN -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
