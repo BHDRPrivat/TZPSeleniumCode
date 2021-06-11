@@ -90,6 +90,9 @@ public class TZPRegGG {
 		Thread.sleep(3 * Zeitspanne);
 		test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
 
+//		// Zeit für Video-Aufnahme
+//		Thread.sleep(80 * Zeitspanne);
+		
 		// Unternehmensname
 		Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "companyName", Unternehmensname, test);
 

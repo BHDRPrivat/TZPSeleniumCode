@@ -103,6 +103,9 @@ public class TZPStammGG {
 			// TZRegGG-Eingabemaske
 			Thread.sleep(3 * Zeitspanne);
 			test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
+
+			// Zeitspanne für Video
+			Thread.sleep(80 * Zeitspanne);
 			
 			
 			// Login mit gültigen Daten

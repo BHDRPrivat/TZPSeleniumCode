@@ -175,6 +175,12 @@ public class TZPTenderStartGG {
 				// 4.2 Feld "Ende der Ausschreibung (Zeit)" ausfüllen
 				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//Label[text() ='Ende der Ausschreibung (Uhrzeit)*']//following::input[contains(@class, 'MuiInput')][1]", EndeUhrzeit, test);
 
+				// 4.4 Field "Volumen" ausfüllen
+				// In der Zahl der Exceleingabe die "." entfernen, da bei der Eingabe in das Feld eine Fehlinterpretion erfolgt.
+				VolumenGG = (VolumenGG.replace(".", ""));
+				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//Label[text() ='Volumen*']//following::input[contains(@class, 'MuiInput')]", VolumenGG, test);
+				
+				
 				// 4.3 Drei Banken auswählen 
 				// Button klick zum öffnen der Maske
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//*[text()='Geldnehmer*']//following::button[contains(@class, 'MuiButtonBase-root')][1]", test);
@@ -188,10 +194,7 @@ public class TZPTenderStartGG {
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Auswahl bestätigen']//ancestor::button", test);
 				
 							
-				// 4.4 Field "Volumen" ausfüllen
-				// In der Zahl der Exceleingabe die "." entfernen, da bei der Eingabe in das Feld eine Fehlinterpretion erfolgt.
-				VolumenGG = (VolumenGG.replace(".", ""));
-				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//Label[text() ='Volumen*']//following::input[contains(@class, 'MuiInput')]", VolumenGG, test);
+
 				
 				//5.3 Zinskonvention
 				System.out.println("Zinskonvention: " + Zinskonvention);

@@ -13,16 +13,4 @@
       </class> <!-- TopZinsPortal.TZPTenderAngebotSendenGN -->
     </classes>
   </test> <!-- TZP-Ausschreibung-Angebot-Abgeben-GN(failed) -->
-  <test thread-count="5" name="TZP-Ausschreibung-Angebot-Annehmen-GG(failed)">
-    <parameter name="Ablaufart" value="Smoketest"/>
-    <classes>
-      <class name="TopZinsPortal.TZPTenderAngebotAnnehmenGG">
-        <methods>
-          <include name="BrowserTearDown"/>
-          <include name="TZPTenderAngebotAnnehmenGGTest" invocation-numbers="0"/>
-          <include name="SetupSeleniumTestdaten"/>
-        </methods>
-      </class> <!-- TopZinsPortal.TZPTenderAngebotAnnehmenGG -->
-    </classes>
-  </test> <!-- TZP-Ausschreibung-Angebot-Annehmen-GG(failed) -->
 </suite> <!-- Failed suite [TopZinzPortal-Ausschreibung-Ablauftesttest] -->

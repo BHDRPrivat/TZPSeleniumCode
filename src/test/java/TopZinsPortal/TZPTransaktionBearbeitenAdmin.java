@@ -178,7 +178,7 @@ public class TZPTransaktionBearbeitenAdmin {
 			      // Angebot wird telefonsich weitergeleitet	
 		         	
      	         	// Admin soll anehmen.
-					AdminTransactionActions();
+					AdminTransactionActions(ZinssatzGN);
 					
 				}
 				
@@ -207,7 +207,7 @@ public class TZPTransaktionBearbeitenAdmin {
 		
 		
 	    // Klasse für den Forsa-Admin
-		public void AdminTransactionActions() throws InterruptedException {
+		public void AdminTransactionActions(String ZinssatzGN) throws InterruptedException {
 			// positiver Durchlauf
 			System.out.println("Telefonisch weitergeleitet");
 			
@@ -234,7 +234,7 @@ public class TZPTransaktionBearbeitenAdmin {
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'TRANSAKTION')]", test);
 			
 			// In der Tabelle die erste Kontakt-Forsa Spalte auswählen
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//tr[@class='MuiTableRow-root']//td[7]", test);
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//p[contains(text(), '" + ZinssatzGN + ",00 %')]//ancestor::tr[@class='MuiTableRow-root']//td[7]", test);
 			
 			// Handelsvermerk eintragen
 			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "adminComment", "Handelvermerk durch den Forsa-Admin", test);

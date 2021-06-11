@@ -46,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jun 10, 2021 03:52:29 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Jun 11, 2021 02:59:56 PM</span>
 				</a>
 			</li>
 			<li>
@@ -72,7 +72,6 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -123,10 +122,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='25%'><span class='strong'>1</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>4</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='75%'>3</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -141,7 +140,7 @@
 					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='50%'>6</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='50%'>6</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>32</span> others
 				</div>
 			</div>
 		</div>
@@ -159,14 +158,14 @@
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>TZP_Transaktion: TZPTransaktionStartGG-TF-001 - Ad Hoc Test</span>
-						<span class='test-time'>Jun 10, 2021 03:52:33 PM</span>
+						<span class='test-time'>Jun 11, 2021 03:00:00 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jun 10, 2021 03:52:33 PM</span>
-	<span class='label end-time'>Jun 10, 2021 03:52:37 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+368ms</span>
+	<span class='label start-time'>Jun 11, 2021 03:00:00 PM</span>
+	<span class='label end-time'>Jun 11, 2021 03:00:16 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+984ms</span>
 </div>
 	<div class='test-desc'>Bearbeitung einer Transaktion durch den Geldnehmer </div>
 	<div class='test-steps'>
@@ -181,19 +180,44 @@
 			<tbody>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:52:34 PM</td>
+					<td class='timestamp'>3:00:01 PM</td>
 					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://52.59.225.49/portal/login</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:52:36 PM</td>
+					<td class='timestamp'>3:00:03 PM</td>
 					<td class='step-details'>Eintrag in email mit Wert: BHDR.GN.Handel@gmail.com</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:52:37 PM</td>
+					<td class='timestamp'>3:00:04 PM</td>
 					<td class='step-details'>Eintrag in password mit Wert: Test12345!</td>
 				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:10 PM</td>
+					<td class='step-details'>Eintrag in (//input[@name='volume'])[3] mit Wert: 100000</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:11 PM</td>
+					<td class='step-details'>Eintrag in (//input[@name='interestRate'])[3] mit Wert: 1</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:12 PM</td>
+					<td class='step-details'>Eintrag in (//Label[text() ='Ende des Angebots (Uhrzeit)*']//following::input[contains(@class, 'MuiInput')][1])[3] mit Wert: 20:00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:14 PM</td>
+					<td class='step-details'>Eintrag in (//textarea[@name='other'])[3] mit Wert: Sonstiges TF 1 durch den Geldnehmer GN sendet Angebot</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:16 PM</td>
+					<td class='step-details'>Eintrag in (//textarea[@name='comment'])[3] mit Wert: Kommentar TF1 Geldnehmer GN sendet Angebot</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
@@ -201,17 +225,17 @@
 				</li>
 				
 				
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='2'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
 					<div class='test-heading'>
 						<span class='test-name'>TZP_Transaktion: TZPTransaktionStartGG-TF-002 - Ad Hoc Test</span>
-						<span class='test-time'>Jun 10, 2021 03:52:51 PM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-time'>Jun 11, 2021 03:00:23 PM</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jun 10, 2021 03:52:51 PM</span>
-	<span class='label end-time'>Jun 10, 2021 03:53:03 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 12s+350ms</span>
+	<span class='label start-time'>Jun 11, 2021 03:00:23 PM</span>
+	<span class='label end-time'>Jun 11, 2021 03:00:39 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 16s+812ms</span>
 </div>
 	<div class='test-desc'>Bearbeitung einer Transaktion durch den Geldnehmer </div>
 	<div class='test-steps'>
@@ -226,26 +250,43 @@
 			<tbody>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:52:52 PM</td>
+					<td class='timestamp'>3:00:24 PM</td>
 					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://52.59.225.49/portal/login</td>
 				</tr>
-				<tr class='log' status='fail'>
-					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>3:53:03 PM</td>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:26 PM</td>
 					<td class='step-details'>Eintrag in email mit Wert: BHDR.GN.Handel@gmail.com</td>
 				</tr>
-				<tr class='log' status='fail'>
-					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>3:53:03 PM</td>
-					<td class='step-details'>Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='email']"}
-  (Session info: chrome=91.0.4472.101)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.101, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:56167}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
-*** Element info: {Using=name, value=email}</td>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:27 PM</td>
+					<td class='step-details'>Eintrag in password mit Wert: Test12345!</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:33 PM</td>
+					<td class='step-details'>Eintrag in (//input[@name='volume'])[2] mit Wert: 200000</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:34 PM</td>
+					<td class='step-details'>Eintrag in (//input[@name='interestRate'])[2] mit Wert: 2</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:35 PM</td>
+					<td class='step-details'>Eintrag in (//Label[text() ='Ende des Angebots (Uhrzeit)*']//following::input[contains(@class, 'MuiInput')][1])[2] mit Wert: 20:00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:38 PM</td>
+					<td class='step-details'>Eintrag in (//textarea[@name='other'])[2] mit Wert: Sonstiges TF 2 durch den Geldnehmer GN lehnt Angebot ab</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:39 PM</td>
+					<td class='step-details'>Eintrag in (//textarea[@name='comment'])[2] mit Wert: Kommentar TF2 Geldnehmer GN lehnt Angebot ab</td>
 				</tr>
 			</tbody>
 		</table>
@@ -254,17 +295,17 @@ Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
 				</li>
 				
 				
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='3'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
 					<div class='test-heading'>
 						<span class='test-name'>TZP_Transaktion: TZPTransaktionStartGG-TF-003 - Ad Hoc Test</span>
-						<span class='test-time'>Jun 10, 2021 03:53:03 PM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-time'>Jun 11, 2021 03:00:45 PM</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jun 10, 2021 03:53:03 PM</span>
-	<span class='label end-time'>Jun 10, 2021 03:53:16 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 12s+199ms</span>
+	<span class='label start-time'>Jun 11, 2021 03:00:45 PM</span>
+	<span class='label end-time'>Jun 11, 2021 03:01:01 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 16s+448ms</span>
 </div>
 	<div class='test-desc'>Bearbeitung einer Transaktion durch den Geldnehmer </div>
 	<div class='test-steps'>
@@ -279,26 +320,43 @@ Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
 			<tbody>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:53:04 PM</td>
+					<td class='timestamp'>3:00:47 PM</td>
 					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://52.59.225.49/portal/login</td>
 				</tr>
-				<tr class='log' status='fail'>
-					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>3:53:16 PM</td>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:48 PM</td>
 					<td class='step-details'>Eintrag in email mit Wert: BHDR.GN.Handel@gmail.com</td>
 				</tr>
-				<tr class='log' status='fail'>
-					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>3:53:16 PM</td>
-					<td class='step-details'>Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='email']"}
-  (Session info: chrome=91.0.4472.101)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.101, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:56167}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
-*** Element info: {Using=name, value=email}</td>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:49 PM</td>
+					<td class='step-details'>Eintrag in password mit Wert: Test12345!</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:55 PM</td>
+					<td class='step-details'>Eintrag in (//input[@name='volume'])[1] mit Wert: 300000</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:56 PM</td>
+					<td class='step-details'>Eintrag in (//input[@name='interestRate'])[1] mit Wert: 3</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:57 PM</td>
+					<td class='step-details'>Eintrag in (//Label[text() ='Ende des Angebots (Uhrzeit)*']//following::input[contains(@class, 'MuiInput')][1])[1] mit Wert: 20:00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:00:59 PM</td>
+					<td class='step-details'>Eintrag in (//textarea[@name='other'])[1] mit Wert: Sonstiges TF 3 durch den Geldnehmer GN Telefonisch</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:01:01 PM</td>
+					<td class='step-details'>Eintrag in (//textarea[@name='comment'])[1] mit Wert: Kommentar TF3 Geldnehmer GN Telefonisch</td>
 				</tr>
 			</tbody>
 		</table>
@@ -307,17 +365,17 @@ Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
 				</li>
 				
 				
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='4'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
 					<div class='test-heading'>
 						<span class='test-name'>TZP_Transaktion: TZPTransaktionStartGG-TF-004 - Ad Hoc Test</span>
-						<span class='test-time'>Jun 10, 2021 03:53:16 PM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-time'>Jun 11, 2021 03:01:07 PM</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jun 10, 2021 03:53:16 PM</span>
-	<span class='label end-time'>Jun 10, 2021 03:53:28 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 12s+193ms</span>
+	<span class='label start-time'>Jun 11, 2021 03:01:07 PM</span>
+	<span class='label end-time'>Jun 11, 2021 03:01:23 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 16s+645ms</span>
 </div>
 	<div class='test-desc'>Bearbeitung einer Transaktion durch den Geldnehmer </div>
 	<div class='test-steps'>
@@ -332,26 +390,43 @@ Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
 			<tbody>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:53:17 PM</td>
+					<td class='timestamp'>3:01:08 PM</td>
 					<td class='step-details'>Web-Applikation im Browser geoeffnet: http://52.59.225.49/portal/login</td>
 				</tr>
-				<tr class='log' status='fail'>
-					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>3:53:28 PM</td>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:01:10 PM</td>
 					<td class='step-details'>Eintrag in email mit Wert: Burk.GN.Handel@gmail.com</td>
 				</tr>
-				<tr class='log' status='fail'>
-					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-					<td class='timestamp'>3:53:28 PM</td>
-					<td class='step-details'>Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='email']"}
-  (Session info: chrome=91.0.4472.101)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.101, chrome: {chromedriverVersion: 91.0.4472.19 (1bf021f248676..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:56167}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
-*** Element info: {Using=name, value=email}</td>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:01:11 PM</td>
+					<td class='step-details'>Eintrag in password mit Wert: Test12345!</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:01:17 PM</td>
+					<td class='step-details'>Eintrag in (//input[@name='volume'])[1] mit Wert: 400000</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:01:18 PM</td>
+					<td class='step-details'>Eintrag in (//input[@name='interestRate'])[1] mit Wert: 4</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:01:19 PM</td>
+					<td class='step-details'>Eintrag in (//Label[text() ='Ende des Angebots (Uhrzeit)*']//following::input[contains(@class, 'MuiInput')][1])[1] mit Wert: 20:00</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:01:21 PM</td>
+					<td class='step-details'>Eintrag in (//textarea[@name='other'])[1] mit Wert: Sonstiges TF 4 durch den Geldnehmer GN sendet Angebot</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>3:01:23 PM</td>
+					<td class='step-details'>Eintrag in (//textarea[@name='comment'])[1] mit Wert: Kommentar TF4 Geldnehmer GN sendet Angebot</td>
 				</tr>
 			</tbody>
 		</table>
@@ -399,25 +474,25 @@ Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>12</div>
+					<div class='panel-lead'>32</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jun 10, 2021 03:52:29 PM</div>
+					<div class='panel-lead'>Jun 11, 2021 02:59:56 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jun 10, 2021 03:53:28 PM</div>
+			 		<div class='panel-lead'>Jun 11, 2021 03:01:31 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 58s+848ms</div>
+					<div class='panel-lead'>0h 1m 34s+567ms</div>
 				</div>
 			</div>
 		</div>
@@ -430,22 +505,22 @@ Session ID: 5cb7c7ce26f41324e3fa79dd59f3776e
 
 		<script>
 			var statusGroup = {
-				passParent: 1,
-				failParent: 3,
+				passParent: 4,
+				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 3,
+				exceptionsParent: 0,
 				
 				passChild: 0,
-				failChild: 6,
+				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
-				infoChild: 6,
-				exceptionsChild: 6,
+				infoChild: 32,
+				exceptionsChild: 0,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,

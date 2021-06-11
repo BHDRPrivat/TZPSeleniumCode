@@ -110,10 +110,12 @@ public class TZPTransaktionBearbeitenGN {
 
 		
 		
-		// Fehler: Wenn die Masken der vorherigen Firam nihct vorhanden sidn, kann auch nihct auf den neuen Anwender zugeriffen werrden.
+		// Fehler: Wenn die Masken der vorherigen Firma nicht vorhanden sind, kann auch nicht auf den neuen Anwender zugegriffen werden.
 		
 		// Für die GN-Firma "Burk-GN-Handel -BHDR-" existiert nur 1 Maske
-		if (FirmaGN.equals("Burk-GN-Handel -BHDR-")) {
+		if (FirmaGN.equals("BHDR-GN-Handel")) {
+			// Wert wird be 3 belassen
+		} else {
 			AktuellTransaktionMaske = 1;
 		}
 			
