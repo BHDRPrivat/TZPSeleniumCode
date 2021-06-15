@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- bisherige Daten aus D:\IR-WebRisk-Testdaten löschen -->
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TopZinzPortal-Ablauftesttest-Several-User-GG">
+
+	<test name="TZP-Serveral-User-Einladung-GN">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<parameter name="HtmlReporter"
+			value="Fehlerreport TopZinsPortal Several User Einladung GN"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPSeveralUserGNEinladung" />
+		</classes>
+	</test>
+	<test name="TZP-Serveral-User-Mail-GN">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<parameter name="HtmlReporter"
+			value="Fehlerreport TopZinsPortal Several User Mail GN"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPSeveralUserGNMailRegistration" />
+		</classes>
+	</test>
+	<test name="TZP-Serveral-User-Stamm-GN">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<parameter name="HtmlReporter"
+			value="Fehlerreport TopZinsPortal Several User Stamm GN"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPSeveralUserGNStamm" />
+		</classes>
+	</test>
+	<test name="TZP-Serveral-User-Forsa-Admin-Freigabe-GN">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<parameter name="HtmlReporter"
+			value="Fehlerreport TopZinsPortal Several User Admin Freigabe GN"></parameter>
+		<classes>
+			<class
+				name="TopZinsPortal.TZPSeveralUserGNAdminHandelsfreigabe" />
+		</classes>
+	</test>
+	
+
+</suite> <!-- Smoketest Prozesse Registrierungsdurchlauf -->

@@ -90,7 +90,7 @@ public class TZPSeveralUserGGEinladung {
 		}
 		
 		@Test(dataProvider = "TZPSeveralUserGG", dataProviderClass = Utils.DataSupplier.class)
-		public void TZPServeralUserEinladenGGTest(String Teststep, String Aktiv, String EmailadresseCompanyAdmin, String PasswortCompanyAdmin, String Anrede, 
+		public void TZPSeveralUserEinladenGGTest(String Teststep, String Aktiv, String EmailadresseCompanyAdmin, String PasswortCompanyAdmin, String Anrede, 
 				String FirstName, String LastName, String EmailadresseCompanyUser, String PasswortCompanyUser, 
 				String Unternehmensname, String Vorname, String TelefonNr, String Titel, String Nachname, String DatumPDF) throws Exception {
 
@@ -108,6 +108,9 @@ public class TZPSeveralUserGGEinladung {
 			// TZRegGG-Eingabemaske
 			Thread.sleep(3 * Zeitspanne);
 			test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
+
+//			// Zeitspanne für Video			
+//			Thread.sleep(100 * Zeitspanne);	
 			
 			
 			// Login mit gültigen Daten
@@ -119,7 +122,9 @@ public class TZPSeveralUserGGEinladung {
 			Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 			Thread.sleep(3 * Zeitspanne);
 			
-						
+		
+			
+			
 			// 3. Obern Profile icon clicken
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='profile-button']", test);
 			

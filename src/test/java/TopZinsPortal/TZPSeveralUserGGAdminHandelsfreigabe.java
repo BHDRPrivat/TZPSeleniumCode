@@ -88,7 +88,7 @@ public class TZPSeveralUserGGAdminHandelsfreigabe {
 	}
 
 	@Test(dataProvider = "TZPSeveralUserGG", dataProviderClass = Utils.DataSupplier.class)
-	public void TZPServeralUserAdminHandelsfreigabeGGTest(String Teststep, String Aktiv,
+	public void TZPSeveralUserAdminHandelsfreigabeGGTest(String Teststep, String Aktiv,
 			String EmailadresseCompanyAdmin, String PasswortCompanyAdmin, String Anrede, String FirstName,
 			String LastName, String EmailadresseCompanyUser, String PasswortCompanyUser, String Unternehmensname,
 			String Vorname, String TelefonNr, String Titel, String Nachname, String DatumPDF) throws Exception {
@@ -119,7 +119,8 @@ public class TZPSeveralUserGGAdminHandelsfreigabe {
 
 			// Button "Anmelden auswählen"
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
-
+			Thread.sleep(3 * Zeitspanne);
+			
 			// Button "Daten komplett" in menu clicken
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
 					"//li[contains(@data-test, '" + "BEREIT FÜR HANDELSBERECHTIGUNG" + "')]", test);

@@ -103,48 +103,7 @@ public class TZPSeveralUserGNMailRegistration {
 			// creates a toggle for the given test, adds all log events under it
 			ExtentTest test = extent.createTest("TZPServeralUserGN: " + Teststep + " - " + AblaufartGlobal,
 					"Einladen eines Company Employeers eines Geldnehmers");
-//
-//			driver.get(BaseUrl);
-//			// TZRegGG-Eingabemaske
-//			Thread.sleep(3 * Zeitspanne);
-//			test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
-//			
-//			
-//			// Login mit gültigen Daten
-//			SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", EmailadresseCompanyAdmin, test);
-//			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", PasswortCompanyAdmin, test);
-//
-//     		// Button "Registrieren auswählen"
-//			Utils.SeleniumUtils.ButtonKlick(driver, 
-//			Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
-//			Thread.sleep(3 * Zeitspanne);
-//			
-//						
-//			// 3. Obern Profile icon clicken
-//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='profile-button']", test);
-//			
-//			// 4. Register "Berechtigungen" auswaehlen
-//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@data-test='Berechtigungen']", test);
-//			
-//			// 5. Anrede in dropdown auswaehlen
-//			// Anrede 
-//			Utils.SeleniumUtils.ListenAuswahl(driver, Zeitspanne, "xpath", "//*[@id=\"mui-component-select-salutation\"]", "//li[contains(text(),'", Anrede, test);
-//			
-//			
-//			// 6. Vorname eingeben
-//			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "firstName", FirstName, test);
-//			
-//			// 7. Nachname eingeben
-//			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "lastName", LastName, test);
-//			
-//			// 8. E-Mail eingeben
-//			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", EmailadresseCompanyUser, test);
-//			
-//			// 9. Button "Einladen" clicken
-//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Einladen']//ancestor::button", test);
-//			
-//			// Zeit für die Versendung der Mail geben.
-// 			Thread.sleep(100 * Zeitspanne);
+
 
 			// Link für die Registration aus der E-Mail ermitteln
 			String EMailEingelesen = null;
@@ -165,14 +124,18 @@ public class TZPSeveralUserGNMailRegistration {
 			// in der Objektvariablen  Mailweitergabe befindet sich der Link zu der neuen Seite
 			// Beachte, die Klammer um (Mailweitergabe) führt zu einem Fehler
 			if (Mailweitergabe != null) {
+				if (RegistrierungslinkSU == null) {
 				RegistrierungslinkSU = Utils.EMailUtils.EMailSeveralUserRegistrationLink(Mailweitergabe, test);
 				System.out.println("Der Registierungslink lautet: " + RegistrierungslinkSU);				
+				}
 			}
 
 			// Es muss eine neue Webseite aufgebaut werden.
      		driver.get(RegistrierungslinkSU);
      		System.out.println("Der Registierungslink im driver: " + RegistrierungslinkSU);
-			
+			// Wieder zurücksetzen, für die nächste Mail
+     		RegistrierungslinkSU = null;
+     		
 			// warten bis die Seite aufgebaut wurde
 			// Sobald die Kondition erfüllt wird, erfolgt der weitere Programmablauf.
 			WebDriverWait wait = new WebDriverWait(driver, 10);

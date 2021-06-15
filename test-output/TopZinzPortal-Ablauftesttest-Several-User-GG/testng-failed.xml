@@ -1,56 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [TopZinzPortal-Ablauftesttest-Several-User-GG]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="TZP-Serveral-User-Deaktivieren-GG(failed)">
+  <test thread-count="5" name="TZP-Serveral-User-Mails-Lesen-GG-Bereinigung(failed)">
     <parameter name="Ablaufart" value="Smoketest"/>
-    <parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User deaktivieren GG"/>
+    <parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User Mails auslesen GG"/>
     <classes>
-      <class name="TopZinsPortal.TZPAdminSeveralUserDeaktivierenGG">
-        <methods>
-          <include name="BrowserTearDown"/>
-          <include name="TZPAdminSeveralUserDeaktivierenGGTest" invocation-numbers="0 1 2"/>
-          <include name="SetupSeleniumTestdaten"/>
-        </methods>
-      </class> <!-- TopZinsPortal.TZPAdminSeveralUserDeaktivierenGG -->
-    </classes>
-  </test> <!-- TZP-Serveral-User-Deaktivieren-GG(failed) -->
-  <test thread-count="5" name="TZP-Serveral-User-Loeschen-GG(failed)">
-    <parameter name="Ablaufart" value="Smoketest"/>
-    <parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User loeschen GG"/>
-    <classes>
-      <class name="TopZinsPortal.TZPAdminSeveralUserLoeschenGG">
+      <class name="TopZinsPortal.TZPCheckEMailsSeveralUserGG">
         <methods>
           <include name="SetupSeleniumTestdaten"/>
-          <include name="TZPAdminSeveralUserDeaktivierenGNTest" invocation-numbers="0 1 2"/>
+          <include name="TZPCheckEMailSeveralUserGGTest" invocation-numbers="0 1 2 3 4 5"/>
           <include name="BrowserTearDown"/>
         </methods>
-      </class> <!-- TopZinsPortal.TZPAdminSeveralUserLoeschenGG -->
+      </class> <!-- TopZinsPortal.TZPCheckEMailsSeveralUserGG -->
     </classes>
-  </test> <!-- TZP-Serveral-User-Loeschen-GG(failed) -->
-  <test thread-count="5" name="TZP-Serveral-User-Deaktivieren-GN(failed)">
+  </test> <!-- TZP-Serveral-User-Mails-Lesen-GG-Bereinigung(failed) -->
+  <test thread-count="5" name="TZP-Serveral-User-Mails-Lesen-GN-Bereinigung(failed)">
     <parameter name="Ablaufart" value="Smoketest"/>
-    <parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User deaktivieren GN"/>
+    <parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User Mails auslesen GN"/>
     <classes>
-      <class name="TopZinsPortal.TZPAdminSeveralUserDeaktivierenGN">
+      <class name="TopZinsPortal.TZPCheckEMailsSeveralUserGN">
+        <methods>
+          <include name="TZPCheckEMailSeveralUserGNTest" invocation-numbers="0 3"/>
+          <include name="BrowserTearDown"/>
+          <include name="SetupSeleniumTestdaten"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPCheckEMailsSeveralUserGN -->
+    </classes>
+  </test> <!-- TZP-Serveral-User-Mails-Lesen-GN-Bereinigung(failed) -->
+  <test thread-count="5" name="TZP-Serveral-User-Mail-GG(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User Mail GG"/>
+    <classes>
+      <class name="TopZinsPortal.TZPSeveralUserGGMailRegistration">
         <methods>
           <include name="SetupSeleniumTestdaten"/>
-          <include name="TZPAdminSeveralUserDeaktivierenGNTest" invocation-numbers="0 1 2"/>
           <include name="BrowserTearDown"/>
+          <include name="TZPServeralUserMailRegistrationGGTest" invocation-numbers="3"/>
         </methods>
-      </class> <!-- TopZinsPortal.TZPAdminSeveralUserDeaktivierenGN -->
+      </class> <!-- TopZinsPortal.TZPSeveralUserGGMailRegistration -->
     </classes>
-  </test> <!-- TZP-Serveral-User-Deaktivieren-GN(failed) -->
-  <test thread-count="5" name="TZP-Serveral-User-Loeschen-GN(failed)">
+  </test> <!-- TZP-Serveral-User-Mail-GG(failed) -->
+  <test thread-count="5" name="TZP-Serveral-User-Stamm-GG(failed)">
     <parameter name="Ablaufart" value="Smoketest"/>
-    <parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User loeschen GN"/>
+    <parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User Stamm GG"/>
     <classes>
-      <class name="TopZinsPortal.TZPAdminSeveralUserLoeschenGN">
+      <class name="TopZinsPortal.TZPSeveralUserGGStamm">
         <methods>
-          <include name="TZPAdminSeveralUserLoeschenGNTest" invocation-numbers="0 1 2"/>
+          <include name="TZPSeveralUserStammdatenGGTest" invocation-numbers="3"/>
           <include name="SetupSeleniumTestdaten"/>
           <include name="BrowserTearDown"/>
         </methods>
-      </class> <!-- TopZinsPortal.TZPAdminSeveralUserLoeschenGN -->
+      </class> <!-- TopZinsPortal.TZPSeveralUserGGStamm -->
     </classes>
-  </test> <!-- TZP-Serveral-User-Loeschen-GN(failed) -->
+  </test> <!-- TZP-Serveral-User-Stamm-GG(failed) -->
+  <test thread-count="5" name="TZP-Serveral-User-Forsa-Admin-Freigabe-GG(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User Admin Freigabe GG"/>
+    <classes>
+      <class name="TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe">
+        <methods>
+          <include name="SetupSeleniumTestdaten"/>
+          <include name="TZPSeveralUserAdminHandelsfreigabeGGTest" invocation-numbers="3"/>
+          <include name="BrowserTearDown"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe -->
+    </classes>
+  </test> <!-- TZP-Serveral-User-Forsa-Admin-Freigabe-GG(failed) -->
+  <test thread-count="5" name="TZP-Serveral-User-Mail-GN(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User Mail GN"/>
+    <classes>
+      <class name="TopZinsPortal.TZPSeveralUserGNMailRegistration">
+        <methods>
+          <include name="SetupSeleniumTestdaten"/>
+          <include name="BrowserTearDown"/>
+          <include name="TZPServeralUserMailRgistrationGNTest" invocation-numbers="2"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPSeveralUserGNMailRegistration -->
+    </classes>
+  </test> <!-- TZP-Serveral-User-Mail-GN(failed) -->
+  <test thread-count="5" name="TZP-Serveral-User-Stamm-GN(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User Stamm GN"/>
+    <classes>
+      <class name="TopZinsPortal.TZPSeveralUserGNStamm">
+        <methods>
+          <include name="TZPSeveralUserStammdatenGNTest" invocation-numbers="2"/>
+          <include name="BrowserTearDown"/>
+          <include name="SetupSeleniumTestdaten"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPSeveralUserGNStamm -->
+    </classes>
+  </test> <!-- TZP-Serveral-User-Stamm-GN(failed) -->
+  <test thread-count="5" name="TZP-Serveral-User-Forsa-Admin-Freigabe-GN(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User Admin Freigabe GN"/>
+    <classes>
+      <class name="TopZinsPortal.TZPSeveralUserGNAdminHandelsfreigabe">
+        <methods>
+          <include name="SetupSeleniumTestdaten"/>
+          <include name="TZPSeveralUserAdminHandelsfreigabeGNTest" invocation-numbers="2"/>
+          <include name="BrowserTearDown"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPSeveralUserGNAdminHandelsfreigabe -->
+    </classes>
+  </test> <!-- TZP-Serveral-User-Forsa-Admin-Freigabe-GN(failed) -->
+  <test thread-count="5" name="TZP-Serveral-User-Mails-Lesen-GG(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User Mails auslesen GG"/>
+    <classes>
+      <class name="TopZinsPortal.TZPCheckEMailsSeveralUserGG">
+        <methods>
+          <include name="SetupSeleniumTestdaten"/>
+          <include name="TZPCheckEMailSeveralUserGGTest" invocation-numbers="0 3"/>
+          <include name="BrowserTearDown"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPCheckEMailsSeveralUserGG -->
+    </classes>
+  </test> <!-- TZP-Serveral-User-Mails-Lesen-GG(failed) -->
+  <test thread-count="5" name="TZP-Serveral-User-Mails-Lesen-GN(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User Mails auslesen GN"/>
+    <classes>
+      <class name="TopZinsPortal.TZPCheckEMailsSeveralUserGN">
+        <methods>
+          <include name="TZPCheckEMailSeveralUserGNTest" invocation-numbers="0 3"/>
+          <include name="BrowserTearDown"/>
+          <include name="SetupSeleniumTestdaten"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPCheckEMailsSeveralUserGN -->
+    </classes>
+  </test> <!-- TZP-Serveral-User-Mails-Lesen-GN(failed) -->
 </suite> <!-- Failed suite [TopZinzPortal-Ablauftesttest-Several-User-GG] -->

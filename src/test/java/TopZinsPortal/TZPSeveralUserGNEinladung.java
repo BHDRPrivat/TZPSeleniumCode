@@ -90,7 +90,7 @@ public class TZPSeveralUserGNEinladung {
 		}
 		
 		@Test(dataProvider = "TZPSeveralUserGN", dataProviderClass = Utils.DataSupplier.class)
-		public void TZPServeralUserEinladenGNTest(String Teststep, String Aktiv, String EmailadresseCompanyAdmin, String PasswortCompanyAdmin, String Anrede, 
+		public void TZPSeveralUserEinladenGNTest(String Teststep, String Aktiv, String EmailadresseCompanyAdmin, String PasswortCompanyAdmin, String Anrede, 
 				String FirstName, String LastName, String EmailadresseCompanyUser, String PasswortCompanyUser, 
 				String Unternehmensname, String Vorname, String TelefonNr, String Titel, String Nachname, String DatumPDF) throws Exception {
 

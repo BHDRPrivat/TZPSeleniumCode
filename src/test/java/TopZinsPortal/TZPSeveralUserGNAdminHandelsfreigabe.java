@@ -88,7 +88,7 @@ public class TZPSeveralUserGNAdminHandelsfreigabe {
 	}
 
 	@Test(dataProvider = "TZPSeveralUserGN", dataProviderClass = Utils.DataSupplier.class)
-	public void TZPServeralUserAdminHanbdelsfreigabeGNTest(String Teststep, String Aktiv,
+	public void TZPSeveralUserAdminHandelsfreigabeGNTest(String Teststep, String Aktiv,
 			String EmailadresseCompanyAdmin, String PasswortCompanyAdmin, String Anrede, String FirstName,
 			String LastName, String EmailadresseCompanyUser, String PasswortCompanyUser, String Unternehmensname,
 			String Vorname, String TelefonNr, String Titel, String Nachname, String DatumPDF) throws Exception {
@@ -123,6 +123,7 @@ public class TZPSeveralUserGNAdminHandelsfreigabe {
 			// Button "Daten komplett" in menu clicken
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
 					"//li[contains(@data-test, '" + "BEREIT FÜR HANDELSBERECHTIGUNG" + "')]", test);
+			Thread.sleep(3 * Zeitspanne);
 
 			// Weiterlauf nur nach implizierter Anzeige des Suchfeldes
 			// Sobald die Kondition erfüllt wird, erfolgt der weitere Programmablauf.
@@ -171,6 +172,7 @@ public class TZPSeveralUserGNAdminHandelsfreigabe {
 
 			// Direktsprung auf Dokumente
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@href='#/masterdata/documents']", test);
+			Thread.sleep(3 * Zeitspanne);
 
 //			Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'identityCard']", test);
 //			Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'tradingLicense']", test);

@@ -240,6 +240,7 @@ public class EMailUtils {
 				test.log(Status.INFO, "Der Registrierungslink: " + (emails[(i)][7]).toString() + " wurde eingelesen.");
 				Registerlink = ((emails[(i)][7]).toString()).substring(6);
 				return Registerlink;
+				// Nur den ersten Link auslesen
 			}	
 		}
 		test.log(Status.INFO, "Kein Registrierungslink für den eingeladenen User in den E-Mails vorhanden");

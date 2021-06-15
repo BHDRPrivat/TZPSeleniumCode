@@ -97,8 +97,8 @@ public class TZPAdminSeveralUserLoeschenGG {
 	}
 
 	// @Test
-	@Test(dataProvider = "TZPAdminSeveralUserDeaktivierenLoeschenGN", dataProviderClass = Utils.DataSupplier.class)
-	public void TZPAdminSeveralUserDeaktivierenGNTest(String Teststep, String Aktiv, String Menue,
+	@Test(dataProvider = "TZPAdminSeveralUserDeaktivierenLoeschenGG", dataProviderClass = Utils.DataSupplier.class)
+	public void TZPAdminSeveralUserLoeschenGGTest(String Teststep, String Aktiv, String Menue,
 			String ZeilenProSeite, String Unternehmensname, String EmailadresseCompanyUser, String Menue2)
 			throws Exception {
 
