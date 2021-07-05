@@ -139,6 +139,14 @@ public class DataSupplier {
 		return testData(excelPath, "Testdaten");
 	}	
 	
+	@DataProvider(name = "TZPTransaktionStartGGSeveralUser")
+	public static Object[][] TZPTransaktionStartGGSeveralUIser() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalTransaktionGG-GN-SeveralUser.xls";
+		return testData(excelPath, "Testdaten");
+	}
+	
+	
 	// Auslesen der Exceldaten.
 	public static Object[][] testData(String excelPath, String sheetName) throws BiffException {
 		// Aufruf des Constructors von ExcelUtils

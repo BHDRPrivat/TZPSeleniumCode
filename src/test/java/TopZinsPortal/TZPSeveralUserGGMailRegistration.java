@@ -90,7 +90,7 @@ public class TZPSeveralUserGGMailRegistration {
 		}
 		
 		@Test(dataProvider = "TZPSeveralUserGG", dataProviderClass = Utils.DataSupplier.class)
-		public void TZPServeralUserMailRegistrationGGTest(String Teststep, String Aktiv, String EmailadresseCompanyAdmin, String PasswortCompanyAdmin, String Anrede, 
+		public void TZPSeveralUserMailRegistrationGGTest(String Teststep, String Aktiv, String EmailadresseCompanyAdmin, String PasswortCompanyAdmin, String Anrede, 
 				String FirstName, String LastName, String EmailadresseCompanyUser, String PasswortCompanyUser, 
 				String Unternehmensname, String Vorname, String TelefonNr, String Titel, String Nachname, String DatumPDF) throws Exception {
 

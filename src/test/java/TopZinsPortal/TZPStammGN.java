@@ -188,7 +188,11 @@ public class TZPStammGN {
 			Thread.sleep(3 * Zeitspanne);
 			
     		// Button "Weiter" auswählen
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);		
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);	
+			
+			// Wichtig: Nur mit Weiter Button prüfen
+			// Auswahl Register Person-> direktsprung ist sicherer
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[contains(@data-test, 'Person')]", test);
 			
      		// Reiter Person ausfüllen
 			// Anrede 
@@ -219,6 +223,10 @@ public class TZPStammGN {
     		// Button "Weiter" auswählen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);		
 			
+			// Wichtig, nur den Weiter Button verwenden
+			// Auswahl Register -> Direktsprung ist sicherer
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[contains(@data-test, 'Geldnehmer')]", test);
+
 			
 			// Reiter Geldnehmer ausfüllen
 			//Typ ELS 
@@ -260,7 +268,10 @@ public class TZPStammGN {
 			 // Direktsprung auf Dokumente
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@href='#/masterdata/documents']", test);
 			}
-				
+			
+			// Wichtig, wieder deaktivieren, um nur den Weiter-Button zu prüfen
+			// Auswahl Register -> wurden die Daten sauber gespeichert?
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[contains(@data-test, 'Dokumente')]", test);
 				
 			
 //			// Die Heftzwecke für das Hochladen des Dokuments hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?> <!-- bisherige Daten aus D:\IR-WebRisk-Testdaten löschen -->
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="TopZinzPortal-Gesamt-Ablauftest-GGundGN">
+	<test name="TZP-Lesen E-Mails-GG">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPCheckEMailsGG" />
+		</classes>
+	</test>
+	<test name="TZP-L	esen E-Mails-GN">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPCheckEMailsGN" />
+		</classes>
+	</test>
 	<test name="TZP-Registrierung-GG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
@@ -18,62 +30,62 @@
 		<classes>
 			<class name="TopZinsPortal.TZPLoginGG" />
 		</classes>
-    </test>	
-    	<test name="TZP-Login-GN">
+	</test>
+	<test name="TZP-Login-GN">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPLoginGN" />
 		</classes>
-    </test>
-    <test name="TZP-Stammdaten-GG">
+	</test>
+	<test name="TZP-Stammdaten-GG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPStammGG" />
 		</classes>
-    </test>
-        <test name="TZP-Stammdaten-GN">
+	</test>
+	<test name="TZP-Stammdaten-GN">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPStammGN" />
 		</classes>
-    </test>
-    <test name="TZP-Admin-Handelsfreigabe-GG">
+	</test>
+	<test name="TZP-Admin-Handelsfreigabe-GG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPAdminHandelsfreigabeGG" />
 		</classes>
-    </test>
-    <test name="TZP-Admin-Handelsfreigabe-GN">
+	</test>
+	<test name="TZP-Admin-Handelsfreigabe-GN">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPAdminHandelsfreigabeGN" />
 		</classes>
-    </test>
-    <test name="TZP-Admin-Deaktivieren-GG">
+	</test>
+	<test name="TZP-Admin-Deaktivieren-GG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPAdminUserDeaktivierenGG" />
 		</classes>
-    </test> 
-    <test name="TZP-Admin-Loeschen-GG">
+	</test>
+	<test name="TZP-Admin-Loeschen-GG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPAdminUserLoeschenGG" />
 		</classes>
-    </test> 
-    <test name="TZP-Admin-Deaktivieren-GN">
+	</test>
+	<test name="TZP-Admin-Deaktivieren-GN">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPAdminUserDeaktivierenGN" />
 		</classes>
-    </test> 
-    <test name="TZP-Admin-Loeschen-GN">
+	</test>
+	<test name="TZP-Admin-Loeschen-GN">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPAdminUserLoeschenGN" />
 		</classes>
-    </test>     
-    <test name="TZP-Zinssatz-Vorgabe-GN">
+	</test>
+	<test name="TZP-Zinssatz-Vorgabe-GN">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPZinssatzVorgabeGN" />
@@ -90,20 +102,20 @@
 		<classes>
 			<class name="TopZinsPortal.TZPTransaktionBearbeitenGN" />
 		</classes>
-    </test>
-    <test name="TZP-Transaktion-Akzeptieren-GG">
+	</test>
+	<test name="TZP-Transaktion-Akzeptieren-GG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPTransaktionAkzeptierenGG" />
 		</classes>
-    </test>
-    <test name="TZP-Transaktion-Abschluss-GN">
+	</test>
+	<test name="TZP-Transaktion-Abschluss-GN">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPTransaktionAbschlussGN" />
 		</classes>
-    </test>
-    	<test name="TZP-Ausschreibung-Start-GG">
+	</test>
+	<test name="TZP-Ausschreibung-Start-GG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPTenderStartGG" />
@@ -114,23 +126,23 @@
 		<classes>
 			<class name="TopZinsPortal.TZPTenderAngebotSendenGN" />
 		</classes>
-    </test>
-    <test name="TZP-Ausschreibung-Angebot-Annehmen-GG">
+	</test>
+	<test name="TZP-Ausschreibung-Angebot-Annehmen-GG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPTenderAngebotAnnehmenGG" />
 		</classes>
-    </test>
-        <test name="TZP-Kontrolle E-Mails-GG">
+	</test>
+	<test name="TZP-Kontrolle E-Mails-GG">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPCheckEMailsGG" />
 		</classes>
-    </test>
-    <test name="TZP-Kontrolle E-Mails-GN">
+	</test>
+	<test name="TZP-Kontrolle E-Mails-GN">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPCheckEMailsGN" />
 		</classes>
-    </test>  
-</suite> <!-- Smoketest Prozesse Registrierungsdurchlauf-->
+	</test>
+</suite> <!-- Smoketest Prozesse Registrierungsdurchlauf -->

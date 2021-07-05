@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [TopZinzPortal-Ablauftesttest-Komplette-Registrierung-GG]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="TZP-Admin-Deaktivieren(failed)">
+  <test thread-count="5" name="TZP-Lesen E-Mails-GG(failed)">
     <parameter name="Ablaufart" value="Smoketest"/>
     <classes>
-      <class name="TopZinsPortal.TZPAdminUserDeaktivierenGG">
+      <class name="TopZinsPortal.TZPCheckEMailsGG">
         <methods>
-          <include name="BrowserTearDown"/>
-          <include name="TZPAdminUserDeaktivierenGGTest" invocation-numbers="0 1"/>
           <include name="SetupSeleniumTestdaten"/>
+          <include name="TZPCheckEMailGGTest" invocation-numbers="0 1 2 3 4 5 6 7 8 10"/>
+          <include name="BrowserTearDown"/>
         </methods>
-      </class> <!-- TopZinsPortal.TZPAdminUserDeaktivierenGG -->
+      </class> <!-- TopZinsPortal.TZPCheckEMailsGG -->
     </classes>
-  </test> <!-- TZP-Admin-Deaktivieren(failed) -->
+  </test> <!-- TZP-Lesen E-Mails-GG(failed) -->
+  <test thread-count="5" name="TZP-Kontrolle E-Mails-GG(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <classes>
+      <class name="TopZinsPortal.TZPCheckEMailsGG">
+        <methods>
+          <include name="SetupSeleniumTestdaten"/>
+          <include name="TZPCheckEMailGGTest" invocation-numbers="6 7 10"/>
+          <include name="BrowserTearDown"/>
+        </methods>
+      </class> <!-- TopZinsPortal.TZPCheckEMailsGG -->
+    </classes>
+  </test> <!-- TZP-Kontrolle E-Mails-GG(failed) -->
 </suite> <!-- Failed suite [TopZinzPortal-Ablauftesttest-Komplette-Registrierung-GG] -->

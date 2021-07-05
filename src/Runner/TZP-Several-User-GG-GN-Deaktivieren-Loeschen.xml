@@ -29,4 +29,7 @@
 			<class name="TopZinsPortal.TZPAdminSeveralUserLoeschenGN" />
 		</classes>
 	</test>
+	
+	
+	
 </suite> <!-- Smoketest Prozesse Registrierungsdurchlauf-->

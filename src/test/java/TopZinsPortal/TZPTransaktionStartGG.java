@@ -30,23 +30,23 @@ public class TZPTransaktionStartGG {
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
 	
 	public static WebDriver driver;
-	private Integer Zeitspanne;
-	private String BaseUrl;
-	public String StandardBrowser;
-	public String SpeicherpfadTestdokumente;
+	private static Integer Zeitspanne;
+	private static String BaseUrl;
+	public static String StandardBrowser;
+	public static String SpeicherpfadTestdokumente;
 	public static String TestdatenExceldatei;
 	public static String projectpath = null;
 	public SoftAssert softassert = new SoftAssert();
 	
 	// Klassenvariablen
-	ExtentHtmlReporter htmlReporter = null;
-	ExtentReports extent;
+	static ExtentHtmlReporter htmlReporter = null;
+	static ExtentReports extent;
 
-	public String AblaufartGlobal;
+	public static String AblaufartGlobal;
 
 	//public ChromeDevToolsService devToolsService = null;
 	// Variable für Applitools
-	public Eyes eyes = null;
+	public static Eyes eyes = null;
 		
 		// Zu Testzwecken, direktsprung auf das Hochladen der PDF-dateien
 		// Wenn alle Stammdaten eingegeben wurden, kann mit false direkt auf Dokumente zugegriffen werden
@@ -57,7 +57,7 @@ public class TZPTransaktionStartGG {
 
 		@Parameters({ "Ablaufart" })
 		@BeforeTest
-		public void SetupSeleniumTestdaten(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
+		public static void SetupSeleniumTestdaten(@Optional("Ad Hoc Test") String Ablaufart) throws InterruptedException, IOException {
 
 			// Ermittelt den Pfad des aktuellen Projekts
 			projectpath = System.getProperty("user.dir");
@@ -88,7 +88,7 @@ public class TZPTransaktionStartGG {
 
 		// @Test
 		@Test(dataProvider = "TZPTransaktionStartGG", dataProviderClass = Utils.DataSupplier.class)
-		public void TZPTransaktionStartGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
+		static public void TZPTransaktionStartGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
 				String ZinssatzGG, String Valuta, String Zinskonvention, String Zahlungsfrequenz, String SonstigesGG, String KommentarGG, String EndeAnfrageUhrzeitGG, 
 				String BtnAnfrageSendenGG, String BtnAusloggenGG, String FirmaGN, String EmailadresseGN, String PasswortGN, String VolumenGN, 
 				String ZinssatzGN, String EndeAngebotGN, String BtnAngebotSendenGN, String BtnAnfrageAblehnenGN, String BtnAngebotTelefonischWeiterleitenGN, 

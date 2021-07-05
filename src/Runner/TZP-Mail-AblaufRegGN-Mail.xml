@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?> <!-- bisherige Daten aus D:\IR-WebRisk-Testdaten löschen -->
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="TopZinzPortal-Ablauftesttest">
+	<test name="TZP-Lesen E-Mails-GN">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPCheckEMailsGN" />
+		</classes>
+	</test>
+
 	<test name="TZP-Registrierung-GN">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
@@ -12,30 +19,37 @@
 		<classes>
 			<class name="TopZinsPortal.TZPLoginGN" />
 		</classes>
-    </test>
-    <test name="TZP-Stammdaten-GN">
+	</test>
+	<test name="TZP-Stammdaten-GN">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPStammGN" />
 		</classes>
-    </test>
-    <test name="TZP-Admin-HandelsfreigabeGN">
+	</test>
+	<test name="TZP-Admin-HandelsfreigabeGN">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPAdminHandelsfreigabeGN" />
 		</classes>
-    </test>
-    <test name="TZP-Admin-Deaktivieren">
+	</test>
+	<test name="TZP-Admin-Deaktivieren">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPAdminUserDeaktivierenGN" />
 		</classes>
-    </test> 
-    <test name="TZP-Admin-Loeschen">
+	</test>
+	<test name="TZP-Admin-Loeschen">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPAdminUserLoeschenGN" />
 		</classes>
-    </test> 
-</suite> <!-- Smoketest Prozesse Registrierungsdurchlauf-->
+	</test>
+
+	<test name="TZP-Kontrolle E-Mails-GN">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPCheckEMailsGN" />
+		</classes>
+	</test>
+</suite> <!-- Smoketest Prozesse Registrierungsdurchlauf -->
 

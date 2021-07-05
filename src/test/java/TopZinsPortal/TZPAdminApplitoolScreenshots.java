@@ -95,10 +95,13 @@ public class TZPAdminApplitoolScreenshots {
 	@Test
 	public void TZPApplitoolScreenshot() throws Exception {
 
-		String Testversion = "Klon Prod Sprint 37";
+		String Testversion = "Stage Sprint 41";
 		String Aktiv = "Ja";
 		String Teststep ="TZP-Aplitool-001";
-		String Suchbegriff = "Volksbank";
+//		// Produktiv
+//		String Suchbegriff = "Volksbank";
+		// Testversion
+		String Suchbegriff = "BHDR";		
 		String LogInVon = "01.05.2021";
 		String LogInBis = "03.05.2021";
 		String Scrollelement = null;
@@ -129,63 +132,84 @@ public class TZPAdminApplitoolScreenshots {
 			
 			
 			
-			// Ab hier Aufnahmen der Admin-Seiten
-			// Button "Dashboard" in menu clicken
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'DASHBOARD')]", test);			
-			
-			// Screenshot für Applitool aufnehmen
-     		Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "DASHBOARD"+ "-" +Testversion, "", Teststep, test);
-
-			// Button "INAKTIV" in menu clicken
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'INAKTIV')]", test);			
-			
-			// Screenshot für Applitool aufnehmen
-     		Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "INAKTIV"+ "-" +Testversion, "", Teststep, test);
-     		
-			// Button "Aktuelle Benutzer" in menu clicken
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'AKTUELLE BENUTZER')]", test);
-			
-			// Suchbegriff eintragen
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search",  Suchbegriff, test);
-			Thread.sleep(3 * Zeitspanne);
-			
-			// Screenshot für Applitool aufnehmen
-			// Scrollelement
-			Scrollelement = "//table[@id='CurrentUsers-table']//ancestor::div[contains(@class, 'jss')]";
-			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "AKTUELLE BENUTZER " + Suchbegriff + "-"+ Testversion, Scrollelement, Teststep, test);			
-			
-			// Button "OHNE HANDELSBERECHTIGUNG" in menu clicken
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'OHNE HANDELSBERECHTIGUNG')]", test);	
-
-			// Suchbegriff eintragen
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search",  Suchbegriff, test);
-			Thread.sleep(3 * Zeitspanne);
-			
-			// Neue Aufnahme
-			Scrollelement = "";
-			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "OHNE HANDELSBERECHTIGUNG "+ Suchbegriff +  "-" + Testversion, Scrollelement, Teststep, test);		
-
-			// Button "BEREIT FÜR HANDELSBERECHTIGUNG" in menu clicken
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'BEREIT FÜR HANDELSBERECHTIGUNG')]", test);	
-			
-			// Suchbegriff eintragen
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search",  Suchbegriff, test);
-			Thread.sleep(3 * Zeitspanne);			
-
-			// Neue Aufnahme
-			Scrollelement = "";
-			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "BEREIT FÜR HANDELSBERECHTIGUNG "+ Suchbegriff + "-" + Testversion, Scrollelement, Teststep, test);	
-			
-			// Button "MIT HANDELSBERECHTIGUNG" in menu clicken
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'MIT HANDELSBERECHTIGUNG')]", test);	
-
-			// Suchbegriff eintragen
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search",  Suchbegriff, test);
-			Thread.sleep(3 * Zeitspanne);			
-			
-			// Neue Aufnahme
-			Scrollelement = "";
-			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "MIT HANDELSBERECHTIGUNG "+ Suchbegriff + "-" + Testversion, Scrollelement, Teststep, test);	
+//			// Ab hier Aufnahmen der Admin-Seiten
+//			// Button "Dashboard" in menu clicken
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'DASHBOARD')]", test);			
+//			
+//			// Screenshot für Applitool aufnehmen
+//     		Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "DASHBOARD"+ "-" +Testversion, "", Teststep, test);
+//
+//			// Button "INAKTIV" in menu clicken
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'INAKTIV')]", test);			
+//			
+//			// Screenshot für Applitool aufnehmen
+//     		Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "INAKTIV"+ "-" +Testversion, "", Teststep, test);
+//     		
+//			// Button "Eingeladen" in menu clicken
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'EINGELADEN')]", test);
+//			
+//			// Screenshot für Applitool aufnehmen
+//     		Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "EINGELADEN"+ "-" +Testversion, "", Teststep, test);
+//			
+//			// Button "Aktuelle Benutzer" in menu clicken
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'AKTUELLE BENUTZER')]", test);
+//
+//			// Screenshot für Applitool aufnehmen
+//     		Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "AKTUELLE BENUTZER"+ "-" +Testversion, "", Teststep, test);
+//			
+//			
+//			// Suchbegriff eintragen
+//			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search",  Suchbegriff, test);
+//			Thread.sleep(3 * Zeitspanne);
+//			
+//			// Screenshot für Applitool aufnehmen
+//			// Scrollelement
+//			Scrollelement = "//table[@id='CurrentUsers-table']//ancestor::div[contains(@class, 'jss')]";
+//			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "AKTUELLE BENUTZER " + Suchbegriff + "-"+ Testversion, Scrollelement, Teststep, test);			
+//
+//		
+//			// Button "OHNE HANDELSBERECHTIGUNG" in menu clicken
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'OHNE HANDELSBERECHTIGUNG')]", test);	
+//			
+//			// Screenshot für Applitool aufnehmen
+//     		Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "OHNE HANDELSBERECHTIGUNG"+ "-" +Testversion, "", Teststep, test);
+//
+//			// Suchbegriff eintragen
+//			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search",  Suchbegriff, test);
+//			Thread.sleep(3 * Zeitspanne);
+//			
+//			// Neue Aufnahme
+//			Scrollelement = "";
+//			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "OHNE HANDELSBERECHTIGUNG "+ Suchbegriff +  "-" + Testversion, Scrollelement, Teststep, test);		
+//
+//			// Button "BEREIT FÜR HANDELSBERECHTIGUNG" in menu clicken
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'BEREIT FÜR HANDELSBERECHTIGUNG')]", test);
+//			
+//			// Screenshot für Applitool aufnehmen
+//     		Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "BEREIT FÜR HANDELSBERECHTIGUNG"+ "-" +Testversion, "", Teststep, test);
+//			
+//			
+//			// Suchbegriff eintragen
+//			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search",  Suchbegriff, test);
+//			Thread.sleep(3 * Zeitspanne);			
+//
+//			// Neue Aufnahme
+//			Scrollelement = "";
+//			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "BEREIT FÜR HANDELSBERECHTIGUNG "+ Suchbegriff + "-" + Testversion, Scrollelement, Teststep, test);	
+//			
+//			// Button "MIT HANDELSBERECHTIGUNG" in menu clicken
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'MIT HANDELSBERECHTIGUNG')]", test);	
+//			
+//			// Screenshot für Applitool aufnehmen
+//     		Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "MIT HANDELSBERECHTIGUNG"+ "-" +Testversion, "", Teststep, test);
+//
+//			// Suchbegriff eintragen
+//			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "search",  Suchbegriff, test);
+//			Thread.sleep(3 * Zeitspanne);			
+//			
+//			// Neue Aufnahme
+//			Scrollelement = "";
+//			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "MIT HANDELSBERECHTIGUNG "+ Suchbegriff + "-" + Testversion, Scrollelement, Teststep, test);	
 			
 			// Button "TRANSAKTION" in menu clicken
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'TRANSAKTION')]", test);	
@@ -247,6 +271,11 @@ public class TZPAdminApplitoolScreenshots {
 			Scrollelement = "";
 			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "AUSSCHREIBUNG Abgeschlossene"+ "-" + Testversion, Scrollelement, Teststep, test);
 
+			
+			// Button "Fälligkeiten" in menu clicken
+			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'FÄLLIGKEITENLISTE')]", test);	
+			
+			
 			// Neue Aufnahme
 			Scrollelement = "";
 			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "FÄLLIGKEITENLISTE"+ "-" + Testversion, Scrollelement, Teststep, test);
@@ -261,7 +290,7 @@ public class TZPAdminApplitoolScreenshots {
 			Thread.sleep(2 * Zeitspanne);
 			
 			Scrollelement = "";
-			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "FÄLLIGKEITENLISTE Volksbanken"+ "-" + Testversion, Scrollelement, Teststep, test);
+			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "FÄLLIGKEITENLISTE " + Suchbegriff +  "-" + Testversion, Scrollelement, Teststep, test);
 			
 						
 			// Button "ÜBERSICHT" in menu clicken
@@ -277,16 +306,18 @@ public class TZPAdminApplitoolScreenshots {
 			// Neue Aufnahme
 			Scrollelement = "";
 			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "FAVORITEN ohne Optionen"+ "-" + Testversion, Scrollelement, Teststep, test);
+
+			// Favoriten sollten die bestehenden Optionen verwenden, daher eine Veränderung nicht durchführen.
 			
-			// Führt zu einem Fehler
-			// Listenelement "Alle" aus Liste "Sparkassen Sicherungssystem" wählen (kein klassisches Listenelement)
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//label[contains(text(), 'Sicherungssystem')]//ancestor::div[contains(@class, 'MuiFormControl-root jss')]", test);
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[@data-value='all']", test);
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//label[contains(text(), 'Sicherungssystem')]//ancestor::div[contains(@class, 'MuiFormControl-root jss')]", test);
-		
-			// Neue Aufnahme
-			Scrollelement = "";
-			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "FAVORITEN Sparkassen"+ "-" + Testversion, Scrollelement, Teststep, test);
+//			// Führt zu einem Fehler
+//			// Listenelement "Alle" aus Liste "Sparkassen Sicherungssystem" wählen (kein klassisches Listenelement)
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//label[contains(text(), 'Sicherungssystem')]//ancestor::div[contains(@class, 'MuiFormControl-root jss')]", test);
+//			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[@data-value='all']", test);
+//			// Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//label[contains(text(), 'Sicherungssystem')]//ancestor::div[contains(@class, 'MuiFormControl-root jss')]", test);
+//		
+//			// Neue Aufnahme
+//			Scrollelement = "";
+//			Utils.SeleniumUtils.ApplitoolsAufnahme(driver, "Admin-Forsa", "FAVORITEN Option gewählt"+ "-" + Testversion, Scrollelement, Teststep, test);
 			
 			// Button "LOG-IN-HISTORIE" in menu clicken
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//li[contains(@data-test, 'LOG-IN-HISTORIE')]", test);
