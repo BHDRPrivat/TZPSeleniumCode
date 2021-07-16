@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- bisherige Daten aus D:\IR-WebRisk-Testdaten löschen -->
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TopZinzPortal-Gesamt-Ablauftest-Einzel und Several User">
+
+<!-- Platzhalter für die manuelle Kontrolle auf der Forsa-Admin-Seite -->
+
+<!-- Unter Aktuelle Benutzer darf es kein Zugang mit BHDR geben -->
+
+<!-- in Inaktiv darf es kein Zugang mit BHDR geben -->
+
+<!-- in Eingeladen darf es kein Zugang mit BHDR geben -->
+
+</suite> <!-- Smoketest Prozesse Registrierungsdurchlauf -->

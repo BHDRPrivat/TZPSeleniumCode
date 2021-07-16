@@ -233,10 +233,20 @@ public class TZPTransaktionBearbeitenGN {
 								+ AktuellTransaktionMaske + "]",
 						test);
 
-		
+
+				Thread.sleep(10 * Zeitspanne);
+				
+				// Es gibt schon eine Prüfung über die Variablen. 
+//    			// Prüfung ob die Bestätigung geöffnet wird?
+//    			SoftAssert softassert = new SoftAssert();
+//    			softassert.assertEquals(driver.getPageSource().contains("Die Anfrage wurde abgelehnt"), false); 
+//    			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
 				
 				// Button "OK" auswählen, wenn vorhanden
 				Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
+				
+
+
 
 			} else if (BtnAngebotTelefonischWeiterleitenGN.equals("Ja")) {
 				// Angebot wird telefonsich weitergeleitet

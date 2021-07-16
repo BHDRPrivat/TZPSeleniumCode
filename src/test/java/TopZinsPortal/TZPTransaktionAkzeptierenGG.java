@@ -43,7 +43,10 @@ public class TZPTransaktionAkzeptierenGG {
 	public String AblaufartGlobal;
 	
 	// Anzahl der Testfälle wichtig für die einzelnen Zugriffe 
-	public static Integer AktuellTransaktionMaske = 0; 
+    // Später die exakte Zahl auslesen
+	// hier wird Sie im Code festgelegt:
+	public static Integer AktuellTransaktionMaske = 5; 
+
 
 
 	//public ChromeDevToolsService devToolsService = null;
@@ -85,52 +88,8 @@ public class TZPTransaktionAkzeptierenGG {
 		}
 		
 
-		@DataProvider(name = "TZPTransaktionAkzeptierenGG")
-		public static Object[][] getData() throws BiffException {
-			// Ermittelt den Pfad des aktuellen Projekts
-			projectpath = System.getProperty("user.dir");
-			// Zugriff auf die zugehörigen Exceldaten
-			
-			TestdatenExceldatei = "\\Excel\\TopZinsPortalTransaktionGG-GN.xls";
-
-			String excelPath = projectpath + TestdatenExceldatei;
-			Object testData[][] = testData(excelPath, "Testdaten");
-			return testData;
-		}
-
-		public static Object[][] testData(String excelPath, String sheetName) throws BiffException {
-			// Aufruf des Constructors von ExcelUtils
-			ExcelUtilsJXL excel = new ExcelUtilsJXL(excelPath, sheetName);
-
-			int rowCount = ExcelUtilsJXL.getRowCount();
-			int colCount = ExcelUtilsJXL.getColCount();
-			
-			AktuellTransaktionMaske = rowCount;
-      		System.out.println("Zeile=" + rowCount + "Spalte=" + colCount + "String Wert: ");
-
-			// 2 Dimensionales Object-Array erzeugen
-			Object data[][] = new Object[rowCount-1][colCount];
-
-			// �ber alle Zeilen laufen (i=1, da i=0 die Headerzeile)
-			for (int i = 1; i < rowCount; i++) {
-				// �ber alle Spalten laufen
-				for (int j = 0; j < colCount; j++) {
-
-					String cellData = ExcelUtilsJXL.getExcelDataString(i, j);
-					data[i - 1][j] = cellData;
-					
-					System.out.println("Pro Zeile=" + i + "Pro Spalte= " + data[0][j] + " " + j + " Pro String Wert: " + cellData);
-					
-					// Werte in einer Zeile anzeigen
-					// System.out.print(cellData + " | ");
-				}
-			}
-			return data;
-		}
-
-
 		// @Test
-		@Test(dataProvider = "TZPTransaktionAkzeptierenGG")
+		@Test(dataProvider = "TZPTransaktionAkzeptierenGG", dataProviderClass = Utils.DataSupplier.class)
 		public void TZPTransaktionAkzeptierenGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String VolumenGG, 
 				String ZinssatzGG, String Valuta, String Zinskonvention, String Zahlungsfrequenz, String SonstigesGG, String KommentarGG, String EndeAnfrageUhrzeitGG, 
 				String BtnAnfrageSendenGG, String BtnAusloggenGG, String FirmaGN, String EmailadresseGN, String PasswortGN, String VolumenGN, 
@@ -186,7 +145,14 @@ public class TZPTransaktionAkzeptierenGG {
     			// 17. Button "Ja" in Pop-up klicken
     			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//*[@class='MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary']" , test);
     		
-    		
+    			Thread.sleep(5 * Zeitspanne);
+    			
+    			// Prüfung ob die Bestätigung geöffnet wird?
+    			SoftAssert softassert = new SoftAssert();
+    			softassert.assertEquals(driver.getPageSource().contains("Die Transaktion wurde erfolgreich abgeschlossen"), false); 
+    			softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
+    			
+    			
     		}
 			else if (BtnAnfrageAblehnenGN.equals("Ja")) {
 			// Anfrage wurde durch den GN abgelehnt	

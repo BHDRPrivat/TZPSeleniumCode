@@ -7,7 +7,7 @@
 			<class name="TopZinsPortal.TZPCheckEMailsGG" />
 		</classes>
 	</test>
-	<test name="TZP-L	esen E-Mails-GN">
+	<test name="TZP-Lesen E-Mails-GN">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>
 		<classes>
 			<class name="TopZinsPortal.TZPCheckEMailsGN" />

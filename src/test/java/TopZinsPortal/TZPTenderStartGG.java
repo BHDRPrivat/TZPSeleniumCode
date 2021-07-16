@@ -81,51 +81,8 @@ public class TZPTenderStartGG {
 		}
 		
 
-		@DataProvider(name = "TZPTenderStartGG")
-		public static Object[][] getData() throws BiffException {
-			// Ermittelt den Pfad des aktuellen Projekts
-			projectpath = System.getProperty("user.dir");
-			// Zugriff auf die zugehörigen Exceldaten
-			
-			TestdatenExceldatei = "\\Excel\\TopZinsPortalTenderGG-GN.xls";
-
-			String excelPath = projectpath + TestdatenExceldatei;
-			Object testData[][] = testData(excelPath, "Testdaten");
-			return testData;
-		}
-
-		public static Object[][] testData(String excelPath, String sheetName) throws BiffException {
-			// Aufruf des Constructors von ExcelUtils
-			ExcelUtilsJXL excel = new ExcelUtilsJXL(excelPath, sheetName);
-
-			int rowCount = ExcelUtilsJXL.getRowCount();
-			int colCount = ExcelUtilsJXL.getColCount();
-			
-			System.out.println("Zeile=" + rowCount + "Spalte=" + colCount + "String Wert: ");
-
-			// 2 Dimensionales Object-Array erzeugen
-			Object data[][] = new Object[rowCount-1][colCount];
-
-			// �ber alle Zeilen laufen (i=1, da i=0 die Headerzeile)
-			for (int i = 1; i < rowCount; i++) {
-				// �ber alle Spalten laufen
-				for (int j = 0; j < colCount; j++) {
-
-					String cellData = ExcelUtilsJXL.getExcelDataString(i, j);
-					data[i - 1][j] = cellData;
-					
-					System.out.println("Pro Zeile=" + i + "Pro Spalte=" + j + "Pro String Wert: " + cellData);
-					
-					// Werte in einer Zeile anzeigen
-					// System.out.print(cellData + " | ");
-				}
-			}
-			return data;
-		}
-
-
 		// @Test
-		@Test(dataProvider = "TZPTenderStartGG")
+		@Test(dataProvider = "TZPTenderStartGG", dataProviderClass = Utils.DataSupplier.class)
 		public void TZPTenderStartGGTest(String Teststep, String Aktiv, String EmailadresseGG, String PasswortGG, String EndeDatum, 
 		String	EndeUhrzeit, String Zinskonvention, String Zahlungsfrequenz, 		
 		String VolumenGG, String Valuta, String Faelligkeit1, String Faelligkeit2, String Faelligkeit3, String KommentarGG,
@@ -136,10 +93,7 @@ public class TZPTenderStartGG {
 		String BtnAngebotSendenGN1, String	BtnAngebotAblehnenGN1, String BtnAngebotTelefonischGN1,
 		String BtnAngebotSendenGN2, String	BtnAngebotAblehnenGN2, String BtnAngebotTelefonischGN2,
 		String BtnAngebotSendenGN3, String	BtnAngebotAblehnenGN3, String BtnAngebotTelefonischGN3,
-	    String BtnAngebotAnnehmenGG, String	BtnAngebotAblehnenGG, String BtnAngebotTelefonischGG
-
-
-		) throws Exception {
+	    String BtnAngebotAnnehmenGG, String	BtnAngebotAblehnenGG, String BtnAngebotTelefonischGG) throws Exception {
 
 			
 			if (Aktiv.equals("Ja")) {
@@ -226,60 +180,14 @@ public class TZPTenderStartGG {
 				
 				Thread.sleep(10 * Zeitspanne);
 				
-				
-				
-			/*
-			// creates a toggle for the given test, adds all log events under it
-			ExtentTest test = extent.createTest("TZP_Transaktion: " + Teststep + " - " + AblaufartGlobal,
-					"Start einer Transaktion durch den Geldgeber");
+				driver.close();
+				// Für den Teardown
+				driver = null;
+				eyes = null;
 
-			driver.get(BaseUrl);
-			// 1. Loginseite oeffnen
-			Thread.sleep(3 * Zeitspanne);
-			test.log(Status.INFO, "Web-Applikation im Browser geoeffnet: " + BaseUrl);
+				// Neu Starten
+				SetupSeleniumTestdaten(AblaufartGlobal);
 
-			// 2. Login Geldgeber, der eine handelsberechtigung hat, mit gueltigen Daten
-			SeleniumUtils.InputText(driver, Zeitspanne, "name", "email", EmailadresseGG, test);
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", "password", PasswortGG, test);
-
-     		// 3. Button "Login" auswaehlen
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
-			
-			// 4. Ein Zinssatz in view "Alle Banken" auswaehlen
-			// Auf das Zellenelemnet mit Bankname und Zinssatz zugreifen
-			Utils.SeleniumUtils.TabelleButtonKlick(driver, Zeitspanne, "xpath", FirmaGN, ZinssatzGG, test); 
-			System.out.println("nach Buttonclick");
-			
-			// 5. Alle Pflichtfelder in Pop-up "Anfrage Termingeldanlage starten" ausfuellen
-			// 5.1 Volumen 
-			Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//input[@inputmode='numeric']", VolumenGN, test);
-						
-			
-			// 5.2 Valuta
-			Utils.SeleniumUtils.InputDatum(driver, Zeitspanne, "xpath", "//Label[text() ='Valuta*']//following::input[contains(@class, 'MuiInput')]", Valuta, test);
-		
-			// 6.0 Button "Anfrage senden" klicken 
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
-			
-			
-			// 6.1 OK Button der neuen Meldung
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
-			
-			
-			// 7. Geldgeber ausloggen
-			// Beispiel, wie man ein Element mit einem bestimmten Attribut finden kann -> webDriver.findElements(By.xpath("//element[@attribute='value']"))
-			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[@data-test='logout-button']", test);  // Klicken auf ein Button mit dem Attribut data-test='logout-button'
-			
-			Thread.sleep(3 * Zeitspanne);
-						
-			
-			driver.close();
-			// Für den Teardown
-			driver = null;
-			eyes = null;
-
-			// Neu Starten
-			SetupSeleniumTestdaten(AblaufartGlobal);*/
 
 		} // Nur wenn Aktic "Ja" ist durchlaufen
 
@@ -287,40 +195,7 @@ public class TZPTenderStartGG {
 		
 		
 		
-
-		
-		public void ApplitoolsAufnahme(String Ablaufart, String teststep) {
-			if (Ablaufart.equals("Applitool")) {
-				// Applitools vorbereiten
-				eyes = new Eyes();
-				eyes.setApiKey("1epbTsh91uyej6yur9x0FzJb3WUit5naoVB8SYMRZUE110");
-				try {
-
-					// eyes.check("AL_Risiko", Target.window().fully());
-
-					// eyes.open(driver, "AL-Risiko", "Testfall: " + teststep, new
-					// RectangleSize(800, 600));
-
-					// eyes.open(driver, "IR-PHV", "Testfall: " + teststep,
-					// Target.window().fully());
-
-					// eyes.open(driver, "IR-PHV", "Testfall: " + teststep, new
-					// RectangleSize(900,750));
-
-					// Kein Rectangle vorgeben um die Voreinstellung zu verwenden.
-					eyes.open(driver, "IR-PHV", "Testfall: " + teststep);
-
-					eyes.checkWindow("AL-Risiko-Ergebnisseite");
-
-					eyes.close();
-
-				} finally {
-
-				}
-			}
-		}
-
-		@AfterTest
+    	@AfterTest
 		public void BrowserTearDown() throws InterruptedException {
 
 	        // Offene Bereiche Schließen

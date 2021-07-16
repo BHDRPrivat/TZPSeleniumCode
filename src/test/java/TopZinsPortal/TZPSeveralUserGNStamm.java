@@ -254,7 +254,7 @@ public class TZPSeveralUserGNStamm {
 
      		// Button "Registrieren auswählen"
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
-			Thread.sleep(3 * Zeitspanne);
+			Thread.sleep(5 * Zeitspanne);
 			
      		// Button "Vollständige Registrierung auswählen"
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@data-test, 'logout-dsgvo-button')]", test);
@@ -303,13 +303,13 @@ public class TZPSeveralUserGNStamm {
 			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
 			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GG\\Stammdaten GG 4-Dokumente hochladen ", Teststep, test);
-			Thread.sleep(3 * Zeitspanne);
+			Thread.sleep(5 * Zeitspanne);
 			
 			
 			// Handelsfreigabe beantragn		
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Handelsberechtigung anfordern']//ancestor::button[@tabindex='0']", test);
 			// TSonderzeit zum Hochladen
-			Thread.sleep(3 * Zeitspanne);	
+			Thread.sleep(5 * Zeitspanne);	
 			
 			// Button "OK" auswählen, wenn vorhanden
 			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);

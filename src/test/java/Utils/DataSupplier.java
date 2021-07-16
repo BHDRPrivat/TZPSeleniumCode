@@ -34,12 +34,33 @@ public class DataSupplier {
 		return testData(excelPath, "Testdaten");
 	}
 	
+	
+	@DataProvider(name = "TZPTenderStartGG")
+	public static Object[][] getDataTenderStartGG() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalTenderGG-GN.xls";
+		return testData(excelPath, "Testdaten");
+	}	
+	
+	
+	
+	@DataProvider(name = "TZPTenderAngebotSendenGN")
+	public static Object[][] getDataTenderAngebotSendenGN() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalTenderGG-GN.xls";
+		return testData(excelPath, "Testdaten");
+	}	
+	
+	
+	
 	@DataProvider(name = "TenderAngebotAnnehmenGG")
 	public static Object[][] getData() throws BiffException {
 		// Zugriff auf die korrekten Exceldaten
 		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalTenderGG-GN.xls";
 		return testData(excelPath, "Testdaten");
 	}
+	
+	
 	
 	@DataProvider(name = "TZPCheckEMailsGG")
 	public static Object[][] getDataCheckEMailsGG() throws BiffException {
@@ -89,6 +110,14 @@ public class DataSupplier {
 		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalTransaktionGG-GN.xls";
 		return testData(excelPath, "Testdaten");
 	}	
+	
+	@DataProvider(name = "TZPTransaktionAkzeptierenGG")
+	public static Object[][] TZPTransaktionAkzeptierenGN() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalTransaktionGG-GN.xls";
+		return testData(excelPath, "Testdaten");
+	}		
+	
 	
 	@DataProvider(name = "TZPAdminCourtageGN")
 	public static Object[][] TZPAdminCourtageGN() throws BiffException {
@@ -143,6 +172,45 @@ public class DataSupplier {
 	public static Object[][] TZPTransaktionStartGGSeveralUIser() throws BiffException {
 		// Zugriff auf die korrekten Exceldaten
 		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalTransaktionGG-GN-SeveralUser.xls";
+		return testData(excelPath, "Testdaten");
+	}
+	
+	@DataProvider(name = "TZPTransaktionBearbeitenGNSeveralUser")
+	public static Object[][] TZPTransaktionBearbeitenGNSeveralUser() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalTransaktionGG-GN-SeveralUser.xls";
+		return testData(excelPath, "Testdaten");
+	}	
+
+	@DataProvider(name = "TZPTransaktionAkzeptierenGGSeveralUser")
+	public static Object[][] TZPTransaktionAkzeptierenGGSeveralUser() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalTransaktionGG-GN-SeveralUser.xls";
+		return testData(excelPath, "Testdaten");
+	}	
+	
+	@DataProvider(name = "TZPTenderStartGGSeveralUser")
+	public static Object[][] getDataTenderStartGGSeveralUser() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalTenderGG-GN-SeveralUser.xls";
+		return testData(excelPath, "Testdaten");
+	}	
+	
+	
+	
+	@DataProvider(name = "TZPTenderAngebotSendenGNSeveralUser")
+	public static Object[][] getDataTenderAngebotSendenGNSeveralUser() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalTenderGG-GN-SeveralUser.xls";
+		return testData(excelPath, "Testdaten");
+	}	
+	
+	
+	
+	@DataProvider(name = "TenderAngebotAnnehmenGGSeveralUser")
+	public static Object[][] getDataTenderAngebotAnnehmenGGSeveralUser() throws BiffException {
+		// Zugriff auf die korrekten Exceldaten
+		String excelPath = System.getProperty("user.dir") + "\\Excel\\TopZinsPortalTenderGG-GN-SeveralUser.xls";
 		return testData(excelPath, "Testdaten");
 	}
 	

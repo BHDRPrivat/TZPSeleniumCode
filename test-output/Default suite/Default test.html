@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jul 05 15:44:18 CEST 2021</td>
+<td>Started on:</td><td>Mon Jul 12 13:19:41 CEST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>112 seconds (112337 ms)</td>
+<tr><td>Total time:</td><td>27 seconds (27264 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,21 +75,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe.TZPSeveralUserAdminHandelsfreigabeGGTest()'><b>TZPSeveralUserAdminHandelsfreigabeGGTest</b><br>Test class: TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe<br>Parameters: TZSUGG-TF-003, Ja, bhdr.gg.handel@gmail.com, Test12345!, Herr, TZP Serveral User, GG Eingeladen, TZPSeveralUserGGEingeladen@gmail.com, Test12345!, BHDR-GG-Handel, Bahadir, 00496119738163, Prof., TZP.Serveral.User.gg.Eingeladen, 01.01.1990</td>
-<td><div><pre>java.lang.AssertionError: The following asserts failed:
-	Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text() = &apos;BHDR-GG-Handel&apos;]//ancestor::tr[contains(@class, &apos;MuiTableRow-root&apos;)]//button[@type=&apos;button&apos;]&quot;}
-  (Session info: chrome=91.0.4472.124)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;FORSA-VM31&apos;, ip: &apos;10.52.76.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.124, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:63270}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 3ffa0f31588ceb279d4f2e36f9bce4c4
-*** Element info: {Using=xpath, value=//div[text() = &apos;BHDR-GG-Handel&apos;]//ancestor::tr[contains(@class, &apos;MuiTableRow-root&apos;)]//button[@type=&apos;button&apos;]} expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at Utils.SeleniumUtils.ButtonKlick(SeleniumUtils.java:481)
-	at TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe.TZPSeveralUserAdminHandelsfreigabeGGTest(TZPSeveralUserGGAdminHandelsfreigabe.java:161)
+<td title='TopZinsPortal.TZPAdminApplitoolScreenshots.TZPApplitoolScreenshot()'><b>TZPApplitoolScreenshot</b><br>Test class: TopZinsPortal.TZPAdminApplitoolScreenshots</td>
+<td><div><pre>com.applitools.eyes.exceptions.DiffsFoundException: Test &apos;DASHBOARD-Stage Sprint 43&apos; of &apos;Admin-Forsa&apos; detected differences! See details at: https://eyes.applitools.com/app/batches/00000251776212003910/00000251776212002942?accountId=YtPt0DUaZkajGGdnI6uxvA~~
+	at com.applitools.eyes.EyesBase.logSessionResultsAndThrowException(EyesBase.java:515)
+	at com.applitools.eyes.EyesBase.close(EyesBase.java:488)
+	at com.applitools.eyes.selenium.SeleniumEyes.close(SeleniumEyes.java:2127)
+	at com.applitools.eyes.selenium.Eyes.close(Eyes.java:415)
+	at com.applitools.eyes.selenium.Eyes.close(Eyes.java:129)
+	at Utils.SeleniumUtils.ApplitoolsAufnahme(SeleniumUtils.java:108)
+	at TopZinsPortal.TZPAdminApplitoolScreenshots.TZPApplitoolScreenshot(TZPAdminApplitoolScreenshots.java:140)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -118,21 +112,15 @@ Session ID: 3ffa0f31588ceb279d4f2e36f9bce4c4
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace773059332", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace773059332'><pre>java.lang.AssertionError: The following asserts failed:
-	Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text() = &apos;BHDR-GG-Handel&apos;]//ancestor::tr[contains(@class, &apos;MuiTableRow-root&apos;)]//button[@type=&apos;button&apos;]&quot;}
-  (Session info: chrome=91.0.4472.124)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;FORSA-VM31&apos;, ip: &apos;10.52.76.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.124, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:63270}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 3ffa0f31588ceb279d4f2e36f9bce4c4
-*** Element info: {Using=xpath, value=//div[text() = &apos;BHDR-GG-Handel&apos;]//ancestor::tr[contains(@class, &apos;MuiTableRow-root&apos;)]//button[@type=&apos;button&apos;]} expected [true] but found [false]
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-	at Utils.SeleniumUtils.ButtonKlick(SeleniumUtils.java:481)
-	at TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe.TZPSeveralUserAdminHandelsfreigabeGGTest(TZPSeveralUserGGAdminHandelsfreigabe.java:161)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1132385302", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1132385302'><pre>com.applitools.eyes.exceptions.DiffsFoundException: Test &apos;DASHBOARD-Stage Sprint 43&apos; of &apos;Admin-Forsa&apos; detected differences! See details at: https://eyes.applitools.com/app/batches/00000251776212003910/00000251776212002942?accountId=YtPt0DUaZkajGGdnI6uxvA~~
+	at com.applitools.eyes.EyesBase.logSessionResultsAndThrowException(EyesBase.java:515)
+	at com.applitools.eyes.EyesBase.close(EyesBase.java:488)
+	at com.applitools.eyes.selenium.SeleniumEyes.close(SeleniumEyes.java:2127)
+	at com.applitools.eyes.selenium.Eyes.close(Eyes.java:415)
+	at com.applitools.eyes.selenium.Eyes.close(Eyes.java:129)
+	at Utils.SeleniumUtils.ApplitoolsAufnahme(SeleniumUtils.java:108)
+	at TopZinsPortal.TZPAdminApplitoolScreenshots.TZPApplitoolScreenshot(TZPAdminApplitoolScreenshots.java:140)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -162,31 +150,8 @@ Session ID: 3ffa0f31588ceb279d4f2e36f9bce4c4
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>31</td>
-<td>TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe@4466af20</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe.TZPSeveralUserAdminHandelsfreigabeGGTest()'><b>TZPSeveralUserAdminHandelsfreigabeGGTest</b><br>Test class: TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe<br>Parameters: TZSUGG-TF-000, Nein, vor.nach@Kommune.de, Test12345!, Herr, Mitarbeiter Vorname, Mitarbeiter Nachname, MitarbeiterVor.MitarbeiterNach@kommunue.de, Test12345!, Test Kommunue, Max, 00496119738163, Dr., Mustermann, 01.01.1990</td>
-<td></td>
-<td>0</td>
-<td>TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe@4466af20</td></tr>
-<tr>
-<td title='TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe.TZPSeveralUserAdminHandelsfreigabeGGTest()'><b>TZPSeveralUserAdminHandelsfreigabeGGTest</b><br>Test class: TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe<br>Parameters: TZSUGG-TF-001, Ja, bhdr.gg.handel@gmail.com, Test12345!, Herr, TZP Serveral User, GG der Erste Handel, TZPSeveralUserGG1@gmail.com, Test12345!, BHDR-GG-Handel, Bahadir, 00496119738163, Dr., TZP.Serveral.User.gg.Handel, 01.01.1990</td>
-<td></td>
-<td>44</td>
-<td>TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe@4466af20</td></tr>
-<tr>
-<td title='TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe.TZPSeveralUserAdminHandelsfreigabeGGTest()'><b>TZPSeveralUserAdminHandelsfreigabeGGTest</b><br>Test class: TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe<br>Parameters: TZSUGG-TF-002, Ja, bhdr.gg.handel@gmail.com, Test12345!, Frau, TZP Serveral User, GG der Zweite Handel, TZPSeveralUserGG2@gmail.com, Test12345!, BHDR-GG-Handel, Bahadir, 0049-611-97381-63, , TZP.Serveral.User.gg.Handel, 01.01.1990</td>
-<td></td>
-<td>31</td>
-<td>TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe@4466af20</td></tr>
+<td>22</td>
+<td>TopZinsPortal.TZPAdminApplitoolScreenshots@4f6ee6e4</td></tr>
 </table><p>
 </body>
 </html>

@@ -267,47 +267,6 @@
 		</classes>
     </test>
 
-	<test name="TZP-Serveral-User-Deaktivieren-GG">
-		<parameter name="Ablaufart" value="Smoketest"></parameter>
-		<parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User deaktivieren GG"></parameter>
-		<classes>
-			<class name="TopZinsPortal.TZPAdminSeveralUserDeaktivierenGG" />
-		</classes>
-	</test>
-	<test name="TZP-Serveral-User-Loeschen-GG">
-		<parameter name="Ablaufart" value="Smoketest"></parameter>
-		<parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User loeschen GG"></parameter>
-		<classes>
-			<class name="TopZinsPortal.TZPAdminSeveralUserLoeschenGG" />
-		</classes>
-	</test>
-	<test name="TZP-Serveral-User-Deaktivieren-GN">
-		<parameter name="Ablaufart" value="Smoketest"></parameter>
-		<parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User deaktivieren GN"></parameter>
-		<classes>
-			<class name="TopZinsPortal.TZPAdminSeveralUserDeaktivierenGN" />
-		</classes>
-	</test>
-	<test name="TZP-Serveral-User-Loeschen-GN">
-		<parameter name="Ablaufart" value="Smoketest"></parameter>
-		<parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User loeschen GN"></parameter>
-		<classes>
-			<class name="TopZinsPortal.TZPAdminSeveralUserLoeschenGN" />
-		</classes>
-	</test>
-
-    <test name="TZP-Admin-Deaktivieren">
-		<parameter name="Ablaufart" value="Reset"></parameter>
-		<classes>
-			<class name="TopZinsPortal.TZPAdminUserDeaktivierenGG" />
-		</classes>
-    </test> 
-    <test name="TZP-Admin-Loeschen">
-		<parameter name="Ablaufart" value="Reset"></parameter>
-		<classes>
-			<class name="TopZinsPortal.TZPAdminUserLoeschenGG" />
-		</classes>
-    </test> 
 
 
 </suite> <!-- Smoketest Prozesse Registrierungsdurchlauf -->

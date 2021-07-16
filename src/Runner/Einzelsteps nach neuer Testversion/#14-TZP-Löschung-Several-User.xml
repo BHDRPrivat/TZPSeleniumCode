@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- bisherige Daten aus D:\IR-WebRisk-Testdaten löschen -->
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TopZinzPortal-Gesamt-Ablauftest-Einzel und Several User">
+
+<!-- Druchlauf mit Zugängen für den manuellen Test -->
+
+	<test name="TZP-Serveral-User-Deaktivieren-GG">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<parameter name="HtmlReporter"
+			value="Fehlerreport TopZinsPortal Several User deaktivieren GG"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPAdminSeveralUserDeaktivierenGG" />
+		</classes>
+	</test>
+	<test name="TZP-Serveral-User-Loeschen-GG">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<parameter name="HtmlReporter"
+			value="Fehlerreport TopZinsPortal Several User loeschen GG"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPAdminSeveralUserLoeschenGG" />
+		</classes>
+	</test>
+	<test name="TZP-Serveral-User-Deaktivieren-GN">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<parameter name="HtmlReporter"
+			value="Fehlerreport TopZinsPortal Several User deaktivieren GN"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPAdminSeveralUserDeaktivierenGN" />
+		</classes>
+	</test>
+	<test name="TZP-Serveral-User-Loeschen-GN">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<parameter name="HtmlReporter"
+			value="Fehlerreport TopZinsPortal Several User loeschen GN"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPAdminSeveralUserLoeschenGN" />
+		</classes>
+	</test>
+
+
+
+
+</suite> <!-- Smoketest Prozesse Registrierungsdurchlauf -->

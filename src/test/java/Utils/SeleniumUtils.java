@@ -60,6 +60,10 @@ public class SeleniumUtils {
 		// Variable für Applitools
 		Eyes eyes = null;
 		
+		// für die Aufnahme den Zoom verkleinern
+		JavascriptExecutor executor = (JavascriptExecutor)driver;
+		executor.executeScript("document.body.style.zoom = '67%';");
+		
 		    // Applitools vorbereiten
 			eyes = new Eyes();
 			eyes.setApiKey("1epbTsh91uyej6yur9x0FzJb3WUit5naoVB8SYMRZUE110");
@@ -68,7 +72,12 @@ public class SeleniumUtils {
 				// Funktionstüchtig, Rechteck vorgeben 
 				// Erzeugt einen Bereich im Applitool mit "Empty" Screenshot
 				// Wird als Basis benötigt
+				
+				// Einstellung bei Forsa-Bildschirm
 				eyes.open(driver, appName, testName, new RectangleSize(1900, 920));
+				
+//				// Einstellung bei BHDR-Bildschirm
+//				eyes.open(driver, appName, testName, new RectangleSize(1500, 720));
 				
 				// Nicht funktionstüchtig
 				// eyes.open(driver, appName, testName, Target.window().fully());
@@ -81,7 +90,7 @@ public class SeleniumUtils {
 				if (Scrollelement.isEmpty()) {
 					// Erzeugt eine Windows-Ausfnahme und prüft die Veränderungen
 					// führt zu einem Abbruch des Ablaufs, wenn es Unterschiede zur letzten 
-					// Aufnahme gibt (auch beim ersten Druchlauf gibt es Unetrschiede zur leeren Version)
+					// Aufnahme gibt (auch beim ersten Druchlauf gibt es Unterschiede zur leeren Version)
 					// Wenn die letzte Aufnahme als Baseline existiert und keine Veränderungen vorhanden sind
 					// wird der Code weiter ausgeführt.
 					eyes.checkWindow(optionalTag);					
@@ -91,6 +100,8 @@ public class SeleniumUtils {
 				}
 			}	 finally {
 
+				executor.executeScript("document.body.style.zoom = '100%';");
+	
 			}
 			
 			// Eyes wieder schließen

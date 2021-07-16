@@ -86,7 +86,7 @@ public class TZPTransaktionAbschlussGN {
 		
 		}
 		
-
+        // Nicht umstellen, da die Anzahl der Zeilen benötigt wird.
 		@DataProvider(name = "TZPTransaktionAbschlussGN")
 		public static Object[][] getData() throws BiffException {
 			// Ermittelt den Pfad des aktuellen Projekts

@@ -1,40 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [TopZinzPortal-Transaktion-Ablauftesttest]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="TZP-Transaktion-Akzeptieren-GN(failed)">
+  <test thread-count="5" name="TZP-Transaktion-Start-GG-SeveralUser(failed)">
     <parameter name="Ablaufart" value="Smoketest"/>
     <classes>
-      <class name="TopZinsPortal.TZPTransaktionBearbeitenGN">
-        <methods>
-          <include name="TZPTransaktionAkzeptierenGNTest" invocation-numbers="0 1 2"/>
-          <include name="BrowserTearDown"/>
-          <include name="SetupSeleniumTestdaten"/>
-        </methods>
-      </class> <!-- TopZinsPortal.TZPTransaktionBearbeitenGN -->
-    </classes>
-  </test> <!-- TZP-Transaktion-Akzeptieren-GN(failed) -->
-  <test thread-count="5" name="TZP-Transaktion-Akzeptieren-GG(failed)">
-    <parameter name="Ablaufart" value="Smoketest"/>
-    <classes>
-      <class name="TopZinsPortal.TZPTransaktionAkzeptierenGG">
-        <methods>
-          <include name="BrowserTearDown"/>
-          <include name="SetupSeleniumTestdaten"/>
-          <include name="TZPTransaktionAkzeptierenGGTest" invocation-numbers="0 1 2"/>
-        </methods>
-      </class> <!-- TopZinsPortal.TZPTransaktionAkzeptierenGG -->
-    </classes>
-  </test> <!-- TZP-Transaktion-Akzeptieren-GG(failed) -->
-  <test thread-count="5" name="TZP-Transaktion-Abschluss-GN(failed)">
-    <parameter name="Ablaufart" value="Smoketest"/>
-    <classes>
-      <class name="TopZinsPortal.TZPTransaktionAbschlussGN">
+      <class name="TopZinsPortal.TZPTransaktionStartGGSeveralUser">
         <methods>
           <include name="SetupSeleniumTestdaten"/>
-          <include name="TZPTransaktionAbschlussGNTest" invocation-numbers="0 1 2"/>
+          <include name="ApplitoolsAufnahme"/>
           <include name="BrowserTearDown"/>
         </methods>
-      </class> <!-- TopZinsPortal.TZPTransaktionAbschlussGN -->
+      </class> <!-- TopZinsPortal.TZPTransaktionStartGGSeveralUser -->
     </classes>
-  </test> <!-- TZP-Transaktion-Abschluss-GN(failed) -->
+  </test> <!-- TZP-Transaktion-Start-GG-SeveralUser(failed) -->
 </suite> <!-- Failed suite [TopZinzPortal-Transaktion-Ablauftesttest] -->

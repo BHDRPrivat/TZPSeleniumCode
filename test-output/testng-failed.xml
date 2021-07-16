@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [TopZinzPortal-Gesamt-Ablauftest-Einzel und Several User]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="TZP-Serveral-User-Mails-Lesen-Kontrolle-GN(failed)">
+    <parameter name="Ablaufart" value="Smoketest"/>
+    <parameter name="HtmlReporter" value="Fehlerreport TopZinsPortal Several User Mails auslesen GG"/>
     <classes>
-      <class name="TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe">
+      <class name="TopZinsPortal.TZPCheckEMailsSeveralUserGN">
         <methods>
-          <include name="SetupSeleniumTestdaten"/>
-          <include name="TZPSeveralUserAdminHandelsfreigabeGGTest" invocation-numbers="3"/>
+          <include name="TZPCheckEMailSeveralUserGNTest" invocation-numbers="4 6 11 13"/>
           <include name="BrowserTearDown"/>
+          <include name="SetupSeleniumTestdaten"/>
         </methods>
-      </class> <!-- TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe -->
+      </class> <!-- TopZinsPortal.TZPCheckEMailsSeveralUserGN -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- TZP-Serveral-User-Mails-Lesen-Kontrolle-GN(failed) -->
+</suite> <!-- Failed suite [TopZinzPortal-Gesamt-Ablauftest-Einzel und Several User] -->

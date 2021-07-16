@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+<testng-results ignored="0" total="24" passed="20" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-07-05T15:44:18 CEST" name="Default suite" finished-at="2021-07-05T15:46:11 CEST" duration-ms="112337">
+  <suite started-at="2021-07-16T12:28:29 CEST" name="TopZinzPortal-Gesamt-Ablauftest-Einzel und Several User" finished-at="2021-07-16T12:30:37 CEST" duration-ms="127772">
     <groups>
     </groups>
-    <test started-at="2021-07-05T15:44:18 CEST" name="Default test" finished-at="2021-07-05T15:46:11 CEST" duration-ms="112337">
-      <class name="TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe">
-        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe@4466af20]" started-at="2021-07-05T15:44:18 CEST" name="SetupSeleniumTestdaten" finished-at="2021-07-05T15:44:21 CEST" duration-ms="2936" status="PASS">
+    <test started-at="2021-07-16T12:28:29 CEST" name="TZP-Serveral-User-Mails-lesen-Kontrolle-GG" finished-at="2021-07-16T12:29:22 CEST" duration-ms="53481">
+      <class name="TopZinsPortal.TZPCheckEMailsSeveralUserGG">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGG@5876a9af]" started-at="2021-07-16T12:28:29 CEST" name="SetupSeleniumTestdaten" finished-at="2021-07-16T12:28:29 CEST" duration-ms="254" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Ad Hoc Test]]>
+                <![CDATA[Smoketest]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetupSeleniumTestdaten -->
-        <test-method signature="TZPSeveralUserAdminHandelsfreigabeGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe@4466af20]" started-at="2021-07-05T15:44:21 CEST" name="TZPSeveralUserAdminHandelsfreigabeGGTest" data-provider="TZPSeveralUserGG" finished-at="2021-07-05T15:44:21 CEST" duration-ms="12" status="PASS">
+        <test-method signature="TZPCheckEMailSeveralUserGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGG@5876a9af]" started-at="2021-07-16T12:28:29 CEST" name="TZPCheckEMailSeveralUserGGTest" data-provider="TZPCheckEMailsSeveralUserGG" finished-at="2021-07-16T12:28:34 CEST" duration-ms="4507" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZSUGG-TF-000]]>
+                <![CDATA[TZPCheckEMailGG-TF-001]]>
               </value>
             </param>
             <param index="1">
@@ -32,7 +32,7 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[vor.nach@Kommune.de]]>
+                <![CDATA[tzpseveralusergg1@gmail.com]]>
               </value>
             </param>
             <param index="3">
@@ -42,230 +42,38 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[Herr]]>
+                <![CDATA[FORSA TopZinsPortal - Einladung zur Registrierung]]>
               </value>
             </param>
             <param index="5">
-              <value>
-                <![CDATA[Mitarbeiter Vorname]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Mitarbeiter Nachname]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[MitarbeiterVor.MitarbeiterNach@kommunue.de]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[Test Kommunue]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[Max]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[00496119738163]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[Dr.]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[Mustermann]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[01.01.1990]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPSeveralUserAdminHandelsfreigabeGGTest -->
-        <test-method signature="TZPSeveralUserAdminHandelsfreigabeGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe@4466af20]" started-at="2021-07-05T15:44:21 CEST" name="TZPSeveralUserAdminHandelsfreigabeGGTest" data-provider="TZPSeveralUserGG" finished-at="2021-07-05T15:45:06 CEST" duration-ms="44426" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZSUGG-TF-001]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[bhdr.gg.handel@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Herr]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[TZP Serveral User]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[GG der Erste Handel]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[TZPSeveralUserGG1@gmail.com]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[BHDR-GG-Handel]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[Bahadir]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[00496119738163]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[Dr.]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[TZP.Serveral.User.gg.Handel]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[01.01.1990]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TZPSeveralUserAdminHandelsfreigabeGGTest -->
-        <test-method signature="TZPSeveralUserAdminHandelsfreigabeGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe@4466af20]" started-at="2021-07-05T15:45:06 CEST" name="TZPSeveralUserAdminHandelsfreigabeGGTest" data-provider="TZPSeveralUserGG" finished-at="2021-07-05T15:45:38 CEST" duration-ms="31803" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[TZSUGG-TF-002]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Ja]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[bhdr.gg.handel@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Frau]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[TZP Serveral User]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[GG der Zweite Handel]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[TZPSeveralUserGG2@gmail.com]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[Test12345!]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[BHDR-GG-Handel]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[Bahadir]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[0049-611-97381-63]]>
-              </value>
-            </param>
-            <param index="12">
               <value>
                 <![CDATA[]]>
               </value>
             </param>
-            <param index="13">
+            <param index="6">
               <value>
-                <![CDATA[TZP.Serveral.User.gg.Handel]]>
+                <![CDATA[/portal/login]]>
               </value>
             </param>
-            <param index="14">
+            <param index="7">
               <value>
-                <![CDATA[01.01.1990]]>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPSeveralUserAdminHandelsfreigabeGGTest -->
-        <test-method signature="TZPSeveralUserAdminHandelsfreigabeGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe@4466af20]" started-at="2021-07-05T15:45:38 CEST" name="TZPSeveralUserAdminHandelsfreigabeGGTest" data-provider="TZPSeveralUserGG" finished-at="2021-07-05T15:46:09 CEST" duration-ms="31414" status="FAIL">
+        </test-method> <!-- TZPCheckEMailSeveralUserGGTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGG@5876a9af]" started-at="2021-07-16T12:28:34 CEST" name="TZPCheckEMailSeveralUserGGTest" data-provider="TZPCheckEMailsSeveralUserGG" finished-at="2021-07-16T12:28:44 CEST" duration-ms="9632" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[TZSUGG-TF-003]]>
+                <![CDATA[TZPCheckEMailGG-TF-002]]>
               </value>
             </param>
             <param index="1">
@@ -275,7 +83,7 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[bhdr.gg.handel@gmail.com]]>
+                <![CDATA[tzpseveralusergg1@gmail.com]]>
               </value>
             </param>
             <param index="3">
@@ -285,88 +93,723 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[Herr]]>
+                <![CDATA[Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[TZP Serveral User]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[GG Eingeladen]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[TZPSeveralUserGGEingeladen@gmail.com]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="8">
               <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGGTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGG@5876a9af]" started-at="2021-07-16T12:28:44 CEST" name="TZPCheckEMailSeveralUserGGTest" data-provider="TZPCheckEMailsSeveralUserGG" finished-at="2021-07-16T12:28:48 CEST" duration-ms="4510" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGG-TF-003]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergg1@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
                 <![CDATA[Test12345!]]>
               </value>
             </param>
-            <param index="9">
+            <param index="4">
               <value>
-                <![CDATA[BHDR-GG-Handel]]>
+                <![CDATA[FORSA TopZinsPortal - Anforderung der Handelsberechtigung]]>
               </value>
             </param>
-            <param index="10">
+            <param index="5">
               <value>
-                <![CDATA[Bahadir]]>
+                <![CDATA[]]>
               </value>
             </param>
-            <param index="11">
+            <param index="6">
               <value>
-                <![CDATA[00496119738163]]>
+                <![CDATA[]]>
               </value>
             </param>
-            <param index="12">
+            <param index="7">
               <value>
-                <![CDATA[Prof.]]>
+                <![CDATA[]]>
               </value>
             </param>
-            <param index="13">
+            <param index="8">
               <value>
-                <![CDATA[TZP.Serveral.User.gg.Eingeladen]]>
+                <![CDATA[]]>
               </value>
             </param>
-            <param index="14">
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGGTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGG@5876a9af]" started-at="2021-07-16T12:28:48 CEST" name="TZPCheckEMailSeveralUserGGTest" data-provider="TZPCheckEMailsSeveralUserGG" finished-at="2021-07-16T12:28:53 CEST" duration-ms="4513" status="PASS">
+          <params>
+            <param index="0">
               <value>
-                <![CDATA[01.01.1990]]>
+                <![CDATA[TZPCheckEMailGG-TF-004]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergg1@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Die Vergabe der Handelsberechtigung war erfolgreich]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGGTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGG@5876a9af]" started-at="2021-07-16T12:28:53 CEST" name="TZPCheckEMailSeveralUserGGTest" data-provider="TZPCheckEMailsSeveralUserGG" finished-at="2021-07-16T12:28:57 CEST" duration-ms="4512" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGG-TF-005]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergg1@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal: Konditionsübersicht lhrer heutigen Ausschreibung]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGGTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGG@5876a9af]" started-at="2021-07-16T12:28:57 CEST" name="TZPCheckEMailSeveralUserGGTest" data-provider="TZPCheckEMailsSeveralUserGG" finished-at="2021-07-16T12:29:02 CEST" duration-ms="4514" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGG-TF-006]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergg2@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Einladung zur Registrierung]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[/portal/login]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGGTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGG@5876a9af]" started-at="2021-07-16T12:29:02 CEST" name="TZPCheckEMailSeveralUserGGTest" data-provider="TZPCheckEMailsSeveralUserGG" finished-at="2021-07-16T12:29:08 CEST" duration-ms="6402" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGG-TF-007]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergg2@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGGTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGG@5876a9af]" started-at="2021-07-16T12:29:08 CEST" name="TZPCheckEMailSeveralUserGGTest" data-provider="TZPCheckEMailsSeveralUserGG" finished-at="2021-07-16T12:29:12 CEST" duration-ms="4510" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGG-TF-008]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergg2@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Anforderung der Handelsberechtigung]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGGTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGG@5876a9af]" started-at="2021-07-16T12:29:12 CEST" name="TZPCheckEMailSeveralUserGGTest" data-provider="TZPCheckEMailsSeveralUserGG" finished-at="2021-07-16T12:29:17 CEST" duration-ms="4507" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGG-TF-009]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergg2@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Die Vergabe der Handelsberechtigung war erfolgreich]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGGTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGGTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGG@5876a9af]" started-at="2021-07-16T12:29:17 CEST" name="TZPCheckEMailSeveralUserGGTest" data-provider="TZPCheckEMailsSeveralUserGG" finished-at="2021-07-16T12:29:22 CEST" duration-ms="4504" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGG-TF-010]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergg2@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal: Konditionsübersicht lhrer heutigen Ausschreibung]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGGTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGG@5876a9af]" started-at="2021-07-16T12:29:22 CEST" name="BrowserTearDown" finished-at="2021-07-16T12:29:22 CEST" duration-ms="922" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BrowserTearDown -->
+      </class> <!-- TopZinsPortal.TZPCheckEMailsSeveralUserGG -->
+    </test> <!-- TZP-Serveral-User-Mails-lesen-Kontrolle-GG -->
+    <test started-at="2021-07-16T12:29:22 CEST" name="TZP-Serveral-User-Mails-Lesen-Kontrolle-GN" finished-at="2021-07-16T12:30:37 CEST" duration-ms="74249">
+      <class name="TopZinsPortal.TZPCheckEMailsSeveralUserGN">
+        <test-method is-config="true" signature="SetupSeleniumTestdaten(java.lang.String)[pri:0, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:29:22 CEST" name="SetupSeleniumTestdaten" finished-at="2021-07-16T12:29:22 CEST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Smoketest]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetupSeleniumTestdaten -->
+        <test-method signature="TZPCheckEMailSeveralUserGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:29:23 CEST" name="TZPCheckEMailSeveralUserGNTest" data-provider="TZPCheckEMailsSeveralUserGN" finished-at="2021-07-16T12:29:27 CEST" duration-ms="4516" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-001]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergn1@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Einladung zur Registrierung]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[/portal/login]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGNTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:29:27 CEST" name="TZPCheckEMailSeveralUserGNTest" data-provider="TZPCheckEMailsSeveralUserGN" finished-at="2021-07-16T12:29:40 CEST" duration-ms="12444" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-002]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergn1@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGNTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:29:40 CEST" name="TZPCheckEMailSeveralUserGNTest" data-provider="TZPCheckEMailsSeveralUserGN" finished-at="2021-07-16T12:29:44 CEST" duration-ms="4511" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-003]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergn1@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Anforderung der Handelsberechtigung]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGNTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:29:44 CEST" name="TZPCheckEMailSeveralUserGNTest" data-provider="TZPCheckEMailsSeveralUserGN" finished-at="2021-07-16T12:29:49 CEST" duration-ms="4514" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-004]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergn1@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Die Vergabe der Handelsberechtigung war erfolgreich]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGNTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:29:49 CEST" name="TZPCheckEMailSeveralUserGNTest" data-provider="TZPCheckEMailsSeveralUserGN" finished-at="2021-07-16T12:29:53 CEST" duration-ms="4518" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-005]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergn1@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Benachrichtigung über eine Termingeldanfrage]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[https://portal-clone.forsa-topzins.de/portal/Kurve]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
               </value>
             </param>
           </params>
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[The following asserts failed:
-Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[text() = 'BHDR-GG-Handel']//ancestor::tr[contains(@class, 'MuiTableRow-root')]//button[@type='button']"}
-  (Session info: chrome=91.0.4472.124)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.124, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:63270}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 3ffa0f31588ceb279d4f2e36f9bce4c4
-*** Element info: {Using=xpath, value=//div[text() = 'BHDR-GG-Handel']//ancestor::tr[contains(@class, 'MuiTableRow-root')]//button[@type='button']} expected [true] but found [false]]]>
+expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: The following asserts failed:
-Gemeldeter Fehler: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[text() = 'BHDR-GG-Handel']//ancestor::tr[contains(@class, 'MuiTableRow-root')]//button[@type='button']"}
-  (Session info: chrome=91.0.4472.124)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'FORSA-VM31', ip: '10.52.76.82', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 91.0.4472.124, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:63270}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 3ffa0f31588ceb279d4f2e36f9bce4c4
-*** Element info: {Using=xpath, value=//div[text() = 'BHDR-GG-Handel']//ancestor::tr[contains(@class, 'MuiTableRow-root')]//button[@type='button']} expected [true] but found [false]
+expected [true] but found [false]
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
 at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
-at Utils.SeleniumUtils.ButtonKlick(SeleniumUtils.java:481)
-at TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe.TZPSeveralUserAdminHandelsfreigabeGGTest(TZPSeveralUserGGAdminHandelsfreigabe.java:161)
+at TopZinsPortal.TZPCheckEMailsSeveralUserGN.TZPCheckEMailSeveralUserGNTest(TZPCheckEMailsSeveralUserGN.java:125)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -400,12 +843,597 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TZPSeveralUserAdminHandelsfreigabeGGTest -->
-        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe@4466af20]" started-at="2021-07-05T15:46:09 CEST" name="BrowserTearDown" finished-at="2021-07-05T15:46:11 CEST" duration-ms="1543" status="PASS">
+        </test-method> <!-- TZPCheckEMailSeveralUserGNTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:29:53 CEST" name="TZPCheckEMailSeveralUserGNTest" data-provider="TZPCheckEMailsSeveralUserGN" finished-at="2021-07-16T12:29:58 CEST" duration-ms="4508" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-006]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergn1@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal: Eröffnung einer Ausschreibung]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGNTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:29:58 CEST" name="TZPCheckEMailSeveralUserGNTest" data-provider="TZPCheckEMailsSeveralUserGN" finished-at="2021-07-16T12:30:02 CEST" duration-ms="4514" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-007]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergn1@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal: Zusammenfassung der heutigen Ausschreibung]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsSeveralUserGN.TZPCheckEMailSeveralUserGNTest(TZPCheckEMailsSeveralUserGN.java:125)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGNTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:30:02 CEST" name="TZPCheckEMailSeveralUserGNTest" data-provider="TZPCheckEMailsSeveralUserGN" finished-at="2021-07-16T12:30:07 CEST" duration-ms="4512" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-008]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Nein]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergn2@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Einladung zur Registrierung]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[/portal/login]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGNTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:30:07 CEST" name="TZPCheckEMailSeveralUserGNTest" data-provider="TZPCheckEMailsSeveralUserGN" finished-at="2021-07-16T12:30:14 CEST" duration-ms="7005" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-009]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergn2@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Herzlichen Dank für Ihre Registrierung auf dem FORSA TopZinsPortal]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGNTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:30:14 CEST" name="TZPCheckEMailSeveralUserGNTest" data-provider="TZPCheckEMailsSeveralUserGN" finished-at="2021-07-16T12:30:18 CEST" duration-ms="4514" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-010]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergn2@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Anforderung der Handelsberechtigung]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGNTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:30:18 CEST" name="TZPCheckEMailSeveralUserGNTest" data-provider="TZPCheckEMailsSeveralUserGN" finished-at="2021-07-16T12:30:23 CEST" duration-ms="4504" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-011]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergn2@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Die Vergabe der Handelsberechtigung war erfolgreich]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGNTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:30:23 CEST" name="TZPCheckEMailSeveralUserGNTest" data-provider="TZPCheckEMailsSeveralUserGN" finished-at="2021-07-16T12:30:27 CEST" duration-ms="4515" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-012]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergn2@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal - Benachrichtigung über eine Termingeldanfrage]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[https://portal-clone.forsa-topzins.de/portal/Kurve]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsSeveralUserGN.TZPCheckEMailSeveralUserGNTest(TZPCheckEMailsSeveralUserGN.java:125)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGNTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:30:27 CEST" name="TZPCheckEMailSeveralUserGNTest" data-provider="TZPCheckEMailsSeveralUserGN" finished-at="2021-07-16T12:30:32 CEST" duration-ms="4510" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-013]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergn2@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal: Eröffnung einer Ausschreibung]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGNTest -->
+        <test-method signature="TZPCheckEMailSeveralUserGNTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:30:32 CEST" name="TZPCheckEMailSeveralUserGNTest" data-provider="TZPCheckEMailsSeveralUserGN" finished-at="2021-07-16T12:30:36 CEST" duration-ms="4505" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TZPCheckEMailGN-TF-014]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ja]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[tzpseveralusergn2@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Test12345!]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[FORSA TopZinsPortal: Zusammenfassung der heutigen Ausschreibung]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at TopZinsPortal.TZPCheckEMailsSeveralUserGN.TZPCheckEMailSeveralUserGNTest(TZPCheckEMailsSeveralUserGN.java:125)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TZPCheckEMailSeveralUserGNTest -->
+        <test-method is-config="true" signature="BrowserTearDown()[pri:0, instance:TopZinsPortal.TZPCheckEMailsSeveralUserGN@9597028]" started-at="2021-07-16T12:30:36 CEST" name="BrowserTearDown" finished-at="2021-07-16T12:30:37 CEST" duration-ms="553" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BrowserTearDown -->
-      </class> <!-- TopZinsPortal.TZPSeveralUserGGAdminHandelsfreigabe -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- TopZinsPortal.TZPCheckEMailsSeveralUserGN -->
+    </test> <!-- TZP-Serveral-User-Mails-Lesen-Kontrolle-GN -->
+  </suite> <!-- TopZinzPortal-Gesamt-Ablauftest-Einzel und Several User -->
 </testng-results>

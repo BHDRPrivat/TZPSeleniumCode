@@ -75,8 +75,6 @@ public class TZPTenderAngebotAnnehmenGG {
 
 			// Aufruf des Browser-Setups
 			driver = Utils.TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
-
-		
 		}
 		
 

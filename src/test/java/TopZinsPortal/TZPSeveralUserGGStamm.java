@@ -135,16 +135,16 @@ public class TZPSeveralUserGGStamm {
 			
 			
 			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Personalausweis", "[2]", DatumPDF, test);
-			Thread.sleep(3 * Zeitspanne);
+			Thread.sleep(10 * Zeitspanne);
 			
 			Utils.SeleniumUtils.PDFUpload(driver, Zeitspanne, "xpath", "", "Handelsberechtigung", "[2]", DatumPDF, test);
-			Thread.sleep(3 * Zeitspanne);
+			Thread.sleep(10 * Zeitspanne);
 			
 			Thread.sleep(3 * Zeitspanne);	
 			// Hochladen auswählen		
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='Hochladen']//ancestor::button[@tabindex='0']", test);
 			// TSonderzeit zum Hochladen
-			Thread.sleep(3 * Zeitspanne);
+			Thread.sleep(5 * Zeitspanne);
 			
 			// Button "OK" auswählen, wenn vorhanden
 			Utils.SeleniumUtils.OKButtonKlick(driver, Zeitspanne, test);
