@@ -176,6 +176,12 @@ public class TZPRegGN {
 		// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  
 		// Programm läuft nicht weiter
 		// Assert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed()));	
+		
+		// Weiterlauf ermöglichen 
+		SoftAssert softassert = new SoftAssert();
+		softassert.assertTrue((driver.findElement(By.xpath("//span[text()='Vollständige Registrierung']")).isDisplayed())); 
+		softassert.assertAll(); // Damit der Code weiter durchlaufen wird.
+		
 		Thread.sleep(3 * Zeitspanne);
 		
 		

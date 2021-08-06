@@ -10,6 +10,13 @@
 			<class name="TopZinsPortal.TZPRegGN" />
 		</classes>
 	</test>
+	
+	<test name="TZP-Login-GN">
+		<parameter name="Ablaufart" value="Smoketest"></parameter>
+		<classes>
+			<class name="TopZinsPortal.TZPLoginGN" />
+		</classes>
+	</test>
 
 	<test name="TZP-Stammdaten-GN">
 		<parameter name="Ablaufart" value="Smoketest"></parameter>

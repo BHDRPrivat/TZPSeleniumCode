@@ -145,16 +145,16 @@ public class TZPSeveralUserGGAdminHandelsfreigabe {
 			// Bei den Several Usern muss eine Fallunterscheidung erfolgen
 
 			// Sichtbarkeit des Stifts weiter verfeinern.
-
-			String xpathvalue = "//div[text() = '" + Unternehmensname
+			String xpathvalue = "//div[text() = '" + EmailadresseCompanyUser
 					+ "']//ancestor::tr[contains(@class, 'MuiTableRow-root')]//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary']";
-
+		
+			
 			// Wenn Stift existiert, direkt auswählen
 			if (Utils.SeleniumUtils.isElementPresent(driver, By.xpath(xpathvalue))) {
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);
 			} else {
 
-				// Ansonsten Button zum Auslösen wählen
+				// Ansonsten Gruppen-Button zum aufklappen wählen
 				xpathvalue = "//div[text() = '" + Unternehmensname
 						+ "']//ancestor::tr[contains(@class, 'MuiTableRow-root')]//button[@type='button']";
 
@@ -172,8 +172,11 @@ public class TZPSeveralUserGGAdminHandelsfreigabe {
 
 			// Direktsprung auf Dokumente
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@href='#/masterdata/documents']", test);
-
+			Thread.sleep(3 * Zeitspanne);
+			
 			Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'identityCard']", test);
+			Thread.sleep(3 * Zeitspanne);
+			
 			Utils.SeleniumUtils.HakenKlick(driver, Zeitspanne, "xpath", "//input[@value = 'tradingLicense']", test);
 
 			// Screenshot aufnehmen

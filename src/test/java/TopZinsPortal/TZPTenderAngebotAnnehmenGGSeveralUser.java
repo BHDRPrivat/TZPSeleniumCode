@@ -113,7 +113,7 @@ public class TZPTenderAngebotAnnehmenGGSeveralUser {
 				// 1.1 Button "Einloggen" klicken
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 				
-				// 2. Klicken auf Register "Auschreibung"
+				// 2. Klicken auf Register "Ausschreibung"
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@data-test='Ausschreibungen']", test);
 			
 				// Die Anzeige auf 100 erhöhen

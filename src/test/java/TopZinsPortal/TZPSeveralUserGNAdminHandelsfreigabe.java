@@ -145,10 +145,9 @@ public class TZPSeveralUserGNAdminHandelsfreigabe {
 			// Bei den Several Usern muss eine Fallunterscheidung erfolgen
 
 			// Sichtbarkeit des Buttons weiter verfeinern.
-
-			String xpathvalue = "//div[text() = '" + Unternehmensname
+			String xpathvalue = "//div[text() = '" + EmailadresseCompanyUser
 					+ "']//ancestor::tr[contains(@class, 'MuiTableRow-root')]//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary']";
-
+			
 			// Wenn Stift existiert, dirket auswählen
 			if (Utils.SeleniumUtils.isElementPresent(driver, By.xpath(xpathvalue))) {
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", xpathvalue, test);

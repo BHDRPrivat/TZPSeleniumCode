@@ -161,7 +161,7 @@ public class TZPAdminUserDeaktivierenGN {
 				// Eintrag im ersten Eingabefeld
 				// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen
 				xpathvalue = "//div[text() = '" + Unternehmensname
-						+ "']//ancestor::div[contains(@class, 'jss')]//button[contains(@class, 'MuiButtonBase-root MuiIconButton-root')][1]";
+						+ "']//ancestor::tr[contains(@class, 'jss')]//button[contains(@class, 'MuiButtonBase-root MuiIconButton-root')][1]";
 				// prüfen, ob Element vorhanden
 				// Assert.assertTrue((driver.findElement(By.xpath(xpathvalue)).isDisplayed()));
 				// Weiterlauf ermöglichen

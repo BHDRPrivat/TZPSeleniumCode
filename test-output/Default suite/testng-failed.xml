@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TopZinsPortal.TZPAdminApplitoolScreenshots">
+      <class name="TopZinsPortal.TZPTenderStartGG">
         <methods>
           <include name="SetupSeleniumTestdaten"/>
           <include name="BrowserTearDown"/>
-          <include name="TZPApplitoolScreenshot"/>
+          <include name="TZPTenderStartGGTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- TopZinsPortal.TZPAdminApplitoolScreenshots -->
+      </class> <!-- TopZinsPortal.TZPTenderStartGG -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

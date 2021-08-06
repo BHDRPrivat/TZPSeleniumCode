@@ -180,7 +180,7 @@ public class TZPTransaktionAbschlussGN {
 			// 20. Button "Angebot annehmen" klicken
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "(//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')])[" + AktuellTransaktionMaske + "]", test);
 			
-			Thread.sleep(3 * Zeitspanne);
+			Thread.sleep(8 * Zeitspanne);
 			}	
 			
 			driver.close();

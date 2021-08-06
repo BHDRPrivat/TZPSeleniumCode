@@ -122,13 +122,13 @@ public class TZPSeveralUserGGStamm {
 			
      		// Button "Vollständige Registrierung auswählen"
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@data-test, 'logout-dsgvo-button')]", test);
-			
+			Thread.sleep(5 * Zeitspanne);
 			// Auf Dokumente wechseln
 			
 			 // Direktsprung auf Dokumente
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@href='#/masterdata/documents']", test);
 						
-			
+				Thread.sleep(10 * Zeitspanne);
 			// Die Heftzwecke für das Hochladen des Dokuments hat keine eindeutige ID. Der Zugriff erfolgt über den Eintrag im ersten Eingabefeld
 			// Beachte, der Eintrag im ersten Eingabefeld ist abhängig vom Unternehmensnamen 
 			// Alle anderen Zeilen können mit Standardwerten durchsucht werden. 

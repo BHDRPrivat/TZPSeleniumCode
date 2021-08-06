@@ -85,7 +85,7 @@ public class TZPZinssatzVorgabeGN {
 	@Test(dataProvider = "TZPZinssatzVorgabeGN", dataProviderClass = Utils.DataSupplier.class)
 	public void TZPZinssatzVorgabeGNTest(String Teststep, String Aktiv, String Unternehmensname, String Emailadresse,
 			String Passwort, String M1, String M2, String M3, String M4, String M5, String M6, String M7, String M8,
-			String M9, String M10, String M11, String M12, String M18, String M24, String M36, String M48, String M60)
+			String M9, String M10, String M11, String M12, String M18, String M24, String M36, String M48, String M60, String M72)
 			throws Exception {
 
 		if (Aktiv.equals("Ja")) {
@@ -107,7 +107,7 @@ public class TZPZinssatzVorgabeGN {
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 
 			// 20. Die Zinssätze eingeben
-			String[] Werte = { M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M18, M24, M36, M48, M60 };
+			String[] Werte = { M1, M2, M3, M4, M5, M6, M7, M8, M9, M10, M11, M12, M18, M24, M36, M48, M60, M72 };
 			Integer i = 1;
 			for (String werte : Werte) {
 				String Objektname = "m" + String.valueOf(i);
@@ -127,6 +127,10 @@ public class TZPZinssatzVorgabeGN {
 				case 17:
 					Objektname = "y5";
 					break;
+				case 18:
+					Objektname = "y6";
+					break;
+				
 				}
 				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "name", Objektname, werte, test);
 				i++;
@@ -136,7 +140,7 @@ public class TZPZinssatzVorgabeGN {
 			// Hat den Effekt, dass bestehende Werte geändert werden und
 			// Meldung erscheint
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",
-					"//th[text()='60 M']//following::span//ancestor::button", test);
+					"//th[text()='24 M']//following::span//ancestor::button", test);
 
 			// Button Aktualisieren wählen
 			Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath",

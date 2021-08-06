@@ -432,7 +432,8 @@ public class SeleniumUtils {
 	
 	    // Nur wenn der "OK"-Button angezeigt wird, erfolgt ein Klick auf dem Button bevor es normal weiter geht. 
 		// Dann müssen die ganzen OK-klicks nicht seperat erfasst werden.
-
+		Thread.sleep(5 * Zeitspanne);
+		
 		String element = "//div[@role='dialog']//span[text()='OK']//ancestor::button[contains(@class, 'MuiButtonBase')]";
 		
 		if ( isElementPresent(driver, By.xpath(element))){

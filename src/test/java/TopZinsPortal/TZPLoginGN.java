@@ -168,7 +168,7 @@ public class TZPLoginGN {
 
 			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
-			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GN\\Login-GN-Eingabe", Teststep, test);
+			//Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GN\\Login-GN-Eingabe", Teststep, test);
 			Thread.sleep(3 * Zeitspanne);
 			
 			
@@ -177,7 +177,7 @@ public class TZPLoginGN {
 			
 			// Screenshot aufnehmen
 			Thread.sleep(3 * Zeitspanne);
-			Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GN\\Login-GN-Register", Teststep, test);
+			// Utils.SeleniumUtils.FullPageScreenshotAShotSelenium(driver, Zeitspanne, projectpath, "\\Reg GN\\Login-GN-Register", Teststep, test);
 			Thread.sleep(3 * Zeitspanne);			
 
 			// Prüfen, ob die die Maske mit den Button Vollständige Registrierung angezeigt wird  

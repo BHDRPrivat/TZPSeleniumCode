@@ -166,7 +166,7 @@ public class TZPTransaktionAkzeptierenGGSeveralUser {
 
 				
 			
-			Thread.sleep(3 * Zeitspanne);
+			Thread.sleep(8 * Zeitspanne);
 			
 			driver.close();
 			// Für den Teardown

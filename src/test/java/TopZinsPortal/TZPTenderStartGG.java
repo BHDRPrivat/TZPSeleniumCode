@@ -21,17 +21,17 @@ import Utils.ExcelUtilsJXL;
 import Utils.SeleniumUtils;
 import jxl.read.biff.BiffException;
 
-public class TZPTenderStartGG {
+public class TZPTenderStartGG implements VariablenBereich {
 	
 	// Beachte: Die Volumeneingabe des Geldgebers in der Exceldatei steuert den Ablauf.
 	
 	// Die Stammdateneingabe eines Geldgebers wird Excel-Datengetrieben durchlaufen
 	
 	public static WebDriver driver;
-	private Integer Zeitspanne;
+//	private Integer Zeitspanne;
 	private String BaseUrl;
-	public String StandardBrowser;
-	public String SpeicherpfadTestdokumente;
+//	public String StandardBrowser;
+//	public String SpeicherpfadTestdokumente;
 	public static String TestdatenExceldatei;
 	public static String projectpath = null;
 	public SoftAssert softassert = new SoftAssert();
@@ -42,9 +42,9 @@ public class TZPTenderStartGG {
 
 	public String AblaufartGlobal;
 
-	//public ChromeDevToolsService devToolsService = null;
-	// Variable für Applitools
-	public Eyes eyes = null;
+//	//public ChromeDevToolsService devToolsService = null;
+//	// Variable für Applitools
+//	public Eyes eyes = null;
 		
 		// Zu Testzwecken, direktsprung auf das Hochladen der PDF-dateien
 		// Wenn alle Stammdaten eingegeben wurden, kann mit false direkt auf Dokumente zugegriffen werden
@@ -65,17 +65,18 @@ public class TZPTenderStartGG {
 				extent.attachReporter(htmlReporter);
 			}
 			AblaufartGlobal = Ablaufart;
-			StandardBrowser = Utils.TZPBeforeTest.BrowserArt();
-			Zeitspanne = Utils.TZPBeforeTest.Pausenzeit();
+//			StandardBrowser = Utils.TZPBeforeTest.BrowserArt();
+//			Zeitspanne = Utils.TZPBeforeTest.Pausenzeit();
 
 			BaseUrl = Utils.TZPBeforeTest.Umgebung() + "/portal/login";
 
-			SpeicherpfadTestdokumente = "F:\\BHDR\\TopZinsPortalTest\\PDFDokumente\\";
+//			SpeicherpfadTestdokumente = "F:\\BHDR\\TopZinsPortalTest\\PDFDokumente\\";
 			// Wichtiger Hinweis: In Java dürfen generische Strings nicht mit "=="
 			// verglichen werden. "==" steht für die Überprüfung des Speicherorts
 
 			// Aufruf des Browser-Setups
-			driver = Utils.TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
+			// driver = Utils.TZPSetupBrowser.BrowserSetup(driver, StandardBrowser, SpeicherpfadTestdokumente);
+			driver = Utils.TZPSetupBrowser.BrowserSetup(null, StandardBrowser, SpeicherpfadTestdokumente);
 
 		
 		}
@@ -183,7 +184,7 @@ public class TZPTenderStartGG {
 				driver.close();
 				// Für den Teardown
 				driver = null;
-				eyes = null;
+//				eyes = null;
 
 				// Neu Starten
 				SetupSeleniumTestdaten(AblaufartGlobal);
@@ -199,7 +200,7 @@ public class TZPTenderStartGG {
 		public void BrowserTearDown() throws InterruptedException {
 
 	        // Offene Bereiche Schließen
-			Utils.SeleniumUtils.BrowserBeenden(driver, Zeitspanne, extent,  eyes);
+			Utils.SeleniumUtils.BrowserBeenden(driver, Zeitspanne, extent,  null);
 		}
 
 	}

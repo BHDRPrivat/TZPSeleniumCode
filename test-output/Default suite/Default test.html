@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jul 12 13:19:41 CEST 2021</td>
+<td>Started on:</td><td>Fri Aug 06 15:13:55 CEST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>27 seconds (27264 ms)</td>
+<tr><td>Total time:</td><td>35 seconds (35931 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,15 +75,32 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='TopZinsPortal.TZPAdminApplitoolScreenshots.TZPApplitoolScreenshot()'><b>TZPApplitoolScreenshot</b><br>Test class: TopZinsPortal.TZPAdminApplitoolScreenshots</td>
-<td><div><pre>com.applitools.eyes.exceptions.DiffsFoundException: Test &apos;DASHBOARD-Stage Sprint 43&apos; of &apos;Admin-Forsa&apos; detected differences! See details at: https://eyes.applitools.com/app/batches/00000251776212003910/00000251776212002942?accountId=YtPt0DUaZkajGGdnI6uxvA~~
-	at com.applitools.eyes.EyesBase.logSessionResultsAndThrowException(EyesBase.java:515)
-	at com.applitools.eyes.EyesBase.close(EyesBase.java:488)
-	at com.applitools.eyes.selenium.SeleniumEyes.close(SeleniumEyes.java:2127)
-	at com.applitools.eyes.selenium.Eyes.close(Eyes.java:415)
-	at com.applitools.eyes.selenium.Eyes.close(Eyes.java:129)
-	at Utils.SeleniumUtils.ApplitoolsAufnahme(SeleniumUtils.java:108)
-	at TopZinsPortal.TZPAdminApplitoolScreenshots.TZPApplitoolScreenshot(TZPAdminApplitoolScreenshots.java:140)
+<td title='TopZinsPortal.TZPTenderStartGG.TZPTenderStartGGTest()'><b>TZPTenderStartGGTest</b><br>Test class: TopZinsPortal.TZPTenderStartGG<br>Parameters: TZPTenderStartGG-TF-001, Ja, bhdr.gg.Handel@gmail.com, Test12345!, ActDatum, 20:00, act/360, halbjährlich, 6.357.000, ActDatum + 3, ActDatum + 10, ActDatum + 20, ActDatum + 30, Das ist ein Kommentar durch den , Burk-GN-Handel -BHDR-, Burk.GN.Handel@gmail.com, Test12345!, -0.5, BHDR-GN-Handel, bhdr.gn.handel@gmail.com, Test12345!, -0.4, Centner-GN-Handel -BHDR-, Centner.GN.Handel@gmail.com, Test12345!, -0.3, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja, Ja</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=92.0.4515.131)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;FORSA-VM31&apos;, ip: &apos;10.52.76.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:55501}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 15973f32205fce358bc098f296004d84
+*** Element info: {Using=xpath, value=//tr//td[2]//p}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementsByXPath(RemoteWebDriver.java:432)
+	at org.openqa.selenium.By$ByXPath.findElements(By.java:348)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:311)
+	at Utils.SeleniumUtils.AusschreibungBankenAuswahl(SeleniumUtils.java:190)
+	at TopZinsPortal.TZPTenderStartGG.TZPTenderStartGGTest(TZPTenderStartGG.java:143)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -112,15 +129,32 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1132385302", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1132385302'><pre>com.applitools.eyes.exceptions.DiffsFoundException: Test &apos;DASHBOARD-Stage Sprint 43&apos; of &apos;Admin-Forsa&apos; detected differences! See details at: https://eyes.applitools.com/app/batches/00000251776212003910/00000251776212002942?accountId=YtPt0DUaZkajGGdnI6uxvA~~
-	at com.applitools.eyes.EyesBase.logSessionResultsAndThrowException(EyesBase.java:515)
-	at com.applitools.eyes.EyesBase.close(EyesBase.java:488)
-	at com.applitools.eyes.selenium.SeleniumEyes.close(SeleniumEyes.java:2127)
-	at com.applitools.eyes.selenium.Eyes.close(Eyes.java:415)
-	at com.applitools.eyes.selenium.Eyes.close(Eyes.java:129)
-	at Utils.SeleniumUtils.ApplitoolsAufnahme(SeleniumUtils.java:108)
-	at TopZinsPortal.TZPAdminApplitoolScreenshots.TZPApplitoolScreenshot(TZPAdminApplitoolScreenshots.java:140)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1681993012", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1681993012'><pre>org.openqa.selenium.WebDriverException: chrome not reachable
+  (Session info: chrome=92.0.4515.131)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;FORSA-VM31&apos;, ip: &apos;10.52.76.82&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\Users\B22E7~1.DIK\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:55501}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 15973f32205fce358bc098f296004d84
+*** Element info: {Using=xpath, value=//tr//td[2]//p}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementsByXPath(RemoteWebDriver.java:432)
+	at org.openqa.selenium.By$ByXPath.findElements(By.java:348)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:311)
+	at Utils.SeleniumUtils.AusschreibungBankenAuswahl(SeleniumUtils.java:190)
+	at TopZinsPortal.TZPTenderStartGG.TZPTenderStartGGTest(TZPTenderStartGG.java:143)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -150,8 +184,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>22</td>
-<td>TopZinsPortal.TZPAdminApplitoolScreenshots@4f6ee6e4</td></tr>
+<td>31</td>
+<td>TopZinsPortal.TZPTenderStartGG@294425a7</td></tr>
 </table><p>
 </body>
 </html>

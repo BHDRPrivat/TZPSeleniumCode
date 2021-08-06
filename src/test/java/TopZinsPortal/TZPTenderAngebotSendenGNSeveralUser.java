@@ -147,7 +147,7 @@ public class TZPTenderAngebotSendenGNSeveralUser {
 				// 1.1 Button "Einloggen" klicken
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//button[contains(@type, 'submit')]", test);
 				
-				// 2. Klicken auf Register "Auschreibung"
+				// 2. Klicken auf Register "Ausschreibung"
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//a[@data-test='Ausschreibungen']", test);
 				
 				// Die Anzeige auf 100 erhöhen
@@ -167,6 +167,10 @@ public class TZPTenderAngebotSendenGNSeveralUser {
 				
 				// 5.6 Eintrag "Kommentar" 
 				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath", "//textarea[@name='comment']", (KommentarGG + " Geldnehmer GN: " + FrimaGN[Durchlauf]), test);	
+				
+				// In der Pre-Prod. noch nicht vorhanden, wenn ergänzt, dann Markierung entfernen
+//				// Ende Uhrzeit eintragen
+//				Utils.SeleniumUtils.InputText(driver, Zeitspanne, "xpath","//Label[text() ='Ende des Angebots (Uhrzeit)']//following::input[contains(@class, 'MuiInput')][1]", EndeUhrzeit, test);
 				
 				// 5. Klicken auf Button "Angebot senden"
 				Utils.SeleniumUtils.ButtonKlick(driver, Zeitspanne, "xpath", "//span[text()='senden']//ancestor::button[contains(@class, 'MuiButtonBase')]", test);
